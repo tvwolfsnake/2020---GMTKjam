@@ -25,7 +25,7 @@ When play begins:
 	say "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.";
 	wait for any key.	
 
-A stealable is a kind of thing.
+A stealable is a kind of undescribed thing.
 
 A mourner is a kind of person.
 
@@ -74,22 +74,38 @@ Check taking a stealable:
 		[if the player is in Hors D'oeuvres Table...]
 		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
+Instead of taking scenery, say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are."
+
 Part I - Get Upstairs
 
 [n.b.: parts don't actually show up in the game, they're just to make the code easier to keep track of]
 
 [Vestibule]
 
-Vestibule is a room. The description of the vestibule is "The foyer of your uncle's home. [list of visible unheld stealables in the location]"
+Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if].  Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
 
-Testthing is a stealable in the vestibule.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
+The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is a stealable in the umbrella_stand. The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 2014]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
 
-Anotherthing is a stealable in the vestibule. Anotherthing is undescribed. The description of anotherthing is "pasdoifnpoie".
+There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is stealable. The table is scenery.
 
-John is a mourner in the vestibule. John is male. The description of John is "John."
+
+
+The description of the table is "[first time]Hastily dragged here from a different room in the house. [only]Most people would just use a folding table, but you're pretty sure this is an antique."
+
+The description of the condolence book is "[first time]Not to sound crass, but do the bereaved ever actually read these? It's bad enough having people come up to you in person to give a tactless [quotation mark]he's in a better place now[quotation mark], you can't imagine having a written record of that too.[line break][line break][only]Probably better not to subject yourself to that."
+
+The description of the pen is "It's an ordinary ballpoint pen: sleek, black, [if pen is held]demonstrably [end if]easy to palm."
+
+[Testthing is a stealable in the vestibule.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
+
+Anotherthing is a stealable in the vestibule. The description of anotherthing is "pasdoifnpoie".
+
+Thirdthing is a stealable in the vestibule. The description of thirdthing is "thirdthing".
+
+John is a mourner in the vestibule. John is male. The description of John is "John."]
 
 Instead of going south in the vestibule:
-	say "Not until you get what you came for."
+	say "You're not leaving until you get what you came for.[first time][line break]Hell, with your condition you usually end up being escorted out another door.[only]"
 
 [Coat Closet is east of vestibule.
 
@@ -105,7 +121,7 @@ Instead of going east in the vestibule for more than the first time:
 
 [Hall]
 
-Hall is north of Vestibule. The description of Hall is "s"
+The hall is north of the vestibule. The description of Hall is "s"
 
 Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.
 
@@ -156,3 +172,5 @@ one problem with this approach is that the room descriptions will have to be dyn
 ["After about a seven count, you]
 
 [let K be the list of visible unheld scenery??? (thinking about taking a thing that's nailed down)]
+
+[list of visible unheld stealables in the location]
