@@ -36,8 +36,7 @@ The steal list is a list of objects that varies.
 The most-recently-taken list is a list of objects that varies.
 Carry out taking something (called the item):
 	truncate the most-recently-taken list to the last 0 entries;
-	add the item to the most-recently-taken list;
-	say "[most-recently-taken list]".
+	add the item to the most-recently-taken list.
 
 Every turn:
 	let L be the steal list;
@@ -61,9 +60,15 @@ Every turn:
 			say "Your fingers itch.";
 			if a mourner is touchable:
 				say "[line break]You feel eyes on you."
-				
 
+The block giving rule is not listed in the check giving it to rules. 
 				
+Instead of putting, inserting, or dropping a stealable, say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them."
+
+Check giving a stealable to a person:
+	if the person is a mourner:
+		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them." instead.
+		
 Check taking a stealable:
 	if kleptomode is false:
 		[if the player is in Hors D'oeuvres Table...]
@@ -73,9 +78,9 @@ Part I - Get Upstairs
 
 [n.b.: parts don't actually show up in the game, they're just to make the code easier to keep track of]
 
-Foyer is a room. The description of the foyer is "The foyer of your uncle's home."
+Foyer is a room. The description of the foyer is "The foyer of your uncle's home. [list of visible unheld stealables in the location]"
 
-Testthing is a stealable in the foyer. Testthing is undescribed. The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
+Testthing is a stealable in the foyer.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
 
 Anotherthing is a stealable in the foyer. Anotherthing is undescribed. The description of anotherthing is "pasdoifnpoie".
 
