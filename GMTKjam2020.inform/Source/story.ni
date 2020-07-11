@@ -1,4 +1,5 @@
 "Uncle Albert in a Can" by Unnamed Game Jam Team
+[title obviously not final]
 [we really need to think of a team name, or else just credit it A&B&C]
 
 The release number is 1.
@@ -60,6 +61,11 @@ Every turn:
 			say "Your fingers itch.";
 			if a mourner is touchable:
 				say "[line break]You feel eyes on you."
+				
+Check taking a stealable:
+	if kleptomode is false:
+		[if the player is in Hors D'oeuvres Table...]
+		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
 Part I - Get Upstairs
 
@@ -77,9 +83,7 @@ Newroom is north of Foyer. The description of Newroom is "s"
 
 Differentthing is a stealable in the Newroom. The description of the differentthing is "It's different." Differentthing is undescribed.
 
-Check taking a stealable:
-	if kleptomode is false:
-		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
+
 
 
 
@@ -124,3 +128,5 @@ one problem with this approach is that the room descriptions will have to be dyn
 
 
 ["You stuff it in your pocket as surreptitiously as you can."]
+
+[let K be the list of visible unheld scenery??? (thinking about taking a thing that's nailed down)]
