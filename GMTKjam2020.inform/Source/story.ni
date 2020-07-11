@@ -16,13 +16,12 @@ Include Basic Screen Effects by Emily Short.
 Release along with the "Quixe" interpreter.
 
 [BASIC RULES]
-[This is the dumb rule:
-	let L be the list of visible stealables.]
+
+Kleptomode is a truth state that varies.
 
 When play begins:
-	let L be the list of visible unheld stealables;
-	say "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.
-[L with definite articles]";
+	now kleptomode is false;
+	say "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.";
 	wait for any key.	
 
 A stealable is a kind of thing.
@@ -31,7 +30,7 @@ A mourner is a kind of person.
 
 Definition: a stealable is unheld if it is not carried.
 
-
+The steal list is a list of objects that varies.
 
 The most-recently-taken list is a list of objects that varies.
 Carry out taking something (called the item):
@@ -40,23 +39,28 @@ Carry out taking something (called the item):
 	add the item to the most-recently-taken list. 
 
 Every turn:
-	let L be the list of visible unheld stealables;
+	let L be the steal list;
+	now L is the list of visible unheld stealables;
 	if the remainder after dividing the turn count by three is zero:
 		if L is non-empty:
+			now kleptomode is true;
 			try silently taking a random visible unheld stealable;
 			say "> take [most-recently-taken list][line break]You stuff it in your pocket as surreptitiously as you can.";
+			now kleptomode is false;
 			if a mourner is touchable:
 				wait for any key;
-				say "[line break]hey don't take that";
+				say "[line break]You just can't help yourself, can you.[line break][line break]";
+				wait for any key;
+				say "[quotation mark]THIEF! THIEF![quotation mark]";
+				wait for any key;
+				clear screen;
+				now the left hand status line is "The Curb";
+				end the story saying "You have been thrown out";
 		if L is empty:
 			say "Your fingers itch.";
 			if a mourner is touchable:
 				say "[line break]You feel eyes on you."
-				
-Before looking in a room:
-	let L be the list of visible unheld stealables.
 
-	
 Part I - Get Upstairs
 
 [n.b.: parts don't actually show up in the game, they're just to make the code easier to keep track of]
@@ -69,12 +73,13 @@ Anotherthing is a stealable in the foyer. Anotherthing is undescribed. The descr
 
 John is a mourner in Foyer. John is male. The description of John is "John."
 
-[After taking the testthing:
-	say "[L with definite articles]".]
-
 Newroom is north of Foyer. The description of Newroom is "s"
 
 Differentthing is a stealable in the Newroom. The description of the differentthing is "It's different." Differentthing is undescribed.
+
+Check taking a stealable:
+	if kleptomode is false:
+		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
 
 

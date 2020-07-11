@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-1543"/>
+  <activeNode nodeId="node-1573"/>
   <item nodeId="node-1">
     <command xml:space="preserve">GMTKjam2020</command>
-    <result xml:space="preserve">This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title. Testthing and Anotherthing</result>
+    <result xml:space="preserve">This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
       <child nodeId="node-1495"/>
       <child nodeId="node-1502"/>
       <child nodeId="node-1503"/>
+      <child nodeId="node-1565"/>
     </children>
   </item>
   <item nodeId="node-1495">
@@ -83,6 +84,8 @@
       <child nodeId="node-1507"/>
       <child nodeId="node-1541"/>
       <child nodeId="node-1543"/>
+      <child nodeId="node-1544"/>
+      <child nodeId="node-1548"/>
     </children>
   </item>
   <item nodeId="node-1504">
@@ -105,7 +108,7 @@
   </item>
   <item nodeId="node-1506">
     <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take &#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>YES</changed>
     <children>
@@ -245,7 +248,140 @@
   </item>
   <item nodeId="node-1540">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">hey don't take that&#x000A;&gt;</result>
+    <result xml:space="preserve">You just can't help yourself, can you.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1552"/>
+    </children>
+  </item>
+  <item nodeId="node-1552">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">"THIEF! THIEF!"</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1553"/>
+    </children>
+  </item>
+  <item nodeId="node-1553">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">*** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1554"/>
+    </children>
+  </item>
+  <item nodeId="node-1554">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Foyer&#x000A;[Previous turn undone.]&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1555"/>
+      <child nodeId="node-1572"/>
+    </children>
+  </item>
+  <item nodeId="node-1555">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Anotherthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1556"/>
+    </children>
+  </item>
+  <item nodeId="node-1556">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">You just can't help yourself, can you.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1557"/>
+    </children>
+  </item>
+  <item nodeId="node-1557">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">"THIEF! THIEF!"</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1558"/>
+    </children>
+  </item>
+  <item nodeId="node-1558">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">*** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1559"/>
+    </children>
+  </item>
+  <item nodeId="node-1559">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Foyer&#x000A;[Previous turn undone.]&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1560"/>
+    </children>
+  </item>
+  <item nodeId="node-1560">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Newroom&#x000A;s&#x000A;&#x000A;&gt; take Differentthing&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1561"/>
+    </children>
+  </item>
+  <item nodeId="node-1561">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Foyer&#x000A;[Previous turn undone.]&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1562"/>
+    </children>
+  </item>
+  <item nodeId="node-1562">
+    <command xml:space="preserve">undo</command>
+    <result xml:space="preserve">Foyer&#x000A;[Previous turn undone.]&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1563"/>
+    </children>
+  </item>
+  <item nodeId="node-1563">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Newroom&#x000A;s&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1564"/>
+    </children>
+  </item>
+  <item nodeId="node-1564">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Differentthing&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1572">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Newroom&#x000A;s&#x000A;&#x000A;&gt; take &#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1573"/>
+    </children>
+  </item>
+  <item nodeId="node-1573">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
@@ -425,9 +561,135 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
+  <item nodeId="node-1544">
+    <command xml:space="preserve">take testthing</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1545"/>
+    </children>
+  </item>
+  <item nodeId="node-1545">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1546"/>
+    </children>
+  </item>
+  <item nodeId="node-1546">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing and Anotherthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1547"/>
+    </children>
+  </item>
+  <item nodeId="node-1547">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">hey don't take that&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1548">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Foyer&#x000A;The foyer of your uncle's home.&#x000A;&#x000A;&#x000A;You can see John here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1549"/>
+    </children>
+  </item>
+  <item nodeId="node-1549">
+    <command xml:space="preserve">x john</command>
+    <result xml:space="preserve">John.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1550"/>
+    </children>
+  </item>
+  <item nodeId="node-1550">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Anotherthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1551"/>
+    </children>
+  </item>
+  <item nodeId="node-1551">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">hey don't take that&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
   <item nodeId="node-1503">
     <command xml:space="preserve">[back]</command>
     <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your great uncle's home.&#x000A;&#x000A;It's a testthing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1565">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your uncle's home.&#x000A;&#x000A;You can see John here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1566"/>
+    </children>
+  </item>
+  <item nodeId="node-1566">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1567"/>
+    </children>
+  </item>
+  <item nodeId="node-1567">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1568"/>
+    </children>
+  </item>
+  <item nodeId="node-1568">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1569"/>
+    </children>
+  </item>
+  <item nodeId="node-1569">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">You just can't help yourself, can you.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1570"/>
+    </children>
+  </item>
+  <item nodeId="node-1570">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">"THIEF! THIEF!"</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1571"/>
+    </children>
+  </item>
+  <item nodeId="node-1571">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">Curb&#x000A;&#x000A;&#x000A;    *** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
