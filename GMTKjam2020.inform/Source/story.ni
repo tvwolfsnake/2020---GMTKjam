@@ -67,7 +67,7 @@ Instead of putting, inserting, or dropping a stealable, say "It might not be a g
 
 Check giving a stealable to a person:
 	if the person is a mourner:
-		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them." instead.
+		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.[first time][line break]Even rich people who [italic type]aren't[roman type] grieving tend to be extra-vindictive about that sort of thing.[only]" instead.
 		
 Check taking a stealable:
 	if kleptomode is false:
@@ -78,17 +78,36 @@ Part I - Get Upstairs
 
 [n.b.: parts don't actually show up in the game, they're just to make the code easier to keep track of]
 
-Foyer is a room. The description of the foyer is "The foyer of your uncle's home. [list of visible unheld stealables in the location]"
+[Vestibule]
 
-Testthing is a stealable in the foyer.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
+Vestibule is a room. The description of the vestibule is "The foyer of your uncle's home. [list of visible unheld stealables in the location]"
 
-Anotherthing is a stealable in the foyer. Anotherthing is undescribed. The description of anotherthing is "pasdoifnpoie".
+Testthing is a stealable in the vestibule.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
 
-John is a mourner in Foyer. John is male. The description of John is "John."
+Anotherthing is a stealable in the vestibule. Anotherthing is undescribed. The description of anotherthing is "pasdoifnpoie".
 
-Newroom is north of Foyer. The description of Newroom is "s"
+John is a mourner in the vestibule. John is male. The description of John is "John."
 
-Differentthing is a stealable in the Newroom. The description of the differentthing is "It's different." Differentthing is undescribed.
+Instead of going south in the vestibule:
+	say "Not until you get what you came for."
+
+[Coat Closet is east of vestibule.
+
+Instead of going east for the first time in the vestibule:
+	say "You open the door.[line break][line break]";
+	wait for any key;
+	say "It's absolutely full of coats.[line break][line break]";
+	wait for any key;
+	say "You close the door."
+	
+Instead of going east in the vestibule for more than the first time:
+	say "There's no room for you in there. It's just a bunch of coats."]
+
+[Hall]
+
+Hall is north of Vestibule. The description of Hall is "s"
+
+Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.
 
 
 
