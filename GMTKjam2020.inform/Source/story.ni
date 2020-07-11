@@ -110,7 +110,7 @@ Hall is north of Vestibule. The description of Hall is "s"
 Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.
 
 
-
+[asdfasdf]
 
 
 Part II - You're Upstairs
