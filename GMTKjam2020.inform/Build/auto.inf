@@ -43,7 +43,7 @@ Global Story = BC_0;
 Constant Headline BC_1;
 Constant Story_Author BC_2;
 Release 1;
-Serial "200710";
+Serial "200711";
 
 Default Story 0;
 Default Headline 0;
@@ -4408,7 +4408,7 @@ Global lightflag = false;
 ! ListWriter.i6t: Memory
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-Constant REQUISITION_STACK_SIZE = 3*14;
+Constant REQUISITION_STACK_SIZE = 3*15;
 Array requisition_stack --> REQUISITION_STACK_SIZE;
 Global requisition_stack_pointer = 0;
 
@@ -9188,7 +9188,7 @@ Constant START_ROOM_INIS = 2;
 Constant START_TIME_INIS = 3;
 Constant DONE_INIS = 4;
 
-Array InitialSituation --> selfobj nothing I129_foyer 540 0;
+Array InitialSituation --> selfobj nothing I131_foyer 540 0;
 
 
 
@@ -9653,10 +9653,14 @@ Constant p97 = IK14_Count;
 Constant p98 = IK14_Link;
 Constant p99 = IK15_Count;
 Constant p100 = IK15_Link;
-Constant p101 = KD_Count;
-Constant p102 = name;
-Constant p103 = parse_name;
-Constant p104 = action_bitmap;
+Constant p101 = IK16_Count;
+Constant p102 = IK16_Link;
+Constant p103 = IK17_Count;
+Constant p104 = IK17_Link;
+Constant p105 = KD_Count;
+Constant p106 = name;
+Constant p107 = parse_name;
+Constant p108 = action_bitmap;
 
 Constant FBNA_PROP_NUMBER = p57_recurring;
 Object property_numberspace_forcer
@@ -9830,19 +9834,27 @@ Array property_metadata -->
     "<nameless>" NULL
     ! offset 242: property IK15_Link
     "<nameless>" NULL
-    ! offset 244: property KD_Count
+    ! offset 244: property IK16_Count
     "<nameless>" NULL
-    ! offset 246: property name
+    ! offset 246: property IK16_Link
     "<nameless>" NULL
-    ! offset 248: property parse_name
+    ! offset 248: property IK17_Count
     "<nameless>" NULL
-    ! offset 250: property action_bitmap
+    ! offset 250: property IK17_Link
+    "<nameless>" NULL
+    ! offset 252: property KD_Count
+    "<nameless>" NULL
+    ! offset 254: property name
+    "<nameless>" NULL
+    ! offset 256: property parse_name
+    "<nameless>" NULL
+    ! offset 258: property action_bitmap
     "<nameless>" NULL
 ;
 
 Constant attributed_property_offsets_SIZE 48;
 Array attributed_property_offsets --> attributed_property_offsets_SIZE;
-Constant valued_property_offsets_SIZE (100 + 105 + INDIV_PROP_START-48);
+Constant valued_property_offsets_SIZE (100 + 109 + INDIV_PROP_START-48);
 Array valued_property_offsets --> valued_property_offsets_SIZE;
 
 [ CreatePropertyOffsets 
@@ -9933,10 +9945,14 @@ Array valued_property_offsets --> valued_property_offsets_SIZE;
     valued_property_offsets-->IK14_Link = 238;
     valued_property_offsets-->IK15_Count = 240;
     valued_property_offsets-->IK15_Link = 242;
-    valued_property_offsets-->KD_Count = 244;
-    valued_property_offsets-->name = 246;
-    valued_property_offsets-->parse_name = 248;
-    valued_property_offsets-->action_bitmap = 250;
+    valued_property_offsets-->IK16_Count = 244;
+    valued_property_offsets-->IK16_Link = 246;
+    valued_property_offsets-->IK17_Count = 248;
+    valued_property_offsets-->IK17_Link = 250;
+    valued_property_offsets-->KD_Count = 252;
+    valued_property_offsets-->name = 254;
+    valued_property_offsets-->parse_name = 256;
+    valued_property_offsets-->action_bitmap = 258;
 ];
 
 
@@ -10550,6 +10566,8 @@ Constant REL_BLOCK_HEADER ($100*6 + $$1101)*$10000;
     if (k == K13_device) print "device";
     if (k == K14_vehicle) print "vehicle";
     if (k == K15_player_s_holdall) print "player's holdall";
+    if (k == K16_stealable) print "stealable";
+    if (k == K17_mourner) print "mourner";
 ];
 
 Constant RBNO_0 = "allow access";
@@ -10579,8 +10597,8 @@ Constant RBNO_12 = "it does";
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
 
-Array KindHierarchy --> K0_kind (0) K1_room (0) K2_thing (0) K3_direction (0) K4_door (2) K5_container (2) K6_supporter (2) K7_backdrop (2) K8_person (2) K9_region (0) K10_man (8) K11_woman (8) K12_animal (8) K13_device (2) K14_vehicle (5) K15_player_s_holdall (5) ;
-Constant IK1_First = I129_foyer;
+Array KindHierarchy --> K0_kind (0) K1_room (0) K2_thing (0) K3_direction (0) K4_door (2) K5_container (2) K6_supporter (2) K7_backdrop (2) K8_person (2) K9_region (0) K10_man (8) K11_woman (8) K12_animal (8) K13_device (2) K14_vehicle (5) K15_player_s_holdall (5) K16_stealable (2) K17_mourner (8) ;
+Constant IK1_First = I131_foyer;
 Constant IK2_First = selfobj;
 Constant IK3_First = I51_north;
 Constant IK4_First = nothing;
@@ -10595,6 +10613,8 @@ Constant IK12_First = nothing;
 Constant IK13_First = nothing;
 Constant IK14_First = nothing;
 Constant IK15_First = nothing;
+Constant IK16_First = I132_testthing;
+Constant IK17_First = nothing;
 Constant No_Directions = 12;
 ! Table of direction object alias constants:
 Constant DirectionObject_0 = I51_north;
@@ -10610,7 +10630,7 @@ Constant DirectionObject_9 = I60_down;
 Constant DirectionObject_10 = in_obj;
 Constant DirectionObject_11 = out_obj;
 Array Map_Storage -->
- 0 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I129_foyer
+ 0 0 0 0 0 0 0 0 0 0 0 0 ! Exits from: I131_foyer
 ;
 
 Class VPH_Class;
@@ -10746,10 +10766,20 @@ Class K12_animal
     with article BC_48
 ;
 
+Class K17_mourner 
+    class K8_person
+    with plural BC_49
+    with description BC_50
+    with initial BC_51
+    with list_together BC_52
+    with short_name BC_53
+    with article BC_54
+;
+
 Class K4_door 
     class K2_thing
      has door, 
-    with plural BC_49
+    with plural BC_55
     has static
     has ~pushable
     has ~open
@@ -10758,17 +10788,17 @@ Class K4_door
     has ~locked
     with door_to nothing
     with with_key nothing
-    with description BC_50
-    with initial BC_51
-    with list_together BC_52
-    with short_name BC_53
-    with article BC_54
+    with description BC_56
+    with initial BC_57
+    with list_together BC_58
+    with short_name BC_59
+    with article BC_60
 ;
 
 Class K5_container 
     class K2_thing
      has container, 
-    with plural BC_55
+    with plural BC_61
     with capacity 100
     has ~transparent
     has open
@@ -10777,18 +10807,6 @@ Class K5_container
     has ~locked
     has ~enterable
     with with_key nothing
-    with description BC_56
-    with initial BC_57
-    with list_together BC_58
-    with short_name BC_59
-    with article BC_60
-;
-
-Class K14_vehicle 
-    class K5_container
-    with plural BC_61
-    has static
-    has enterable
     with description BC_62
     with initial BC_63
     with list_together BC_64
@@ -10796,11 +10814,11 @@ Class K14_vehicle
     with article BC_66
 ;
 
-Class K15_player_s_holdall 
+Class K14_vehicle 
     class K5_container
     with plural BC_67
-    has ~static
-    has openable
+    has static
+    has enterable
     with description BC_68
     with initial BC_69
     with list_together BC_70
@@ -10808,12 +10826,11 @@ Class K15_player_s_holdall
     with article BC_72
 ;
 
-Class K7_backdrop 
-    class K2_thing
+Class K15_player_s_holdall 
+    class K5_container
     with plural BC_73
-    has static
-    has scenery
-    has ~pushable
+    has ~static
+    has openable
     with description BC_74
     with initial BC_75
     with list_together BC_76
@@ -10821,11 +10838,12 @@ Class K7_backdrop
     with article BC_78
 ;
 
-Class K13_device 
+Class K7_backdrop 
     class K2_thing
-     has switchable, 
     with plural BC_79
-    has ~on
+    has static
+    has scenery
+    has ~pushable
     with description BC_80
     with initial BC_81
     with list_together BC_82
@@ -10833,13 +10851,35 @@ Class K13_device
     with article BC_84
 ;
 
+Class K13_device 
+    class K2_thing
+     has switchable, 
+    with plural BC_85
+    has ~on
+    with description BC_86
+    with initial BC_87
+    with list_together BC_88
+    with short_name BC_89
+    with article BC_90
+;
+
+Class K16_stealable 
+    class K2_thing
+    with plural BC_91
+    with description BC_92
+    with initial BC_93
+    with list_together BC_94
+    with short_name BC_95
+    with article BC_96
+;
+
 Class K9_region 
     class K0_kind
-    with plural BC_85
+    with plural BC_97
     has ~privately_named
-    with list_together BC_86
-    with short_name BC_87
-    with article BC_88
+    with list_together BC_98
+    with short_name BC_99
+    with article BC_100
 ;
 
 Class K3_direction 
@@ -10847,19 +10887,19 @@ Class K3_direction
 
     	has scenery, ! class CompassDirection,
 
-    with plural BC_89
+    with plural BC_101
     has ~privately_named
     has ~workflag
     with p10_opposite I51_north
-    with list_together BC_90
-    with short_name BC_91
-    with article BC_92
+    with list_together BC_102
+    with short_name BC_103
+    with article BC_104
 ;
 
 Object I51_north "" Compass
     class K3_direction
-    with short_name BC_93
-    with article BC_94
+    with short_name BC_105
+    with article BC_106
     with p10_opposite I54_south
     with vector 0
     with IK3_Count 0
@@ -10868,14 +10908,14 @@ Object I51_north "" Compass
     with name 'north' 'directions//p' 'n//' 
     with parse_name Parse_Name_GV1
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_95
-    with plural BC_96
+    with list_together BC_107
+    with plural BC_108
 ;
 
 Object I52_northeast "" Compass
     class K3_direction
-    with short_name BC_97
-    with article BC_98
+    with short_name BC_109
+    with article BC_110
     with p10_opposite I56_southwest
     with vector 0
     with IK3_Count 1
@@ -10884,14 +10924,14 @@ Object I52_northeast "" Compass
     with name 'northeast' 'directions//p' 'ne' 
     with parse_name Parse_Name_GV2
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_99
-    with plural BC_100
+    with list_together BC_111
+    with plural BC_112
 ;
 
 Object I53_northwest "" Compass
     class K3_direction
-    with short_name BC_101
-    with article BC_102
+    with short_name BC_113
+    with article BC_114
     with p10_opposite I55_southeast
     with vector 0
     with IK3_Count 2
@@ -10900,14 +10940,14 @@ Object I53_northwest "" Compass
     with name 'northwest' 'directions//p' 'nw' 
     with parse_name Parse_Name_GV3
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_103
-    with plural BC_104
+    with list_together BC_115
+    with plural BC_116
 ;
 
 Object I54_south "" Compass
     class K3_direction
-    with short_name BC_105
-    with article BC_106
+    with short_name BC_117
+    with article BC_118
     with p10_opposite I51_north
     with vector 0
     with IK3_Count 3
@@ -10916,14 +10956,14 @@ Object I54_south "" Compass
     with name 'south' 'directions//p' 's//' 
     with parse_name Parse_Name_GV4
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_107
-    with plural BC_108
+    with list_together BC_119
+    with plural BC_120
 ;
 
 Object I55_southeast "" Compass
     class K3_direction
-    with short_name BC_109
-    with article BC_110
+    with short_name BC_121
+    with article BC_122
     with p10_opposite I53_northwest
     with vector 0
     with IK3_Count 4
@@ -10932,14 +10972,14 @@ Object I55_southeast "" Compass
     with name 'southeast' 'directions//p' 'se' 
     with parse_name Parse_Name_GV5
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_111
-    with plural BC_112
+    with list_together BC_123
+    with plural BC_124
 ;
 
 Object I56_southwest "" Compass
     class K3_direction
-    with short_name BC_113
-    with article BC_114
+    with short_name BC_125
+    with article BC_126
     with p10_opposite I52_northeast
     with vector 0
     with IK3_Count 5
@@ -10948,14 +10988,14 @@ Object I56_southwest "" Compass
     with name 'southwest' 'directions//p' 'sw' 
     with parse_name Parse_Name_GV6
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_115
-    with plural BC_116
+    with list_together BC_127
+    with plural BC_128
 ;
 
 Object I57_east "" Compass
     class K3_direction
-    with short_name BC_117
-    with article BC_118
+    with short_name BC_129
+    with article BC_130
     with p10_opposite I58_west
     with vector 0
     with IK3_Count 6
@@ -10964,14 +11004,14 @@ Object I57_east "" Compass
     with name 'east' 'directions//p' 'e//' 
     with parse_name Parse_Name_GV7
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_119
-    with plural BC_120
+    with list_together BC_131
+    with plural BC_132
 ;
 
 Object I58_west "" Compass
     class K3_direction
-    with short_name BC_121
-    with article BC_122
+    with short_name BC_133
+    with article BC_134
     with p10_opposite I57_east
     with vector 0
     with IK3_Count 7
@@ -10980,14 +11020,14 @@ Object I58_west "" Compass
     with name 'west' 'directions//p' 'w//' 
     with parse_name Parse_Name_GV8
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_123
-    with plural BC_124
+    with list_together BC_135
+    with plural BC_136
 ;
 
 Object I59_up "" Compass
     class K3_direction
-    with short_name BC_125
-    with article BC_126
+    with short_name BC_137
+    with article BC_138
     with p10_opposite I60_down
     with vector 0
     with IK3_Count 8
@@ -10996,14 +11036,14 @@ Object I59_up "" Compass
     with name 'up' 'directions//p' 'u//' 
     with parse_name Parse_Name_GV9
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_127
-    with plural BC_128
+    with list_together BC_139
+    with plural BC_140
 ;
 
 Object I60_down "" Compass
     class K3_direction
-    with short_name BC_129
-    with article BC_130
+    with short_name BC_141
+    with article BC_142
     with p10_opposite I59_up
     with vector 0
     with IK3_Count 9
@@ -11012,14 +11052,14 @@ Object I60_down "" Compass
     with name 'down' 'directions//p' 'd//' 
     with parse_name Parse_Name_GV10
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_131
-    with plural BC_132
+    with list_together BC_143
+    with plural BC_144
 ;
 
 Object in_obj "" Compass
     class K3_direction
-    with short_name BC_133
-    with article BC_134
+    with short_name BC_145
+    with article BC_146
     with p10_opposite out_obj
     with vector 0
     with IK3_Count 10
@@ -11028,14 +11068,14 @@ Object in_obj "" Compass
     with name 'inside' 'directions//p' 'in' 
     with parse_name Parse_Name_GV11
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_135
-    with plural BC_136
+    with list_together BC_147
+    with plural BC_148
 ;
 
 Object out_obj "" Compass
     class K3_direction
-    with short_name BC_137
-    with article BC_138
+    with short_name BC_149
+    with article BC_150
     with p10_opposite in_obj
     with vector 0
     with IK3_Count 11
@@ -11044,40 +11084,40 @@ Object out_obj "" Compass
     with name 'outside' 'directions//p' 'out' 
     with parse_name Parse_Name_GV12
     with action_bitmap 0 0 0 0 0 
-    with list_together BC_139
-    with plural BC_140
+    with list_together BC_151
+    with plural BC_152
 ;
 
 Object selfobj ""
     class K8_person
 
-    	with saved_short_name TX_L_31,
+    	with saved_short_name TX_L_33,
      
-    with short_name BC_141
-    with description BC_142
+    with short_name BC_153
+    with description BC_154
     has proper
     has privately_named
     has concealed
     with vector 0
-    with cap_short_name BC_143
+    with cap_short_name BC_155
     has mark_as_thing
     with IK2_Count 0
-    with IK2_Link nothing
+    with IK2_Link I132_testthing
     with IK8_Count 0
     with IK8_Link nothing
     with KD_Count 8
     with parse_name Parse_Name_GV13
     with action_bitmap 0 0 0 0 0 
-    with initial BC_144
-    with list_together BC_145
-    with plural BC_146
-    with article BC_147
+    with initial BC_156
+    with list_together BC_157
+    with plural BC_158
+    with article BC_159
 ;
 
-Object I129_foyer ""
+Object I131_foyer ""
     class K1_room
-    with short_name BC_148
-    with description BC_149
+    with short_name BC_160
+    with description BC_161
     has proper
     with vector 0
     with room_index -1
@@ -11086,9 +11126,31 @@ Object I129_foyer ""
     with IK1_Link nothing
     with KD_Count 1
     with name 'foyer' 'rooms//p' 
-    with list_together BC_150
-    with plural BC_151
-    with article BC_152
+    with list_together BC_162
+    with plural BC_163
+    with article BC_164
+;
+
+Object -> I132_testthing ""
+    class K16_stealable
+    with short_name BC_165
+    with description BC_166
+    has proper
+    has concealed
+    with vector 0
+    has mark_as_thing
+    with IK2_Count 1
+    with IK2_Link nothing
+    with IK16_Count 0
+    with IK16_Link nothing
+    with KD_Count 16
+    with name 'testthing' 'stealables//p' 'thing' 
+    with parse_name Parse_Name_GV98
+    with action_bitmap 0 0 0 0 0 
+    with initial BC_167
+    with list_together BC_168
+    with plural BC_169
+    with article BC_170
 ;
 
 Constant I71_english_language = 1;
@@ -11145,18 +11207,18 @@ Constant I127_verbose = 2;
 Constant I128_superbrief = 3;
 Array Global_Vars -->
   (false) ! 7 darkness witnessed
-  (BC_153) ! 25 command prompt
+  (BC_171) ! 25 command prompt
   (I71_english_language) ! 29 language of play
-  (BC_154) ! 32 story author
-  (BC_155) ! 33 story headline
-  (BC_156) ! 34 story genre
-  (BC_157) ! 35 story description
+  (BC_172) ! 32 story author
+  (BC_173) ! 33 story headline
+  (BC_174) ! 34 story genre
+  (BC_175) ! 35 story description
   (1) ! 36 release number
   (2020) ! 37 story creation year
   (0) ! 45 locale paragraph count
   (0) ! 60 menu depth
   (0) ! 61 endnode flag
-  (BC_158) ! 62 current menu title
+  (BC_176) ! 62 current menu title
   (T2_sample_options) ! 63 current menu
   (1) ! 64 current menu selection
   (T13_ordinary_status) ! 65 status bar table
@@ -11172,62 +11234,62 @@ Array Global_Vars -->
 
 
 Array T0_final_question_options table  tab_0_0 tab_0_1 tab_0_2 tab_0_3 tab_0_4;
-Array tab_0_0 table $0664 0 (BC_159) (BC_160) (BC_161) (BC_162) (BC_163) ;
+Array tab_0_0 table $0664 0 (BC_177) (BC_178) (BC_179) (BC_180) (BC_181) ;
 Array tab_0_1 table $0465 1 (0) (0) (1) (0) (0) ;
-Array tab_0_2 table $2066 2 (Consult_Grammar_98) (Consult_Grammar_99) (Consult_Grammar_100) (Consult_Grammar_101) (Consult_Grammar_102) ;
+Array tab_0_2 table $2066 2 (Consult_Grammar_99) (Consult_Grammar_100) (Consult_Grammar_101) (Consult_Grammar_102) (Consult_Grammar_103) ;
 Array tab_0_3 table $0067 3 (IMMEDIATELY_RESTART_VM_R) (IMMEDIATELY_RESTORE_SAVED_R) ( TABLE_NOVALUE) (IMMEDIATELY_QUIT_R) (IMMEDIATELY_UNDO_R) ;
 Array tab_0_4 table $0068 4 ( TABLE_NOVALUE) ( TABLE_NOVALUE) (V27_amusing_a_victorious_pla) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array T1_locale_priorities table  tab_1_0 tab_1_1;
-Array tab_1_0 table $0869 NULL ( TABLE_NOVALUE)  TABLE_NOVALUE;
-Array tab_1_1 table $446a 5 ( TABLE_NOVALUE)  TABLE_NOVALUE;
+Array tab_1_0 table $0869 NULL ( TABLE_NOVALUE)  TABLE_NOVALUE TABLE_NOVALUE;
+Array tab_1_1 table $446a 5 ( TABLE_NOVALUE)  TABLE_NOVALUE TABLE_NOVALUE;
 Array T2_sample_options table  tab_2_0 tab_2_1 tab_2_2 tab_2_3;
-Array tab_2_0 table $066b 6 (BC_164) ;
+Array tab_2_0 table $066b 6 (BC_182) ;
 Array tab_2_1 table $006c 7 ( TABLE_NOVALUE) ;
-Array tab_2_2 table $066d 8 (BC_165) ;
+Array tab_2_2 table $066d 8 (BC_183) ;
 Array tab_2_3 table $006e 9 ( TABLE_NOVALUE) ;
 Array T3_menu_commands table  tab_3_0 tab_3_1;
 Array tab_3_0 table $446f 10 (78) (110) (80) (112) (81) (113) (13) (32) (130) (129) (27) (-8) (-6) (-5) (-4) ;
 Array tab_3_1 table $0070 12 (R_800) (R_800) (R_801) (R_801) (R_799) (R_799) (R_802) (R_802) (R_800) (R_801) (R_799) (R_799) (R_802) (R_800) (R_801) ;
 Array T4_shallow_menu_status table  tab_4_0 tab_4_1 tab_4_2;
-Array tab_4_0 table $0671 14 (BC_166) ;
-Array tab_4_1 table $0672 15 (BC_167) ;
-Array tab_4_2 table $0673 16 (BC_168) ;
+Array tab_4_0 table $0671 14 (BC_184) ;
+Array tab_4_1 table $0672 15 (BC_185) ;
+Array tab_4_2 table $0673 16 (BC_186) ;
 Array T5_deep_menu_status table  tab_5_0 tab_5_1 tab_5_2;
-Array tab_5_0 table $0671 17 (BC_169) (BC_170) (BC_171) (BC_172) ;
-Array tab_5_1 table $0672 18 (BC_173) (BC_174) (BC_175) (BC_176) ;
-Array tab_5_2 table $0673 19 (BC_177) (BC_178) (BC_179) (BC_180) ;
+Array tab_5_0 table $0671 17 (BC_187) (BC_188) (BC_189) (BC_190) ;
+Array tab_5_1 table $0672 18 (BC_191) (BC_192) (BC_193) (BC_194) ;
+Array tab_5_2 table $0673 19 (BC_195) (BC_196) (BC_197) (BC_198) ;
 Array T6_sample_hints table  tab_6_0 tab_6_1;
-Array tab_6_0 table $0674 20 (BC_181) ;
+Array tab_6_0 table $0674 20 (BC_199) ;
 Array tab_6_1 table $4475 21 ( TABLE_NOVALUE) ;
 Array T8_basic_help_options table  tab_8_0 tab_8_1 tab_8_2 tab_8_3;
-Array tab_8_0 table $066b 22 (BC_182) (BC_183) ;
+Array tab_8_0 table $066b 22 (BC_200) (BC_201) ;
 Array tab_8_1 table $006c 23 ( TABLE_NOVALUE) (T9_instruction_options) ;
-Array tab_8_2 table $066d 24 (BC_184) ( TABLE_NOVALUE) ;
+Array tab_8_2 table $066d 24 (BC_202) ( TABLE_NOVALUE) ;
 Array tab_8_3 table $006e 25 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array T9_instruction_options table  tab_9_0 tab_9_1 tab_9_2 tab_9_3;
-Array tab_9_0 table $066b 26 (BC_185) (BC_186) (BC_187) (BC_188) (BC_189) (BC_190) (BC_191) (BC_192) ;
+Array tab_9_0 table $066b 26 (BC_203) (BC_204) (BC_205) (BC_206) (BC_207) (BC_208) (BC_209) (BC_210) ;
 Array tab_9_1 table $006c 27 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) (T11_if_elements) (T10_stuckness_advice) ;
-Array tab_9_2 table $066d 28 (BC_193) (BC_194) (BC_195) (BC_196) (BC_197) (BC_198) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
+Array tab_9_2 table $066d 28 (BC_211) (BC_212) (BC_213) (BC_214) (BC_215) (BC_216) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array tab_9_3 table $006e 29 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array T10_stuckness_advice table  tab_10_0 tab_10_1 tab_10_2 tab_10_3;
-Array tab_10_0 table $066b 30 (BC_199) (BC_200) (BC_201) (BC_202) ;
+Array tab_10_0 table $066b 30 (BC_217) (BC_218) (BC_219) (BC_220) ;
 Array tab_10_1 table $006c 31 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
-Array tab_10_2 table $066d 32 (BC_203) (BC_204) (BC_205) (BC_206) ;
+Array tab_10_2 table $066d 32 (BC_221) (BC_222) (BC_223) (BC_224) ;
 Array tab_10_3 table $006e 33 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array T11_if_elements table  tab_11_0 tab_11_1 tab_11_2 tab_11_3;
-Array tab_11_0 table $066b 34 (BC_207) (BC_208) (BC_209) (BC_210) ;
+Array tab_11_0 table $066b 34 (BC_225) (BC_226) (BC_227) (BC_228) ;
 Array tab_11_1 table $006c 35 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
-Array tab_11_2 table $066d 36 (BC_211) (BC_212) (BC_213) (BC_214) ;
+Array tab_11_2 table $066d 36 (BC_229) (BC_230) (BC_231) (BC_232) ;
 Array tab_11_3 table $006e 37 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array T12_setting_options table  tab_12_0 tab_12_1 tab_12_2 tab_12_3;
-Array tab_12_0 table $066b 38 (BC_215) (BC_216) ;
+Array tab_12_0 table $066b 38 (BC_233) (BC_234) ;
 Array tab_12_1 table $006c 39 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array tab_12_2 table $066d 40 ( TABLE_NOVALUE) ( TABLE_NOVALUE) ;
 Array tab_12_3 table $006e 41 (R_813) (R_812) ;
 Array T13_ordinary_status table  tab_13_0 tab_13_1 tab_13_2;
-Array tab_13_0 table $0671 42 (BC_217) ;
-Array tab_13_1 table $0672 43 (BC_218) ;
-Array tab_13_2 table $0673 44 (BC_219) ;
+Array tab_13_0 table $0671 42 (BC_235) ;
+Array tab_13_1 table $0672 43 (BC_236) ;
+Array tab_13_2 table $0673 44 (BC_237) ;
 Array TB_Blanks -> 
   ! For table T0_final_question_options
   $00  ! Column 0
@@ -11237,7 +11299,7 @@ Array TB_Blanks ->
   $1b  ! Column 4
   
   ! For table T1_locale_priorities
-  $03  ! Column 1
+  $07  ! Column 1
   
   ! For table T2_sample_options
   $00  ! Column 0
@@ -11430,7 +11492,7 @@ Constant AD_RECORDS = 78;
     state ! Implied call parameter
     ;
     if (state == 1) {
-        MStack-->pos = I129_foyer; pos++;
+        MStack-->pos = I131_foyer; pos++;
         MStack-->pos = nothing; pos++;
         MStack-->pos = nothing; pos++;
         MStack-->pos = nothing; pos++;
@@ -12036,9 +12098,11 @@ Array ActionHappened --> 0 0 0 0 0;
 ! When play begins:
 [ R_835 ;
     if (debug_rules) DB_Rule(R_835, 835);
-    ! [2: say ~This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, and then follow it up with the title.~]
-    say__p=1;! [3: ~This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, and then follow it up with the title.~]
-    ParaContent(); print "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, and then follow it up with the title."; new_line; .L_Say1; .L_SayX1;rfalse;
+    ! [2: say ~This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.~]
+    say__p=1;! [3: ~This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.~]
+    ParaContent(); print "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title."; new_line; .L_Say1; .L_SayX1;! [4: wait for any key]
+    KeyPause();
+    rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
 
@@ -12062,6 +12126,24 @@ Array ActionHappened --> 0 0 0 0 0;
         ParaContent(); @push self; print (TEXT_TY_Say) GProperty(SCENE_TY, self=tmp_0,description);@pull self; ! [5: paragraph break]
         ParaContent(); DivideParagraphPoint(); new_line; .L_Say2; .L_SayX2;}
         } else if (debug_rules > 1) DB_Rule(R_65, 65, 'action');
+        rfalse;
+];
+! ----------------------------------------------------------------------------------------------------
+
+! ----------------------------------------------------------------------------------------------------
+! Rules in rulebook: Every turn (B8_every_turn)
+! ----------------------------------------------------------------------------------------------------
+! Rule 1/1 ! Every turn:
+! ----------------------------------------------------------------------------------------------------
+! No specific request
+! Every turn:
+[ R_836 ;
+    if (debug_rules) DB_Rule(R_836, 836);
+    ! [2: if the remainder after dividing the turn count by three is zero]
+    if ((((IntegerRemainder(turns, 3)) == 0)))
+    {! [3: try taking a random object]
+        TryAction(0, player, ##Take, (Prop_1()), 0);
+        }
         rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -12776,7 +12858,7 @@ Array ActionHappened --> 0 0 0 0 0;
     if (((((((action ==##Enter) &&  (actor==player))))))) { ! Runs only while condition holds
     if (debug_rules) DB_Rule(R_162, 162);
     ! [2: if something enterable ( called the box ) is in the location]
-    if ((((Prop_1() && (tmp_0=deferred_calling_list-->0, true)) || (tmp_0 = 0,false))))
+    if ((((Prop_2() && (tmp_0=deferred_calling_list-->0, true)) || (tmp_0 = 0,false))))
     {! [3: now the noun is the box]
         noun = tmp_0;
         } else {
@@ -13043,7 +13125,7 @@ Array ActionHappened --> 0 0 0 0 0;
 
     		tmp_1 = 0;
     ! [4: repeat with item running through things]
-    for (tmp_2=Prop_2(0), tmp_3=Prop_2(tmp_2): tmp_2: tmp_2=tmp_3, tmp_3=Prop_2(tmp_3))
+    for (tmp_2=Prop_3(0), tmp_3=Prop_3(tmp_2): tmp_2: tmp_2=tmp_3, tmp_3=Prop_3(tmp_3))
     {! [5: now the item is not marked for listing]
         (Adj_65_t3_v10(tmp_2));
         }
@@ -13064,7 +13146,7 @@ Array ActionHappened --> 0 0 0 0 0;
         @pull ct_1; @pull ct_0;! [10: if the mentionable count is greater than 0]
     if (((tmp_1 > 0)))
     {! [11: repeat with item running through things]
-        for (tmp_2=Prop_3(0), tmp_3=Prop_3(tmp_2): tmp_2: tmp_2=tmp_3, tmp_3=Prop_3(tmp_3))
+        for (tmp_2=Prop_4(0), tmp_3=Prop_4(tmp_2): tmp_2: tmp_2=tmp_3, tmp_3=Prop_4(tmp_3))
         {! [12: if the item is mentioned]
             if ((((Adj_67_t1_v10(tmp_2)))))
             {! [13: now the item is not marked for listing]
@@ -13074,7 +13156,7 @@ Array ActionHappened --> 0 0 0 0 0;
         ! [14: begin the listing nondescript items activity with the domain]
         BeginActivity(V8_listing_nondescript_items, tmp_0);
         ! [15: if the number of marked for listing things is 0]
-        if ((((Prop_4()) == 0)))
+        if ((((Prop_5()) == 0)))
         {! [16: abandon the listing nondescript items activity with the domain]
             AbandonActivity(V8_listing_nondescript_items, tmp_0);
             } else {
@@ -13109,7 +13191,7 @@ Array ActionHappened --> 0 0 0 0 0;
 
                 		tmp_3 = 1;
                 ! [33: repeat with list item running through marked for listing things]
-                for (tmp_4=Prop_5(0), tmp_5=Prop_5(tmp_4): tmp_4: tmp_4=tmp_5, tmp_5=Prop_5(tmp_5))
+                for (tmp_4=Prop_6(0), tmp_5=Prop_6(tmp_4): tmp_4: tmp_4=tmp_5, tmp_5=Prop_6(tmp_5))
                 {! [34: if the holder of the list item is not the common holder]
                     if (((~~(((HolderOf(tmp_4)) == tmp_2)))))
                     {! [35: if the common holder is nothing]
@@ -13128,7 +13210,7 @@ Array ActionHappened --> 0 0 0 0 0;
                         }
                         }
                 ! [40: filter list recursion to unmentioned things]
-                list_filter_routine = Prop_6;
+                list_filter_routine = Prop_7;
                 ! [41: if contents form of list is true and the common holder is not nothing]
                 if (((((tmp_3 && true) == (1 && true)))) && (((~~((tmp_2 == nothing))))))
                 {! [42: list the contents of the common holder , as a sentence , including contents , giving brief inventory information , tersely , not listing concealed items , listing marked items only]
@@ -13230,7 +13312,7 @@ Array ActionHappened --> 0 0 0 0 0;
     if ((((tmp_0 = parameter_value, (((parameter_value ofclass K6_supporter) && (tmp_0=(parameter_value), true))))) || (tmp_0 = 0,false))) { ! Runs only when pattern matches
     if (debug_rules) DB_Rule(R_94, 94);
     ! [2: repeat with item running through not handled things on the tabletop which provide the property initial appearance]
-    for (tmp_1=Prop_7(tmp_0,tmp_0,tmp_0,0), tmp_2=Prop_7(tmp_0,tmp_0,tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_7(tmp_0,tmp_0,tmp_0,tmp_2))
+    for (tmp_1=Prop_8(tmp_0,tmp_0,tmp_0,0), tmp_2=Prop_8(tmp_0,tmp_0,tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_8(tmp_0,tmp_0,tmp_0,tmp_2))
     {! [3: if the item is not a person and the initial appearance of the item is not ~~ and the item is not undescribed]
         if ((((~~((tmp_1 ofclass K8_person))))) && ((((~~(( BlkValueCompare(GProperty(10, tmp_1,initial), EMPTY_TEXT_VALUE) == 0))))) && (((~~(((Adj_64_t1_v10(tmp_1)))))))))
         {! [4: now the item is mentioned]
@@ -13377,9 +13459,9 @@ Array ActionHappened --> 0 0 0 0 0;
             ParaContent(); @push self; print (TEXT_TY_Say) GProperty(10, self=tmp_0,initial);@pull self;  .L_Say27; .L_SayX27;! [7: say ~[paragraph break]~]
             say__p=1;! [8: paragraph break]
             ParaContent(); DivideParagraphPoint(); new_line; .L_Say28; .L_SayX28;! [9: if a locale-supportable thing is on the item]
-            if ((((Prop_8(tmp_0)))))
+            if ((((Prop_9(tmp_0)))))
             {! [10: repeat with possibility running through things on the item]
-                for (tmp_1=Prop_9(tmp_0,0), tmp_2=Prop_9(tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_9(tmp_0,tmp_2))
+                for (tmp_1=Prop_10(tmp_0,0), tmp_2=Prop_10(tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_10(tmp_0,tmp_2))
                 {! [11: now the possibility is marked for listing]
                     (Adj_65_t2_v10(tmp_1));
                     ! [12: if the possibility is mentioned]
@@ -13419,11 +13501,11 @@ Array ActionHappened --> 0 0 0 0 0;
     ! [2: if the item is scenery and the item does not enclose the player]
     if (((((Adj_59_t1_v10(tmp_0))))) && (((~~((IndirectlyContains(tmp_0,player)))))))
     {! [3: if a locale-supportable thing is on the item]
-        if ((((Prop_10(tmp_0)))))
+        if ((((Prop_11(tmp_0)))))
         {! [4: set pronouns from the item]
             PronounNotice(tmp_0);
             ! [5: repeat with possibility running through things on the item]
-            for (tmp_1=Prop_11(tmp_0,0), tmp_2=Prop_11(tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_11(tmp_0,tmp_2))
+            for (tmp_1=Prop_12(tmp_0,0), tmp_2=Prop_12(tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_12(tmp_0,tmp_2))
             {! [6: now the possibility is marked for listing]
                 (Adj_65_t2_v10(tmp_1));
                 ! [7: if the possibility is mentioned]
@@ -13462,11 +13544,11 @@ Array ActionHappened --> 0 0 0 0 0;
     ! [2: if the item is mentioned and the item is not undescribed and the item is not scenery and the item does not enclose the player]
     if (((((Adj_67_t1_v10(tmp_0))))) && ((((~~(((Adj_64_t1_v10(tmp_0))))))) && ((((~~(((Adj_59_t1_v10(tmp_0))))))) && (((~~((IndirectlyContains(tmp_0,player)))))))))
     {! [3: if a locale-supportable thing is on the item]
-        if ((((Prop_12(tmp_0)))))
+        if ((((Prop_13(tmp_0)))))
         {! [4: set pronouns from the item]
             PronounNotice(tmp_0);
             ! [5: repeat with possibility running through things on the item]
-            for (tmp_1=Prop_13(tmp_0,0), tmp_2=Prop_13(tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_13(tmp_0,tmp_2))
+            for (tmp_1=Prop_14(tmp_0,0), tmp_2=Prop_14(tmp_0,tmp_1): tmp_1: tmp_1=tmp_2, tmp_2=Prop_14(tmp_0,tmp_2))
             {! [6: now the possibility is marked for listing]
                 (Adj_65_t2_v10(tmp_1));
                 ! [7: if the possibility is mentioned]
@@ -13824,14 +13906,14 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_111, 111);
     ! [2: if the number of things carried by the actor is at least the carrying capacity of the actor]
-    if ((((Prop_14()) >= GProperty(10, actor,capacity))))
+    if ((((Prop_15()) >= GProperty(10, actor,capacity))))
     {! [3: if the actor is holding a player's holdall ( called the current working sack )]
-        if ((((Prop_15() && (tmp_0=deferred_calling_list-->0, true)) || (tmp_0 = 0,false))))
+        if ((((Prop_16() && (tmp_0=deferred_calling_list-->0, true)) || (tmp_0 = 0,false))))
         {! [4: let the transferred item be nothing]
 
             		tmp_1 = nothing;
             ! [5: repeat with the possible item running through things carried by the actor]
-            for (tmp_2=Prop_16(0), tmp_3=Prop_16(tmp_2): tmp_2: tmp_2=tmp_3, tmp_3=Prop_16(tmp_3))
+            for (tmp_2=Prop_17(0), tmp_3=Prop_17(tmp_2): tmp_2: tmp_2=tmp_3, tmp_3=Prop_17(tmp_3))
             {! [6: if the possible item is not lit and the possible item is not the current working sack]
                 if ((((~~(((Adj_53_t1_v10(tmp_2))))))) && (((~~((tmp_2 == tmp_0))))))
                 {! [7: let the transferred item be the possible item]
@@ -13871,7 +13953,7 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_112, 112);
     ! [2: if the number of things carried by the actor is at least the carrying capacity of the actor]
-    if ((((Prop_17()) >= GProperty(10, actor,capacity))))
+    if ((((Prop_18()) >= GProperty(10, actor,capacity))))
     {! [3: if the actor is the player]
         if (((actor == player)))
         {! [4: say ~[We]['re] carrying too many things already.~ ( a )]
@@ -14163,7 +14245,7 @@ Array ActionHappened --> 0 0 0 0 0;
     {! [6: if the receptacle is a supporter]
         if (((tmp_0 ofclass K6_supporter)))
         {! [7: if the number of things on the receptacle is at least the carrying capacity of the receptacle]
-            if ((((Prop_18(tmp_0)) >= GProperty(OBJECT_TY, tmp_0,capacity))))
+            if ((((Prop_19(tmp_0)) >= GProperty(OBJECT_TY, tmp_0,capacity))))
             {! [8: if the actor is the player]
                 if (((actor == player)))
                 {! [9: now the prior named object is nothing]
@@ -14178,7 +14260,7 @@ Array ActionHappened --> 0 0 0 0 0;
             ! [13: if the receptacle is a container]
             if (((tmp_0 ofclass K5_container)))
             {! [14: if the number of things in the receptacle is at least the carrying capacity of the receptacle]
-                if ((((Prop_19(tmp_0)) >= GProperty(OBJECT_TY, tmp_0,capacity))))
+                if ((((Prop_20(tmp_0)) >= GProperty(OBJECT_TY, tmp_0,capacity))))
                 {! [15: if the actor is the player]
                     if (((actor == player)))
                     {! [16: now the prior named object is nothing]
@@ -14396,7 +14478,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ! [2: if the second noun provides the property carrying capacity]
     if (((WhetherProvides(second, false, capacity))))
     {! [3: if the number of things on the second noun is at least the carrying capacity of the second noun]
-        if ((((Prop_20()) >= GProperty(OBJECT_TY, second,capacity))))
+        if ((((Prop_21()) >= GProperty(OBJECT_TY, second,capacity))))
         {! [4: if the actor is the player]
             if (((actor == player)))
             {! [5: say ~[There] [are] no more room on [the second noun].~ ( a )]
@@ -14650,7 +14732,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ! [2: if the second noun provides the property carrying capacity]
     if (((WhetherProvides(second, false, capacity))))
     {! [3: if the number of things in the second noun is at least the carrying capacity of the second noun]
-        if ((((Prop_21()) >= GProperty(OBJECT_TY, second,capacity))))
+        if ((((Prop_22()) >= GProperty(OBJECT_TY, second,capacity))))
         {! [4: if the actor is the player]
             if (((actor == player)))
             {! [5: now the prior named object is nothing]
@@ -14798,7 +14880,7 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_147, 147);
     ! [2: if the noun is enclosed by a person ( called the owner ) who is not the actor]
-    if ((((Prop_22() && (tmp_0=deferred_calling_list-->0, true)) || (tmp_0 = 0,false))))
+    if ((((Prop_23() && (tmp_0=deferred_calling_list-->0, true)) || (tmp_0 = 0,false))))
     {! [3: if the actor is the player]
         if (((actor == player)))
         {! [4: say ~[The owner] [might not appreciate] that.~ ( a )]
@@ -15510,17 +15592,17 @@ Array ActionHappened --> 0 0 0 0 0;
     {! [3: if the player is the actor]
         if (((player == actor)))
         {! [4: if the player's command includes ~stand~]
-            if (((matched_text=SnippetIncludes(Consult_Grammar_103,players_command))))
+            if (((matched_text=SnippetIncludes(Consult_Grammar_104,players_command))))
             {! [5: say ~[regarding the noun][They're] not something [we] [can] stand on.~ ( a )]
                 say__p=1;! [6: ~[regarding the noun][They're] not something [we] [can] stand on.~ ( a )]
                 ParaContent(); print (TEXT_TY_Say) (TX_R_223); new_line; .L_Say112; .L_SayX112;} else {
                 ! [7: if the player's command includes ~sit~]
-                if (((matched_text=SnippetIncludes(Consult_Grammar_104,players_command))))
+                if (((matched_text=SnippetIncludes(Consult_Grammar_105,players_command))))
                 {! [8: say ~[regarding the noun][They're] not something [we] [can] sit down on.~ ( b )]
                     say__p=1;! [9: ~[regarding the noun][They're] not something [we] [can] sit down on.~ ( b )]
                     ParaContent(); print (TEXT_TY_Say) (TX_R_224); new_line; .L_Say113; .L_SayX113;} else {
                     ! [10: if the player's command includes ~lie~]
-                    if (((matched_text=SnippetIncludes(Consult_Grammar_105,players_command))))
+                    if (((matched_text=SnippetIncludes(Consult_Grammar_106,players_command))))
                     {! [11: say ~[regarding the noun][They're] not something [we] [can] lie down on.~ ( c )]
                         say__p=1;! [12: ~[regarding the noun][They're] not something [we] [can] lie down on.~ ( c )]
                         ParaContent(); print (TEXT_TY_Say) (TX_R_225); new_line; .L_Say114; .L_SayX114;} else {
@@ -15568,7 +15650,7 @@ Array ActionHappened --> 0 0 0 0 0;
     {! [3: if the noun is a supporter]
         if (((noun ofclass K6_supporter)))
         {! [4: if the number of things on the noun is at least the carrying capacity of the noun]
-            if ((((Prop_23()) >= GProperty(OBJECT_TY, noun,capacity))))
+            if ((((Prop_24()) >= GProperty(OBJECT_TY, noun,capacity))))
             {! [5: if the actor is the player]
                 if (((actor == player)))
                 {! [6: now the prior named object is nothing]
@@ -15583,7 +15665,7 @@ Array ActionHappened --> 0 0 0 0 0;
             ! [10: if the noun is a container]
             if (((noun ofclass K5_container)))
             {! [11: if the number of things in the noun is at least the carrying capacity of the noun]
-                if ((((Prop_24()) >= GProperty(OBJECT_TY, noun,capacity))))
+                if ((((Prop_25()) >= GProperty(OBJECT_TY, noun,capacity))))
                 {! [12: if the actor is the player]
                     if (((actor == player)))
                     {! [13: now the prior named object is nothing]
@@ -16115,7 +16197,7 @@ Array ActionHappened --> 0 0 0 0 0;
     if (actor == player) {
     if (debug_rules) DB_Rule(R_187, 187);
     ! [2: repeat with item running through things]
-    for (tmp_0=Prop_25(0), tmp_1=Prop_25(tmp_0): tmp_0: tmp_0=tmp_1, tmp_1=Prop_25(tmp_1))
+    for (tmp_0=Prop_26(0), tmp_1=Prop_26(tmp_0): tmp_0: tmp_0=tmp_1, tmp_1=Prop_26(tmp_1))
     {! [3: now the item is not mentioned]
         (Adj_67_t3_v10(tmp_0));
         }
@@ -16385,7 +16467,7 @@ Array ActionHappened --> 0 0 0 0 0;
     {! [3: if the noun is open or the noun is transparent]
         if (((((Adj_72_t1_v10(noun))))) || ((((Adj_71_t1_v10(noun))))))
         {! [4: if something described which is not scenery is in the noun and something which is not the player is in the noun]
-            if (((((Prop_26())))) && ((((Prop_27())))))
+            if (((((Prop_27())))) && ((((Prop_28())))))
             {! [5: say ~In [the noun] ~ ( a )]
                 say__p=1;! [6: ~In [the noun] ~ ( a )]
                 ParaContent(); print (TEXT_TY_Say) (TX_R_253); .L_Say149; .L_SayX149;! [7: list the contents of the noun , as a sentence , tersely , not listing concealed items , prefacing with is/are]
@@ -16422,7 +16504,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ! [2: if the noun is a supporter]
     if (((noun ofclass K6_supporter)))
     {! [3: if something described which is not scenery is on the noun and something which is not the player is on the noun]
-        if (((((Prop_28())))) && ((((Prop_29())))))
+        if (((((Prop_29())))) && ((((Prop_30())))))
         {! [4: say ~On [the noun] ~ ( a )]
             say__p=1;! [5: ~On [the noun] ~ ( a )]
             ParaContent(); print (TEXT_TY_Say) (TX_R_255); .L_Say152; .L_SayX152;! [6: list the contents of the noun , as a sentence , tersely , not listing concealed items , prefacing with is/are , including contents , giving brief inventory information]
@@ -16605,7 +16687,7 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_204, 204);
     ! [2: if the noun contains a described thing which is not scenery]
-    if ((((Prop_30()))))
+    if ((((Prop_31()))))
     {! [3: say ~In [the noun] ~ ( a )]
         say__p=1;! [4: ~In [the noun] ~ ( a )]
         ParaContent(); print (TEXT_TY_Say) (TX_R_263); .L_Say161; .L_SayX161;! [5: list the contents of the noun , as a sentence , tersely , not listing concealed items , prefacing with is/are]
@@ -16627,7 +16709,7 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_205, 205);
     ! [2: if the noun supports a described thing which is not scenery]
-    if ((((Prop_31()))))
+    if ((((Prop_32()))))
     {! [3: say ~On [the noun] ~ ( a )]
         say__p=1;! [4: ~On [the noun] ~ ( a )]
         ParaContent(); print (TEXT_TY_Say) (TX_R_265); .L_Say164; .L_SayX164;! [5: list the contents of the noun , as a sentence , tersely , not listing concealed items , prefacing with is/are]
@@ -17549,7 +17631,7 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_244, 244);
     ! [2: if the number of things carried by the actor is at least the carrying capacity of the actor]
-    if ((((Prop_32()) >= GProperty(10, actor,capacity))))
+    if ((((Prop_33()) >= GProperty(10, actor,capacity))))
     {! [3: if the actor is the player]
         if (((actor == player)))
         {! [4: say ~[We]['re] carrying too many things already.~ ( a )]
@@ -17737,7 +17819,7 @@ Array ActionHappened --> 0 0 0 0 0;
     self = noun;
     if (debug_rules) DB_Rule(R_252, 252);
     ! [2: if the number of things carried by the second noun is at least the carrying capacity of the second noun]
-    if ((((Prop_33()) >= GProperty(OBJECT_TY, second,capacity))))
+    if ((((Prop_34()) >= GProperty(OBJECT_TY, second,capacity))))
     {! [3: if the actor is the player]
         if (((actor == player)))
         {! [4: say ~[The second noun] [are] carrying too many things already.~ ( a )]
@@ -21750,7 +21832,18 @@ Constant B5_when_play_ends = EMPTY_RULEBOOK;
     return 0; ! 1 rule(s)
 ];
 Constant B7_when_scene_ends = EMPTY_RULEBOOK;
-Constant B8_every_turn = EMPTY_RULEBOOK;
+[ B8_every_turn 
+    forbid_breaks ! Implied call parameter
+    rv ! return value
+    ;
+    rv = R_836();
+    if (rv) {
+        if (rv == 2) return reason_the_action_failed;
+        return R_836;
+    }
+    latest_rule_result-->0 = 0;
+    return 0; ! 1 rule(s)
+];
 [ B9_action_processing 
     forbid_breaks ! Implied call parameter
     rv ! return value
@@ -28470,7 +28563,7 @@ Array FWMatrix --> NUM_ROOMS*NUM_ROOMS;
 ! Relations.i6t: Relation Route-Finding
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-Constant MAX_ROUTE_LENGTH = 14 + 32;
+Constant MAX_ROUTE_LENGTH = 15 + 32;
 
 [ RelationRouteTo relation from to count  handler;
 	if (count) {
@@ -30001,6 +30094,7 @@ Array RulebookNames -->
         if (R == R_174) { print "Setting action variables for exiting"; rtrue; } ! rule 357
         if (R == R_242) { print "Does the player mean taking off something worn"; rtrue; } ! rule 358
         if (R == R_835) { print "When play begins"; rtrue; } ! rule 359
+        if (R == R_836) { print "Every turn"; rtrue; } ! rule 360
 
 		print "(nameless rule at address ", R, ")";
 	}
@@ -41140,7 +41234,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
     ! [1: ~This is a simple demonstration [story genre] game.~]
     say__p=1;! [2: ~This is a simple demonstration ~]
     ParaContent(); print "This is a simple demonstration ";! [3: story genre]
-    ParaContent(); print (TEXT_TY_Say) TX_L_37;! [4: ~ game.~]
+    ParaContent(); print (TEXT_TY_Say) TX_L_41;! [4: ~ game.~]
     ParaContent(); print " game."; .L_Say490; .L_SayX487;rtrue;
 ];
 [ R_TX_S_139 ;
@@ -41310,9 +41404,31 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
     }
     return nothing;
 ];
+! Find a random x satisfying:
+! [ object(x) ]
+[ Prop_1 
+    x ! internal use only
+    x_ix ! internal use only
+    counter ! internal use only
+    selection ! internal use only
+    ;
+    ;
+    selection = -1;
+    while (true) {
+        counter = 0;
+        objectloop (x ofclass Object){
+            counter++;
+            if (counter == selection) return x;
+            jump NextOuterLoop_7;
+            .NextOuterLoop_7;
+        }
+        if ((counter == 0) || (selection >= 0)) return nothing;
+        selection = random(counter);
+    }
+];
 ! True or false?
 ! [ Exists x : thing(x) & 'enterable'(x) & called='box'(thing)(x) & is('the location', ContainerOf(x)) ]
-[ Prop_1 
+[ Prop_2 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41324,24 +41440,6 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
         }
     }
     rfalse;
-];
-! Find next x satisfying:
-! [ thing(x) ]
-[ Prop_2 
-    x ! internal use only
-    x_ix ! internal use only
-    ;
-    ;
-    if (x_ix > 0) {
-        x_ix--;
-        jump NextOuterLoop_4;
-    }
-    if (x) jump NextOuterLoop_4;
-    for (x=IK2_First: x: x=x.IK2_Link){
-        return x;
-        .NextOuterLoop_4;
-    }
-    return nothing;
 ];
 ! Find next x satisfying:
 ! [ thing(x) ]
@@ -41361,9 +41459,27 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
     }
     return nothing;
 ];
+! Find next x satisfying:
+! [ thing(x) ]
+[ Prop_4 
+    x ! internal use only
+    x_ix ! internal use only
+    ;
+    ;
+    if (x_ix > 0) {
+        x_ix--;
+        jump NextOuterLoop_4;
+    }
+    if (x) jump NextOuterLoop_4;
+    for (x=IK2_First: x: x=x.IK2_Link){
+        return x;
+        .NextOuterLoop_4;
+    }
+    return nothing;
+];
 ! How many x satisfy this?
 ! [ thing(x) & 'marked for listing'(x) ]
-[ Prop_4 
+[ Prop_5 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41380,7 +41496,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Find next x satisfying:
 ! [ thing(x) & 'marked for listing'(x) ]
-[ Prop_5 
+[ Prop_6 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41400,7 +41516,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Abstraction for set of x such that:
 ! [ thing(x) & thing(x) & 'unmentioned'(x) ]
-[ Prop_6 
+[ Prop_7 
     reason ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
@@ -41488,7 +41604,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Find next x satisfying:
 ! [ thing(x) & not-'handled'(x) & supporter(const_0) & provides(const_1, 'the property initial appearance') & is(const_2, SupporterOf(x)) ]
-[ Prop_7 
+[ Prop_8 
     const_0 ! Implied call parameter
     const_1 ! Implied call parameter
     const_2 ! Implied call parameter
@@ -41511,48 +41627,48 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & 'locale-supportable'(x) & is(const_0, SupporterOf(x)) ]
-[ Prop_8 
-    const_0 ! Implied call parameter
-    x ! internal use only
-    x_ix ! internal use only
-    ;
-    ;
-    objectloop (x in const_0) if (SupporterOf(x)==parent(x)){
-        if ((x ofclass K2_thing) && ((Adj_41_t1_v10(x)))){
-            rtrue;
-        }
-    }
-    rfalse;
-];
-! Find next x satisfying:
-! [ thing(x) & is(const_0, SupporterOf(x)) ]
 [ Prop_9 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
     ;
     ;
-    if (x_ix > 0) {
-        x_ix--;
-        jump NextOuterLoop_4;
-    }
-    if (x) jump NextOuterLoop_4;
     objectloop (x in const_0) if (SupporterOf(x)==parent(x)){
-        if ((x ofclass K2_thing)){
-            return x;
+        if ((x ofclass K2_thing) && ((Adj_41_t1_v10(x)))){
+            rtrue;
         }
-        .NextOuterLoop_4;
     }
-    return nothing;
+    rfalse;
 ];
-! True or false?
-! [ Exists x : thing(x) & 'locale-supportable'(x) & is(const_0, SupporterOf(x)) ]
+! Find next x satisfying:
+! [ thing(x) & is(const_0, SupporterOf(x)) ]
 [ Prop_10 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
     ;
     ;
+    if (x_ix > 0) {
+        x_ix--;
+        jump NextOuterLoop_4;
+    }
+    if (x) jump NextOuterLoop_4;
+    objectloop (x in const_0) if (SupporterOf(x)==parent(x)){
+        if ((x ofclass K2_thing)){
+            return x;
+        }
+        .NextOuterLoop_4;
+    }
+    return nothing;
+];
+! True or false?
+! [ Exists x : thing(x) & 'locale-supportable'(x) & is(const_0, SupporterOf(x)) ]
+[ Prop_11 
+    const_0 ! Implied call parameter
+    x ! internal use only
+    x_ix ! internal use only
+    ;
+    ;
     objectloop (x in const_0) if (SupporterOf(x)==parent(x)){
         if ((x ofclass K2_thing) && ((Adj_41_t1_v10(x)))){
             rtrue;
@@ -41562,7 +41678,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Find next x satisfying:
 ! [ thing(x) & is(const_0, SupporterOf(x)) ]
-[ Prop_11 
+[ Prop_12 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
@@ -41583,7 +41699,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & 'locale-supportable'(x) & is(const_0, SupporterOf(x)) ]
-[ Prop_12 
+[ Prop_13 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
@@ -41598,7 +41714,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Find next x satisfying:
 ! [ thing(x) & is(const_0, SupporterOf(x)) ]
-[ Prop_13 
+[ Prop_14 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
@@ -41619,7 +41735,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the actor', CarrierOf(x)) ]
-[ Prop_14 
+[ Prop_15 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41636,7 +41752,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : player's holdall(x) & called='current working sack'(player's holdall)(x) & is('actor', HolderOf(x)) ]
-[ Prop_15 
+[ Prop_16 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41651,7 +41767,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Find next x satisfying:
 ! [ thing(x) & is('the actor', CarrierOf(x)) ]
-[ Prop_16 
+[ Prop_17 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41671,7 +41787,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the actor', CarrierOf(x)) ]
-[ Prop_17 
+[ Prop_18 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41688,7 +41804,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is(const_0, SupporterOf(x)) ]
-[ Prop_18 
+[ Prop_19 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
@@ -41706,7 +41822,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is(const_0, ContainerOf(x)) ]
-[ Prop_19 
+[ Prop_20 
     const_0 ! Implied call parameter
     x ! internal use only
     x_ix ! internal use only
@@ -41724,7 +41840,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the second noun', SupporterOf(x)) ]
-[ Prop_20 
+[ Prop_21 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41741,7 +41857,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the second noun', ContainerOf(x)) ]
-[ Prop_21 
+[ Prop_22 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41758,7 +41874,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : person(x) & called='owner'(person)(x) & NOT[ is(x, 'the actor') NOT] & encloses(x, 'noun') ]
-[ Prop_22 
+[ Prop_23 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41775,7 +41891,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the noun', SupporterOf(x)) ]
-[ Prop_23 
+[ Prop_24 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41792,7 +41908,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the noun', ContainerOf(x)) ]
-[ Prop_24 
+[ Prop_25 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41809,7 +41925,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! Find next x satisfying:
 ! [ thing(x) ]
-[ Prop_25 
+[ Prop_26 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41827,7 +41943,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & 'described'(x) & NOT[ 'scenery'(x) NOT] & is('the noun', ContainerOf(x)) ]
-[ Prop_26 
+[ Prop_27 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41843,7 +41959,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & NOT[ is(x, 'the player') NOT] & is('the noun', ContainerOf(x)) ]
-[ Prop_27 
+[ Prop_28 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41859,7 +41975,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & 'described'(x) & NOT[ 'scenery'(x) NOT] & is('the noun', SupporterOf(x)) ]
-[ Prop_28 
+[ Prop_29 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41875,7 +41991,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & NOT[ is(x, 'the player') NOT] & is('the noun', SupporterOf(x)) ]
-[ Prop_29 
+[ Prop_30 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41891,7 +42007,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & 'described'(x) & NOT[ 'scenery'(x) NOT] & is('noun', ContainerOf(x)) ]
-[ Prop_30 
+[ Prop_31 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41907,7 +42023,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! True or false?
 ! [ Exists x : thing(x) & 'described'(x) & NOT[ 'scenery'(x) NOT] & is('noun', SupporterOf(x)) ]
-[ Prop_31 
+[ Prop_32 
     x ! internal use only
     x_ix ! internal use only
     ;
@@ -41923,7 +42039,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the actor', CarrierOf(x)) ]
-[ Prop_32 
+[ Prop_33 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -41940,7 +42056,7 @@ Array TX_R_392 --> CONSTANT_PACKED_TEXT_STORAGE TX_R_392_R;
 ];
 ! How many x satisfy this?
 ! [ thing(x) & is('the second noun', CarrierOf(x)) ]
-[ Prop_33 
+[ Prop_34 
     x ! internal use only
     x_ix ! internal use only
     counter ! internal use only
@@ -49447,7 +49563,61 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
     DetectPluralWord(original_wn, n);
     return n;
 ];
-[ Consult_Grammar_98 
+[ Parse_Name_GV98 
+    original_wn ! first word of text parsed
+    group_wn ! first word matched against A/B/C/... disjunction
+    try_from_wn ! position to try matching from
+    n ! number of words matched
+    f ! flag: sufficiently good match found to justify success
+    w ! for use by individual grammar lines
+    rv ! for use by individual grammar lines
+    g ! temporary: success flag for parsing visibles
+    ss ! temporary: saves 'self' in distinguishing visibles
+    spn ! temporary: saves 'parsed_number' in parsing visibles
+    pass ! pass counter (1 to 3)
+    pass1_n ! value of n recorded during pass 1
+    pass2_n ! value of n recorded during pass 2
+    ;
+    #ifdef DEBUG;
+    if (parser_trace >= 3) print "Parse_name called^";
+    #endif;
+    if (parser_action == ##TheSame) return 0;
+    original_wn = wn;
+    for (pass = 1: pass <= 3: pass++) {
+        wn = original_wn;
+        try_from_wn = wn; f = false; n = 0;
+        while (true) {
+            ! On pass 1 only, advance wn past name property words
+            ! (but do not do this for ##TheSame, when wn is undefined)
+            if ((parser_action ~= ##TheSame) && (pass == 1)) {
+                while (WordInProperty(NextWordStopped(), self, name)) f = true;
+                wn--; try_from_wn = wn;
+            }
+            if (pass == 1 or 2) {
+            }
+            if ((parser_action ~= ##TheSame) && (pass == 1)) {
+                while (WordInProperty(NextWordStopped(), self, name)) f = true;
+                wn--; try_from_wn = wn;
+            }
+            break;
+        } ! End of endless loop
+        while (WordInProperty(NextWordStopped(), self, name)) n++;
+        if ((f) || (n>0)) n = n + try_from_wn - original_wn;
+        if (pass == 1) pass1_n = n;
+        if (pass == 2) pass2_n = n;
+    } ! End of pass loop
+    #ifdef DEBUG;
+    if (parser_trace >= 3)
+        print "Pass 1: ", pass1_n, " Pass 2: ", pass2_n, " Pass 3: ", n, "^";
+    #endif;
+    if (pass1_n > n) n = pass1_n;
+    if (pass2_n > n) n = pass2_n;
+    wn = original_wn + n;
+    if (n == 0) return -1;
+    DetectPluralWord(original_wn, n);
+    return n;
+];
+[ Consult_Grammar_99 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49467,7 +49637,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_99 
+[ Consult_Grammar_100 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49487,7 +49657,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_100 
+[ Consult_Grammar_101 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49507,7 +49677,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_101 
+[ Consult_Grammar_102 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49527,7 +49697,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_102 
+[ Consult_Grammar_103 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49547,7 +49717,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_103 
+[ Consult_Grammar_104 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49567,7 +49737,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_104 
+[ Consult_Grammar_105 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49587,7 +49757,7 @@ Array present_chronological_record-->(NO_PAST_TENSE_CONDS+1);
         .Fail_1; rv = GPR_PREPOSITION; wn = original_wn;
     return GPR_FAIL;
 ];
-[ Consult_Grammar_105 
+[ Consult_Grammar_106 
     range_from ! call parameter: word number of snippet start
 
     range_words ! call parameter: snippet length
@@ -49957,81 +50127,85 @@ Verb 'info'
 
 
 
-Constant TX_PS_49 = " ";
-Constant TX_PS_47 = " N = Next";
-Constant TX_PS_48 = " P = Previous";
-Constant TX_PS_36 = ">";
+Constant TX_PS_53 = " ";
+Constant TX_PS_51 = " N = Next";
+Constant TX_PS_52 = " P = Previous";
+Constant TX_PS_40 = ">";
 Constant TX_PS_3 = "A struggle with kleptomania";
-Constant TX_PS_53 = "About Interactive Fiction";
-Constant TX_PS_32 = "As good-looking as ever.";
-Constant TX_PS_63 = "Be creative";
-Constant TX_PS_37 = "Comedy";
-Array TX_L_37 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_37;
-Constant TX_PS_67 = "Containment";
-Constant TX_PS_57 = "Controlling the Game";
-Constant TX_PS_64 = "Cooperate";
-Constant TX_PS_50 = "ENTER = Select";
-Constant TX_PS_61 = "Explore";
-Constant TX_PS_34 = "Foyer";
-Constant TX_PS_54 = "Getting Started";
-Constant TX_PS_58 = "How the World is Assembled";
-Constant TX_PS_59 = "If You Get Stuck";
-Constant TX_PS_52 = "Instructions for Play";
-Constant TX_PS_39 = "Instructions";
-Constant TX_PS_70 = "Most IF games are set in a world made up of rooms without internal division. Movement between rooms is possible; movement within a room does not always amount to anything. >WALK OVER TO THE DESK is rarely a useful sort of command. On the other hand, if something is described as being high or out of reach, it is sometimes relevant to stand on an object to increase your height. This kind of activity tends to be important only if prompted by the game text.";
-Constant TX_PS_72 = "Most of the actions you can perform in the world of IF are brief and specific. >WALK WEST or >OPEN DOOR are likely to be provided. >TAKE A JOURNEY or >BUILD A TABLE are not. Things like >GO TO THE HOTEL are on the borderline: some games allow them, but most do not. In general, abstract, multi-stage behavior usually has to be broken down in order for the game to understand it. ";
-Constant TX_PS_56 = "Objects";
-Constant TX_PS_71 = "One thing that IF does tend to model thoroughly is containment. Is something in or on something else? The game keeps track of this, and many puzzles have to do with where things are -- in the player's possession, lying on the floor of the room, on a table, in a box, etc.";
-Constant TX_PS_69 = "Other Characters";
-Constant TX_PS_73 = "Other characters in IF games are sometimes rather limited. On the other hand, there are also games in which character interaction is the main point of the game. You should be able to get a feel early on for the characters -- if they seem to respond to a lot of questions, remember what they're told, move around on their own, etc., then they may be fairly important. If they have a lot of stock responses and don't seem to have been the game designer's main concern, then they are most likely present either as local color or to provide the solution to a specific puzzle or set of puzzles. Characters in very puzzle-oriented games often have to be bribed, threatened, or cajoled into doing something that the player cannot do -- giving up a piece of information or an object, reaching something high, allowing the player into a restricted area, and so on.";
-Constant TX_PS_65 = "Play with someone else. Two heads are often better than one. If that doesn't work, try emailing the author or (better yet) posting a request for hints on the newsgroup rec.games.int-fiction.  For best results, put the name of the game you want help with in the subject line; then leave a page or so of blank spoiler space (so that no one will read about where you got to in the game unless they've already played it), and describe your problem as clearly as possible.  Someone will probably be able to tell you how to get around it.";
-Constant TX_PS_43 = "QUIT";
-Constant TX_PS_40 = "RESTART";
-Constant TX_PS_41 = "RESTORE a saved game";
-Constant TX_PS_62 = "Read carefully";
-Constant TX_PS_55 = "Rooms and Travel";
-Constant TX_PS_38 = "STORY RELEASE DESCRIPTION HERE";
-Constant TX_PS_51 = "Sample Hint";
-Constant TX_PS_66 = "Space";
-Constant TX_PS_35 = "The foyer of your great uncle's home.";
-Constant TX_PS_60 = "The game you are playing is a work of Interactive Fiction.  In interactive fiction you play the main character of a story.  You type commands which determine the actions of the character and the flow of the plot.  Some IF games include graphics, but most do not: the imagery is provided courtesy of your imagination.  On the other hand, there's a wide range of action available: whereas in other games you may be restricted to shooting, movement, or searching items you can click on with a mouse, IF allows you a wide range of verbs.";
-Constant TX_PS_68 = "Types of Action";
-Constant TX_PS_44 = "UNDO the last command";
+Constant TX_PS_57 = "About Interactive Fiction";
+Constant TX_PS_34 = "As good-looking as ever.";
+Constant TX_PS_67 = "Be creative";
+Constant TX_PS_41 = "Comedy";
+Array TX_L_41 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_41;
+Constant TX_PS_71 = "Containment";
+Constant TX_PS_61 = "Controlling the Game";
+Constant TX_PS_68 = "Cooperate";
+Constant TX_PS_54 = "ENTER = Select";
+Constant TX_PS_65 = "Explore";
+Constant TX_PS_36 = "Foyer";
+Constant TX_PS_58 = "Getting Started";
+Constant TX_PS_62 = "How the World is Assembled";
+Constant TX_PS_63 = "If You Get Stuck";
+Constant TX_PS_56 = "Instructions for Play";
+Constant TX_PS_43 = "Instructions";
+Constant TX_PS_39 = "It's a testthing.";
+Constant TX_PS_74 = "Most IF games are set in a world made up of rooms without internal division. Movement between rooms is possible; movement within a room does not always amount to anything. >WALK OVER TO THE DESK is rarely a useful sort of command. On the other hand, if something is described as being high or out of reach, it is sometimes relevant to stand on an object to increase your height. This kind of activity tends to be important only if prompted by the game text.";
+Constant TX_PS_76 = "Most of the actions you can perform in the world of IF are brief and specific. >WALK WEST or >OPEN DOOR are likely to be provided. >TAKE A JOURNEY or >BUILD A TABLE are not. Things like >GO TO THE HOTEL are on the borderline: some games allow them, but most do not. In general, abstract, multi-stage behavior usually has to be broken down in order for the game to understand it. ";
+Constant TX_PS_60 = "Objects";
+Constant TX_PS_75 = "One thing that IF does tend to model thoroughly is containment. Is something in or on something else? The game keeps track of this, and many puzzles have to do with where things are -- in the player's possession, lying on the floor of the room, on a table, in a box, etc.";
+Constant TX_PS_73 = "Other Characters";
+Constant TX_PS_77 = "Other characters in IF games are sometimes rather limited. On the other hand, there are also games in which character interaction is the main point of the game. You should be able to get a feel early on for the characters -- if they seem to respond to a lot of questions, remember what they're told, move around on their own, etc., then they may be fairly important. If they have a lot of stock responses and don't seem to have been the game designer's main concern, then they are most likely present either as local color or to provide the solution to a specific puzzle or set of puzzles. Characters in very puzzle-oriented games often have to be bribed, threatened, or cajoled into doing something that the player cannot do -- giving up a piece of information or an object, reaching something high, allowing the player into a restricted area, and so on.";
+Constant TX_PS_69 = "Play with someone else. Two heads are often better than one. If that doesn't work, try emailing the author or (better yet) posting a request for hints on the newsgroup rec.games.int-fiction.  For best results, put the name of the game you want help with in the subject line; then leave a page or so of blank spoiler space (so that no one will read about where you got to in the game unless they've already played it), and describe your problem as clearly as possible.  Someone will probably be able to tell you how to get around it.";
+Constant TX_PS_47 = "QUIT";
+Constant TX_PS_44 = "RESTART";
+Constant TX_PS_45 = "RESTORE a saved game";
+Constant TX_PS_66 = "Read carefully";
+Constant TX_PS_59 = "Rooms and Travel";
+Constant TX_PS_42 = "STORY RELEASE DESCRIPTION HERE";
+Constant TX_PS_55 = "Sample Hint";
+Constant TX_PS_70 = "Space";
+Constant TX_PS_38 = "Testthing";
+Constant TX_PS_37 = "The foyer of your great uncle's home.";
+Constant TX_PS_64 = "The game you are playing is a work of Interactive Fiction.  In interactive fiction you play the main character of a story.  You type commands which determine the actions of the character and the flow of the plot.  Some IF games include graphics, but most do not: the imagery is provided courtesy of your imagination.  On the other hand, there's a wide range of action available: whereas in other games you may be restricted to shooting, movement, or searching items you can click on with a mouse, IF allows you a wide range of verbs.";
+Constant TX_PS_72 = "Types of Action";
+Constant TX_PS_48 = "UNDO the last command";
 Constant TX_PS_2 = "Uncle Albert in a Can";
 Array TX_L_2 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_2;
 Constant TX_PS_4 = "Unnamed Game Jam Team";
-Constant TX_PS_33 = "Yourself";
+Constant TX_PS_35 = "Yourself";
 Constant TX_PS_9 = "animals";
-Constant TX_PS_14 = "backdrops";
-Constant TX_PS_46 = "bar";
-Constant TX_PS_11 = "containers";
-Constant TX_PS_15 = "devices";
-Constant TX_PS_17 = "directions";
-Constant TX_PS_10 = "doors";
-Constant TX_PS_28 = "down";
-Constant TX_PS_25 = "east";
-Constant TX_PS_45 = "foo";
-Constant TX_PS_29 = "inside";
+Constant TX_PS_15 = "backdrops";
+Constant TX_PS_50 = "bar";
+Constant TX_PS_12 = "containers";
+Constant TX_PS_16 = "devices";
+Constant TX_PS_19 = "directions";
+Constant TX_PS_11 = "doors";
+Constant TX_PS_30 = "down";
+Constant TX_PS_27 = "east";
+Constant TX_PS_49 = "foo";
+Constant TX_PS_31 = "inside";
 Constant TX_PS_7 = "men";
-Constant TX_PS_18 = "north";
-Constant TX_PS_20 = "northeast";
-Constant TX_PS_21 = "northwest";
-Constant TX_PS_30 = "outside";
+Constant TX_PS_10 = "mourners";
+Constant TX_PS_20 = "north";
+Constant TX_PS_22 = "northeast";
+Constant TX_PS_23 = "northwest";
+Constant TX_PS_32 = "outside";
 Constant TX_PS_6 = "people";
-Constant TX_PS_13 = "player's holdalls";
-Constant TX_PS_16 = "regions";
-Constant TX_PS_42 = "see some suggestions for AMUSING things to do";
-Constant TX_PS_22 = "south";
-Constant TX_PS_23 = "southeast";
-Constant TX_PS_24 = "southwest";
+Constant TX_PS_14 = "player's holdalls";
+Constant TX_PS_18 = "regions";
+Constant TX_PS_46 = "see some suggestions for AMUSING things to do";
+Constant TX_PS_24 = "south";
+Constant TX_PS_25 = "southeast";
+Constant TX_PS_26 = "southwest";
+Constant TX_PS_17 = "stealables";
 Constant TX_PS_5 = "supporters";
-Constant TX_PS_19 = "the";
-Constant TX_PS_27 = "up";
-Constant TX_PS_12 = "vehicles";
-Constant TX_PS_26 = "west";
+Constant TX_PS_21 = "the";
+Constant TX_PS_29 = "up";
+Constant TX_PS_13 = "vehicles";
+Constant TX_PS_28 = "west";
 Constant TX_PS_8 = "women";
-Constant TX_PS_31 = "yourself";
-Array TX_L_31 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_31;
+Constant TX_PS_33 = "yourself";
+Array TX_L_33 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_33;
 
 #ifndef p0_specification; Constant p0_specification = 0; #endif;
 #ifndef p1_indefinite_appearance_tex; Constant p1_indefinite_appearance_tex = 0; #endif;
@@ -50116,6 +50290,10 @@ Array TX_L_31 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_31;
 #ifndef IK14_Link; Constant IK14_Link = 0; #endif;
 #ifndef IK15_Count; Constant IK15_Count = 0; #endif;
 #ifndef IK15_Link; Constant IK15_Link = 0; #endif;
+#ifndef IK16_Count; Constant IK16_Count = 0; #endif;
+#ifndef IK16_Link; Constant IK16_Link = 0; #endif;
+#ifndef IK17_Count; Constant IK17_Count = 0; #endif;
+#ifndef IK17_Link; Constant IK17_Link = 0; #endif;
 #ifndef KD_Count; Constant KD_Count = 0; #endif;
 #ifndef name; Constant name = 0; #endif;
 #ifndef parse_name; Constant parse_name = 0; #endif;
@@ -57273,137 +57451,155 @@ Array BC_85 --> PACKED_TEXT_STORAGE TX_PS_16;
 Array BC_86 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_87 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_88 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_89 --> PACKED_TEXT_STORAGE TX_PS_17;
+Array BC_89 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_90 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_91 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_91 --> PACKED_TEXT_STORAGE TX_PS_17;
 Array BC_92 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_93 --> PACKED_TEXT_STORAGE TX_PS_18;
-Array BC_94 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_93 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_94 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_95 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_96 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_97 --> PACKED_TEXT_STORAGE TX_PS_20;
-Array BC_98 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_96 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_97 --> PACKED_TEXT_STORAGE TX_PS_18;
+Array BC_98 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_99 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_100 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_101 --> PACKED_TEXT_STORAGE TX_PS_21;
-Array BC_102 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_100 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_101 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_102 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_103 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_104 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_105 --> PACKED_TEXT_STORAGE TX_PS_22;
-Array BC_106 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_104 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_105 --> PACKED_TEXT_STORAGE TX_PS_20;
+Array BC_106 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_107 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_108 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_109 --> PACKED_TEXT_STORAGE TX_PS_23;
-Array BC_110 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_108 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_109 --> PACKED_TEXT_STORAGE TX_PS_22;
+Array BC_110 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_111 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_112 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_113 --> PACKED_TEXT_STORAGE TX_PS_24;
-Array BC_114 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_112 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_113 --> PACKED_TEXT_STORAGE TX_PS_23;
+Array BC_114 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_115 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_116 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_117 --> PACKED_TEXT_STORAGE TX_PS_25;
-Array BC_118 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_116 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_117 --> PACKED_TEXT_STORAGE TX_PS_24;
+Array BC_118 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_119 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_120 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_121 --> PACKED_TEXT_STORAGE TX_PS_26;
-Array BC_122 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_120 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_121 --> PACKED_TEXT_STORAGE TX_PS_25;
+Array BC_122 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_123 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_124 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_125 --> PACKED_TEXT_STORAGE TX_PS_27;
-Array BC_126 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_124 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_125 --> PACKED_TEXT_STORAGE TX_PS_26;
+Array BC_126 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_127 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_128 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_129 --> PACKED_TEXT_STORAGE TX_PS_28;
-Array BC_130 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_128 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_129 --> PACKED_TEXT_STORAGE TX_PS_27;
+Array BC_130 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_131 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_132 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_133 --> PACKED_TEXT_STORAGE TX_PS_29;
-Array BC_134 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_132 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_133 --> PACKED_TEXT_STORAGE TX_PS_28;
+Array BC_134 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_135 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_136 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_137 --> PACKED_TEXT_STORAGE TX_PS_30;
-Array BC_138 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_136 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_137 --> PACKED_TEXT_STORAGE TX_PS_29;
+Array BC_138 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_139 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_140 --> PACKED_TEXT_STORAGE TX_PS_17;
-Array BC_141 --> PACKED_TEXT_STORAGE TX_PS_31;
-Array BC_142 --> PACKED_TEXT_STORAGE TX_PS_32;
-Array BC_143 --> PACKED_TEXT_STORAGE TX_PS_33;
-Array BC_144 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_145 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_146 --> PACKED_TEXT_STORAGE TX_PS_6;
+Array BC_140 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_141 --> PACKED_TEXT_STORAGE TX_PS_30;
+Array BC_142 --> PACKED_TEXT_STORAGE TX_PS_21;
+Array BC_143 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_144 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_145 --> PACKED_TEXT_STORAGE TX_PS_31;
+Array BC_146 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_147 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_148 --> PACKED_TEXT_STORAGE TX_PS_34;
-Array BC_149 --> PACKED_TEXT_STORAGE TX_PS_35;
-Array BC_150 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_148 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_149 --> PACKED_TEXT_STORAGE TX_PS_32;
+Array BC_150 --> PACKED_TEXT_STORAGE TX_PS_21;
 Array BC_151 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_152 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_153 --> PACKED_TEXT_STORAGE TX_PS_36;
-Array BC_154 --> PACKED_TEXT_STORAGE TX_PS_4;
-Array BC_155 --> PACKED_TEXT_STORAGE TX_PS_3;
-Array BC_156 --> PACKED_TEXT_STORAGE TX_PS_37;
-Array BC_157 --> PACKED_TEXT_STORAGE TX_PS_38;
-Array BC_158 --> PACKED_TEXT_STORAGE TX_PS_39;
-Array BC_159 --> PACKED_TEXT_STORAGE TX_PS_40;
-Array BC_160 --> PACKED_TEXT_STORAGE TX_PS_41;
-Array BC_161 --> PACKED_TEXT_STORAGE TX_PS_42;
-Array BC_162 --> PACKED_TEXT_STORAGE TX_PS_43;
-Array BC_163 --> PACKED_TEXT_STORAGE TX_PS_44;
-Array BC_164 --> PACKED_TEXT_STORAGE TX_PS_45;
-Array BC_165 --> PACKED_TEXT_STORAGE TX_PS_46;
-Array BC_166 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_167 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_134;
+Array BC_152 --> PACKED_TEXT_STORAGE TX_PS_19;
+Array BC_153 --> PACKED_TEXT_STORAGE TX_PS_33;
+Array BC_154 --> PACKED_TEXT_STORAGE TX_PS_34;
+Array BC_155 --> PACKED_TEXT_STORAGE TX_PS_35;
+Array BC_156 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_157 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_158 --> PACKED_TEXT_STORAGE TX_PS_6;
+Array BC_159 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_160 --> PACKED_TEXT_STORAGE TX_PS_36;
+Array BC_161 --> PACKED_TEXT_STORAGE TX_PS_37;
+Array BC_162 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_163 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_164 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_165 --> PACKED_TEXT_STORAGE TX_PS_38;
+Array BC_166 --> PACKED_TEXT_STORAGE TX_PS_39;
+Array BC_167 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
 Array BC_168 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_169 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_169 --> PACKED_TEXT_STORAGE TX_PS_17;
 Array BC_170 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_171 --> PACKED_TEXT_STORAGE TX_PS_47;
-Array BC_172 --> PACKED_TEXT_STORAGE TX_PS_48;
-Array BC_173 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_135;
-Array BC_174 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_175 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_176 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_177 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_178 --> PACKED_TEXT_STORAGE TX_PS_49;
-Array BC_179 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_136;
-Array BC_180 --> PACKED_TEXT_STORAGE TX_PS_50;
-Array BC_181 --> PACKED_TEXT_STORAGE TX_PS_51;
-Array BC_182 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_137;
-Array BC_183 --> PACKED_TEXT_STORAGE TX_PS_52;
-Array BC_184 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_138;
-Array BC_185 --> PACKED_TEXT_STORAGE TX_PS_53;
-Array BC_186 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_139;
-Array BC_187 --> PACKED_TEXT_STORAGE TX_PS_54;
-Array BC_188 --> PACKED_TEXT_STORAGE TX_PS_55;
-Array BC_189 --> PACKED_TEXT_STORAGE TX_PS_56;
-Array BC_190 --> PACKED_TEXT_STORAGE TX_PS_57;
-Array BC_191 --> PACKED_TEXT_STORAGE TX_PS_58;
-Array BC_192 --> PACKED_TEXT_STORAGE TX_PS_59;
-Array BC_193 --> PACKED_TEXT_STORAGE TX_PS_60;
-Array BC_194 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_140;
-Array BC_195 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_141;
-Array BC_196 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_142;
-Array BC_197 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_143;
-Array BC_198 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_144;
-Array BC_199 --> PACKED_TEXT_STORAGE TX_PS_61;
-Array BC_200 --> PACKED_TEXT_STORAGE TX_PS_62;
-Array BC_201 --> PACKED_TEXT_STORAGE TX_PS_63;
-Array BC_202 --> PACKED_TEXT_STORAGE TX_PS_64;
-Array BC_203 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_145;
-Array BC_204 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_146;
-Array BC_205 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_147;
-Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_65;
-Array BC_207 --> PACKED_TEXT_STORAGE TX_PS_66;
-Array BC_208 --> PACKED_TEXT_STORAGE TX_PS_67;
-Array BC_209 --> PACKED_TEXT_STORAGE TX_PS_68;
-Array BC_210 --> PACKED_TEXT_STORAGE TX_PS_69;
-Array BC_211 --> PACKED_TEXT_STORAGE TX_PS_70;
-Array BC_212 --> PACKED_TEXT_STORAGE TX_PS_71;
-Array BC_213 --> PACKED_TEXT_STORAGE TX_PS_72;
-Array BC_214 --> PACKED_TEXT_STORAGE TX_PS_73;
-Array BC_215 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_148;
-Array BC_216 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_149;
-Array BC_217 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_150;
-Array BC_218 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
-Array BC_219 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_151;
+Array BC_171 --> PACKED_TEXT_STORAGE TX_PS_40;
+Array BC_172 --> PACKED_TEXT_STORAGE TX_PS_4;
+Array BC_173 --> PACKED_TEXT_STORAGE TX_PS_3;
+Array BC_174 --> PACKED_TEXT_STORAGE TX_PS_41;
+Array BC_175 --> PACKED_TEXT_STORAGE TX_PS_42;
+Array BC_176 --> PACKED_TEXT_STORAGE TX_PS_43;
+Array BC_177 --> PACKED_TEXT_STORAGE TX_PS_44;
+Array BC_178 --> PACKED_TEXT_STORAGE TX_PS_45;
+Array BC_179 --> PACKED_TEXT_STORAGE TX_PS_46;
+Array BC_180 --> PACKED_TEXT_STORAGE TX_PS_47;
+Array BC_181 --> PACKED_TEXT_STORAGE TX_PS_48;
+Array BC_182 --> PACKED_TEXT_STORAGE TX_PS_49;
+Array BC_183 --> PACKED_TEXT_STORAGE TX_PS_50;
+Array BC_184 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_185 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_134;
+Array BC_186 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_187 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_188 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_189 --> PACKED_TEXT_STORAGE TX_PS_51;
+Array BC_190 --> PACKED_TEXT_STORAGE TX_PS_52;
+Array BC_191 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_135;
+Array BC_192 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_193 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_194 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_195 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_196 --> PACKED_TEXT_STORAGE TX_PS_53;
+Array BC_197 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_136;
+Array BC_198 --> PACKED_TEXT_STORAGE TX_PS_54;
+Array BC_199 --> PACKED_TEXT_STORAGE TX_PS_55;
+Array BC_200 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_137;
+Array BC_201 --> PACKED_TEXT_STORAGE TX_PS_56;
+Array BC_202 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_138;
+Array BC_203 --> PACKED_TEXT_STORAGE TX_PS_57;
+Array BC_204 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_139;
+Array BC_205 --> PACKED_TEXT_STORAGE TX_PS_58;
+Array BC_206 --> PACKED_TEXT_STORAGE TX_PS_59;
+Array BC_207 --> PACKED_TEXT_STORAGE TX_PS_60;
+Array BC_208 --> PACKED_TEXT_STORAGE TX_PS_61;
+Array BC_209 --> PACKED_TEXT_STORAGE TX_PS_62;
+Array BC_210 --> PACKED_TEXT_STORAGE TX_PS_63;
+Array BC_211 --> PACKED_TEXT_STORAGE TX_PS_64;
+Array BC_212 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_140;
+Array BC_213 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_141;
+Array BC_214 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_142;
+Array BC_215 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_143;
+Array BC_216 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_144;
+Array BC_217 --> PACKED_TEXT_STORAGE TX_PS_65;
+Array BC_218 --> PACKED_TEXT_STORAGE TX_PS_66;
+Array BC_219 --> PACKED_TEXT_STORAGE TX_PS_67;
+Array BC_220 --> PACKED_TEXT_STORAGE TX_PS_68;
+Array BC_221 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_145;
+Array BC_222 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_146;
+Array BC_223 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_147;
+Array BC_224 --> PACKED_TEXT_STORAGE TX_PS_69;
+Array BC_225 --> PACKED_TEXT_STORAGE TX_PS_70;
+Array BC_226 --> PACKED_TEXT_STORAGE TX_PS_71;
+Array BC_227 --> PACKED_TEXT_STORAGE TX_PS_72;
+Array BC_228 --> PACKED_TEXT_STORAGE TX_PS_73;
+Array BC_229 --> PACKED_TEXT_STORAGE TX_PS_74;
+Array BC_230 --> PACKED_TEXT_STORAGE TX_PS_75;
+Array BC_231 --> PACKED_TEXT_STORAGE TX_PS_76;
+Array BC_232 --> PACKED_TEXT_STORAGE TX_PS_77;
+Array BC_233 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_148;
+Array BC_234 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_149;
+Array BC_235 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_150;
+Array BC_236 --> PACKED_TEXT_STORAGE EMPTY_TEXT_PACKED;
+Array BC_237 --> CONSTANT_PACKED_TEXT_STORAGE R_TX_S_151;
 
 
 

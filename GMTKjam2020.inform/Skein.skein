@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-1501"/>
+  <activeNode nodeId="node-1506"/>
   <item nodeId="node-1">
     <command xml:space="preserve">GMTKjam2020</command>
-    <result xml:space="preserve">This is some text before the title.&#x000A;&#x000A;Uncle Albert in a Can&#x000A;STORY HEADLINE HERE by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200710 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of a home.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
       <child nodeId="node-1495"/>
+      <child nodeId="node-1502"/>
+      <child nodeId="node-1503"/>
     </children>
   </item>
   <item nodeId="node-1495">
@@ -68,6 +70,45 @@
   <item nodeId="node-1501">
     <command xml:space="preserve">look</command>
     <result xml:space="preserve">Foyer&#x000A;The foyer of a home.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1502">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your great uncle's home.&#x000A;&#x000A;You can see Testthing here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1504"/>
+    </children>
+  </item>
+  <item nodeId="node-1504">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1505"/>
+    </children>
+  </item>
+  <item nodeId="node-1505">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1506"/>
+    </children>
+  </item>
+  <item nodeId="node-1506">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;Taken.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1503">
+    <command xml:space="preserve">[back]</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your great uncle's home.&#x000A;&#x000A;It's a testthing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
