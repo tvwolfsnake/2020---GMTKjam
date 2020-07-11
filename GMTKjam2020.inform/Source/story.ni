@@ -68,13 +68,29 @@ Instead of putting, inserting, or dropping a stealable, say "It might not be a g
 Check giving a stealable to a person:
 	if the person is a mourner:
 		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.[first time][line break]Even rich people who [italic type]aren't[roman type] grieving tend to be extra-vindictive about that sort of thing.[only]" instead.
-		
+
+Instead of giving the wallet to a person:
+	if the person is a mourner:
+		say "The family is already watching you like a hawk, if you give it to one of them they'll probably think you stole it.[line break][line break]";
+		wait for any key;
+		say "Which, to be fair, you did.".
+			
+Instead of giving the wallet to Cartwright:
+	say "That would be a really, really, really bad idea. I don't think he'll believe you if you claim you [quotation mark]just found it.[quotation mark][line break]If you really want to return it, you might want to find someone more sympathetic to your condition.".
+	
+
 Check taking a stealable:
 	if kleptomode is false:
 		[if the player is in Hors D'oeuvres Table...]
 		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
 Instead of taking scenery, say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are."
+
+[starting inventory]
+
+Cartwright's wallet is a stealable. The player carries Cartwright's wallet. The description of Cartwright's wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him."
+
+
 
 Part I - Get Upstairs
 
@@ -87,8 +103,6 @@ Vestibule is a room. The description of the vestibule is "The entranceway of Unc
 The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is a stealable in the umbrella_stand. The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 2014]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
 
 There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is stealable. The table is scenery.
-
-
 
 The description of the table is "[first time]Hastily dragged here from a different room in the house. [only]Most people would just use a folding table, but you're pretty sure this is an antique."
 
@@ -123,10 +137,29 @@ Instead of going east in the vestibule for more than the first time:
 
 The hall is north of the vestibule. The description of Hall is "s"
 
-Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.
+Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal [quotation mark]jokes[quotation mark] at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is the old man version of that.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet."
+
+[Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.]
 
 
-[asdfasdf]
+[Sitting Room]
+
+The Sitting Room is southwest of the hall. The description of Sitting Room is "Description of sitting room. Further south in the room, there's an hors d'oeuvres table." Jack is a mourner in the sitting room.
+
+[Library]
+
+The Library is southeast of the hall. The description of the Library is "Library."
+
+[Game Room]
+
+The Game Room is east of the hall. The description of the Game Room is "The bulk of blah taken up by billard table. Bar, etc."
+
+[Kitchen]
+
+The Kitchen is northeast of the hall. The description of the kitchen is "Kitchen."
+
+
+[The Small Hallway is north of the hall.]
 
 
 Part II - You're Upstairs
@@ -174,3 +207,15 @@ one problem with this approach is that the room descriptions will have to be dyn
 [let K be the list of visible unheld scenery??? (thinking about taking a thing that's nailed down)]
 
 [list of visible unheld stealables in the location]
+
+[Instead of giving the peanut butter canapé to Cartwright, say "You give Cartwright[unicode 2014]a man whose allergies might be way more severe than you're aware of[unicode 2014]a common and potentially life-threatening allergen.[line break][line break]";
+wait for any key;
+clear screen;
+say "No. You don't. Obviously you don't.[line break][line break]";
+wait for any key;
+say "What is wrong with you?";
+wait for any key;
+clear screen.]
+
+[Instead of attacking Cartwright:]
+

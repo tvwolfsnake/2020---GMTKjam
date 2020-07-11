@@ -11,28 +11,28 @@
     </dict>
     <key>1</key><dict>
         <key>Filename</key><string>G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Source\story.ni</string>
-        <key>Line</key><integer>79</integer>
+        <key>Line</key><integer>95</integer>
         <key>Title</key><string>Part I - Get Upstairs</string>
         <key>Level</key><integer>3</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>2</key><dict>
         <key>Filename</key><string>G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Source\story.ni</string>
-        <key>Line</key><integer>132</integer>
+        <key>Line</key><integer>150</integer>
         <key>Title</key><string>Part II - You're Upstairs</string>
         <key>Level</key><integer>3</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>3</key><dict>
         <key>Filename</key><string>G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Source\story.ni</string>
-        <key>Line</key><integer>136</integer>
+        <key>Line</key><integer>154</integer>
         <key>Title</key><string>Part III - Now Go Back Downstairs</string>
         <key>Level</key><integer>3</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>4</key><dict>
         <key>Filename</key><string>G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Source\story.ni</string>
-        <key>Line</key><integer>152</integer>
+        <key>Line</key><integer>170</integer>
         <key>Title</key><string>Part IV - Spaghetti Code</string>
         <key>Level</key><integer>3</integer>
         <key>Indentation</key><integer>1</integer>
