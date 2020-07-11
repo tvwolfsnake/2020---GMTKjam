@@ -22,7 +22,7 @@ Kleptomode is a truth state that varies.
 
 When play begins:
 	now kleptomode is false;
-	say "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car and get ready to walk inside, and then follow it up with the title.";
+	say "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.";
 	wait for any key.	
 
 A stealable is a kind of thing.
@@ -35,14 +35,14 @@ The steal list is a list of objects that varies.
 
 The most-recently-taken list is a list of objects that varies.
 Carry out taking something (called the item):
-	let M be the most-recently-taken list;
-	now M is { };
-	add the item to the most-recently-taken list. 
+	truncate the most-recently-taken list to the last 0 entries;
+	add the item to the most-recently-taken list;
+	say "[most-recently-taken list]".
 
 Every turn:
 	let L be the steal list;
 	now L is the list of visible unheld stealables;
-	if the remainder after dividing the turn count by three is zero:
+	if the remainder after dividing the turn count by 7 is zero:
 		if L is non-empty:
 			now kleptomode is true;
 			try silently taking a random visible unheld stealable;
@@ -61,6 +61,8 @@ Every turn:
 			say "Your fingers itch.";
 			if a mourner is touchable:
 				say "[line break]You feel eyes on you."
+				
+
 				
 Check taking a stealable:
 	if kleptomode is false:
@@ -127,6 +129,6 @@ the hors d'oeuvres will be a hundredfold item under standard take rules and no m
 one problem with this approach is that the room descriptions will have to be dynamic in order to account for random item theft. hopefully it's possible to list every item on a table in a description, but if not (or if there's no time) we'll stick with the bad default "You can see x here."]
 
 
-["You stuff it in your pocket as surreptitiously as you can."]
+["After about a seven count, you]
 
 [let K be the list of visible unheld scenery??? (thinking about taking a thing that's nailed down)]
