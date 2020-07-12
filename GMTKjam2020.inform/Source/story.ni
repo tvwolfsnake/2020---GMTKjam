@@ -23,11 +23,40 @@ Kleptomode is a truth state that varies.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
+[He caught you once, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He promised you that someday, when he was gone, you would have the pocketwatch.]
+
+[He was a bastard.
+
+He was a friend.]
+
 When play begins:
 	now kleptomode is false;
 	say "Uncle Clifton is dead.[line break][line break]";
 	wait for any key;
-	say "He wasn't even really your uncle. A distant relative of an in-law. MORE DESCRIPTION";
+	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
+	wait for any key;
+	say "He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.[line break][line break]";
+	wait for any key;
+	say "He was awful, probably.[line break][line break]";
+	wait for any key;
+	clear screen;
+	say "He was one of the few people who bothered to understand you.";
+	wait for any key;
+	clear screen;
+	wait for any key;
+	clear screen;
+	say "He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.[line break][line break]He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.[line break][line break]";
+	wait for any key;
+	say "That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.";
+	wait for any key;
+	clear screen;
+	say "You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.[line break][line break]He gives you a dirty look and walks off into the hall.[line break][line break] His wallet fell out of his pocket. It's sitting on the floor.";
+	wait for any key;
+	say "> take Cartwright's wallet[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
+	wait for any key;
+	say "In about a seven count, you're going to take something else, even though you don't want to.[line break][line break]";
+	wait for any key;
+	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
 	now description entry is "hi! chloe from TEAM here. cool to see you're playing our game.[line break][line break]GAME NAME is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total I have worked on.[line break][line break]the game should take about TIME OF GAME to complete.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, coding[line break]ian kay: writing.".
 
