@@ -191,6 +191,11 @@ The Game Room is a first-floor room. The Game Room is northeast of the hall. The
 
 The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "Kitchen."
 
+The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
+Loose grapes is a stealable in The Kitchen. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
+The empty bottle is a stealable in The Kitchen. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
+The recipe book is a stealable in The Kitchen. The description of the empty bottle is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
+
 [scope pantry]
 
 [Pantry]
