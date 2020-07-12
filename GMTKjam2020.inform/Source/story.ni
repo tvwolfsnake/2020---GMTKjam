@@ -199,15 +199,35 @@ The mounted fish is a stealable in the Game Room. The description of the mounted
 The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
 The billiards table is scenery in the Game room. The description of the billiards table is "You remember when you could barely see over the edge of this table. The billiards table is littered with snooker balls, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
 
+Instead of touching the billiards table:
+	say "You felt the felt.[line break][line break]";
+	wait for any key;
+	say "Actually the fabric on the table is baize, a coarse woollen cloth, similar in texture to felt, but more durable.".
 
 [Kitchen]
 
 The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "Kitchen."
 
 The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
+Understand "tea cup" as delicate tea cup.
 Loose grapes is a stealable in The Kitchen. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
 The empty bottle is a stealable in The Kitchen. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
 The recipe book is a stealable in The Kitchen. The description of the recipe book is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
+
+Instead of smelling the loose grapes:
+	say "If you close your eyes you can pretend you are smelling eyeballs. If that’s something you’re into.".
+Instead of tasting the loose grapes:
+	say "You aren’t in the mood for eyeballs.".
+Instead of drinking the empty bottle:
+	say "You gulp down a fresh mouthful of air. Refreshing!".
+Instead of tasting the empty bottle:
+	say "You gulp down a fresh mouthful of air. Refreshing!".
+Instead of tasting the delicate tea cup:
+	say "Careful! You’ll break it!".
+Instead of touching the delicate tea cup:
+	say "Careful! You’ll break it!".
+Instead of smelling the delicate tea cup:
+	say "Careful! You’ll break it!".
 
 [scope pantry]
 
