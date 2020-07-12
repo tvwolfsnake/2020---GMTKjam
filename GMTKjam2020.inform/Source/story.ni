@@ -239,6 +239,11 @@ The Pantry is north of the Kitchen. The description of the Pantry is "Pantry."
 
 The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room.
 
+The china cabinet is scenery in the Dining Room. The description of the china cabinet is "A tall wooden cabinet. Through the glass panels in the cabinet doors, you can see an absurdly expensive collection of fancy, mostly unused fine china."
+Understand "cabinet" as the china cabinet.
+Instead of opening the china cabinet:
+	say "You pull on the handle and the doors rattle alarmingly, but remain closed. The china locked safely inside.".
+
 [The Small Hallway is north of the hall.]
 
 
