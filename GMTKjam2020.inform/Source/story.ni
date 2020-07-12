@@ -162,7 +162,7 @@ The hunting trophy is a stealable in the Hall. The description of the hunting tr
 The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "Description of sitting room. To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there." Jack is a mourner in the sitting room.
 
 The chess set is a stealable in the Sitting Room. The description of the chess set is "A portable chessboard with small wooden chess pieces carved to resemble civil war soldiers. Both sides are modeled in the image of Union soldiers.[line break][line break]There’s a story there."
-The  pack of cigarettes is a stealable in the Sitting Room. The description of the chess set is "You look down at the half-empty pack of cigarettes. The weirdly sexually-charged camel mascot stares back at you through his Ray-Ban sunglasses."
+The pack of cigarettes is a stealable in the Sitting Room. The description of the pack of cigarettes is "You look down at the half-empty pack of cigarettes. The weirdly sexually-charged camel mascot stares back at you through his Ray-Ban sunglasses."
 The ashtray is a stealable in the Sitting Room. The description of the ashtray is "Shallow yellow glass tray, currently empty."
 The clutch is a stealable in the Sitting Room. The description of the clutch is "You don’t know who this clutch belongs to. It is soft velvet with pearl adornment on the handle."
 The sweater is a stealable in the Sitting Room. The description of the sweater is "A thin black cardigan." 

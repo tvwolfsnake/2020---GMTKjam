@@ -14,7 +14,7 @@ Reading language definition from <C:\Program Files (x86)\Inform 7\Internal\Langu
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 2048 words long.
+I've now read your source text, which is 2049 words long.
 
 
 -----------------------------------------------------
@@ -56,41 +56,129 @@ Phase VI ... Semantic analysis III
 Phase VII ... First pass through assertions
 -----------------------------------------------------
 
-Problem PM_NameWithText issued from inform7/Chapter 15/The Creator.w, line 567
-(Assertion error: looking for alternative verbs in <the description of the clutch is "You don't know who this clutch belongs to. It is soft velvet with pearl adornment on the handle" the sweater is a stealable in the sitting room>.)
-
-In Part I - Get Upstairs:
 
 
-  >--> You wrote 'The description of the clutch is "You don't know who this
-    clutch bel [...] with pearl adornment on the handle" The sweater is a
-    stealable in the Sitting Room' (source text, line 167): but this seems to
-    give something a name which contains double-quoted text, which is not
-    allowed. If you do need quotes in a name, one option would be to write
-    something like 'In the Saloon is 'Black' Jacques Bernoulli.'; but this
-    problem message is often caused by an accident in punctuation, in which
-    case you never intended to create an object - you thought that the text
-    ended a sentence because it finished with sentence-ending punctuation, when
-    in fact it didn't, so that I read the next words as following on. (It may
-    help to know that I am reading the primary verb here as 'is', not 'is'.)
-
-Problem PM_NameWithText issued from inform7/Chapter 15/The Creator.w, line 567
-(Assertion error: looking for alternative verbs in <the description of the empty china plate is "The last surviving remnant of Clifton's favourite china set.  Very recently full of hors d'oeuvres. Currently littered with the debris of said hors d'oeuvres" the golden watch is a stealable in the sitting room>.)
-
-  >--> You wrote 'The description of the empty china plate is "The last
-    surviving remnant of Clif [...] the debris of said hors d'oeuvres" The
-    golden watch is a stealable in the Sitting Room' (source text, line 171):
-    again, this seems to give something a name which contains double-quoted
-    text.
+-----------------------------------------------------
+Phase VIII ... Second pass through assertions
+-----------------------------------------------------
 
 
 
 -----------------------------------------------------
-Phase VIII ... Compilation now complete
+Phase IX ... Making the model world
 -----------------------------------------------------
 
-Total of 4 files written as streams.
-CPU time: 21 centiseconds
+
+
+-----------------------------------------------------
+Phase X ... Tables and grammar
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase XI ... Phrases and rules
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase XII ... Code generation
+-----------------------------------------------------
+
+
+
+==== Phase XII.1 ... Compiling the storage for the model world ====
+
+
+
+==== Phase XII.2 ... Compiling the tables ====
+
+
+
+==== Phase XII.3 ... Compiling the equations ====
+
+
+
+==== Phase XII.4 ... Compiling the named action patterns ====
+
+
+
+==== Phase XII.5 ... Compiling the action routines ====
+
+
+
+==== Phase XII.6 ... Compiling first block of phrases ====
+
+
+
+==== Phase XII.7 ... Compiling the rulebooks ====
+
+
+
+==== Phase XII.8 ... Compiling scene details ====
+
+
+
+==== Phase XII.9 ... CTNL ====
+
+
+
+==== Phase XII.10 ... Slashing grammar (G1) ====
+
+
+
+==== Phase XII.11 ... Determining grammar (G2) ====
+
+
+
+==== Phase XII.12 ... Compiling GPR tokens for parsing various kinds of value ====
+
+
+
+==== Phase XII.13 ... Compiling second block of phrases ====
+
+
+
+==== Phase XII.14 ... Compiling noun and scope filter tokens ====
+
+
+
+==== Phase XII.15 ... Compiling chronology ====
+
+
+
+==== Phase XII.16 ... Compiling I6 Verb directives ====
+
+
+
+==== Phase XII.17 ... Slashing grammar (G1) ====
+
+
+
+==== Phase XII.18 ... Determining grammar (G2) ====
+
+
+
+==== Phase XII.19 ... Sorting and compiling non-value grammar (G3, G4) ====
+
+
+
+==== Phase XII.20 ... Compiling noun and scope filter tokens ====
+
+
+
+==== Phase XII.21 ... Compiling routines from predicate calculus ====
+
+Providing for a total heap of 8192, given requirement of 8192
+
+
+-----------------------------------------------------
+Phase XIII ... Compilation now complete
+-----------------------------------------------------
+
+Total of 106 files written as streams.
+CPU time: 99 centiseconds
 
 
 That concludes the debugging log from this run of Inform.
