@@ -21,6 +21,7 @@ Release along with the "Quixe" interpreter.
 
 Kleptomode is a truth state that varies.
 wallet_given is a truth state that varies.
+gun_start is a truth state that varies.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
@@ -33,6 +34,7 @@ He was a friend.]
 When play begins:
 	now kleptomode is false;
 	now wallet_given is false;
+	now gun_start is false;
 	say "Uncle Clifton is dead.[line break][line break]";
 	wait for any key;
 	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
@@ -107,7 +109,11 @@ Every turn:
 
 The block giving rule is not listed in the check giving it to rules. 
 				
-Instead of putting, inserting, or dropping a stealable, say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them."
+Instead of putting, inserting, or dropping a stealable:
+	if gun_start is false:
+		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.";
+	if gun_start is true:
+		say "No, you're keeping all of this stuff."
 
 Instead of wearing a stealable, say "You'd look really cool, but they might catch on."
 
@@ -236,7 +242,8 @@ Hildegard is a person in the Lawn. Hildegard is undescribed. The description of 
 
 Instead of giving the wallet to Hildegard:
 	now the wallet is nowhere;
-	now wallet_given is true.
+	now wallet_given is true;
+	now kleptomode is true.
 
 [scope sitting room]
 
@@ -442,11 +449,12 @@ After taking the silver pocketwatch:
 	wait for any key;
 	say "With the moment of silence over, now you can leave this damn house.";
 	now the papers are nowhere;
-	now the will_original is on the partners desk;
-	now the will_doctored is on the partners desk;
+	now the original will is on the partners desk;
+	now the doctored will is on the partners desk;
 	now the letter opener is on the partners desk;
 	now the description of the desk is "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
-	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. The letter opener on the desk."
+	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. The letter opener on the desk.[line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.";
+	try looking.
 	
 Instead of putting, inserting, or dropping the silver pocketwatch, say "This is staying right in your pocket, where it belongs."
 
@@ -463,10 +471,21 @@ Instead of taking the letter opener during Gun Scene:
 
 The rolling chair is scenery in Uncle Clifton's Study. Understand "chair" as the rolling chair. The description of the rolling chair is "An old leather rolling chair. Parts of it are peeling off, and friction on the seat over years of sitting has turned it from brown to almost white.".
 
-A will is a kind of thing. The will_original is a will with printed name "original will".  The will_original is undescribed. The will_doctored is a will with printed name "doctored will". The will_doctored is undescribed.
+The original will has the printed name "original will". The original will is undescribed.
 
-Instead of taking a will:
-	try examining the noun instead.
+Understand "doctored will", "altered will", or "changed will" as the doctored will. The doctored will is undescribed.
+
+Instead of taking the original will:
+	try examining the original will instead.
+	
+Instead of taking the doctored will:
+	try examining the doctored will instead.
+	
+Instead of examining the original will:
+	now gun_start is true.
+	
+Instead of examining the doctored will:
+	now gun_start is true.
 
 Instead of going in Uncle Clifton's Study:
 	say "There's something much more important in here.".
@@ -495,14 +514,127 @@ When Wallet Scene ends:
 	say "Now's your chance! You duck up the stairs and tiptoe over to Uncle Clifton's study.";
 	now the player is in Uncle Clifton's Study.
 
-[Instead of attacking Cartwright in Uncle Clifton's Study:
-	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break]"
+Instead of attacking Cartwright during the Gun Scene:
+	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break]";
 	wait for any key;
 	say "Cartwright did.";
 	wait for any key;
-	end the story saying "You have died"]
+	end the story saying "You have died".
+	
+[Instead of going during the Gun Scene:]
+	
 
-Gun Scene is a scene.
+Gun Scene is a scene. Gun Scene begins when gun_start is true. Gun Scene ends when the time since Gun Scene began is 7 minutes.
+
+When Gun Scene begins:
+	say "You pick up both wills, one in each hand, weighing the implications.[line break][line break]";
+	now the player is carrying the original will;
+	now the player is carrying the doctored will;
+	wait for any key;
+	say "One will is definitely the original. The other is a decent fake.[line break][line break]";
+	wait for any key;
+	say "You read through the wills at the same time. You can only find one change in the doctored will.[line break][line break]";
+	wait for any key;
+	clear screen;
+	say "The line that bequeaths the pocketwatch to you has been removed.[line break][line break]";
+	wait for any key;
+	clear screen;
+	say "His family gets a 750 fucking million dollar estate and they couldn't let you have one measly pocketwatch.[line break][line break]";
+	wait for any key;
+	say "You sigh.[line break][line break]";
+	wait for any key;
+	say "You hear the unmistakable [italic type]cli-cli-click[roman type] of a revolver hammer being pulled back.";
+	now Cartwright is in Uncle Clifton's Study;
+	now Cartwright is carrying the revolver;
+	now the description of Uncle Clifton's Study is "There's a rolling chair,[if letter opener is held]and[end if] a desk[if letter opener is held].[end if][if letter opener is unheld], and a letter opener.[end if][line break][line break]Oh also, Cartwright is standing in the doorway, brandishing a six-shooter at you.";
+	try looking.
+	
+Every turn during Gun Scene:
+	say "[one of]Cartwright tells you how much he hates you, as if the gun wasn't an obvious reminder.[or]Cartwright uses the arm that isn't holding the gun to wipe sweat off his brow.[or]You wish he'd point that gun somewhere else.[or]You've gotta think of a way out of this.[or]Cartwright makes a snide remark about your kleptomania.[or]You need a miracle.[or]Cartwright brags about how good he is on the shooting range.[stopping][line break]";
+	
+When Gun Scene ends:
+	say "> take revolver[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
+	wait for any key;
+	say "Wait.[line break][line break]";
+	wait for any key;
+	say "What?";
+	now the player is carrying the revolver;
+	wait for any key;
+	clear screen;
+	say "You find yourself holding Cartwright at gunpoint. Waving the revolver in the direction of the desk chair until the scared bully sits down.[line break][line break]";
+	wait for any key;
+	say "Your body moves without you, sprinting out of the room towards the stairs[line break][line break]";
+	wait for any key;
+	say "Fuck this family.[line break][line break]";
+	wait for any key;
+	say "You're taking everything that isn't nailed down.".
+	
+Chase Scene Hall is a scene. Chase Scene Hall begins when Gun Scene ends. Chase Scene Hall ends when the time since Chase Scene Hall began is 2 minutes.
+
+When Chase Scene Hall begins:
+	say "You run back the way you came, barrelling down the stairs.[line break][line break]";
+	wait for any key;
+	say "You hear Cartwright yell [quotation mark]THIEF![quotation mark] and, after a moment's thought, [quotation mark]WITH A GUN![quotation mark][line break][line break]";
+	wait for any key;
+	say "You see Edmund charging you.[line break][line break]";
+	wait for any key;
+	say "You duck into the kitchen.";
+	now the player is in the kitchen;
+	let L be the list of visible unheld stealables;
+	now the description of the kitchen is "Everyone runs out of the room, because you're sprinting into it with a gun. Here's a list of everything you can steal from the kitchen now: [L with definite articles].";
+	try looking;
+	say "[line break]Take all of it!".
+	
+Instead of going during Chase Scene Hall:
+	say "You have enough time to grab something before they catch up to you."
+	
+Chase Scene Dining is a scene. Chase Scene Dining begins when Chase Scene Hall ends. Chase Scene Dining ends when the time since Chase Scene Dining began is 2 minutes.
+
+When Chase Scene Dining begins:
+	say "Edmund finally catches up to you.[line break][line break]";
+	wait for any key;
+	say "You dodge him and run into the dining room.";
+	now the player is in the dining room;
+	let L be the list of visible unheld stealables;
+	now the description of the dining room is "Yet again, a hasty retreat by the WASPs. Yet again, more things to steal: [L with definite articles].";
+	try looking;
+	say "[line break]Take everything!".
+	
+Instead of going during Chase Scene Dining:
+	say "You have enough time to grab something before they catch up to you."
+	
+Chase Scene Sitting is a scene. Chase Scene Sitting begins when Chase Scene Dining ends. Chase Scene Sitting ends when the time since Chase Scene Dining began is 5 minutes.
+
+When Chase Scene Sitting begins:
+	say "Edmund catches up to you again, but the new, slippery loafers he's wearing finally get the best of him, and he faceplants into the dining room floor.[line break][line break]You run into the sitting room with extra time to spare.";
+	now the player is in the sitting room;
+	let L be the list of visible unheld stealables;
+	now the description of the sitting room is "This room was crowded just a few minutes ago. It seems like the people who were in here took the door to the hall and then barricaded it. Cool. Anyways, it's time to steal: [L with definite articles]. Take it all.";
+	try looking.
+
+Instead of going during Chase Scene Sitting:
+	say "You have more than enough time."
+	
+When Chase Scene Sitting ends:
+	say "Probably best to quit while you're ahead.[line break][line break]";
+	wait for any key;
+	now the player is in the lawn;
+	say "You run out onto the lawn. Hildegard gives you a high five.[line break][line break]";
+	wait for any key;
+	now the left hand status line is "Your Car";
+	say "You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face.";
+	end the story finally.
+	
+
+The revolver is a thing. The description of the revolver is "You really don't want to be on the wrong end of this.".
+
+Instead of putting, inserting, or dropping the original will, say "This is evidence. Or blackmail."
+
+Instead of putting, inserting, or dropping the doctored will, say "This is evidence. Or blackmail."
+
+The description of the original will is "Uncle Clifton's Last Will and Testament, last updated two years ago."
+
+The description of the doctored will is "A petty fake by petty takers."
 
 Part III - Now Go Back Downstairs
 
