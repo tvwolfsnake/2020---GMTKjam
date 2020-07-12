@@ -312,12 +312,14 @@ The description of a  cue ball is "It's white."
 
 [Kitchen]
 
-The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen."
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention. On the plus side they probably won't care if you take anything. Unfortunately they are currently occupying three quarters of the room. You can reach the pantry to the north of the kitchen or head into the dining room to the south. The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes."
 
 The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
 Loose grapes is a stealable in The Kitchen. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
+Understand "grapes" as the loose grapes.
 The empty bottle is a stealable in The Kitchen. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
+Understand "bottle" as the empty bottle.
 The recipe book is a stealable in The Kitchen. The description of the recipe book is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
 
 Instead of smelling the loose grapes:
