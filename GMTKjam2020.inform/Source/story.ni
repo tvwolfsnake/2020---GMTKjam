@@ -47,12 +47,16 @@ When play begins:
 	clear screen;
 	wait for any key;
 	clear screen;
-	say "He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.[line break][line break]He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.[line break][line break]";
+	say "He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.[line break][line break]";
 	wait for any key;
-	say "That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.";
+	say "He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.[line break][line break]";
+	wait for any key;
+	say "That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.[line break][line break]";
 	wait for any key;
 	clear screen;
-	say "You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.[line break][line break]He gives you a dirty look and walks off into the hall.[line break][line break] His wallet fell out of his pocket. It's sitting on the floor.";
+	say "You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.[line break][line break]He gives you a dirty look and walks off into the hall.[line break][line break]";
+	wait for any key;
+	say "His wallet fell out of his pocket. It's sitting on the floor.";
 	wait for any key;
 	say "> take Cartwright's wallet[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
 	wait for any key;
@@ -368,16 +372,16 @@ Instead of opening the china cabinet:
 The centerpiece is scenery in the Dining Room. The description of the centerpiece is "The centerpiece is a large ornate ice sculpture of Uncle Clifton holding his hands towards you magnanimously. It's already starting to melt."
 
 A placecard is a kind of stealable.
-placecard1 is a placecard. The description of placecard1 is "Dane Fenwick."
-placecard2 is a placecard. The description of placecard2 is "Anne Chaucer Fenwick."
-placecard3 is a placecard. The description of placecard3 is "Rowan Writingham."
-placecard4 is a placecard. The description of placecard4 is "Hildegard Fenwick."
-placecard5 is a placecard. The description of placecard5 is "Dimia Fenwick."
-placecard6 is a placecard. The description of placecard6 is "Beatrix Cornwallis-Fenwick."
-placecard7 is a placecard. The description of placecard7 is "Bryce Fenwick."
-placecard8 is a placecard. The description of placecard8 is "Cartwright Fenwick."
-placecard9 is a placecard. The description of placecard9 is "Cedric William Fenwick."
-placecard10 is a placecard. The description of placecard10 is "Edmund Fenwick."
+placecard1 is a placecard. The description of placecard1 is "Dane Fenwick.".
+placecard2 is a placecard. The description of placecard2 is "Anne Chaucer Fenwick.".
+placecard3 is a placecard. The description of placecard3 is "Rowan Writingham.".
+placecard4 is a placecard. The description of placecard4 is "Hildegard Fenwick.".
+placecard5 is a placecard. The description of placecard5 is "Dimia Fenwick.".
+placecard6 is a placecard. The description of placecard6 is "Beatrix Cornwallis-Fenwick.".
+placecard7 is a placecard. The description of placecard7 is "Bryce Fenwick.".
+placecard8 is a placecard. The description of placecard8 is "Cartwright Fenwick.".
+placecard9 is a placecard. The description of placecard9 is "Cedric William Fenwick.".
+placecard10 is a placecard. The description of placecard10 is "Edmund Fenwick.".
 
 [Bathroom]
 
@@ -427,7 +431,42 @@ The Upstairs Balcony_south is a room with printed name "Upstairs Balcony (south 
 
 Master_door is east of the Master Bedroom and northwest of the Upstairs Balcony_south. Master_door is a locked door with the printed name "Master bedroom door". Understand "Master bedroom" or "Master bedroom door" as the Master_door.
 
-Uncle Clifton's Study is west of the Upstairs Balcony_south.
+Uncle Clifton's Study is west of the Upstairs Balcony_south. The description of Uncle Clifton's Study is "You know this room very well, but you're so focused on one thing you can barely notice the partners desk it's sitting on, or the papers it's sitting on top of:[line break][line break]The silver pocketwatch."
+
+The silver pocketwatch is in Uncle Clifton's Study. The description of the silver pocketwatch is "The one thing Uncle Clifton promised to you. It's beautiful. On the inside, the hour and minute hand point at roman numerals. On the outside, gold accents circumscribe a pair of initials, also in gold: C.F.[first time][line break][line break]Either Uncle Clifton commissioned this watch, or he got very lucky in an antique shop.[only]". The silver pocketwatch is undescribed.
+
+After taking the silver pocketwatch:
+	say "You grab the pocketwatch, not in an act of compulsive theft, but as a statement of ownership.[line break][line break]";
+	wait for any key;
+	say "You take a moment of silence, to remember Uncle Clifton by. The only sound is the muffled ticking of his pocketwatch in your pocket.[line break][line break]";
+	wait for any key;
+	say "With the moment of silence over, now you can leave this damn house.";
+	now the papers are nowhere;
+	now the will_original is on the partners desk;
+	now the will_doctored is on the partners desk;
+	now the letter opener is on the partners desk;
+	now the description of the desk is "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
+	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. The letter opener on the desk."
+	
+Instead of putting, inserting, or dropping the silver pocketwatch, say "This is staying right in your pocket, where it belongs."
+
+The partners desk is scenery in Uncle Clifton's Study. Understand "desk" as the partners desk. The papers are on the partners desk. The description of the partners desk is "It's a desk. You're more interested right now with what's on it."The description of the papers is "Some stacks of papers. It doesn't matter what they are. All that matters right now is the watch." The papers are undescribed.
+
+The description of the letter opener is "Long, with a white-bone handle. Surprisingly sharp.".
+
+Instead of taking the letter opener during Gun Scene:
+	say "Cartwright sees you reaching for the knife, and fires.[line break][line break]";
+	wait for any key;
+	say "Maybe you shouldn't have brought a knife to a gun fight.";
+	wait for any key;
+	end the story saying "You have died".
+
+The rolling chair is scenery in Uncle Clifton's Study. Understand "chair" as the rolling chair. The description of the rolling chair is "An old leather rolling chair. Parts of it are peeling off, and friction on the seat over years of sitting has turned it from brown to almost white.".
+
+A will is a kind of thing. The will_original is a will with printed name "original will".  The will_original is undescribed. The will_doctored is a will with printed name "doctored will". The will_doctored is undescribed.
+
+Instead of taking a will:
+	try examining the noun instead.
 
 Instead of going in Uncle Clifton's Study:
 	say "There's something much more important in here.".
@@ -460,7 +499,10 @@ When Wallet Scene ends:
 	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break]"
 	wait for any key;
 	say "Cartwright did.";
+	wait for any key;
 	end the story saying "You have died"]
+
+Gun Scene is a scene.
 
 Part III - Now Go Back Downstairs
 
