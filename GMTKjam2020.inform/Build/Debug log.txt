@@ -1,0 +1,113 @@
+Debugging log of Inform 7
+Inform called as: C:\Program Files (x86)\Inform 7\Compilers\ni -internal C:\Program Files (x86)\Inform 7\Internal -project G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform -format=ulx
+Found language bundle 'English' (built in)
+Found language bundle 'French' (built in)
+Found language bundle 'German' (built in)
+Found language bundle 'Italian' (built in)
+Found language bundle 'Spanish' (built in)
+Found language bundle 'Swedish' (built in)
+Reading language definition from <C:\Program Files (x86)\Inform 7\Internal\Languages\English\Syntax.preform>
+720 declarations read (14183 words)
+
+
+-----------------------------------------------------
+Phase I ... Lexical analysis
+-----------------------------------------------------
+
+I've now read your source text, which is 2048 words long.
+
+
+-----------------------------------------------------
+Phase II ... Semantic analysis Ia
+-----------------------------------------------------
+
+I've also read Standard Rules by Graham Nelson, which is 42655 words long.
+I've also read English Language by Graham Nelson, which is 2297 words long.
+I've also read Basic Help Menu by Emily Short, which is 2368 words long.
+I've also read Basic Screen Effects by Emily Short, which is 2218 words long.
+I've also read Menus by Emily Short, which is 2001 words long.
+
+
+-----------------------------------------------------
+Phase III ... Initialise language semantics
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase IV ... Semantic analysis Ib
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase V ... Semantic analysis II
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase VI ... Semantic analysis III
+-----------------------------------------------------
+
+
+
+-----------------------------------------------------
+Phase VII ... First pass through assertions
+-----------------------------------------------------
+
+Problem PM_NameWithText issued from inform7/Chapter 15/The Creator.w, line 567
+(Assertion error: looking for alternative verbs in <the description of the clutch is "You don't know who this clutch belongs to. It is soft velvet with pearl adornment on the handle" the sweater is a stealable in the sitting room>.)
+
+In Part I - Get Upstairs:
+
+
+  >--> You wrote 'The description of the clutch is "You don't know who this
+    clutch bel [...] with pearl adornment on the handle" The sweater is a
+    stealable in the Sitting Room' (source text, line 167): but this seems to
+    give something a name which contains double-quoted text, which is not
+    allowed. If you do need quotes in a name, one option would be to write
+    something like 'In the Saloon is 'Black' Jacques Bernoulli.'; but this
+    problem message is often caused by an accident in punctuation, in which
+    case you never intended to create an object - you thought that the text
+    ended a sentence because it finished with sentence-ending punctuation, when
+    in fact it didn't, so that I read the next words as following on. (It may
+    help to know that I am reading the primary verb here as 'is', not 'is'.)
+
+Problem PM_NameWithText issued from inform7/Chapter 15/The Creator.w, line 567
+(Assertion error: looking for alternative verbs in <the description of the empty china plate is "The last surviving remnant of Clifton's favourite china set.  Very recently full of hors d'oeuvres. Currently littered with the debris of said hors d'oeuvres" the golden watch is a stealable in the sitting room>.)
+
+  >--> You wrote 'The description of the empty china plate is "The last
+    surviving remnant of Clif [...] the debris of said hors d'oeuvres" The
+    golden watch is a stealable in the Sitting Room' (source text, line 171):
+    again, this seems to give something a name which contains double-quoted
+    text.
+
+
+
+-----------------------------------------------------
+Phase VIII ... Compilation now complete
+-----------------------------------------------------
+
+Total of 4 files written as streams.
+CPU time: 21 centiseconds
+
+
+That concludes the debugging log from this run of Inform.
+Its contents were as follows, and can be changed by placing
+text like 'Include property creations in the debugging log.'
+or 'Omit everything from the debugging log.' in the source.
+
+Included:
+  debugging log contents  debugging log inclusions
+Omitted:
+  action creations   action pattern compilation  action pattern parsing  assemblies    assertions    case insensitive filehandling
+  conditions    constructed past participles  constructed plurals   description compilation   excerpt meanings   excerpt parsing 
+  expressions    extensions census   figure creations   grammar    grammar construction   headings  
+  implications    inferences    kind changes   kind checking   kind creations   lexical output 
+  local variables   matching    meaning list allocation  memory allocation   noun resolution   object compilation 
+  object creations   object tree   phrase comparisons   phrase compilation   phrase creations   phrase registration 
+  phrase usage   predicate calculus   predicate calculus workings  pronouns    property creations   property provision 
+  property translations   relation definitions   rule attachments   rulebook compilation   spatial map   spatial map workings
+  specification permissions   specification usage   specificities    table construction   template reading   text substitutions 
+  time periods   variable creations   verifications    vocabulary  

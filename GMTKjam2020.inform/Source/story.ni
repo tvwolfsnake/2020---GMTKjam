@@ -164,11 +164,11 @@ The Sitting Room is a first-floor room. The Sitting Room is southwest of the hal
 The chess set is a stealable in the Sitting Room. The description of the chess set is "A portable chessboard with small wooden chess pieces carved to resemble civil war soldiers. Both sides are modeled in the image of Union soldiers.[line break][line break]There’s a story there."
 The  pack of cigarettes is a stealable in the Sitting Room. The description of the chess set is "You look down at the half-empty pack of cigarettes. The weirdly sexually-charged camel mascot stares back at you through his Ray-Ban sunglasses."
 The ashtray is a stealable in the Sitting Room. The description of the ashtray is "Shallow yellow glass tray, currently empty."
-The clutch is a stealable in the Sitting Room. The description of the clutch is "You don’t know who this clutch belongs to. It is soft velvet with pearl adornment on the handle"
+The clutch is a stealable in the Sitting Room. The description of the clutch is "You don’t know who this clutch belongs to. It is soft velvet with pearl adornment on the handle."
 The sweater is a stealable in the Sitting Room. The description of the sweater is "A thin black cardigan." 
 The jacket is a stealable in the Sitting Room. The description of the jacket is "A plain black leather jacket with almost no wear or tear." 
 The champagne flute is a stealable in the Sitting Room. The description of the champagne flute is "A thin glass tube on a thin glass stem."
-The empty china plate is a stealable in the Sitting Room. The description of the empty china plate is "The last surviving remnant of Clifton’s favourite china set.  Very recently full of hors d’oeuvres. Currently littered with the debris of said hors d’oeuvres"
+The empty china plate is a stealable in the Sitting Room. The description of the empty china plate is "The last surviving remnant of Clifton’s favourite china set.  Very recently full of hors d’oeuvres. Currently littered with the debris of said hors d’oeuvres."
 The golden watch is a stealable in the Sitting Room. The description of the golden watch is "This is Bryce’s chunky golden watch. It does not appear to be working."
 
 
