@@ -29,6 +29,8 @@ A stealable is a kind of undescribed thing.
 
 A mourner is a kind of person.
 
+A first-floor room is a kind of room.
+
 Definition: a stealable is unheld if it is not carried.
 
 The steal list is a list of objects that varies.
@@ -119,7 +121,7 @@ Thirdthing is a stealable in the vestibule. The description of thirdthing is "th
 John is a mourner in the vestibule. John is male. The description of John is "John."]
 
 Instead of going south in the vestibule:
-	say "You're not leaving until you get what you came for.[first time][line break]Hell, with your condition you usually end up being escorted out another door.[only]"
+	say "You're not leaving until you get what you came for.[first time][line break]Hell, with your condition you usually end up being forced to leave through another door.[only]"
 
 [Coat Closet is east of vestibule.
 
@@ -135,35 +137,88 @@ Instead of going east in the vestibule for more than the first time:
 
 [Hall]
 
-The hall is north of the vestibule. The description of Hall is "s"
+The Hall is north of the vestibule. The description of Hall is "s"
 
-Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal [quotation mark]jokes[quotation mark] at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is the old man version of that.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet."
+After deciding the scope of the player while the player is in the Hall:
+	place the Vestibule in scope;
+	place the Sitting Room in scope;
+	place the Library in scope;
+	place the Game Room in scope;
+	place the Kitchen in scope.
+	
+Instead of examining the Vestibule when the player is in the Hall, say "It looks smaller from here. Or maybe you're just farther away from it."
+
+Instead of examining a first-floor room when the player is in the Hall, say "It'd be easier to see if you were inside it."
+	
+Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal [quotation mark]jokes[quotation mark] at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is that guy as an old man.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet."
 
 [Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.]
 
 
 [Sitting Room]
 
-The Sitting Room is southwest of the hall. The description of Sitting Room is "Description of sitting room. Further south in the room, there's an hors d'oeuvres table." Jack is a mourner in the sitting room.
+The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "Description of sitting room. To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there." Jack is a mourner in the sitting room.
+
+[scope lawn]
+
+[Lawn]
+The Lawn is west of the sitting room. The description of the Lawn is "Description of lawn. Hors d'oeuvres, also a person who isn't a jerk about your condition"
+
+[scope sitting room]
 
 [Library]
 
-The Library is southeast of the hall. The description of the Library is "Library."
+The Library is a first-floor room. The description of the Library is "Library." The library_door is a locked door with the printed name "Library door". Understand "locked door", "library door", "door to the library", and "door to library" as the library_door. The library_door is undescribed. The library_door is southeast of the hall and northwest of the library. The description of the library_door is "Normally, this door leads to one of your favorite rooms in the house. Uncle Clifton kept a terrific mix of old newspapers, new science texts, gothic horror...you name it.[line break][line break]Unfortunately, the door is locked."
 
 [Game Room]
 
-The Game Room is east of the hall. The description of the Game Room is "The bulk of blah taken up by billard table. Bar, etc."
+The Game Room is a first-floor room. The Game Room is northeast of the hall. The description of the Game Room is "The bulk of blah taken up by billard table. Bar, etc."
 
 [Kitchen]
 
-The Kitchen is northeast of the hall. The description of the kitchen is "Kitchen."
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "Kitchen."
 
+[scope pantry]
+
+[Pantry]
+
+The Pantry is north of the Kitchen. The description of the Pantry is "Pantry."
+
+[implement later?]
+
+The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room.
 
 [The Small Hallway is north of the hall.]
 
 
 Part II - You're Upstairs
 
+The Upstairs Landing is up from the Hall.
+
+The Attic is up from the Upstairs Landing.
+
+Instead of going up in the Upstairs Landing, say "You'd really rather not. This is a nice house, but it's still an old house, and the attic is unfinished. Who knows how many rotted boards are up there?"
+
+The Upstairs Balcony_north is a room with printed name "Upstairs Balcony (north end)". The Upstairs Balcony_north is west of the Upstairs Landing.
+
+Guest_door is east of Guest Bedroom and west of the Upstairs Balcony_north. Guest_door is a locked door with the printed name "Guest bedroom door". Understand "Guest bedroom" or "Guest bedroom door" as Guest_door.
+
+Dimia_door is east of Dimia's Bedroom and southwest of the Upstairs Balcony_north. Dimia_door is a locked door with the printed name "Dimia's bedroom door". Understand "Dimia's bedroom" or "Dimia's bedroom door" as Dimia_door.
+
+The Upstairs Balcony_south is a room with printed name "Upstairs Balcony (south end)". The Upstairs Balcony_south is south of the Upstairs Balcony_north.
+
+Master_door is east of the Master Bedroom and northwest of the Upstairs Balcony_south. Master_door is a locked door with the printed name "Master bedroom door". Understand "Master bedroom" or "Master bedroom door" as the Master_door.
+
+Uncle Clifton's Study is west of the Upstairs Balcony_south.
+
+
+[A balcony extends to your west and then wraps around to the south end of the mansion. Its railing overlooks the Hall.]
+
+[A little further down the balcony, to the southeast, is the something bedroom. south of here is the other end of the balcony.
+
+North of here is the other end of the balcony ]
+
+[[if the flashlight is held] attic description]
 
 
 Part III - Now Go Back Downstairs
@@ -215,7 +270,14 @@ say "No. You don't. Obviously you don't.[line break][line break]";
 wait for any key;
 say "What is wrong with you?";
 wait for any key;
-clear screen.]
+clear screen.
+
+Another option when he has the gun on you: Don't bring a canapé to a gunfight.]
 
 [Instead of attacking Cartwright:]
 
+[He wasn't a good man [description of real estate holdings, slumlord, etc.] but for some reason he was kind to you.]
+
+[later: put lawn in scope of sitting room and vice versa]
+
+[Cartwright's gun is a asdfasdfsd. You only know that because Uncle Clifton hated the damn thing.]
