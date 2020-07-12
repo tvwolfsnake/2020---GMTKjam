@@ -363,25 +363,37 @@ Instead of tasting the mystery can:
 [implement later?]
 [Dining Room]
 
-The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken table with a large centerpiece and ten placecards set around the table. [line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south."
+The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. [line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south."
 
 The china cabinet is scenery in the Dining Room. The description of the china cabinet is "A tall wooden cabinet. Through the glass panels in the cabinet doors, you can see an absurdly expensive collection of fancy, mostly unused fine china."
 Understand "cabinet" as the china cabinet.
 Instead of opening the china cabinet:
 	say "You pull on the handle and the doors rattle alarmingly, but remain closed. The china locked safely inside.".
 The centerpiece is scenery in the Dining Room. The description of the centerpiece is "The centerpiece is a large ornate ice sculpture of Uncle Clifton holding his hands towards you magnanimously. It's already starting to melt."
+The dining table is scenery in the Dining Room. The description of the dining table is "The centerpiece takes up alot of room on the table but you can see the ten placecards:[line break][line break]Dane's placecard[line break]Anne's placecard[line break]Rowan's placecard[line break]Hildegard's placecard[line break]Dimia's placecard[line break]Beatrix's placecard[line break]Bryce's placecard[line break]Cartwright's placecard[line break]Cedric's placecard[line break]Edmund's placecard."
+
 
 A placecard is a kind of stealable.
-placecard1 is a placecard. The description of placecard1 is "Dane Fenwick.".
-placecard2 is a placecard. The description of placecard2 is "Anne Chaucer Fenwick.".
-placecard3 is a placecard. The description of placecard3 is "Rowan Writingham.".
-placecard4 is a placecard. The description of placecard4 is "Hildegard Fenwick.".
-placecard5 is a placecard. The description of placecard5 is "Dimia Fenwick.".
-placecard6 is a placecard. The description of placecard6 is "Beatrix Cornwallis-Fenwick.".
-placecard7 is a placecard. The description of placecard7 is "Bryce Fenwick.".
-placecard8 is a placecard. The description of placecard8 is "Cartwright Fenwick.".
-placecard9 is a placecard. The description of placecard9 is "Cedric William Fenwick.".
-placecard10 is a placecard. The description of placecard10 is "Edmund Fenwick.".
+
+The placecard1 is a placecard in the Dining room. The description of the placecard1 is "It reads: Dane Fenwick.". The printed name of the placecard1 is "Dane's placecard". Understand "Dane's placecard" as the placecard1. Understand "Dane's" as the placecard1.
+
+The placecard2 is a placecard in the Dining room. The description of the placecard2 is "It reads: Anne Chaucer Fenwick.". The printed name of the placecard2 is "Anne's placecard". Understand "Anne's placecard" as the placecard2. Understand "Anne's" as the placecard2.
+
+The placecard3 is a placecard in the Dining room. The description of the placecard3 is "It reads: Rowan Writingham.". The printed name of the placecard3 is "Rowan's placecard". Understand "Rowan's placecard" as the placecard3. Understand "Rowan's" as the placecard3.
+
+The placecard4 is a placecard in the Dining room. The description of the placecard4 is "It reads: Hildegard Fenwick.". The printed name of the placecard4 is "Hildegard's placecard". Understand "Hildegard's placecard" as the placecard4. Understand "Hildegard's" as the placecard4.
+
+The placecard5 is a placecard in the Dining room. The description of the placecard5 is "It reads: Dimia Fenwick.". The printed name of the placecard5 is "Dimia's placecard". Understand "Dimia's placecard" as the placecard5. Understand "Dimia's" as the placecard5.
+
+The placecard6 is a placecard in the Dining room. The description of the placecard6 is "It reads: Beatrix Cornwallis-Fenwick.". The printed name of the placecard6 is "Beatrix's placecard". Understand "Beatrix's placecard" as the placecard6. Understand "Beatrix's" as the placecard6.
+
+The placecard7 is a placecard in the Dining room. The description of the placecard7 is "It reads: Bryce Fenwick.". The printed name of the placecard7 is "Bryce's placecard". Understand "Bryce's placecard" as the placecard7. Understand "Bryce's" as the placecard7.
+
+The placecard8 is a placecard in the Dining room. The description of the placecard8 is "It reads: Cartwright Fenwick.". The printed name of the the placecard8 is "Cartwright's placecard". Understand "Cartwright's placecard" as the placecard8. 
+
+The placecard9 is a placecard in the Dining room. The description of the placecard9 is "It reads: Cedric William Fenwick.". The printed name of the placecard9 is "Cedric's placecard". Understand "Cedric's placecard" as the placecard9. Understand "Cedric's" as the placecard9.
+
+The placecard10 is a placecard in the Dining room. The description of the placecard10 is "It reads: Edmund Fenwick.". The printed name of the placecard10 is "Edmund's placecard". Understand "Edmunds's placecard" as the placecard10 . Understand "Edmund's" as the placecard10 .
 
 [Bathroom]
 
