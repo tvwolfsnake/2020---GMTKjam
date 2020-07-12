@@ -1,4 +1,4 @@
-"you can't take it with you" by Unnamed Game Jam Team
+"you can't take it with you" by take all games
 [here is a comment to test whether we can work on separate parts of the project without issue]
 [title obviously not final]
 [we really need to think of a team name, or else just credit it A&B&C]
@@ -22,6 +22,7 @@ Release along with the "Quixe" interpreter.
 Kleptomode is a truth state that varies.
 wallet_given is a truth state that varies.
 gun_start is a truth state that varies.
+kitchen_visited is a truth state that varies.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
@@ -35,6 +36,7 @@ When play begins:
 	now kleptomode is false;
 	now wallet_given is false;
 	now gun_start is false;
+	now kitchen_visited is false;
 	say "Uncle Clifton is dead.[line break][line break]";
 	wait for any key;
 	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
@@ -60,13 +62,13 @@ When play begins:
 	wait for any key;
 	say "His wallet fell out of his pocket. It's sitting on the floor.";
 	wait for any key;
-	say "> take Cartwright's wallet[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
+	say "> take wallet[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
 	wait for any key;
 	say "In about a seven count, you're going to take something else, even though you don't want to.[line break][line break]";
 	wait for any key;
 	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
-	now description entry is "hi! chloe from TEAM here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]the game should take about TIME OF GAME to complete.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, coding[line break]ian kay: writing.".
+	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
 
 A stealable is a kind of undescribed thing.
 
@@ -140,11 +142,11 @@ Instead of taking scenery, say "Against your will, you've gotten pretty good at 
 
 [starting inventory]
 
-Cartwright's wallet is a stealable. The player carries Cartwright's wallet. The description of Cartwright's wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him."
+The wallet is a stealable with the printed name "Cartwright's wallet". The player carries the wallet. The description of the wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him." Understand "wallet" as the wallet.
 
-Church pew pencils is a stealable. The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
+The church pew pencils are a stealable. The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
 
-Hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to [quotation mark]O, For A Thousand Tongues To Sing.[quotation mark]"
+The hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to [quotation mark]O, For A Thousand Tongues To Sing.[quotation mark]"
 
 
 
@@ -156,7 +158,7 @@ Part I - Get Upstairs
 
 Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
 
-The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 2014]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
+The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time]--it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
 
 There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is stealable. The table is scenery.
 
@@ -191,13 +193,14 @@ Instead of going east in the vestibule for more than the first time:
 
 [Hall]
 
-The Hall is north of the vestibule. The description of Hall is "The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.[line break][line break]To the southwest is the sitting room.[line break]To the northwest is the kitchen.[line break]To the north is the bathroom.[line break]To the northeast is the game room.[line break]To the southeast is the library.[line break]To the south is the vestibule."
+The Hall is north of the vestibule. The description of Hall is "This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south[first time], where you just came from,[only] is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.[first time][line break][line break]Cedric and Bryce whisper about something. You can only make out the words [quotation mark]alter[quotation mark] and [quotation mark]will[quotation mark].[line break][line break]When they see you, they quickly move to the game room.[only]"
 
 After deciding the scope of the player while the player is in the Hall:
 	place the Vestibule in scope;
 	place the Sitting Room in scope;
 	place the Library in scope;
 	place the Game Room in scope;
+	place the Dining Room in scope;
 	place the Kitchen in scope;
 	place the Bathroom in scope.
 
@@ -205,7 +208,21 @@ Instead of examining the Vestibule when the player is in the Hall, say "It looks
 
 Instead of examining a first-floor room when the player is in the Hall, say "It'd be easier to see if you were inside it."
 	
-Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal [quotation mark]jokes[quotation mark] at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is that guy as an old man.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet."
+Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal [quotation mark]jokes[quotation mark] at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is that guy as an old man.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet." Cartwright is undescribed.
+
+Instead of going up in the hall:
+	say "Cartwright stops you in your tracks. He doesn't want you upstairs, and you know him just well enough to know he's not interested in any stories about a pocketwatch." instead.
+
+Instead of giving the peanut butter canapé to Cartwright in the hall:
+	say "In order to get past him, you give Cartwright--a man whose allergies might be way more severe than you're aware of--a common and potentially life-threatening allergen.[line break][line break]";
+	wait for any key;
+	clear screen;
+	say "No. You don't. Obviously you don't.[line break][line break]";
+	wait for any key;
+	say "What is wrong with you?";
+	wait for any key;
+	clear screen;
+	try looking.
 
 [Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.]
 
@@ -213,7 +230,7 @@ The hunting trophy is a stealable in the Hall. The description of the hunting tr
 
 [Sitting Room]
 
-The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.[line break][line break]To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there."
+The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.[line break][line break]To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. [if lawn is unvisited]Barely anyone's out there.[end if][if lawn is visited]Hildegarde is out there.[end if]"
 
 The game table is scenery in the Sitting Room. The chess set is on the game table. The champagne flute is on the game table.
 The couch is scenery in the Sitting Room. The pack of cigarettes is on the couch. The ashtray is on the couch. The clutch is on the couch. The sweater is on the couch. The jacket is on the couch. The empty china plate is on the couch. The golden watch is on the couch. The description of the couch is "It's probably an antique."
@@ -228,7 +245,7 @@ The empty china plate is stealable. The description of the empty china plate is 
 The golden watch is stealable. The description of the golden watch is "This is Bryce’s chunky golden watch. It does not appear to be working." Understand "gold watch" or "watch" as the golden watch.
 The napkins are scenery in the Sitting Room. The description of the napkins is "With hors d'oeuvres inevitably come napkins. People don't exactly know what to do with them, so they just sort of hold them.[line break][line break]You're not stealing those, even compulsively.".
 The hors d'oeuvre_sitting is scenery in the Sitting room. The hors d'oeuvre_sitting has the printed name "hors d'oeuvre". Understand "hors d'oeuvre" or "hors doeuvre" or "hors doevre" or "horse divorce" as the hors d'oeuvre_sitting. The description of the hors d'oeuvre_sitting is "Hors d'oeuvres sit on napkins in laps, protected from anyone who might accidentally steal them."
-The crowd is scenery in the Sitting Room. The description of the crowd is "They pass around anecdotes". Understand "family", "friends", "family and friends", or "crowd of family and friends" as the crowd.
+The crowd is scenery in the Sitting Room. The description of the crowd is "They pass around anecdotes as they pass around champagne.". Understand "family", "friends", "family and friends", or "crowd of family and friends" as the crowd.
 
 Dimia is a mourner in the Sitting Room. Dimia is undescribed. The description of Dimia is "[first time]Uncle Clifton's daughter. Her expression is inscrutable, but it seems to suggest a vague notion of sorrow.[line break][line break][only]Dimia doesn't like you. But then, almost nobody in the family does."
 
@@ -236,7 +253,11 @@ Dimia is a mourner in the Sitting Room. Dimia is undescribed. The description of
 [scope lawn]
 
 [Lawn]
-The Lawn is west of the sitting room. The description of the Lawn is "Description of lawn. Hors d'oeuvres, also a person who isn't a jerk about your condition"
+The Lawn is west of the sitting room. The description of the Lawn is "A clearing full of lush green grass. A table is set up with, at this point, just peanut butter canapés. Standing near the table is Hildegard, a rare friendly face."
+
+The lawn table is in the Lawn. The lawn table is undescribed.
+
+A peanut butter canapé is a kind of thing. 100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible. Understand "canape" or "peanut canape" or "peanut butter canape" as a peanut butter canapé.
 
 Hildegard is a person in the Lawn. Hildegard is undescribed. The description of Hildegard is "[first time]Anne's daughter. You've known each other growing up, since she's only a few years younger than you. She tends to get overstimulated at social gatherings, so you'll often find her somewhere quieter.[line break][line break][only]She's the only person other than Uncle Clifton who seems to understand what you're going through. She's covered for you in a few tense situations, pretending to [quotation mark]find[quotation mark] things you unintentionally stole, as long as you gave the thing to her."
 
@@ -253,15 +274,20 @@ The Library is a first-floor room. The description of the Library is "Library." 
 
 [Game Room]
 
-The Game Room is a first-floor room. The Game Room is northeast of the hall. The description of the Game Room is "The bulk of the Game Room is taken up by billiards table, which holds a variety of snooker balls and a handful of darts. On the far wall hangs a dartboard, a mounted fish, a bear head, and a deer head. Theres a bar at the end of the room. On top of the bar there are several bottles of alcohol: vodka, gin, rum, whiskey, scotch, sherry, and drambuie. The hall is to the southwest."
+The Game Room is a first-floor room. The Game Room is northeast of the hall. The description of the Game Room is "The bulk of the Game Room is taken up by a snooker table, which holds a variety of snooker balls and a handful of darts. On the far wall hangs a dartboard, a mounted fish, a bear head, and a deer head. Theres a bar at the end of the room. On top of the bar there are several bottles of alcohol: vodka, gin, rum, whiskey, scotch, sherry, and drambuie. The hall is to the southwest.[line break][line break]Cedric and Bryce sip scotch near the bar."
+
+Cedric is a mourner in the Game Room. Cedric is undescribed. The description of Cedric is "He's genial enough, but it's mostly superficial. He's drinking scotch with Bryce."
+
+Bryce is a mourner in the Game Room. Bryce is undescribed. The description of Bryce is "A clumsy coward, but a whiz at snooker. Not that you've played with him. He's drinking scotch with Cedric."
+
 
 The deer head is a stealable in the Game Room. The description of the deer head is "You guess this is why they call it the GAME room. The decapitated deer glares at you."
 The bear head is a stealable in the Game Room. The description of the bear head is "Even mounted on a wooden plaque, this bear is still intimidating."
 The mounted fish is a stealable in the Game Room. The description of the mounted fish is "This fish looks depressed. To the degree that any fish can look depressed."
 The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
-The billiards table is scenery in the Game room. The description of the billiards table is "You remember when you could barely see over the edge of this table. The billiards table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
+The snooker table is scenery in the Game room. The description of the snooker table is "You remember when you could barely see over the edge of this table. The snooker table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
 The darts is a stealable in the Game Room. The Description of the darts is "These darts are probably made out of some real endangerd peacock feathers or something."
-Instead of touching the billiards table:
+Instead of touching the snooker table:
 	say "You felt the felt.[line break][line break]";
 	wait for any key;
 	say "Actually the fabric on the table is baize, a coarse woollen cloth, similar in texture to felt, but more durable.".
@@ -319,7 +345,7 @@ The description of a  cue ball is "It's white."
 
 [Kitchen]
 
-The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break]On the plus side they probably won't care if you take anything.[line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes."
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break][line break]On the plus side they probably won't care if you take anything.[line break][line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. [first time]The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes.[only][if rowan is in the kitchen][line break][line break]Rowan searches the kitchen for something to eat.[end if]"
 
 The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
@@ -343,6 +369,18 @@ Instead of touching the delicate tea cup:
 	say "Careful! You’ll break it!".
 Instead of smelling the delicate tea cup:
 	say "Careful! You’ll break it!".
+	
+Before going north in the Dining Room:
+	now kitchen_visited is true.
+	
+Before going northwest in the Hall:
+	now kitchen_visited is true.
+	
+Before going north in the Kitchen:
+	say "You close the pantry door behind you."
+	
+Before going south in the Pantry:
+	say "You open the pantry door, and leave."
 
 [scope pantry]
 
@@ -372,7 +410,9 @@ Instead of tasting the mystery can:
 [implement later?]
 [Dining Room]
 
-The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. [line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south."
+The Dining Room is a first-floor room. The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. [line break][line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south.[line break][line break]Anne sits at the table with her head in her hands."
+
+Anne is a mourner in the Dining Room. Anne is undescribed. The description of Anne is "Hildegarde's mom. She looks exhausted. She doesn't look thrilled to see you."
 
 The china cabinet is scenery in the Dining Room. The description of the china cabinet is "A tall wooden cabinet. Through the glass panels in the cabinet doors, you can see an absurdly expensive collection of fancy, mostly unused fine china."
 Understand "cabinet" as the china cabinet.
@@ -406,7 +446,7 @@ The placecard10 is a placecard in the Dining room. The description of the placec
 
 [Bathroom]
 
-The Bathroom is a first-floor room. The Bathroom is north of the Hall. The description of the Bathroom is "A small but opulent bathroom. By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf. The only exit is back south into the hall."
+The Bathroom is a first-floor room. The Bathroom is north of the Hall. The description of the Bathroom is "A small but opulent bathroom. [first time]By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf.[only] The only exit is back south into the hall."
 
 The toilet is scenery in the Bathroom. "That's a toilet, alright."
 The sink is scenery in the Bathroom. The description of the sink is "Smooth marble countertop and a sunken sink with ivory taps."
@@ -454,7 +494,7 @@ Master_door is east of the Master Bedroom and northwest of the Upstairs Balcony_
 
 Uncle Clifton's Study is west of the Upstairs Balcony_south. The description of Uncle Clifton's Study is "You know this room very well, but you're so focused on one thing you can barely notice the partners desk it's sitting on, or the papers it's sitting on top of:[line break][line break]The silver pocketwatch."
 
-The silver pocketwatch is in Uncle Clifton's Study. The description of the silver pocketwatch is "The one thing Uncle Clifton promised to you. It's beautiful. On the inside, the hour and minute hand point at roman numerals. On the outside, gold accents circumscribe a pair of initials, also in gold: C.F.[first time][line break][line break]Either Uncle Clifton commissioned this watch, or he got very lucky in an antique shop.[only]". The silver pocketwatch is undescribed.
+The silver pocketwatch is in Uncle Clifton's Study. The description of the silver pocketwatch is "The one thing Uncle Clifton promised to you. It's beautiful. On the inside, the hour and minute hand point at roman numerals. On the outside, gold accents circumscribe a pair of initials, also in gold: C.F.[first time][line break][line break]Either Uncle Clifton commissioned this watch, or he got very lucky in an antique shop.[only]". The silver pocketwatch is undescribed. Understand "watch" or "pocket watch" as the silver pocketwatch.
 
 After taking the silver pocketwatch:
 	say "You grab the pocketwatch, not in an act of compulsive theft, but as a statement of ownership.[line break][line break]";
@@ -467,19 +507,26 @@ After taking the silver pocketwatch:
 	now the doctored will is on the partners desk;
 	now the letter opener is on the partners desk;
 	now the description of the desk is "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
-	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. The letter opener on the desk.[line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.";
+	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. [if letter opener is unheld]The letter opener on the desk.[end if][line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.";
 	try looking.
 	
 Instead of putting, inserting, or dropping the silver pocketwatch, say "This is staying right in your pocket, where it belongs."
 
 The partners desk is scenery in Uncle Clifton's Study. Understand "desk" as the partners desk. The papers are on the partners desk. The description of the partners desk is "It's a desk. You're more interested right now with what's on it."The description of the papers is "Some stacks of papers. It doesn't matter what they are. All that matters right now is the watch." The papers are undescribed.
 
-The description of the letter opener is "Long, with a white-bone handle. Surprisingly sharp.".
+The description of the letter opener is "Long, with a white-bone handle. Surprisingly sharp.". The letter opener is undescribed. Understand "knife" as the letter opener.
 
 Instead of taking the letter opener during Gun Scene:
 	say "Cartwright sees you reaching for the knife, and fires.[line break][line break]";
 	wait for any key;
 	say "Maybe you shouldn't have brought a knife to a gun fight.";
+	wait for any key;
+	end the story saying "You have died".
+	
+Instead of giving the peanut butter canapé to Cartwright during Gun Scene:
+	say "Cartwright's deathly allergic, but he's also a quick shot.[line break][line break]";
+	wait for any key;
+	say "Who brings a canapé to a gunfight?";
 	wait for any key;
 	end the story saying "You have died".
 
@@ -535,7 +582,12 @@ Instead of attacking Cartwright during the Gun Scene:
 	wait for any key;
 	end the story saying "You have died".
 	
-[Instead of going during the Gun Scene:]
+Instead of going during the Gun Scene:
+	say "You move towards the door[line break][line break]";
+	wait for any key;
+	say "Cartwright moves his pointer finger.";
+	wait for any key;
+	end the story saying "You have died".
 	
 
 Gun Scene is a scene. Gun Scene begins when gun_start is true. Gun Scene ends when the time since Gun Scene began is 7 minutes.
@@ -582,6 +634,8 @@ When Gun Scene ends:
 	say "Fuck this family.[line break][line break]";
 	wait for any key;
 	say "You're taking everything that isn't nailed down.".
+	
+Part III - Now Go Back Downstairs
 	
 Chase Scene Hall is a scene. Chase Scene Hall begins when Gun Scene ends. Chase Scene Hall ends when the time since Chase Scene Hall began is 2 minutes.
 
@@ -640,7 +694,7 @@ When Chase Scene Sitting ends:
 	end the story finally.
 	
 
-The revolver is a thing. The description of the revolver is "You really don't want to be on the wrong end of this.".
+The revolver is a thing. The description of the revolver is "A series of mechanisms designed specifically for killing.". Understand "gun" or "six shooter" or "six-shooter" as the revolver.
 
 Instead of putting, inserting, or dropping the original will, say "This is evidence. Or blackmail."
 
@@ -650,7 +704,16 @@ The description of the original will is "Uncle Clifton's Last Will and Testament
 
 The description of the doctored will is "A petty fake by petty takers."
 
-Part III - Now Go Back Downstairs
+Intruding Mourner is a scene. Intruding Mourner begins when kitchen_visited is true. Intruding Mourner ends when the time since Intruding Mourner began is 4 minutes.
+
+When Intruding Mourner ends:
+	now Rowan is in the kitchen;
+	if the player is in the kitchen:
+		say "Rowan enters, searching for a snack.".
+
+
+Rowan is a mourner. Rowan is undescribed. The description of Rowan is "He's a college rower, so he spends a lot of time in the kitchen searching for protein. He'll probably be in here a while. He's ignoring you because he hasn't noticed you, but if he had, he'd still be ignoring you."
+
 
 
 
@@ -692,14 +755,16 @@ one problem with this approach is that the room descriptions will have to be dyn
 
 [list of visible unheld stealables in the location]
 
-[Instead of giving the peanut butter canapé to Cartwright, say "You give Cartwright[unicode 2014]a man whose allergies might be way more severe than you're aware of[unicode 2014]a common and potentially life-threatening allergen.[line break][line break]";
-wait for any key;
-clear screen;
-say "No. You don't. Obviously you don't.[line break][line break]";
-wait for any key;
-say "What is wrong with you?";
-wait for any key;
-clear screen.
+[Instead of giving the peanut butter canapé to Cartwright in the hall:
+	say "You give Cartwright[unicode 2014]a man whose allergies might be way more severe than you're aware of[unicode 2014]a common and potentially life-threatening allergen.[line break][line break]";
+	wait for any key;
+	clear screen;
+	say "No. You don't. Obviously you don't.[line break][line break]";
+	wait for any key;
+	say "What is wrong with you?";
+	wait for any key;
+	clear screen;
+	try looking.
 
 Another option when he has the gun on you: Don't bring a canapé to a gunfight.]
 
