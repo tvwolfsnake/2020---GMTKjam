@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-380"/>
+  <activeNode nodeId="node-392"/>
   <item nodeId="node-1">
     <command xml:space="preserve">GMTKjam2020</command>
     <result xml:space="preserve">Uncle Clifton is dead.</result>
@@ -10,12 +10,12 @@
     <children>
       <child nodeId="node-2"/>
       <child nodeId="node-9"/>
-      <child nodeId="node-318"/>
-      <child nodeId="node-319"/>
-      <child nodeId="node-326"/>
-      <child nodeId="node-328"/>
-      <child nodeId="node-331"/>
-      <child nodeId="node-334"/>
+      <child nodeId="node-361"/>
+      <child nodeId="node-362"/>
+      <child nodeId="node-369"/>
+      <child nodeId="node-371"/>
+      <child nodeId="node-374"/>
+      <child nodeId="node-377"/>
     </children>
   </item>
   <item nodeId="node-2">
@@ -2633,8 +2633,9 @@
     <changed>NO</changed>
     <children>
       <child nodeId="node-304"/>
-      <child nodeId="node-338"/>
-      <child nodeId="node-344"/>
+      <child nodeId="node-318"/>
+      <child nodeId="node-324"/>
+      <child nodeId="node-381"/>
     </children>
   </item>
   <item nodeId="node-304">
@@ -2760,9 +2761,186 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-338">
+  <item nodeId="node-318">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-319"/>
+    </children>
+  </item>
+  <item nodeId="node-319">
+    <command xml:space="preserve">go northwest</command>
+    <result xml:space="preserve">Kitchen&#x000A;The kitchen.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-320"/>
+    </children>
+  </item>
+  <item nodeId="node-320">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-321"/>
+    </children>
+  </item>
+  <item nodeId="node-321">
+    <command xml:space="preserve">examine table</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-322"/>
+    </children>
+  </item>
+  <item nodeId="node-322">
+    <command xml:space="preserve">examine oaken table</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-323"/>
+    </children>
+  </item>
+  <item nodeId="node-323">
+    <command xml:space="preserve">examine oaken table</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-324">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-325"/>
+      <child nodeId="node-354"/>
+    </children>
+  </item>
+  <item nodeId="node-325">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-326"/>
+      <child nodeId="node-345"/>
+    </children>
+  </item>
+  <item nodeId="node-326">
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-327"/>
+      <child nodeId="node-337"/>
+    </children>
+  </item>
+  <item nodeId="node-327">
+    <command xml:space="preserve">go northwest</command>
+    <result xml:space="preserve">Kitchen&#x000A;The kitchen.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-328"/>
+    </children>
+  </item>
+  <item nodeId="node-328">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-329"/>
+    </children>
+  </item>
+  <item nodeId="node-329">
+    <command xml:space="preserve">examine table</command>
+    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-330"/>
+    </children>
+  </item>
+  <item nodeId="node-330">
+    <command xml:space="preserve">examine dining table</command>
+    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-331"/>
+    </children>
+  </item>
+  <item nodeId="node-331">
+    <command xml:space="preserve">examine Dane's placecard</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-332"/>
+    </children>
+  </item>
+  <item nodeId="node-332">
+    <command xml:space="preserve">examine placecard</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-333"/>
+    </children>
+  </item>
+  <item nodeId="node-333">
+    <command xml:space="preserve">examine anne's placecard</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-334"/>
+    </children>
+  </item>
+  <item nodeId="node-334">
+    <command xml:space="preserve">examine the anne placecard</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-335"/>
+    </children>
+  </item>
+  <item nodeId="node-335">
+    <command xml:space="preserve">examine the anne's placecard</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-336"/>
+    </children>
+  </item>
+  <item nodeId="node-336">
+    <command xml:space="preserve">examine Dane's placecard</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-337">
+    <command xml:space="preserve">go southwest</command>
+    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-338"/>
+    </children>
+  </item>
+  <item nodeId="node-338">
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2770,8 +2948,8 @@
     </children>
   </item>
   <item nodeId="node-339">
-    <command xml:space="preserve">go northwest</command>
-    <result xml:space="preserve">Kitchen&#x000A;The kitchen.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">examine table</command>
+    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2779,8 +2957,8 @@
     </children>
   </item>
   <item nodeId="node-340">
-    <command xml:space="preserve">go south</command>
-    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">examine Dane's</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2788,7 +2966,7 @@
     </children>
   </item>
   <item nodeId="node-341">
-    <command xml:space="preserve">examine table</command>
+    <command xml:space="preserve">examine placecard</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
@@ -2797,7 +2975,7 @@
     </children>
   </item>
   <item nodeId="node-342">
-    <command xml:space="preserve">examine oaken table</command>
+    <command xml:space="preserve">examine Dane's placecard</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
@@ -2806,20 +2984,19 @@
     </children>
   </item>
   <item nodeId="node-343">
-    <command xml:space="preserve">examine oaken table</command>
+    <command xml:space="preserve">examine placecard1</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
+    <children>
+      <child nodeId="node-344"/>
+    </children>
   </item>
   <item nodeId="node-344">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">examine Dane's</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
-    <children>
-      <child nodeId="node-345"/>
-      <child nodeId="node-374"/>
-    </children>
   </item>
   <item nodeId="node-345">
     <command xml:space="preserve"></command>
@@ -2828,22 +3005,20 @@
     <changed>NO</changed>
     <children>
       <child nodeId="node-346"/>
-      <child nodeId="node-357"/>
     </children>
   </item>
   <item nodeId="node-346">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
       <child nodeId="node-347"/>
-      <child nodeId="node-366"/>
     </children>
   </item>
   <item nodeId="node-347">
-    <command xml:space="preserve">go northwest</command>
-    <result xml:space="preserve">Kitchen&#x000A;The kitchen.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2851,8 +3026,8 @@
     </children>
   </item>
   <item nodeId="node-348">
-    <command xml:space="preserve">go south</command>
-    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2860,8 +3035,8 @@
     </children>
   </item>
   <item nodeId="node-349">
-    <command xml:space="preserve">examine table</command>
-    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go southwest</command>
+    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2869,8 +3044,8 @@
     </children>
   </item>
   <item nodeId="node-350">
-    <command xml:space="preserve">examine dining table</command>
-    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2878,8 +3053,8 @@
     </children>
   </item>
   <item nodeId="node-351">
-    <command xml:space="preserve">examine Dane's placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">examine table</command>
+    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2887,7 +3062,7 @@
     </children>
   </item>
   <item nodeId="node-352">
-    <command xml:space="preserve">examine placecard</command>
+    <command xml:space="preserve">examine Dane's placecard</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
@@ -2896,17 +3071,14 @@
     </children>
   </item>
   <item nodeId="node-353">
-    <command xml:space="preserve">examine anne's placecard</command>
+    <command xml:space="preserve">examine Anne's placecard</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
-    <children>
-      <child nodeId="node-354"/>
-    </children>
   </item>
   <item nodeId="node-354">
-    <command xml:space="preserve">examine the anne placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2914,8 +3086,8 @@
     </children>
   </item>
   <item nodeId="node-355">
-    <command xml:space="preserve">examine the anne's placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go southwest</command>
+    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2923,83 +3095,17 @@
     </children>
   </item>
   <item nodeId="node-356">
-    <command xml:space="preserve">examine Dane's placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-366">
-    <command xml:space="preserve">go southwest</command>
-    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-367"/>
-    </children>
-  </item>
-  <item nodeId="node-367">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-368"/>
+      <child nodeId="node-357"/>
     </children>
-  </item>
-  <item nodeId="node-368">
-    <command xml:space="preserve">examine table</command>
-    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-369"/>
-    </children>
-  </item>
-  <item nodeId="node-369">
-    <command xml:space="preserve">examine Dane's</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-370"/>
-    </children>
-  </item>
-  <item nodeId="node-370">
-    <command xml:space="preserve">examine placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-371"/>
-    </children>
-  </item>
-  <item nodeId="node-371">
-    <command xml:space="preserve">examine Dane's placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-372"/>
-    </children>
-  </item>
-  <item nodeId="node-372">
-    <command xml:space="preserve">examine placecard1</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-373"/>
-    </children>
-  </item>
-  <item nodeId="node-373">
-    <command xml:space="preserve">examine Dane's</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
   </item>
   <item nodeId="node-357">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">examine table</command>
+    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3007,8 +3113,8 @@
     </children>
   </item>
   <item nodeId="node-358">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">examine Dane's</command>
+    <result xml:space="preserve">Dane Fenwick.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3016,8 +3122,8 @@
     </children>
   </item>
   <item nodeId="node-359">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">exameine Cartwright's</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3025,26 +3131,125 @@
     </children>
   </item>
   <item nodeId="node-360">
+    <command xml:space="preserve">examine Cartwright's</command>
+    <result xml:space="preserve">(Cartwright's wallet)&#x000A;Whoops.&#x000A;You should probably find a way to give it back to him.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-381">
+    <command xml:space="preserve">examine umbrella stand</command>
+    <result xml:space="preserve">The weathered wooden umbrella stand has an old forgotten umbrella in it.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-382"/>
+    </children>
+  </item>
+  <item nodeId="node-382">
+    <command xml:space="preserve">examine umbrella</command>
+    <result xml:space="preserve">Shabby, old, a faded shade of purple&#x07DE;it's as weathered as the umbrella stand.&#x000A;&#x000A;Okay, to be fair, that's kind of expected for an umbrella.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-383"/>
+    </children>
+  </item>
+  <item nodeId="node-383">
+    <command xml:space="preserve">take umbrella</command>
+    <result xml:space="preserve">This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-384"/>
+    </children>
+  </item>
+  <item nodeId="node-384">
+    <command xml:space="preserve">examine table</command>
+    <result xml:space="preserve">Hastily dragged here from a different room in the house. Most people would just use a folding table, but you're pretty sure this is an antique.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-385"/>
+    </children>
+  </item>
+  <item nodeId="node-385">
+    <command xml:space="preserve">examine pen</command>
+    <result xml:space="preserve">It's an ordinary ballpoint pen: sleek, black, easy to palm.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-386"/>
+    </children>
+  </item>
+  <item nodeId="node-386">
+    <command xml:space="preserve">examine condolence book</command>
+    <result xml:space="preserve">Not to sound crass, but do the bereaved ever actually read these? It's bad enough having people come up to you in person to give a tactless "he's in a better place now", you can't imagine having a written record of that too.&#x000A;&#x000A;Probably better not to subject yourself to that.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-387"/>
+    </children>
+  </item>
+  <item nodeId="node-387">
+    <command xml:space="preserve">go south</command>
+    <result xml:space="preserve">You're not leaving until you get what you came for.&#x000A;&#x000A;Hell, with your condition you usually end up being forced to leave through another door.&#x000A;&#x000A;&gt; take pen&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-388"/>
+    </children>
+  </item>
+  <item nodeId="node-388">
     <command xml:space="preserve">go north</command>
     <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-361"/>
+      <child nodeId="node-389"/>
     </children>
   </item>
-  <item nodeId="node-361">
-    <command xml:space="preserve">go southwest</command>
-    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
+  <item nodeId="node-389">
+    <command xml:space="preserve">examine cartwright</command>
+    <result xml:space="preserve">(Cartwright's wallet)&#x000A;Whoops.&#x000A;You should probably find a way to give it back to him.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-362"/>
+      <child nodeId="node-390"/>
     </children>
   </item>
+  <item nodeId="node-390">
+    <command xml:space="preserve">examine Cartwright</command>
+    <result xml:space="preserve">(Cartwright's wallet)&#x000A;You should probably find a way to give it back to him.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-391"/>
+    </children>
+  </item>
+  <item nodeId="node-391">
+    <command xml:space="preserve">talk to cartwright</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-392"/>
+    </children>
+  </item>
+  <item nodeId="node-392">
+    <command xml:space="preserve">give Cartwright's Wallet to Cartwright</command>
+    <result xml:space="preserve">(Cartwright)&#x000A;That would be a really, really, really bad idea. I don't think he'll believe you if you claim you "just found it."&#x000A;If you really want to return it, you might want to find someone more sympathetic to your condition.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-361">
+    <command xml:space="preserve">[back]</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your great uncle's home.&#x000A;&#x000A;It's a testthing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
   <item nodeId="node-362">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your uncle's home.&#x000A;&#x000A;You can see John here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3052,8 +3257,8 @@
     </children>
   </item>
   <item nodeId="node-363">
-    <command xml:space="preserve">examine table</command>
-    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3061,8 +3266,8 @@
     </children>
   </item>
   <item nodeId="node-364">
-    <command xml:space="preserve">examine Dane's placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3070,14 +3275,80 @@
     </children>
   </item>
   <item nodeId="node-365">
-    <command xml:space="preserve">examine Anne's placecard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-366"/>
+    </children>
+  </item>
+  <item nodeId="node-366">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">You just can't help yourself, can you.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-367"/>
+    </children>
+  </item>
+  <item nodeId="node-367">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">"THIEF! THIEF!"</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-368"/>
+    </children>
+  </item>
+  <item nodeId="node-368">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">Curb&#x000A;&#x000A;&#x000A;    *** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-369">
+    <command xml:space="preserve">[up]</command>
+    <result xml:space="preserve"></result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-370"/>
+    </children>
+  </item>
+  <item nodeId="node-370">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  &#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-371">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-372"/>
+    </children>
+  </item>
+  <item nodeId="node-372">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-373"/>
+    </children>
+  </item>
+  <item nodeId="node-373">
+    <command xml:space="preserve">x vestibule</command>
+    <result xml:space="preserve">It looks smaller from here. Or maybe you're just farther away from it.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
   <item nodeId="node-374">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Hall&#x000A;The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.&#x000A;&#x000A;To the southwest is the sitting room.&#x000A;To the northwest is the kitchen.&#x000A;To the north is the bathroom.&#x000A;To the northeast is the game room.&#x000A;To the southeast is the library.&#x000A;To the south is the vestibule.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">f</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3085,8 +3356,8 @@
     </children>
   </item>
   <item nodeId="node-375">
-    <command xml:space="preserve">go southwest</command>
-    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3094,17 +3365,14 @@
     </children>
   </item>
   <item nodeId="node-376">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Dining Room&#x000A;There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. &#x000A;There is no placecard for you. The kitchen is to the north. The sitting room is to the south.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">x vestibule</command>
+    <result xml:space="preserve">The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
-    <children>
-      <child nodeId="node-377"/>
-    </children>
   </item>
   <item nodeId="node-377">
-    <command xml:space="preserve">examine table</command>
-    <result xml:space="preserve">The centerpiece takes up alot of room on the table but you can see the ten placecards:&#x000A;&#x000A;Dane's placecard&#x000A;Anne's placecard&#x000A;Rowan's placecard&#x000A;Hildegard's placecard&#x000A;Dimia's placecard&#x000A;Beatrix's placecard&#x000A;Bryce's placecard&#x000A;Cartwright's placecard&#x000A;Cedric's placecard&#x000A;Edmund's placecard.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">g</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200712 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3112,8 +3380,8 @@
     </children>
   </item>
   <item nodeId="node-378">
-    <command xml:space="preserve">examine Dane's</command>
-    <result xml:space="preserve">Dane Fenwick.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3121,8 +3389,8 @@
     </children>
   </item>
   <item nodeId="node-379">
-    <command xml:space="preserve">exameine Cartwright's</command>
-    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. The only exit is back into the hall.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -3130,168 +3398,6 @@
     </children>
   </item>
   <item nodeId="node-380">
-    <command xml:space="preserve">examine Cartwright's</command>
-    <result xml:space="preserve">(Cartwright's wallet)&#x000A;Whoops.&#x000A;You should probably find a way to give it back to him.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-318">
-    <command xml:space="preserve">[back]</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your great uncle's home.&#x000A;&#x000A;It's a testthing.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-319">
-    <command xml:space="preserve">w</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your uncle's home.&#x000A;&#x000A;You can see John here.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-320"/>
-    </children>
-  </item>
-  <item nodeId="node-320">
-    <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-321"/>
-    </children>
-  </item>
-  <item nodeId="node-321">
-    <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-322"/>
-    </children>
-  </item>
-  <item nodeId="node-322">
-    <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-323"/>
-    </children>
-  </item>
-  <item nodeId="node-323">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">You just can't help yourself, can you.</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-324"/>
-    </children>
-  </item>
-  <item nodeId="node-324">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">"THIEF! THIEF!"</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-325"/>
-    </children>
-  </item>
-  <item nodeId="node-325">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Curb&#x000A;&#x000A;&#x000A;    *** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-326">
-    <command xml:space="preserve">[up]</command>
-    <result xml:space="preserve"></result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-327"/>
-    </children>
-  </item>
-  <item nodeId="node-327">
-    <command xml:space="preserve">d</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  &#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-328">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-329"/>
-    </children>
-  </item>
-  <item nodeId="node-329">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-330"/>
-    </children>
-  </item>
-  <item nodeId="node-330">
-    <command xml:space="preserve">x vestibule</command>
-    <result xml:space="preserve">It looks smaller from here. Or maybe you're just farther away from it.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-331">
-    <command xml:space="preserve">f</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-332"/>
-    </children>
-  </item>
-  <item nodeId="node-332">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-333"/>
-    </children>
-  </item>
-  <item nodeId="node-333">
-    <command xml:space="preserve">x vestibule</command>
-    <result xml:space="preserve">The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-334">
-    <command xml:space="preserve">g</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200712 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-335"/>
-    </children>
-  </item>
-  <item nodeId="node-335">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-336"/>
-    </children>
-  </item>
-  <item nodeId="node-336">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. The only exit is back into the hall.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-337"/>
-    </children>
-  </item>
-  <item nodeId="node-337">
     <command xml:space="preserve">examine scarf</command>
     <result xml:space="preserve">"It's truly truly outrageous&#x000A;truly truly truly outrageous."&#x000A;&#x000A;-Jem and The Holograms, Truly Outrageous.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
