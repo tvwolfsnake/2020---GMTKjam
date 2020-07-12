@@ -285,7 +285,7 @@ The plunger is a stealable in the Bathroom. The description of the plunger is "W
 The lotion is a stealable in the Bathroom. The description of the lotion is "Small travel-sized bottle of skin lotion."
 The glass eye is a stealable in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
 The flashlight is a stealable in the Bathroom. The description of the flashlight is "Thin and hefty, the lack of batteries make this flashlight more useful as a bludgeoning weapon."
-The ostentatious scarf is a stealable in the Bathroom. The description of the ostentatious scarf is "''It's truly truly outrageous[line break]truly truly truly outrageous.''[line break][line break]-Jem and The Holograms, ‘Truly Outrageous’." Understand "scarf" as the ostentatious scarf.
+The ostentatious scarf is a stealable in the Bathroom. The description of the ostentatious scarf is "'It's truly truly outrageous[line break]truly truly truly outrageous.'[line break][line break]-Jem and The Holograms, [italic type]Truly Outrageous[roman type]." Understand "scarf" as the ostentatious scarf.
 The sunglasses is a stealable in the Bathroom. The description of the sunglasses is "Dark aviator sunglasses. Goes well with a cowboy hat." Understand "aviator sunglasses" as the sunglasses.
 
 Instead of smelling the soap:
