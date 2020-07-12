@@ -7,7 +7,7 @@ The release number is 1.
 The story creation year is 2020.
 The story headline is "A struggle with kleptomania".
 The story genre is "Comedy".
-The story description is "STORY RELEASE DESCRIPTION HERE"
+The story description is ""
 
 [Release along with cover art ("ALT TEXT FOR COVER ART."). This code is commented out because we do not have cover art yet.]
 
@@ -174,7 +174,6 @@ The empty china plate is stealable. The description of the empty china plate is 
 The golden watch is stealable. The description of the golden watch is "This is Bryce’s chunky golden watch. It does not appear to be working." Understand "gold watch" or "watch" as the golden watch.
 The napkins are scenery in the Sitting Room. The description of the napkins is "With hors d'oeuvres inevitably come napkins. People don't exactly know what to do with them, so they just sort of hold them.[line break][line break]You're not stealing those, even compulsively.".
 The hors d'oeuvre_sitting is scenery in the Sitting room. The hors d'oeuvre_sitting has the printed name "hors d'oeuvre". Understand "hors d'oeuvre" or "hors doeuvre" or "hors doevre" or "horse divorce" as the hors d'oeuvre_sitting. The description of the hors d'oeuvre_sitting is "Hors d'oeuvres sit on napkins in laps, protected from anyone who might accidentally steal them."
-The china cabinet is scenery in the Sitting Room. The description of the china cabinet is "Empty, like it has been for years. The one remaining plate sits on the top of the couch."
 The crowd is scenery in the Sitting Room. The description of the crowd is "They pass around anecdotes". Understand "family", "friends", "family and friends", or "crowd of family and friends" as the crowd.
 
 Dimia is a mourner in the Sitting Room. Dimia is undescribed. The description of Dimia is "[first time]Uncle Clifton's daughter. Her expression is inscrutable, but it seems to suggest a vague notion of sorrow.[line break][line break][only]Dimia doesn't like you. But then, almost nobody in the family does."
