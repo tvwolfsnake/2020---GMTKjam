@@ -256,6 +256,7 @@ Instead of tasting the mystery can:
 
 
 [implement later?]
+[Dining Room]
 
 The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room.
 
@@ -263,6 +264,30 @@ The china cabinet is scenery in the Dining Room. The description of the china ca
 Understand "cabinet" as the china cabinet.
 Instead of opening the china cabinet:
 	say "You pull on the handle and the doors rattle alarmingly, but remain closed. The china locked safely inside.".
+
+[Bathroom]
+
+The Bathroom is north of the hall. The description of the Bathroom is "bathy room."
+
+The soap is a stealable in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap."
+The roll of toilet paper is a stealable in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive."
+The fancy towels is a stealable in the Bathroom. The description of the fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft."
+The plunger is a stealable in the Bathroom. The description of the plunger is "When one uses triple ply toilet paper, one must expect certain results." 
+The lotion is a stealable in the Bathroom. The description of the lotion is "Small travel-sized bottle of skin lotion."
+The glass eye is a stealable in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
+The flashlight is a stealable in the Bathroom. The description of the flashlight is "Thin and hefty, the lack of batteries make this flashlight more useful as a bludgeoning weapon."
+The ostentatious scarf is a stealable in the Bathroom. The description of the ostentatious scarf is "''It's truly truly outrageous[line break]truly truly truly outrageous.''[line break][line break]-Jem and The Holograms, ‘Truly Outrageous’." Understand "scarf" as the ostentatious scarf.
+The sunglasses is a stealable in the Bathroom. The description of the sunglasses is "Dark aviator sunglasses. Goes well with a cowboy hat." Understand "aviator sunglasses" as the sunglasses.
+
+Instead of smelling the soap:
+	say "Smells like irish spring. Which is to say it smells soapy.".
+Instead of touching the roll of toilet paper:
+	say "Ultra Soft. Best for Bear Bottoms.".
+Instead of drinking the lotion:
+	say "You would love to drink this soothing lotion but you can’t seem to get it open.".
+Instead of opening the lotion:
+	say "You would love to open this soothing lotion but you can’t seem to get it open.".
+
 
 [The Small Hallway is north of the hall.]
 
