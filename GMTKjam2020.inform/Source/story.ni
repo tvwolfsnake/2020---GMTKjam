@@ -25,9 +25,9 @@ Kleptomode is a truth state that varies.
 
 When play begins:
 	now kleptomode is false;
-	say "Uncle Clifton is dead.[linebreak][linebreak]";
+	say "Uncle Clifton is dead.[line break][line break]";
 	wait for any key;
-	say "He wasn't even really your uncle. A distant relative of an in-law. MORE DESCRIPTION"
+	say "He wasn't even really your uncle. A distant relative of an in-law. MORE DESCRIPTION";
 	choose row 1 in Table of Basic Help Options;
 	now description entry is "hi! chloe from TEAM here. cool to see you're playing our game.[line break][line break]GAME NAME is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total I have worked on.[line break][line break]the game should take about TIME OF GAME to complete.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, coding[line break]ian kay: writing.".
 
