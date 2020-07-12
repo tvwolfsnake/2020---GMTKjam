@@ -187,6 +187,13 @@ The Library is a first-floor room. The description of the Library is "Library." 
 
 The Game Room is a first-floor room. The Game Room is northeast of the hall. The description of the Game Room is "The bulk of blah taken up by billard table. Bar, etc."
 
+The deer head is a stealable in the Game Room. The description of the deer head is "You guess this is why they call it the GAME room. The decapitated deer glares at you."
+The bear head is a stealable in the Game Room. The description of the bear head is "Even mounted on a wooden plaque, this bear is still intimidating."
+The mounted fish is a stealable in the Game Room. The description of the mounted fish is "This fish looks depressed. To the degree that any fish can look depressed."
+The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
+The billiards table is scenery in the Game room. The description of the billiards table is "You remember when you could barely see over the edge of this table. The billiards table is littered with snooker balls, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
+
+
 [Kitchen]
 
 The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "Kitchen."
