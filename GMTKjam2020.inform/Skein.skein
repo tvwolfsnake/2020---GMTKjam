@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-294"/>
+  <activeNode nodeId="node-299"/>
   <item nodeId="node-1">
     <command xml:space="preserve">GMTKjam2020</command>
-    <result xml:space="preserve">This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.</result>
+    <result xml:space="preserve">Uncle Clifton is dead.</result>
     <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
+    <changed>YES</changed>
     <children>
       <child nodeId="node-2"/>
       <child nodeId="node-9"/>
-      <child nodeId="node-273"/>
-      <child nodeId="node-274"/>
-      <child nodeId="node-281"/>
+      <child nodeId="node-275"/>
+      <child nodeId="node-276"/>
       <child nodeId="node-283"/>
-      <child nodeId="node-286"/>
+      <child nodeId="node-285"/>
+      <child nodeId="node-288"/>
       <child nodeId="node-291"/>
     </children>
   </item>
@@ -80,9 +80,9 @@
   </item>
   <item nodeId="node-9">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200712 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">He wasn't even really your uncle. A distant relative of an in-law. MORE DESCRIPTION&#x000A;Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200712 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
+    <changed>YES</changed>
     <children>
       <child nodeId="node-10"/>
       <child nodeId="node-57"/>
@@ -1651,6 +1651,7 @@
     <changed>NO</changed>
     <children>
       <child nodeId="node-190"/>
+      <child nodeId="node-295"/>
     </children>
   </item>
   <item nodeId="node-190">
@@ -1782,6 +1783,48 @@
   <item nodeId="node-204">
     <command xml:space="preserve">wait</command>
     <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Differentthing and Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-295">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-296"/>
+    </children>
+  </item>
+  <item nodeId="node-296">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-297"/>
+    </children>
+  </item>
+  <item nodeId="node-297">
+    <command xml:space="preserve">go north</command>
+    <result xml:space="preserve">Hall&#x000A;The hall has a polished hardwood floor.&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-298"/>
+    </children>
+  </item>
+  <item nodeId="node-298">
+    <command xml:space="preserve">inv</command>
+    <result xml:space="preserve">You are carrying:&#x000A;  Cartwright's wallet&#x000A;  Church pew pencils&#x000A;  Hymnal&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-299"/>
+    </children>
+  </item>
+  <item nodeId="node-299">
+    <command xml:space="preserve">examine hymnal</command>
+    <result xml:space="preserve">The church where the funeral was held has a lot of these, but you still feel bad for taking it.&#x000A;&#x000A;On the plus side, you'll never forget the words to "O, For A Thousand Tongues To Sing."&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
@@ -2335,7 +2378,7 @@
     <changed>YES</changed>
     <children>
       <child nodeId="node-270"/>
-      <child nodeId="node-289"/>
+      <child nodeId="node-273"/>
     </children>
   </item>
   <item nodeId="node-270">
@@ -2362,48 +2405,30 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-289">
+  <item nodeId="node-273">
     <command xml:space="preserve">examine scarg</command>
     <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-290"/>
+      <child nodeId="node-274"/>
     </children>
   </item>
-  <item nodeId="node-290">
+  <item nodeId="node-274">
     <command xml:space="preserve">examine scarf</command>
     <result xml:space="preserve">""It's truly truly outrageous&#x000A;truly truly truly outrageous.""&#x000A;&#x000A;-Jem and The Holograms, "Truly Outrageous".&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-273">
+  <item nodeId="node-275">
     <command xml:space="preserve">[back]</command>
     <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your great uncle's home.&#x000A;&#x000A;It's a testthing.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-274">
+  <item nodeId="node-276">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Foyer&#x000A;The foyer of your uncle's home.&#x000A;&#x000A;You can see John here.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-275"/>
-    </children>
-  </item>
-  <item nodeId="node-275">
-    <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-276"/>
-    </children>
-  </item>
-  <item nodeId="node-276">
-    <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2412,7 +2437,7 @@
   </item>
   <item nodeId="node-277">
     <command xml:space="preserve">wait</command>
-    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2420,8 +2445,8 @@
     </children>
   </item>
   <item nodeId="node-278">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">You just can't help yourself, can you.</result>
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2429,8 +2454,8 @@
     </children>
   </item>
   <item nodeId="node-279">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">"THIEF! THIEF!"</result>
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take Testthing&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2439,13 +2464,16 @@
   </item>
   <item nodeId="node-280">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Curb&#x000A;&#x000A;&#x000A;    *** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
+    <result xml:space="preserve">You just can't help yourself, can you.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
+    <children>
+      <child nodeId="node-281"/>
+    </children>
   </item>
   <item nodeId="node-281">
-    <command xml:space="preserve">[up]</command>
-    <result xml:space="preserve"></result>
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">"THIEF! THIEF!"</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2453,14 +2481,14 @@
     </children>
   </item>
   <item nodeId="node-282">
-    <command xml:space="preserve">d</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  &#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">Curb&#x000A;&#x000A;&#x000A;    *** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
   <item nodeId="node-283">
-    <command xml:space="preserve">e</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">[up]</command>
+    <result xml:space="preserve"></result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2468,23 +2496,23 @@
     </children>
   </item>
   <item nodeId="node-284">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  &#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-285">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-285"/>
+      <child nodeId="node-286"/>
     </children>
   </item>
-  <item nodeId="node-285">
-    <command xml:space="preserve">x vestibule</command>
-    <result xml:space="preserve">It looks smaller from here. Or maybe you're just farther away from it.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
   <item nodeId="node-286">
-    <command xml:space="preserve">f</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -2492,15 +2520,30 @@
     </children>
   </item>
   <item nodeId="node-287">
+    <command xml:space="preserve">x vestibule</command>
+    <result xml:space="preserve">It looks smaller from here. Or maybe you're just farther away from it.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-288">
+    <command xml:space="preserve">f</command>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200711 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-289"/>
+    </children>
+  </item>
+  <item nodeId="node-289">
     <command xml:space="preserve">n</command>
     <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-288"/>
+      <child nodeId="node-290"/>
     </children>
   </item>
-  <item nodeId="node-288">
+  <item nodeId="node-290">
     <command xml:space="preserve">x vestibule</command>
     <result xml:space="preserve">The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>

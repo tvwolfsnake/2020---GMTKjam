@@ -147,15 +147,16 @@ Instead of going east in the vestibule for more than the first time:
 
 [Hall]
 
-The Hall is north of the vestibule. The description of Hall is "s"
+The Hall is north of the vestibule. The description of Hall is "The hall connest you to the rest of the house. There are six doors leading out of the hall and a stairwell leading up to the second floor.[line break][line break]To the southwest is the sitting room.[line break]To the northwest is the kitchen.[line break]To the north is the bathroom.[line break]To the northeast is the game room.[line break]To the southeast is the library.[line break]To the south is the vestibule."
 
 After deciding the scope of the player while the player is in the Hall:
 	place the Vestibule in scope;
 	place the Sitting Room in scope;
 	place the Library in scope;
 	place the Game Room in scope;
-	place the Kitchen in scope.
-	
+	place the Kitchen in scope;
+	place the Bathroom in scope.
+
 Instead of examining the Vestibule when the player is in the Hall, say "It looks smaller from here. Or maybe you're just farther away from it."
 
 Instead of examining a first-floor room when the player is in the Hall, say "It'd be easier to see if you were inside it."
@@ -216,7 +217,7 @@ Instead of touching the billiards table:
 
 [Kitchen]
 
-The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "Kitchen."
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen"
 
 The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
@@ -276,7 +277,7 @@ Instead of opening the china cabinet:
 
 [Bathroom]
 
-The Bathroom is north of the hall. The description of the Bathroom is "A small but opulent bathroom. By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf. The only exit is back south into the hall."
+The Bathroom is a first-floor room. The Bathroom is north of the hall. The description of the Bathroom is "A small but opulent bathroom. By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf. The only exit is back south into the hall."
 
 The toilet is scenery in the Bathroom. "That's a toilet, alright."
 The sink is scenery in the Bathroom. The description of the sink is "Smooth marble countertop and a sunken sink with ivory taps."
