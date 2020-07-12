@@ -110,7 +110,7 @@ Part I - Get Upstairs
 
 [Vestibule]
 
-Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
+Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
 
 The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 2014]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
 
@@ -276,11 +276,14 @@ Instead of opening the china cabinet:
 
 [Bathroom]
 
-The Bathroom is north of the hall. The description of the Bathroom is "A small but opulent bathroom. The only exit is back into the hall."
+The Bathroom is north of the hall. The description of the Bathroom is "A small but opulent bathroom. By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf. The only exit is back south into the hall."
+
+The toilet is scenery in the Bathroom. "That's a toilet, alright."
+The sink is scenery in the Bathroom. The description of the sink is "Smooth marble countertop and a sunken sink with ivory taps."
 
 The soap is a stealable in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap."
 The roll of toilet paper is a stealable in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive."
-The fancy towels is a stealable in the Bathroom. The description of the fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft."
+The fancy towels is a stealable in the Bathroom. The description of the fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft." Understand "towels" as the fancy towels. Understand "towel" as the fancy towels. Understand "fancy towel" as the fancy towels.
 The plunger is a stealable in the Bathroom. The description of the plunger is "When one uses triple ply toilet paper, one must expect certain results." 
 The lotion is a stealable in the Bathroom. The description of the lotion is "Small travel-sized bottle of skin lotion."
 The glass eye is a stealable in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
