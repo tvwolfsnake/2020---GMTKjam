@@ -238,11 +238,16 @@ The bear head is a stealable in the Game Room. The description of the bear head 
 The mounted fish is a stealable in the Game Room. The description of the mounted fish is "This fish looks depressed. To the degree that any fish can look depressed."
 The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
 The billiards table is scenery in the Game room. The description of the billiards table is "You remember when you could barely see over the edge of this table. The billiards table is littered with snooker balls, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
-
+The darts is a stealable in the Game Room. The Description of the darts is "These darts are probably made out of some real endangerd peacock feathers or something."
 Instead of touching the billiards table:
 	say "You felt the felt.[line break][line break]";
 	wait for any key;
 	say "Actually the fabric on the table is baize, a coarse woollen cloth, similar in texture to felt, but more durable.".
+
+A snookerball is a kind of stealable. A red snooker ball is a kind of snookerball. A yellow snooker ball is a kind of snookerball. A green snooker ball is a kind of snookerball. A brown snooker ball is a kind of snookerball. A blue snooker ball is a kind of snookerball. A pink snooker ball is a kind of snookerball. A black snooker ball is a kind of snookerball. A cue ball is a kind of snookerball.
+
+There are 15 red snooker balls in the Game Room. There are 6 yellow snooker balls in the Game Room. There are 6 green snooker balls in the Game Room. There are 6 brown snooker balls in the Game Room. There are 6 blue snooker balls in the Game Room. There are 6 pink snooker balls in the Game Room. There are 6 black snooker balls in the Game Room. There is 1 cue ball in the Game Room
+
 
 [Kitchen]
 
@@ -303,6 +308,7 @@ The china cabinet is scenery in the Dining Room. The description of the china ca
 Understand "cabinet" as the china cabinet.
 Instead of opening the china cabinet:
 	say "You pull on the handle and the doors rattle alarmingly, but remain closed. The china locked safely inside.".
+
 
 [Bathroom]
 
