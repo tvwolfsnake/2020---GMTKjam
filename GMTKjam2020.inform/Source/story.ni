@@ -7,7 +7,7 @@ The release number is 1.
 The story creation year is 2020.
 The story headline is "a struggle with kleptomania".
 The story genre is "Comedy".
-The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave.[line break][line break]Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
+The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave. Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
 
 Release along with cover art ("A roll of toilet paper, a ring of keys, a cigarette, and a fancy pocketwatch with the letters C.F. on it, rendered in a black and white comic book style.").
 
@@ -195,14 +195,14 @@ Instead of going east in the vestibule for more than the first time:
 
 The Hall is north of the vestibule. The description of Hall is "This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south[first time], where you just came from,[only] is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.[first time][line break][line break]Cedric and Bryce whisper about something. You can only make out the words [quotation mark]alter[quotation mark] and [quotation mark]will[quotation mark].[line break][line break]When they see you, they quickly move to the game room.[only]"
 
-After deciding the scope of the player while the player is in the Hall:
+[After deciding the scope of the player while the player is in the Hall:
 	place the Vestibule in scope;
 	place the Sitting Room in scope;
 	place the Library in scope;
 	place the Game Room in scope;
 	place the Dining Room in scope;
 	place the Kitchen in scope;
-	place the Bathroom in scope.
+	place the Bathroom in scope.]
 
 Instead of examining the Vestibule when the player is in the Hall, say "It looks smaller from here. Or maybe you're just farther away from it."
 
@@ -213,7 +213,7 @@ Cartwright is a mourner in the hall. The description of Cartwright is "[first ti
 Instead of going up in the hall:
 	say "Cartwright stops you in your tracks. He doesn't want you upstairs, and you know him just well enough to know he's not interested in any stories about a pocketwatch." instead.
 
-[Instead of giving a peanut butter canapé to Cartwright in the hall:
+Instead of giving a peanut butter canapé to Cartwright in the hall:
 	say "In order to get past him, you give Cartwright--a man whose allergies might be way more severe than you're aware of--a common and potentially life-threatening allergen.[line break][line break]";
 	wait for any key;
 	clear screen;
@@ -222,7 +222,7 @@ Instead of going up in the hall:
 	say "What is wrong with you?";
 	wait for any key;
 	clear screen;
-	try looking.]
+	try looking.
 
 [Differentthing is a stealable in the Hall. The description of the differentthing is "It's different." Differentthing is undescribed.]
 
@@ -259,9 +259,13 @@ The lawn table is in the Lawn. The lawn table is undescribed. The peanut butter 
 
 The description of the lawn table is "It's just a table for food."
 
-The peanut butter canapés are scenery. The description of the peanut butter canapés is "Well, you like hors d'oeuvres, but not these."
 
-[A peanut butter canapé is a kind of thing. 100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible.] Understand "canapes" or "peanut canapes" or "peanut butter canapes" or "hors doeuvre" or "hors d'oeuvre" as the peanut butter canapés.
+
+A peanut butter canapé is a kind of thing.  100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible. Understand "canapes" or "canape" or "peanut canapes" or "peanut canape" or "peanut butter canapes" or "peanut butter canape" or "hors doeuvre" or "hors d'oeuvre" as the peanut butter canapés.
+
+Instead of examining a peanut butter canapé, say "Delicious finger food."
+
+Before taking a peanut butter canapé, say "Hey, it's not stealing if it's free food."
 
 Hildegard is a person in the Lawn. Hildegard is undescribed. The description of Hildegard is "[first time]Anne's daughter. You've known each other growing up, since she's only a few years younger than you. She tends to get overstimulated at social gatherings, so you'll often find her somewhere quieter.[line break][line break][only]She's the only person other than Uncle Clifton who seems to understand what you're going through. She's covered for you in a few tense situations, pretending to [quotation mark]find[quotation mark] things you unintentionally stole, as long as you gave the thing to her."
 
@@ -527,12 +531,12 @@ Instead of taking the letter opener during Gun Scene:
 	wait for any key;
 	end the story saying "You have died".
 	
-[Instead of giving the peanut butter canapé to Cartwright during Gun Scene:
+Instead of giving the peanut butter canapé to Cartwright during Gun Scene:
 	say "Cartwright's deathly allergic, but he's also a quick shot.[line break][line break]";
 	wait for any key;
-	say "Who brings a canapé to a gunfight?";
+	say "Seriously, who brings a canapé to a gunfight?";
 	wait for any key;
-	end the story saying "You have died".]
+	end the story saying "You and Cartwright have died".
 
 The rolling chair is scenery in Uncle Clifton's Study. Understand "chair" as the rolling chair. The description of the rolling chair is "An old leather rolling chair. Parts of it are peeling off, and friction on the seat over years of sitting has turned it from brown to almost white.".
 

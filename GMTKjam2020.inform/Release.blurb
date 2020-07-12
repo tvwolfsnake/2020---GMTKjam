@@ -23,7 +23,7 @@ placeholder [RELEASE] = "1"
 placeholder [YEAR] = "2020"
 placeholder [TITLE] = "you can't take it with you"
 placeholder [AUTHOR] = "take all games"
-placeholder [BLURB] = "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave.[line break][line break]Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
+placeholder [BLURB] = "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave. Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
 
 ! Other material to release
 
