@@ -87,7 +87,7 @@ Check taking a stealable:
 		[if the player is in Hors D'oeuvres Table...]
 		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
-Instead of taking scenery, say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are."
+Instead of taking scenery, say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are. Your compulsion will figure out something else to take, when the time comes."
 
 [starting inventory]
 
@@ -101,9 +101,9 @@ Part I - Get Upstairs
 
 [Vestibule]
 
-Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if].  Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
+Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
 
-The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is a stealable inside the umbrella_stand. The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 2014]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
+The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 2014]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
 
 There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is stealable. The table is scenery.
 
@@ -159,23 +159,25 @@ The hunting trophy is a stealable in the Hall. The description of the hunting tr
 
 [Sitting Room]
 
-The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "Family and friends share condolences, drink champagne, and eat the hors d'oeuvres that remain on their napkins. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table. An empty champagne flute sits on top of it.[line break][line break]To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there."
+The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.[line break][line break]To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there."
 
 The game table is scenery in the Sitting Room. The chess set is on the game table. The champagne flute is on the game table.
-The couch is scenery in the Sitting Room. The pack of cigarettes is on the couch. The ashtray is on the couch. The description of the couch is "It's probably an antique."
+The couch is scenery in the Sitting Room. The pack of cigarettes is on the couch. The ashtray is on the couch. The clutch is on the couch. The sweater is on the couch. The jacket is on the couch. The empty china plate is on the couch. The golden watch is on the couch. The description of the couch is "It's probably an antique."
 The chess set is stealable. The description of the chess set is "A portable chessboard with small wooden chess pieces carved to resemble civil war soldiers. Both sides are modeled in the image of Union soldiers.[line break][line break]There’s a story there."
 The pack of cigarettes is stealable. The description of the pack of cigarettes is "You look down at the half-empty pack of cigarettes. The weirdly sexually-charged camel mascot stares back at you through his Ray-Ban sunglasses."
 The ashtray is stealable. The description of the ashtray is "Shallow yellow glass tray, currently empty."
-The clutch is a stealable in the Sitting Room. The description of the clutch is "Soft velvet with pearl adornment on the handle. You don’t know who this clutch belongs to."
-The sweater is a stealable in the Sitting Room. The description of the sweater is "A thin black cardigan." Understand "cardigan" or "black cardigan" or "thin black cardigan" or "thin cardigan" as the sweater.
-The jacket is a stealable in the Sitting Room. The description of the jacket is "A plain black leather jacket with almost no wear or tear." Understand "leather jacket" or "black leather jacket" or "plain black leather jacket" or "plain leather jacket" as the jacket.
+The clutch is stealable. The description of the clutch is "Soft velvet, with pearl adornment on the handle. You don’t know who this clutch belongs to."
+The sweater is stealable. The description of the sweater is "A thin black cardigan." Understand "cardigan" or "black cardigan" or "thin black cardigan" or "thin cardigan" as the sweater.
+The jacket is stealable. The description of the jacket is "A plain black leather jacket with almost no wear or tear." Understand "leather jacket" or "black leather jacket" or "plain black leather jacket" or "plain leather jacket" as the jacket.
 The champagne flute is stealable. The description of the champagne flute is "A thin glass tube on a thin glass stem." Understand "flute" as the champagne flute.
-The empty china plate is a stealable in the Sitting Room. The description of the empty china plate is "The last surviving remnant of Clifton’s favourite china set.  Very recently full of hors d’oeuvres. Currently littered with the debris of said hors d’oeuvres."
-The golden watch is a stealable in the Sitting Room. The description of the golden watch is "This is Bryce’s chunky golden watch. It does not appear to be working."
+The empty china plate is stealable. The description of the empty china plate is "The last surviving remnant of Clifton’s favourite china set.  Very recently full of hors d’oeuvres. Currently littered with the debris of said hors d’oeuvres."
+The golden watch is stealable. The description of the golden watch is "This is Bryce’s chunky golden watch. It does not appear to be working." Understand "gold watch" or "watch" as the golden watch.
 The napkins are scenery in the Sitting Room. The description of the napkins is "With hors d'oeuvres inevitably come napkins. People don't exactly know what to do with them, so they just sort of hold them.[line break][line break]You're not stealing those, even compulsively.".
 The hors d'oeuvre_sitting is scenery in the Sitting room. The hors d'oeuvre_sitting has the printed name "hors d'oeuvre". Understand "hors d'oeuvre" or "hors doeuvre" or "hors doevre" or "horse divorce" as the hors d'oeuvre_sitting. The description of the hors d'oeuvre_sitting is "Hors d'oeuvres sit on napkins in laps, protected from anyone who might accidentally steal them."
+The china cabinet is scenery in the Sitting Room. The description of the china cabinet is "Empty, like it has been for years. The one remaining plate sits on the top of the couch."
+The crowd is scenery in the Sitting Room. The description of the crowd is "They pass around anecdotes". Understand "family", "friends", "family and friends", or "crowd of family and friends" as the crowd.
 
-Dimia is a mourner in the Sitting Room. The description of Dimia is "Uncle Clifton's daughter. She "
+Dimia is a mourner in the Sitting Room. Dimia is undescribed. The description of Dimia is "[first time]Uncle Clifton's daughter. Her expression is inscrutable, but it seems to suggest a vague notion of sorrow.[line break][line break][only]Dimia doesn't like you. But then, almost nobody in the family does."
 
 
 [scope lawn]
@@ -228,7 +230,7 @@ The Upstairs Landing is up from the Hall.
 
 The Attic is up from the Upstairs Landing.
 
-Instead of going up in the Upstairs Landing, say "You'd really rather not. This is a nice house, but it's still an old house, and the attic is unfinished. Who knows how many rotted boards are up there?"
+Instead of going up in the Upstairs Landing, say "You'd really rather not. This is a nice house, but it's still an old house, and the attic is unfinished. Who knows how many rotten boards are up there?"
 
 The Upstairs Balcony_north is a room with printed name "Upstairs Balcony (north end)". The Upstairs Balcony_north is west of the Upstairs Landing.
 
