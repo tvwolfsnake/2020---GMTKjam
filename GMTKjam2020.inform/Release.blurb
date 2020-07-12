@@ -1,18 +1,18 @@
 ! Blurb file created by Inform build 6M62
 
-status "C:\Program Files (x86)\Inform 7\Internal\Miscellany\CblorbModel.html" "D:\2020---GMTK\GMTKjam2020.inform\Build\StatusCblorb.html"
+status "C:\Program Files (x86)\Inform 7\Internal\Miscellany\CblorbModel.html" "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Build\StatusCblorb.html"
 
 
 ! Identification
 
-project folder "D:\2020---GMTK\GMTKjam2020.inform"
-release to "D:\2020---GMTK\GMTKjam2020.materials\Release"
+project folder "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform"
+release to "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Release"
 
 ! Blorb instructions
 
 storyfile leafname "Uncle Albert in a Can.gblorb"
-storyfile "D:\2020---GMTK\GMTKjam2020.inform\Build\output.ulx" include
-ifiction "D:\2020---GMTK\GMTKjam2020.inform\Metadata.iFiction" include
+storyfile "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Build\output.ulx" include
+ifiction "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Metadata.iFiction" include
 cover "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
 picture 1 "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
 release file "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
@@ -33,17 +33,17 @@ placeholder [BLURB] = "STORY RELEASE DESCRIPTION HERE"
 ! Website instructions
 
 placeholder [ENCODEDSTORYFILE] = "Uncle Albert in a Can.gblorb.js"
-template path "D:\2020---GMTK\GMTKjam2020.materials\Templates"
-template path "C:\Users\Joshua\Documents\Inform\Templates"
+template path "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Templates"
+template path "C:\Users\fireh\Documents\Inform\Templates"
 template path "C:\Program Files (x86)\Inform 7\Internal\Templates"
 placeholder [INTERPRETERSCRIPTS] = " "
 interpreter "Quixe" "g"
-base64 "D:\2020---GMTK\GMTKjam2020.inform\Build\output.ulx" to "D:\2020---GMTK\GMTKjam2020.materials\Release\interpreter\Uncle Albert in a Can.gblorb.js"
+base64 "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Build\output.ulx" to "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Release\interpreter\Uncle Albert in a Can.gblorb.js"
 
 ! Website instructions
 
-template path "D:\2020---GMTK\GMTKjam2020.materials\Templates"
-template path "C:\Users\Joshua\Documents\Inform\Templates"
+template path "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Templates"
+template path "C:\Users\fireh\Documents\Inform\Templates"
 template path "C:\Program Files (x86)\Inform 7\Internal\Templates"
 css
 website "Standard"

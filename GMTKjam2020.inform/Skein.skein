@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-249"/>
+  <activeNode nodeId="node-283"/>
   <item nodeId="node-1">
     <command xml:space="preserve">GMTKjam2020</command>
     <result xml:space="preserve">This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.</result>
@@ -79,7 +79,7 @@
   </item>
   <item nodeId="node-9">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200712 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Uncle Albert in a Can&#x000A;A struggle with kleptomania by Unnamed Game Jam Team&#x000A;Release 1 / Serial number 200712 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -100,7 +100,7 @@
       <child nodeId="node-218"/>
       <child nodeId="node-219"/>
       <child nodeId="node-227"/>
-      <child nodeId="node-245"/>
+      <child nodeId="node-251"/>
     </children>
   </item>
   <item nodeId="node-10">
@@ -110,6 +110,7 @@
     <changed>NO</changed>
     <children>
       <child nodeId="node-11"/>
+      <child nodeId="node-245"/>
     </children>
   </item>
   <item nodeId="node-11">
@@ -458,6 +459,57 @@
   <item nodeId="node-50">
     <command xml:space="preserve">wait</command>
     <result xml:space="preserve">Time passes.&#x000A;&#x000A;Differentthing&#x000A;&gt; take *** Couldn't read from entry 1 of a list which is empty ***&#x000A;&#x000A;*** Run-time problem P50: Attempt to use list item which does not exist.&#x000A;&#x000A;nothing&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;Differentthing&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-245">
+    <command xml:space="preserve">ait</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-246"/>
+    </children>
+  </item>
+  <item nodeId="node-246">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-247"/>
+    </children>
+  </item>
+  <item nodeId="node-247">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-248"/>
+    </children>
+  </item>
+  <item nodeId="node-248">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-249"/>
+    </children>
+  </item>
+  <item nodeId="node-249">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-250"/>
+    </children>
+  </item>
+  <item nodeId="node-250">
+    <command xml:space="preserve">x umbrella stand</command>
+    <result xml:space="preserve">The umbrella stand is empty.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
@@ -1366,7 +1418,86 @@
   </item>
   <item nodeId="node-156">
     <command xml:space="preserve">sw</command>
-    <result xml:space="preserve">Sitting Room&#x000A;Family and friends share condolences, drink champagne, and eat the hors d'oeuvres that remain on their napkins.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;Looking around the room, you see .&#x000A;&#x000A;You can see Dimia here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-275"/>
+      <child nodeId="node-283"/>
+    </children>
+  </item>
+  <item nodeId="node-275">
+    <command xml:space="preserve">x dimia</command>
+    <result xml:space="preserve">Uncle Clifton's daughter. Her expression is inscrutable, but it seems to suggest a vague notion of sorrow.&#x000A;&#x000A;Dimia doesn't like you. But then, almost nobody in the family does.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-276"/>
+    </children>
+  </item>
+  <item nodeId="node-276">
+    <command xml:space="preserve">x dimia</command>
+    <result xml:space="preserve">Dimia doesn't like you. But then, almost nobody in the family does.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-277"/>
+    </children>
+  </item>
+  <item nodeId="node-277">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-278"/>
+    </children>
+  </item>
+  <item nodeId="node-278">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-279"/>
+    </children>
+  </item>
+  <item nodeId="node-279">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take clutch&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-280"/>
+    </children>
+  </item>
+  <item nodeId="node-280">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You just can't help yourself, can you.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-281"/>
+    </children>
+  </item>
+  <item nodeId="node-281">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">"THIEF! THIEF!"</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-282"/>
+    </children>
+  </item>
+  <item nodeId="node-282">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">*** You have been thrown out ***&#x000A;&#x000A;&#x000A;&#x000A;Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-283">
+    <command xml:space="preserve">x cigarettes</command>
+    <result xml:space="preserve">You look down at the half-empty pack of cigarettes. The weirdly sexually-charged camel mascot stares back at you through his Ray-Ban sunglasses.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
@@ -1973,45 +2104,216 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-245">
-    <command xml:space="preserve">go north</command>
-    <result xml:space="preserve">Hall&#x000A;s&#x000A;&#x000A;You can see Cartwright here.&#x000A;&#x000A;&gt;</result>
+  <item nodeId="node-251">
+    <command xml:space="preserve">x umbrella stand</command>
+    <result xml:space="preserve">The weathered wooden umbrella stand has an old forgotten umbrella in it.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-252"/>
+    </children>
+  </item>
+  <item nodeId="node-252">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-246"/>
+      <child nodeId="node-253"/>
     </children>
   </item>
-  <item nodeId="node-246">
-    <command xml:space="preserve">go west</command>
-    <result xml:space="preserve">Dining Room&#x000A;&#x000A;&gt;</result>
+  <item nodeId="node-253">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-247"/>
+      <child nodeId="node-254"/>
     </children>
   </item>
-  <item nodeId="node-247">
-    <command xml:space="preserve">examine cupboard</command>
-    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+  <item nodeId="node-254">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-248"/>
+      <child nodeId="node-255"/>
     </children>
   </item>
-  <item nodeId="node-248">
-    <command xml:space="preserve">examine china cabinet</command>
-    <result xml:space="preserve">A tall wooden cabinet. Through the glass panels in the doors, you can see an absurdly expensive collection of fancy, mostly unused fine china.&#x000A;&#x000A;&gt;</result>
+  <item nodeId="node-255">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-249"/>
+      <child nodeId="node-256"/>
     </children>
   </item>
-  <item nodeId="node-249">
-    <command xml:space="preserve">open china cabinet</command>
-    <result xml:space="preserve">The doors rattle alarmingly, but remain closed. The china jailed safely inside.&#x000A;&#x000A;&gt;</result>
+  <item nodeId="node-256">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-257"/>
+    </children>
+  </item>
+  <item nodeId="node-257">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take pen&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-258"/>
+    </children>
+  </item>
+  <item nodeId="node-258">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-259"/>
+    </children>
+  </item>
+  <item nodeId="node-259">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-260"/>
+    </children>
+  </item>
+  <item nodeId="node-260">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-261"/>
+    </children>
+  </item>
+  <item nodeId="node-261">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which lies open.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-262"/>
+    </children>
+  </item>
+  <item nodeId="node-262">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-263"/>
+    </children>
+  </item>
+  <item nodeId="node-263">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-264"/>
+    </children>
+  </item>
+  <item nodeId="node-264">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take condolence book&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-265"/>
+    </children>
+  </item>
+  <item nodeId="node-265">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it.  Next to it, a table has been set up for the condolence book, which is missing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-266"/>
+    </children>
+  </item>
+  <item nodeId="node-266">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-267"/>
+    </children>
+  </item>
+  <item nodeId="node-267">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-268"/>
+    </children>
+  </item>
+  <item nodeId="node-268">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-269"/>
+    </children>
+  </item>
+  <item nodeId="node-269">
+    <command xml:space="preserve">ait</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-270"/>
+    </children>
+  </item>
+  <item nodeId="node-270">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-271"/>
+    </children>
+  </item>
+  <item nodeId="node-271">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-272"/>
+    </children>
+  </item>
+  <item nodeId="node-272">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take umbrella&#x000A;You stuff it in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-273"/>
+    </children>
+  </item>
+  <item nodeId="node-273">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom to the Hall to the north. On your left, a weathered wooden umbrella stand sits.  Next to it, a table has been set up for the condolence book, which is missing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-274"/>
+    </children>
+  </item>
+  <item nodeId="node-274">
+    <command xml:space="preserve">x umbrella stand</command>
+    <result xml:space="preserve">The weathered wooden umbrella stand is umbrellaless.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
