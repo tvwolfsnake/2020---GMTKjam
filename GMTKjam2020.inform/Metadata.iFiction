@@ -11,10 +11,16 @@
             <headline>A struggle with kleptomania</headline>
             <genre>Comedy</genre>
             <firstpublished>2020</firstpublished>
-            <description></description>
+            <description>You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave.[line break][line break]Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac.</description>
             <language>en</language>
             <group>Inform</group>
         </bibliographic>
+        <cover>
+            <format>jpg</format>
+            <height>960</height>
+            <width>960</width>
+            <description>A roll of toilet paper, a ring of keys, a cigarette, and a fancy pocketwatch with the letters C.F. on it, rendered in a black and white comic book style.</description>
+        </cover>
         <releases>
             <attached>
                 <release>
@@ -34,6 +40,7 @@
             <serial>200712</serial>
             <release>1</release>
             <compiler>Inform 7 build 6M62</compiler>
+            <coverpicture>1</coverpicture>
         </glulx>
     </story>
 </ifindex>
