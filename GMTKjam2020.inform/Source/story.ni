@@ -267,7 +267,7 @@ Instead of opening the china cabinet:
 
 [Bathroom]
 
-The Bathroom is north of the hall. The description of the Bathroom is "bathy room."
+The Bathroom is north of the hall. The description of the Bathroom is "A small but opulent bathroom. The only exit is back into the hall."
 
 The soap is a stealable in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap."
 The roll of toilet paper is a stealable in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive."
