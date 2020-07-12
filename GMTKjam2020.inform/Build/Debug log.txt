@@ -14,7 +14,7 @@ Reading language definition from <C:\Program Files (x86)\Inform 7\Internal\Langu
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 8530 words long.
+I've now read your source text, which is 8431 words long.
 
 
 -----------------------------------------------------
@@ -179,7 +179,7 @@ Phase XIII ... Compilation now complete
 
 CAT "A roll of toilet paper, a ring of keys, a cigarette, and a fancy pocketwatch with the letters C.F. on it, rendered in a black and white comic book style."
 Total of 106 files written as streams.
-CPU time: 111 centiseconds
+CPU time: 112 centiseconds
 
 
 That concludes the debugging log from this run of Inform.
