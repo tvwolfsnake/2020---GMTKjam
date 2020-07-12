@@ -233,7 +233,26 @@ Instead of smelling the delicate tea cup:
 
 [Pantry]
 
-The Pantry is north of the Kitchen. The description of the Pantry is "Pantry."
+The Pantry is north of the Kitchen. The description of the Pantry is "A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf at eye-level, you can see a can of beans, a can of corn, a mystery can, and a key. The kitchen to the south is the only exit."
+
+The can of beans is a stealable in the Pantry. The description of the can of beans is "Like most cans, this metal tube is opaque and you must trust, for now, in the veracity of the label that claims it contains beans."
+The can of corn is a stealable in the Pantry. The description of the can of corn is "The verdant colossus on the label is very muscular, selling you effectively on the ameliorating health benefits of regular vegetable consumption. His smile makes you feel funny."
+The mystery can is a stealable in the Pantry. The description of the mystery can is "The label’s long worn off, and what you can make out looks like branding from about fifty years ago.  You’ve offered to pitch it more than once, but Uncle Clifton always kept it around. For...sentimental reasons? You guess?"
+The key is a stealable in the Pantry. The description of the key is "Mysterious, heavy, bronze key. Begging to be picked up."
+
+Instead of smelling the can of beans:
+	say "Tinny.".
+Instead of tasting the can of beans:
+	say "Tinny.".
+Instead of smelling the can of corn:
+	say "Tinny.".
+Instead of tasting the can of corn:
+	say "Tinny.".
+Instead of smelling the mystery can:
+	say "Mysterious...".
+Instead of tasting the mystery can:
+	say "Mysterious...".
+
 
 [implement later?]
 
