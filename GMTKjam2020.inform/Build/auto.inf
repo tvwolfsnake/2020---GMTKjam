@@ -18568,11 +18568,11 @@ Array ActionHappened --> 0 0 0 0 0;
     ParaContent(); new_line;! [5: line break]
     ParaContent(); new_line; .L_Say31; .L_SayX31;! [6: wait for any key]
     KeyPause();
-    ! [7: say ~Who brings a canapé to a gunfight?~]
-    say__p=1;! [8: ~Who brings a canapé to a gunfight?~]
-    ParaContent(); print "Who brings a canapé to a gunfight?"; new_line; .L_Say32; .L_SayX32;! [9: wait for any key]
+    ! [7: say ~Seriously, who brings a canapé to a gunfight?~]
+    say__p=1;! [8: ~Seriously, who brings a canapé to a gunfight?~]
+    ParaContent(); print "Seriously, who brings a canapé to a gunfight?"; new_line; .L_Say32; .L_SayX32;! [9: wait for any key]
     KeyPause();
-    ! [10: end the story saying ~You have died~]
+    ! [10: end the story saying ~You and Cartwright have died~]
     deadflag=TX_L_275; story_complete=false;
     RulebookFails(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_896, 896, 'action');
@@ -18609,7 +18609,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ParaContent(); print "Maybe you shouldn't have brought a knife to a gun fight."; new_line; .L_Say35; .L_SayX35;! [9: wait for any key]
     KeyPause();
     ! [10: end the story saying ~You have died~]
-    deadflag=TX_L_275; story_complete=false;
+    deadflag=TX_L_276; story_complete=false;
     RulebookFails(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_895, 895, 'action');
     } else if (debug_rules > 1) DB_Rule(R_895, 895, 'scene');
@@ -18633,7 +18633,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ParaContent(); print "Cartwright did."; new_line; .L_Say37; .L_SayX37;! [9: wait for any key]
     KeyPause();
     ! [10: end the story saying ~You have died~]
-    deadflag=TX_L_275; story_complete=false;
+    deadflag=TX_L_276; story_complete=false;
     RulebookFails(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_904, 904, 'action');
     } else if (debug_rules > 1) DB_Rule(R_904, 904, 'scene');
@@ -19291,7 +19291,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ParaContent(); print "Cartwright moves his pointer finger."; new_line; .L_Say87; .L_SayX87;! [9: wait for any key]
     KeyPause();
     ! [10: end the story saying ~You have died~]
-    deadflag=TX_L_275; story_complete=false;
+    deadflag=TX_L_276; story_complete=false;
     RulebookFails(); rtrue;
     } else if (debug_rules > 1) DB_Rule(R_905, 905, 'action');
     } else if (debug_rules > 1) DB_Rule(R_905, 905, 'scene');
@@ -19384,7 +19384,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ! [17: now the letter opener is on the partners desk]
     MoveObject(I397_letter_opener,I395_partners_desk);
     ! [18: now the description of the desk is ~A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.~]
-    BlkValueCopy(GProperty(10, I395_partners_desk,description), TX_L_276);
+    BlkValueCopy(GProperty(10, I395_partners_desk,description), TX_L_277);
     ! [19: now the description of uncle clifton's study is ~You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. [if letter opener is unheld]The letter opener on the desk.[end if][line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.~]
     BlkValueCopy(GProperty(10, I393_uncle_clifton_s_study,description), (TEXT_TY_ExpandIfPerishable(I7SFRAME,TX_S_179)));
     ! [20: try looking]
@@ -26418,7 +26418,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ParaContent(); print "~";! [8: ~Go back to the hall, and I'll yell to Cartwright that I found his wallet.~]
     ParaContent(); print "Go back to the hall, and I'll yell to Cartwright that I found his wallet.";! [9: quotation mark]
     ParaContent(); print "~"; .L_Say385; .L_SayX385;! [10: now the description of hildegard is ~Hildegard is a lot of things, but right now she's mostly waiting for you to go to the hall~]
-    BlkValueCopy(GProperty(10, I264_hildegard,description), TX_L_277);
+    BlkValueCopy(GProperty(10, I264_hildegard,description), TX_L_278);
     rfalse;
 ];
 ! ----------------------------------------------------------------------------------------------------
@@ -26780,7 +26780,7 @@ Array ActionHappened --> 0 0 0 0 0;
     ParaContent(); new_line; .L_Say413; .L_SayX413;! [12: wait for any key]
     KeyPause();
     ! [13: now the left hand status line is ~Your Car~]
-    BlkValueCopy(left_hand_status_line, TX_L_278);
+    BlkValueCopy(left_hand_status_line, TX_L_279);
     ! [14: say ~You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face.~]
     say__p=1;! [15: ~You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face.~]
     ParaContent(); print "You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face."; new_line; .L_Say414; .L_SayX414;! [16: end the story finally]
@@ -61388,8 +61388,8 @@ Constant TX_PS_236 = ">";
 Constant TX_PS_97 = "A clearing full of lush green grass. A table is set up with, at this point, just peanut butter canapés. Standing near the table is Hildegard, a rare friendly face.";
 Constant TX_PS_109 = "A clumsy coward, but a whiz at snooker. Not that you've played with him. He's drinking scotch with Cedric.";
 Constant TX_PS_150 = "A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf at eye-level, you can see a can of beans, a can of corn, a mystery can, and a key. The kitchen to the south is the only exit.";
-Constant TX_PS_276 = "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
-Array TX_L_276 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_276;
+Constant TX_PS_277 = "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
+Array TX_L_277 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_277;
 Constant TX_PS_231 = "A petty fake by petty takers.";
 Constant TX_PS_85 = "A plain black leather jacket with almost no wear or tear.";
 Constant TX_PS_148 = "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts.";
@@ -61440,8 +61440,8 @@ Constant TX_PS_211 = "Guest bedroom door";
 Constant TX_PS_65 = "Hall";
 Constant TX_PS_235 = "He's a college rower, so he spends a lot of time in the kitchen searching for protein. He'll probably be in here a while. He's ignoring you because he hasn't noticed you, but if he had, he'd still be ignoring you.";
 Constant TX_PS_107 = "He's genial enough, but it's mostly superficial. He's drinking scotch with Bryce.";
-Constant TX_PS_277 = "Hildegard is a lot of things, but right now she's mostly waiting for you to go to the hall";
-Array TX_L_277 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_277;
+Constant TX_PS_278 = "Hildegard is a lot of things, but right now she's mostly waiting for you to go to the hall";
+Array TX_L_278 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_278;
 Constant TX_PS_101 = "Hildegard";
 Constant TX_PS_173 = "Hildegard's placecard";
 Constant TX_PS_161 = "Hildegarde's mom. She looks exhausted. She doesn't look thrilled to see you.";
@@ -61533,17 +61533,19 @@ Constant TX_PS_215 = "Upstairs Balcony (south end)";
 Constant TX_PS_208 = "Upstairs Landing";
 Constant TX_PS_59 = "Vestibule";
 Constant TX_PS_199 = "When one uses triple ply toilet paper, one must expect certain results.";
+Constant TX_PS_275 = "You and Cartwright have died";
+Array TX_L_275 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_275;
 Constant TX_PS_111 = "You guess this is why they call it the GAME room. The decapitated deer glares at you.";
 Constant TX_PS_274 = "You have been thrown out";
 Array TX_L_274 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_274;
-Constant TX_PS_275 = "You have died";
-Array TX_L_275 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_275;
+Constant TX_PS_276 = "You have died";
+Array TX_L_276 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_276;
 Constant TX_PS_238 = "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave. Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac.";
 Constant TX_PS_77 = "You look down at the half-empty pack of cigarettes. The weirdly sexually-charged camel mascot stares back at you through his Ray-Ban sunglasses.";
 Constant TX_PS_119 = "You remember when you could barely see over the edge of this table. The snooker table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts.";
 Constant TX_PS_123 = "You've never been much of a drinker.";
-Constant TX_PS_278 = "Your Car";
-Array TX_L_278 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_278;
+Constant TX_PS_279 = "Your Car";
+Array TX_L_279 --> CONSTANT_PACKED_TEXT_STORAGE TX_PS_279;
 Constant TX_PS_54 = "Yourself";
 Constant TX_PS_3 = "a struggle with kleptomania";
 Constant TX_PS_9 = "animals";
