@@ -1,11 +1,11 @@
-"Uncle Albert in a Can" by Unnamed Game Jam Team
+"you can't take it with you" by Unnamed Game Jam Team
 [here is a comment to test whether we can work on separate parts of the project without issue]
 [title obviously not final]
 [we really need to think of a team name, or else just credit it A&B&C]
 
 The release number is 1.
 The story creation year is 2020.
-The story headline is "A struggle with kleptomania".
+The story headline is "a struggle with kleptomania".
 The story genre is "Comedy".
 The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave.[line break][line break]Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
 
@@ -101,6 +101,8 @@ Every turn:
 The block giving rule is not listed in the check giving it to rules. 
 				
 Instead of putting, inserting, or dropping a stealable, say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them."
+
+Instead of wearing a stealable, say "You'd look really cool, but they might catch on."
 
 Check giving a stealable to a person:
 	if the person is a mourner:
