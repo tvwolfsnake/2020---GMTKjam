@@ -20,6 +20,7 @@ Release along with the "Quixe" interpreter.
 [BASIC RULES]
 
 Kleptomode is a truth state that varies.
+wallet_given is a truth state that varies.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
@@ -31,6 +32,7 @@ He was a friend.]
 
 When play begins:
 	now kleptomode is false;
+	now wallet_given is false;
 	say "Uncle Clifton is dead.[line break][line break]";
 	wait for any key;
 	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
@@ -58,7 +60,7 @@ When play begins:
 	wait for any key;
 	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
-	now description entry is "hi! chloe from TEAM here. cool to see you're playing our game.[line break][line break]GAME NAME is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total I have worked on.[line break][line break]the game should take about TIME OF GAME to complete.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, coding[line break]ian kay: writing.".
+	now description entry is "hi! chloe from TEAM here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]the game should take about TIME OF GAME to complete.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, coding[line break]ian kay: writing.".
 
 A stealable is a kind of undescribed thing.
 
@@ -79,24 +81,25 @@ Every turn:
 	let L be the steal list;
 	now L is the list of visible unheld stealables;
 	if the remainder after dividing the turn count by 7 is zero:
-		if L is non-empty:
-			now kleptomode is true;
-			try silently taking a random visible unheld stealable;
-			say "> take [most-recently-taken list][line break]You stuff it in your pocket as surreptitiously as you can.";
-			now kleptomode is false;
-			if a mourner is touchable:
-				wait for any key;
-				say "[line break]You just can't help yourself, can you.[line break][line break]";
-				wait for any key;
-				say "[quotation mark]THIEF! THIEF![quotation mark]";
-				wait for any key;
-				clear screen;
-				now the left hand status line is "The Curb";
-				end the story saying "You have been thrown out";
-		if L is empty:
-			say "Your fingers itch.";
-			if a mourner is touchable:
-				say "[line break]You feel eyes on you."
+		if wallet_given is false:
+			if L is non-empty:
+				now kleptomode is true;
+				try silently taking a random visible unheld stealable;
+				say "> take [most-recently-taken list][line break]You stuff it in your pocket as surreptitiously as you can.";
+				now kleptomode is false;
+				if a mourner is touchable:
+					wait for any key;
+					say "[line break]You just can't help yourself, can you.[line break][line break]";
+					wait for any key;
+					say "[quotation mark]THIEF! THIEF![quotation mark]";
+					wait for any key;
+					clear screen;
+					now the left hand status line is "The Curb";
+					end the story saying "You have been thrown out";
+			if L is empty:
+				say "Your fingers itch.";
+				if a mourner is touchable:
+					say "[line break]You feel eyes on you."
 
 The block giving rule is not listed in the check giving it to rules. 
 				
@@ -224,6 +227,12 @@ Dimia is a mourner in the Sitting Room. Dimia is undescribed. The description of
 
 [Lawn]
 The Lawn is west of the sitting room. The description of the Lawn is "Description of lawn. Hors d'oeuvres, also a person who isn't a jerk about your condition"
+
+Hildegard is a person in the Lawn. Hildegard is undescribed. The description of Hildegard is "[first time]Anne's daughter. You've known each other growing up, since she's only a few years younger than you. She tends to get overstimulated at social gatherings, so you'll often find her somewhere quieter.[line break][line break][only]She's the only person other than Uncle Clifton who seems to understand what you're going through. She's covered for you in a few tense situations, pretending to [quotation mark]find[quotation mark] things you unintentionally stole, as long as you gave the thing to her."
+
+Instead of giving the wallet to Hildegard:
+	now the wallet is nowhere;
+	now wallet_given is true.
 
 [scope sitting room]
 
@@ -356,6 +365,9 @@ Master_door is east of the Master Bedroom and northwest of the Upstairs Balcony_
 
 Uncle Clifton's Study is west of the Upstairs Balcony_south.
 
+Instead of going in Uncle Clifton's Study:
+	say "There's something much more important in here.".
+
 
 [A balcony extends to your west and then wraps around to the south end of the mansion. Its railing overlooks the Hall.]
 
@@ -365,6 +377,26 @@ North of here is the other end of the balcony ]
 
 [[if the flashlight is held] attic description]
 
+Wallet Scene is a scene. Wallet Scene begins when wallet_given is true. Wallet Scene ends when the player is in the Hall.
+
+When Wallet Scene begins:
+	say "Hildegard grins, taking the wallet.[line break][line break]She leans in conspiratorially. [quotation mark]Go back to the hall, and I'll yell to Cartwright that I found his wallet.[quotation mark]";
+	now the description of Hildegard is "Hildegard is a lot of things, but right now she's mostly waiting for you to go to the hall".
+	
+When Wallet Scene ends:
+	say "A muffled cry from the other room:[line break][line break][quotation mark]Cartwright! I found your wallet![quotation mark][line break][line break]";
+	wait for any key;
+	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break][quotation mark]You found my wallet?[quotation mark][line break][line break]";
+	now Cartwright is nowhere;
+	wait for any key;
+	say "Now's your chance! You duck up the stairs and tiptoe over to Uncle Clifton's study.";
+	now the player is in Uncle Clifton's Study.
+
+[Instead of attacking Cartwright in Uncle Clifton's Study:
+	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break]"
+	wait for any key;
+	say "Cartwright did.";
+	end the story saying "You have died"]
 
 Part III - Now Go Back Downstairs
 
