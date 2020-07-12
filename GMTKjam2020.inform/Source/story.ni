@@ -233,27 +233,73 @@ The Library is a first-floor room. The description of the Library is "Library." 
 
 [Game Room]
 
-The Game Room is a first-floor room. The Game Room is northeast of the hall. The description of the Game Room is "The bulk of blah taken up by billard table. Bar, etc."
+The Game Room is a first-floor room. The Game Room is northeast of the hall. The description of the Game Room is "The bulk of the Game Room is taken up by billiards table, which holds a variety of snooker balls and a handful of darts. On the far wall hangs a dartboard, a mounted fish, a bear head, and a deer head. Theres a bar at the end of the room. On top of the bar there are several bottles of alcohol: vodka, gin, rum, whiskey, scotch, sherry, and drambuie. The hall is to the southwest."
 
 The deer head is a stealable in the Game Room. The description of the deer head is "You guess this is why they call it the GAME room. The decapitated deer glares at you."
 The bear head is a stealable in the Game Room. The description of the bear head is "Even mounted on a wooden plaque, this bear is still intimidating."
 The mounted fish is a stealable in the Game Room. The description of the mounted fish is "This fish looks depressed. To the degree that any fish can look depressed."
 The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
-The billiards table is scenery in the Game room. The description of the billiards table is "You remember when you could barely see over the edge of this table. The billiards table is littered with snooker balls, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
+The billiards table is scenery in the Game room. The description of the billiards table is "You remember when you could barely see over the edge of this table. The billiards table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
 The darts is a stealable in the Game Room. The Description of the darts is "These darts are probably made out of some real endangerd peacock feathers or something."
 Instead of touching the billiards table:
 	say "You felt the felt.[line break][line break]";
 	wait for any key;
 	say "Actually the fabric on the table is baize, a coarse woollen cloth, similar in texture to felt, but more durable.".
 
+The vodka is a stealable in the Game Room. The description of the vodka is "You've never been much of a drinker."
+The gin is a stealable in the Game Room. The description of the gin is "You've never been much of a drinker."
+The rum is a stealable in the Game Room. The description of the rum is "You've never been much of a drinker."
+The whiskey is a stealable in the Game Room. The description of the whiskey is "You've never been much of a drinker."
+The scotch is a stealable in the Game Room. The description of the scotch is "You've never been much of a drinker."
+The sherry is a stealable in the Game Room. The description of the sherry is "You've never been much of a drinker."
+The drambuie is a stealable in the Game Room. The description of the drambuie is "You've never been much of a drinker."
+
+The bar is scenery in the Game Room. The description of the bar is "On top of the bar there are several bottles of alcohol: vodka, gin, rum, whiskey, scotch, sherry, and drambuie."
+
+Instead of drinking the vodka:
+	say "You've never been much of a drinker.".
+Instead of smelling the vodka:
+	say "You've never been much of a drinker.".
+Instead of drinking the gin:
+	say "You've never been much of a drinker.".
+Instead of smelling the gin:
+	say "You've never been much of a drinker.".
+Instead of drinking the rum:
+	say "You've never been much of a drinker.".
+Instead of smelling the rum:
+	say "You've never been much of a drinker.".
+Instead of drinking the whiskey:
+	say "You've never been much of a drinker.".
+Instead of smelling the whiskey:
+	say "You've never been much of a drinker.".
+Instead of drinking the scotch:
+	say "You've never been much of a drinker.".
+Instead of smelling the scotch:
+	say "You've never been much of a drinker.".
+Instead of drinking the sherry:
+	say "You've never been much of a drinker.".
+Instead of smelling the sherry:
+	say "You've never been much of a drinker.".
+Instead of drinking the drambuie:
+	say "You've never been much of a drinker.".
+Instead of smelling the drambuie:
+	say "You've never been much of a drinker.".
+
 A snookerball is a kind of stealable. A red snooker ball is a kind of snookerball. A yellow snooker ball is a kind of snookerball. A green snooker ball is a kind of snookerball. A brown snooker ball is a kind of snookerball. A blue snooker ball is a kind of snookerball. A pink snooker ball is a kind of snookerball. A black snooker ball is a kind of snookerball. A cue ball is a kind of snookerball.
 
-There are 15 red snooker balls in the Game Room. There are 6 yellow snooker balls in the Game Room. There are 6 green snooker balls in the Game Room. There are 6 brown snooker balls in the Game Room. There are 6 blue snooker balls in the Game Room. There are 6 pink snooker balls in the Game Room. There are 6 black snooker balls in the Game Room. There is 1 cue ball in the Game Room
-
+There are 15 red snooker balls in the Game Room. There are 6 yellow snooker balls in the Game Room. There are 6 green snooker balls in the Game Room. There are 6 brown snooker balls in the Game Room. There are 6 blue snooker balls in the Game Room. There are 6 pink snooker balls in the Game Room. There are 6 black snooker balls in the Game Room. There is 1 cue ball in the Game Room.
+The description of a  red snooker ball is "It's red."
+The description of a  yellow snooker ball is "It's yellow."
+The description of a  green snooker ball is "It's green."
+The description of a  brown snooker ball is "It's brown."
+The description of a  blue snooker ball is "It's blue."
+The description of a  pink snooker ball is "It's pink."
+The description of a  black snooker ball is "It's black."
+The description of a  cue ball is "It's white."
 
 [Kitchen]
 
-The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen"
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen."
 
 The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
@@ -304,17 +350,29 @@ Instead of tasting the mystery can:
 [implement later?]
 [Dining Room]
 
-The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room.
+The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken table with a large centerpiece and ten placecards set around the table. [line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south."
 
 The china cabinet is scenery in the Dining Room. The description of the china cabinet is "A tall wooden cabinet. Through the glass panels in the cabinet doors, you can see an absurdly expensive collection of fancy, mostly unused fine china."
 Understand "cabinet" as the china cabinet.
 Instead of opening the china cabinet:
 	say "You pull on the handle and the doors rattle alarmingly, but remain closed. The china locked safely inside.".
+The centerpiece is scenery in the Dining Room. The description of the centerpiece is "The centerpiece is a large ornate ice sculpture of Uncle Clifton holding his hands towards you magnanimously. It's already starting to melt."
 
+A placecard is a kind of stealable.
+placecard1 is a placecard. The description of placecard1 is "Dane Fenwick."
+placecard2 is a placecard. The description of placecard2 is "Anne Chaucer Fenwick."
+placecard3 is a placecard. The description of placecard3 is "Rowan Writingham."
+placecard4 is a placecard. The description of placecard4 is "Hildegard Fenwick."
+placecard5 is a placecard. The description of placecard5 is "Dimia Fenwick."
+placecard6 is a placecard. The description of placecard6 is "Beatrix Cornwallis-Fenwick."
+placecard7 is a placecard. The description of placecard7 is "Bryce Fenwick."
+placecard8 is a placecard. The description of placecard8 is "Cartwright Fenwick."
+placecard9 is a placecard. The description of placecard9 is "Cedric William Fenwick."
+placecard10 is a placecard. The description of placecard10 is "Edmund Fenwick."
 
 [Bathroom]
 
-The Bathroom is a first-floor room. The Bathroom is north of the hall. The description of the Bathroom is "A small but opulent bathroom. By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf. The only exit is back south into the hall."
+The Bathroom is a first-floor room. The Bathroom is north of the Hall. The description of the Bathroom is "A small but opulent bathroom. By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf. The only exit is back south into the hall."
 
 The toilet is scenery in the Bathroom. "That's a toilet, alright."
 The sink is scenery in the Bathroom. The description of the sink is "Smooth marble countertop and a sunken sink with ivory taps."
