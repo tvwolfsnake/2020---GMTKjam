@@ -7,9 +7,9 @@ The release number is 1.
 The story creation year is 2020.
 The story headline is "A struggle with kleptomania".
 The story genre is "Comedy".
-The story description is ""
+The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave.[line break][line break]Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
 
-[Release along with cover art ("ALT TEXT FOR COVER ART."). This code is commented out because we do not have cover art yet.]
+Release along with cover art ("A roll of toilet paper, a ring of keys, a cigarette, and a fancy pocketwatch with the letters C.F. on it, rendered in a black and white comic book style.").
 
 Include Basic Help Menu by Emily Short.
 
@@ -21,10 +21,15 @@ Release along with the "Quixe" interpreter.
 
 Kleptomode is a truth state that varies.
 
+[This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
+
 When play begins:
 	now kleptomode is false;
-	say "This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.";
-	wait for any key.	
+	say "Uncle Clifton is dead.[linebreak][linebreak]";
+	wait for any key;
+	say "He wasn't even really your uncle. A distant relative of an in-law. MORE DESCRIPTION"
+	choose row 1 in Table of Basic Help Options;
+	now description entry is "hi! chloe from TEAM here. cool to see you're playing our game.[line break][line break]GAME NAME is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total I have worked on.[line break][line break]the game should take about TIME OF GAME to complete.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, coding[line break]ian kay: writing.".
 
 A stealable is a kind of undescribed thing.
 
@@ -92,6 +97,10 @@ Instead of taking scenery, say "Against your will, you've gotten pretty good at 
 [starting inventory]
 
 Cartwright's wallet is a stealable. The player carries Cartwright's wallet. The description of Cartwright's wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him."
+
+Church pew pencils is a stealable. The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
+
+Hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to [quotation mark]O, For A Thousand Tongues To Sing.[quotation mark]"
 
 
 
