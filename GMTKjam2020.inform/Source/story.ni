@@ -285,8 +285,7 @@ Hildegard is a person in the Lawn. Hildegard is undescribed. The description of 
 
 Instead of giving the wallet to Hildegard:
 	now the wallet is nowhere;
-	now wallet_given is true;
-	now kleptomode is true.
+	now wallet_given is true.
 
 [scope sitting room]
 
@@ -601,6 +600,7 @@ When Wallet Scene begins:
 	now the description of Hildegard is "Hildegard is a lot of things, but right now she's mostly waiting for you to go to the hall".
 	
 When Wallet Scene ends:
+	now kleptomode is true;
 	say "A muffled cry from the other room:[line break][line break][quotation mark]Cartwright! I found your wallet![quotation mark][line break][line break]";
 	wait for any key;
 	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break][quotation mark]You found my wallet?[quotation mark][line break][line break]";
