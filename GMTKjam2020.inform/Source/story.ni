@@ -8,6 +8,7 @@ The story creation year is 2020.
 The story headline is "a struggle with kleptomania".
 The story genre is "Comedy".
 The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave. Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
+After printing the banner text, say "Type HELP for more information."
 
 Release along with cover art ("A roll of toilet paper, a ring of keys, a cigarette, and a fancy pocketwatch with the letters C.F. on it, rendered in a black and white comic book style.").
 
@@ -23,6 +24,7 @@ Kleptomode is a truth state that varies.
 wallet_given is a truth state that varies.
 gun_start is a truth state that varies.
 kitchen_visited is a truth state that varies.
+knife_disambiguation is a truth state that varies.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
@@ -37,6 +39,7 @@ When play begins:
 	now wallet_given is false;
 	now gun_start is false;
 	now kitchen_visited is false;
+	now knife_disambiguation is false;
 	say "Uncle Clifton is dead.[line break][line break]";
 	wait for any key;
 	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
@@ -68,7 +71,7 @@ When play begins:
 	wait for any key;
 	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
-	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all. the previous sentence was a lie.[line break][line break]it was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
+	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
 
 A stealable is a kind of undescribed thing.
 
@@ -77,6 +80,8 @@ A mourner is a kind of person.
 A first-floor room is a kind of room.
 
 Definition: a stealable is unheld if it is not carried.
+
+Definition: a thing is unheld if it is not carried.
 
 The steal list is a list of objects that varies.
 
@@ -105,7 +110,7 @@ Every turn:
 					now the left hand status line is "The Curb";
 					end the story saying "You have been thrown out";
 			if L is empty:
-				say "Your fingers itch.";
+				say "Your fingers itch. There's nothing for them to take.";
 				if a mourner is touchable:
 					say "[line break]You feel eyes on you."
 
@@ -117,7 +122,12 @@ Instead of putting, inserting, or dropping a stealable:
 	if gun_start is true:
 		say "No, you're keeping all of this stuff."
 
-Instead of wearing a stealable, say "You'd look really cool, but they might catch on."
+Instead of wearing a stealable:
+	if gun_start is false:
+		say "You'd look really cool, but they might catch on.";
+	if gun_start is true:
+		say "Hell yeah.";
+		now the player is wearing the noun.
 
 Check giving a stealable to a person:
 	if the person is a mourner:
@@ -138,7 +148,11 @@ Check taking a stealable:
 		[if the player is in Hors D'oeuvres Table...]
 		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
-Instead of taking scenery, say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are. Your compulsion will figure out something else to take, when the time comes."
+Check taking scenery:
+	if kleptomode is false:
+		say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are. Your compulsion will figure out something else to take, when the time comes.";
+	if kleptomode is true:
+		say "You can't carry that, which is a damn shame."
 
 [starting inventory]
 
@@ -507,7 +521,10 @@ The silver pocketwatch is in Uncle Clifton's Study. The description of the silve
 After taking the silver pocketwatch:
 	say "You grab the pocketwatch, not in an act of compulsive theft, but as a statement of ownership.[line break][line break]";
 	wait for any key;
-	say "You take a moment of silence, to remember Uncle Clifton by. The only sound is the muffled ticking of his pocketwatch in your pocket.[line break][line break]";
+	clear the screen;
+	say "You take a moment of silence, to remember Uncle Clifton by.";
+	wait for any key;
+	say "The only sound is the muffled ticking of his pocketwatch in your pocket.[line break][line break]";
 	wait for any key;
 	say "With the moment of silence over, now you can leave this damn house.";
 	now the papers are nowhere;
@@ -515,7 +532,7 @@ After taking the silver pocketwatch:
 	now the doctored will is on the partners desk;
 	now the letter opener is on the partners desk;
 	now the description of the desk is "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
-	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. [if letter opener is unheld]The letter opener on the desk.[end if][line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.";
+	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. [if the letter opener is unheld]The letter opener on the desk.[end if][line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.";
 	try looking.
 	
 Instead of putting, inserting, or dropping the silver pocketwatch, say "This is staying right in your pocket, where it belongs."
@@ -525,18 +542,27 @@ The partners desk is scenery in Uncle Clifton's Study. Understand "desk" as the 
 The description of the letter opener is "Long, with a white-bone handle. Surprisingly sharp.". The letter opener is undescribed. Understand "knife" as the letter opener.
 
 Instead of taking the letter opener during Gun Scene:
-	say "Cartwright sees you reaching for the knife, and fires.[line break][line break]";
+	say "Cartwright sees you reaching for the [if knife_disambiguation is true]letter opener[end if][if knife_disambiguation is false]knife[end if], and fires.[line break][line break]";
 	wait for any key;
 	say "Maybe you shouldn't have brought a knife to a gun fight.";
 	wait for any key;
 	end the story saying "You have died".
 	
 Instead of giving the peanut butter canapé to Cartwright during Gun Scene:
+	say "Cartwright's deathly allergic, but he shoots you before you get close.[line break][line break]";
+	wait for any key;
+	say "Seriously, who brings a canapé to a gunfight?";
+	wait for any key;
+	end the story saying "You have died".
+	
+Instead of throwing the peanut butter canapé at Cartwright during Gun Scene:
 	say "Cartwright's deathly allergic, but he's also a quick shot.[line break][line break]";
 	wait for any key;
 	say "Seriously, who brings a canapé to a gunfight?";
 	wait for any key;
-	end the story saying "You and Cartwright have died".
+	end the story saying "Cartwright has died, but so have you".
+	
+Instead of giving the silver pocketwatch to Cartwright during Gun Scene, say "It's what he wants, but 1. you get the sense that any false moves will send you to the same place as Uncle Clifton, and 2. you're taking this damn watch with you."
 
 The rolling chair is scenery in Uncle Clifton's Study. Understand "chair" as the rolling chair. The description of the rolling chair is "An old leather rolling chair. Parts of it are peeling off, and friction on the seat over years of sitting has turned it from brown to almost white.".
 
@@ -597,6 +623,17 @@ Instead of going during the Gun Scene:
 	wait for any key;
 	end the story saying "You have died".
 	
+Stabbing is an action applying to one thing. Understand "stab [something]" as stabbing.
+
+Instead of stabbing Cartwright:
+	if gun_start is false:
+		say "Even if you had a knife, stabbing people out of nowhere is generally considered both [quotation mark]rude[quotation mark] and [quotation mark]attempted murder.[quotation mark][line break]";
+	if gun_start is true:
+		if the player carries the letter opener:
+			try attacking Cartwright instead;
+		otherwise:
+			now knife_disambiguation is true;
+			try taking the letter opener.
 
 Gun Scene is a scene. Gun Scene begins when gun_start is true. Gun Scene ends when the time since Gun Scene began is 7 minutes.
 
@@ -620,7 +657,8 @@ When Gun Scene begins:
 	say "You hear the unmistakable [italic type]cli-cli-click[roman type] of a revolver hammer being pulled back.";
 	now Cartwright is in Uncle Clifton's Study;
 	now Cartwright is carrying the revolver;
-	now the description of Uncle Clifton's Study is "There's a rolling chair,[if letter opener is held]and[end if] a desk[if letter opener is held].[end if][if letter opener is unheld], and a letter opener.[end if][line break][line break]Oh also, Cartwright is standing in the doorway, brandishing a six-shooter at you.";
+	now the description of Uncle Clifton's Study is "There's a rolling chair, [if letter opener is held]and [end if]a desk[if letter opener is held].[end if][if letter opener is unheld], and a letter opener.[end if][line break][line break]Oh also, Cartwright is standing in the doorway, brandishing a six-shooter at you.";
+	now the description of Cartwright is "You know those old rich fratty white guys who hold people at gunpoint?[line break][line break]Yeah. Exactly.";
 	try looking.
 	
 Every turn during Gun Scene:
@@ -637,11 +675,12 @@ When Gun Scene ends:
 	clear screen;
 	say "You find yourself holding Cartwright at gunpoint. Waving the revolver in the direction of the desk chair until the scared bully sits down.[line break][line break]";
 	wait for any key;
-	say "Your body moves without you, sprinting out of the room towards the stairs[line break][line break]";
+	say "Your body moves without you, sprinting out of the room towards the stairs.[line break][line break]";
 	wait for any key;
 	say "Fuck this family.[line break][line break]";
 	wait for any key;
-	say "You're taking everything that isn't nailed down.".
+	say "You're taking everything that isn't nailed down.";
+	wait for any key.
 	
 Part III - Now Go Back Downstairs
 	
@@ -655,11 +694,11 @@ When Chase Scene Hall begins:
 	say "You see Edmund charging you.[line break][line break]";
 	wait for any key;
 	say "You duck into the kitchen.";
+	now the description of the kitchen is "The caterers sprint out of the room, because you're sprinting into it with a gun. Rowan freezes, a handful of ham in his hand. Then he bolts as well.";
 	now the player is in the kitchen;
 	let L be the list of visible unheld stealables;
-	now the description of the kitchen is "Everyone runs out of the room, because you're sprinting into it with a gun. Here's a list of everything you can steal from the kitchen now: [L with definite articles].";
-	try looking;
-	say "[line break]Take all of it!".
+	say "Here's a list of everything you can steal from the kitchen now: [L with definite articles].";
+	say "Take all of it!".
 	
 Instead of going during Chase Scene Hall:
 	say "You have enough time to grab something before they catch up to you."
@@ -670,11 +709,11 @@ When Chase Scene Dining begins:
 	say "Edmund finally catches up to you.[line break][line break]";
 	wait for any key;
 	say "You dodge him and run into the dining room.";
+	now the description of the dining room is "The caterers have already fled. On her way out of the room, Anne flashes you a dirty look.";
 	now the player is in the dining room;
 	let L be the list of visible unheld stealables;
-	now the description of the dining room is "Yet again, a hasty retreat by the WASPs. Yet again, more things to steal: [L with definite articles].";
-	try looking;
-	say "[line break]Take everything!".
+	say "Anyways, there's more things to steal: [L with indefinite articles].";
+	say "Take everything!".
 	
 Instead of going during Chase Scene Dining:
 	say "You have enough time to grab something before they catch up to you."
@@ -683,10 +722,10 @@ Chase Scene Sitting is a scene. Chase Scene Sitting begins when Chase Scene Dini
 
 When Chase Scene Sitting begins:
 	say "Edmund catches up to you again, but the new, slippery loafers he's wearing finally get the best of him, and he faceplants into the dining room floor.[line break][line break]You run into the sitting room with extra time to spare.";
+	now the description of the sitting room is "This room was crowded just a few minutes ago. It seems like the people who were in here took the door to the hall and then barricaded it. Cool.";
 	now the player is in the sitting room;
 	let L be the list of visible unheld stealables;
-	now the description of the sitting room is "This room was crowded just a few minutes ago. It seems like the people who were in here took the door to the hall and then barricaded it. Cool. Anyways, it's time to steal: [L with definite articles]. Take it all.";
-	try looking.
+	say "Anyways, it's time to steal: [L with definite articles]. Take it all.".
 
 Instead of going during Chase Scene Sitting:
 	say "You have more than enough time."
@@ -694,8 +733,10 @@ Instead of going during Chase Scene Sitting:
 When Chase Scene Sitting ends:
 	say "Probably best to quit while you're ahead.[line break][line break]";
 	wait for any key;
+	now the description of the lawn is "";
+	say "You sprint out onto the lawn.";
 	now the player is in the lawn;
-	say "You run out onto the lawn. Hildegard gives you a high five.[line break][line break]";
+	say "In the pandemonium, the hors d'oeuvres table was knocked over. Peanut butter canapés litter the grass beneath your feet, crunching as you run. Hildegard gives you a high five.[line break][line break]";
 	wait for any key;
 	now the left hand status line is "Your Car";
 	say "You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face.";
