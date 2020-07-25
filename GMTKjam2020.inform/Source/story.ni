@@ -156,9 +156,9 @@ Check taking scenery:
 
 [starting inventory]
 
-The wallet is a stealable with the printed name "Cartwright's wallet". The player carries the wallet. The description of the wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him." Understand "wallet" as the wallet.
+wallet is stealable with the printed name "Cartwright's wallet". The player carries wallet. The description of wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him." Understand "wallet" as the wallet.
 
-The church pew pencils are a stealable. The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
+church pew pencils are stealable. The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
 
 The hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to [quotation mark]O, For A Thousand Tongues To Sing.[quotation mark]"
 
@@ -306,8 +306,8 @@ The deer head is a stealable in the Game Room. The description of the deer head 
 The bear head is a stealable in the Game Room. The description of the bear head is "Even mounted on a wooden plaque, this bear is still intimidating."
 The mounted fish is a stealable in the Game Room. The description of the mounted fish is "This fish looks depressed. To the degree that any fish can look depressed."
 The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
-The snooker table is scenery in the Game room. The description of the snooker table is "You remember when you could barely see over the edge of this table. The snooker table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts."
-The darts is a stealable in the Game Room. The Description of the darts is "These darts are probably made out of some real endangerd peacock feathers or something."
+The snooker table is scenery in the Game room. The description of the snooker table is "You remember when you could barely see over the edge of this table. The snooker table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts.".
+darts are a stealable in the Game Room. The Description of darts is "These darts are probably made out of some real endangerd peacock feathers or something."
 Instead of touching the snooker table:
 	say "You felt the felt.[line break][line break]";
 	wait for any key;
@@ -326,31 +326,31 @@ The bar is scenery in the Game Room. The description of the bar is "On top of th
 Instead of drinking the vodka:
 	say "You've never been much of a drinker.".
 Instead of smelling the vodka:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 Instead of drinking the gin:
 	say "You've never been much of a drinker.".
 Instead of smelling the gin:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 Instead of drinking the rum:
 	say "You've never been much of a drinker.".
 Instead of smelling the rum:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 Instead of drinking the whiskey:
 	say "You've never been much of a drinker.".
 Instead of smelling the whiskey:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 Instead of drinking the scotch:
 	say "You've never been much of a drinker.".
 Instead of smelling the scotch:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 Instead of drinking the sherry:
 	say "You've never been much of a drinker.".
 Instead of smelling the sherry:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 Instead of drinking the drambuie:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. ".
 Instead of smelling the drambuie:
-	say "You've never been much of a drinker.".
+	say "You've never been much of a drinker. The smell makes you feel sick.".
 
 A snookerball is a kind of stealable. A red snooker ball is a kind of snookerball. A yellow snooker ball is a kind of snookerball. A green snooker ball is a kind of snookerball. A brown snooker ball is a kind of snookerball. A blue snooker ball is a kind of snookerball. A pink snooker ball is a kind of snookerball. A black snooker ball is a kind of snookerball. A cue ball is a kind of snookerball.
 
@@ -370,15 +370,15 @@ The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The des
 
 The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
-Loose grapes is a stealable in The Kitchen. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
+Loose grapes are stealable. Loose grapes are in The Kitchen. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
 Understand "grapes" as the loose grapes.
 The empty bottle is a stealable in The Kitchen. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
 Understand "bottle" as the empty bottle.
 The recipe book is a stealable in The Kitchen. The description of the recipe book is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
 
-Instead of smelling the loose grapes:
+Instead of smelling loose grapes:
 	say "If you close your eyes you can pretend you are smelling eyeballs. If that’s something you’re into.".
-Instead of tasting the loose grapes:
+Instead of tasting loose grapes:
 	say "You aren’t in the mood for eyeballs.".
 Instead of drinking the empty bottle:
 	say "You gulp down a fresh mouthful of air. Refreshing!".
@@ -390,7 +390,7 @@ Instead of touching the delicate tea cup:
 	say "Careful! You’ll break it!".
 Instead of smelling the delicate tea cup:
 	say "Careful! You’ll break it!".
-Instead of eating the loose grapes:
+Instead of eating loose grapes:
 	say "You aren’t in the mood for eyeballs.".
 	
 Before going north in the Dining Room:
@@ -459,25 +459,25 @@ The dining table is scenery in the Dining Room. The description of the dining ta
 
 A placecard is a kind of stealable.
 
-The placecard1 is a placecard in the Dining room. The description of the placecard1 is "It reads: Dane Fenwick.". The printed name of the placecard1 is "Dane's placecard". Understand "Dane's placecard" as the placecard1. Understand "Dane's" as the placecard1.
+placecard1 is a placecard in the Dining room. The description of placecard1 is "It reads: Dane Fenwick.". The printed name of placecard1 is "Dane's placecard". Understand "Dane's placecard" as placecard1. Understand "Dane's" as placecard1.
 
-The placecard2 is a placecard in the Dining room. The description of the placecard2 is "It reads: Anne Chaucer Fenwick.". The printed name of the placecard2 is "Anne's placecard". Understand "Anne's placecard" as the placecard2. Understand "Anne's" as the placecard2.
+placecard2 is a placecard in the Dining room. The description of placecard2 is "It reads: Anne Chaucer Fenwick.". The printed name of placecard2 is "Anne's placecard". Understand "Anne's placecard" as placecard2. Understand "Anne's" as placecard2.
 
-The placecard3 is a placecard in the Dining room. The description of the placecard3 is "It reads: Rowan Writingham.". The printed name of the placecard3 is "Rowan's placecard". Understand "Rowan's placecard" as the placecard3. Understand "Rowan's" as the placecard3.
+placecard3 is a placecard in the Dining room. The description of placecard3 is "It reads: Rowan Writingham.". The printed name of placecard3 is "Rowan's placecard". Understand "Rowan's placecard" as placecard3. Understand "Rowan's" as placecard3.
 
-The placecard4 is a placecard in the Dining room. The description of the placecard4 is "It reads: Hildegard Fenwick.". The printed name of the placecard4 is "Hildegard's placecard". Understand "Hildegard's placecard" as the placecard4. Understand "Hildegard's" as the placecard4.
+placecard4 is a placecard in the Dining room. The description of placecard4 is "It reads: Hildegard Fenwick.". The printed name of placecard4 is "Hildegard's placecard". Understand "Hildegard's placecard" as placecard4. Understand "Hildegard's" as placecard4.
 
-The placecard5 is a placecard in the Dining room. The description of the placecard5 is "It reads: Dimia Fenwick.". The printed name of the placecard5 is "Dimia's placecard". Understand "Dimia's placecard" as the placecard5. Understand "Dimia's" as the placecard5.
+placecard5 is a placecard in the Dining room. The description of placecard5 is "It reads: Dimia Fenwick.". The printed name of placecard5 is "Dimia's placecard". Understand "Dimia's placecard" as placecard5. Understand "Dimia's" as placecard5.
 
-The placecard6 is a placecard in the Dining room. The description of the placecard6 is "It reads: Beatrix Cornwallis-Fenwick.". The printed name of the placecard6 is "Beatrix's placecard". Understand "Beatrix's placecard" as the placecard6. Understand "Beatrix's" as the placecard6.
+placecard6 is a placecard in the Dining room. The description of placecard6 is "It reads: Beatrix Cornwallis-Fenwick.". The printed name of placecard6 is "Beatrix's placecard". Understand "Beatrix's placecard" as placecard6. Understand "Beatrix's" as placecard6.
 
-The placecard7 is a placecard in the Dining room. The description of the placecard7 is "It reads: Bryce Fenwick.". The printed name of the placecard7 is "Bryce's placecard". Understand "Bryce's placecard" as the placecard7. Understand "Bryce's" as the placecard7.
+placecard7 is a placecard in the Dining room. The description of placecard7 is "It reads: Bryce Fenwick.". The printed name of placecard7 is "Bryce's placecard". Understand "Bryce's placecard" as placecard7. Understand "Bryce's" as placecard7.
 
-The placecard8 is a placecard in the Dining room. The description of the placecard8 is "It reads: Cartwright Fenwick.". The printed name of the the placecard8 is "Cartwright's placecard". Understand "Cartwright's placecard" as the placecard8. 
+placecard8 is a placecard in the Dining room. The description of placecard8 is "It reads: Cartwright Fenwick.". The printed name of the placecard8 is "Cartwright's placecard". Understand "Cartwright's placecard" as placecard8. 
 
-The placecard9 is a placecard in the Dining room. The description of the placecard9 is "It reads: Cedric William Fenwick.". The printed name of the placecard9 is "Cedric's placecard". Understand "Cedric's placecard" as the placecard9. Understand "Cedric's" as the placecard9.
+placecard9 is a placecard in the Dining room. The description of placecard9 is "It reads: Cedric William Fenwick.". The printed name of placecard9 is "Cedric's placecard". Understand "Cedric's placecard" as placecard9. Understand "Cedric's" as placecard9.
 
-The placecard10 is a placecard in the Dining room. The description of the placecard10 is "It reads: Edmund Fenwick.". The printed name of the placecard10 is "Edmund's placecard". Understand "Edmunds's placecard" as the placecard10 . Understand "Edmund's" as the placecard10 .
+placecard10 is a placecard in the Dining room. The description of placecard10 is "It reads: Edmund Fenwick.". The printed name of placecard10 is "Edmund's placecard". Understand "Edmunds's placecard" as placecard10 . Understand "Edmund's" as placecard10 .
 
 [Bathroom]
 
@@ -486,15 +486,15 @@ The Bathroom is a first-floor room. The Bathroom is north of the Hall. The descr
 The toilet is scenery in the Bathroom. "That's a toilet, alright."
 The sink is scenery in the Bathroom. The description of the sink is "Smooth marble countertop and a sunken sink with ivory taps."
 
-The soap is a stealable in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap."
-The roll of toilet paper is a stealable in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive."
-The fancy towels is a stealable in the Bathroom. The description of the fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft." Understand "towels" as the fancy towels. Understand "towel" as the fancy towels. Understand "fancy towel" as the fancy towels.
+The soap is a stealable in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap.". The printed name of the soap is "bar of soap". 
+The roll of toilet paper is a stealable in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive.".
+fancy towels are stealable. fancy towels are in the Bathroom. The description of fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft." Understand "towels" as fancy towels. Understand "towel" as fancy towels. Understand "fancy towel" as fancy towels.
 The plunger is a stealable in the Bathroom. The description of the plunger is "When one uses triple ply toilet paper, one must expect certain results." 
 The lotion is a stealable in the Bathroom. The description of the lotion is "Small travel-sized bottle of skin lotion."
 The glass eye is a stealable in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
 The flashlight is a stealable in the Bathroom. The description of the flashlight is "Thin and hefty, the lack of batteries make this flashlight more useful as a bludgeoning weapon."
 The ostentatious scarf is a stealable in the Bathroom. The description of the ostentatious scarf is "'It's truly truly outrageous[line break]truly truly truly outrageous.'[line break][line break]-Jem and The Holograms, [italic type]Truly Outrageous[roman type]." Understand "scarf" as the ostentatious scarf.
-The sunglasses is a stealable in the Bathroom. The description of the sunglasses is "Dark aviator sunglasses. Goes well with a cowboy hat." Understand "aviator sunglasses" as the sunglasses.
+sunglasses are a stealable in the Bathroom. The description of sunglasses is "Dark aviator sunglasses. Goes well with a cowboy hat." Understand "aviator sunglasses" as sunglasses.
 
 Instead of smelling the soap:
 	say "Smells like irish spring. Which is to say it smells soapy.".
