@@ -3,9 +3,9 @@
 [title obviously not final]
 [we really need to think of a team name, or else just credit it A&B&C]
 
-The release number is 1.
+The release number is 2.
 The story creation year is 2020.
-The story headline is "a struggle with kleptomania".
+The story headline is "a take all game".
 The story genre is "Comedy".
 The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave. Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
 After printing the banner text, say "Type HELP for more information."
@@ -40,35 +40,35 @@ When play begins:
 	now gun_start is false;
 	now kitchen_visited is false;
 	now knife_disambiguation is false;
-	say "Uncle Clifton is dead.[line break][line break]";
-	wait for any key;
+	say "Uncle Clifton is dead.[line break][line break][italic type][bracket]Press ENTER to continue.[close bracket][roman type][line break][line break]";
+	wait for enter key;
 	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "He was awful, probably.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "He was one of the few people who bothered to understand you.";
-	wait for any key;
+	wait for enter key;
 	clear screen;
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.[line break][line break]He gives you a dirty look and walks off into the hall.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "His wallet fell out of his pocket. It's sitting on the floor.";
-	wait for any key;
-	say "> take wallet[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
-	wait for any key;
+	wait for enter key;
+	say "> [bold type]take wallet[roman type][line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
+	wait for enter key;
 	say "In about a seven count, you're going to take something else, even though you don't want to.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
 	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
@@ -98,14 +98,17 @@ Every turn:
 			if L is non-empty:
 				now kleptomode is true;
 				try silently taking a random visible unheld stealable;
-				say "> take [most-recently-taken list][line break]You stuff it in your pocket as surreptitiously as you can.";
+				if entry 1 of the most-recently-taken list is a peanut butter canapé:
+					say "> [bold type]take [most-recently-taken list][roman type][line break]Thankfully, it's not [italic type]really[roman type] stealing if it's free food.[line break][line break]Hildegard shrugs at the kleptomania, and you shrug back. A private joke.";
+				otherwise:
+					say "> [bold type]take [most-recently-taken list][roman type][line break]You stuff it in your pocket as surreptitiously as you can.";
 				now kleptomode is false;
 				if a mourner is touchable:
-					wait for any key;
+					wait for enter key;
 					say "[line break]You just can't help yourself, can you.[line break][line break]";
-					wait for any key;
+					wait for enter key;
 					say "[quotation mark]THIEF! THIEF![quotation mark]";
-					wait for any key;
+					wait for enter key;
 					clear screen;
 					now the left hand status line is "The Curb";
 					end the story saying "You have been thrown out";
@@ -136,7 +139,7 @@ Check giving a stealable to a person:
 Instead of giving the wallet to a person:
 	if the person is a mourner:
 		say "The family is already watching you like a hawk, if you give it to one of them they'll probably think you stole it.[line break][line break]";
-		wait for any key;
+		wait for enter key;
 		say "Which, to be fair, you did.".
 			
 Instead of giving the wallet to Cartwright:
@@ -145,24 +148,33 @@ Instead of giving the wallet to Cartwright:
 
 Check taking a stealable:
 	if kleptomode is false:
-		[if the player is in Hors D'oeuvres Table...]
-		say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
+		if the player is in the Lawn:
+			continue the action;
+		otherwise:
+			say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
 
 Check taking scenery:
 	if kleptomode is false:
 		say "Against your will, you've gotten pretty good at taking things unnoticed. This, however, would attract attention, no matter how sneaky you are. Your compulsion will figure out something else to take, when the time comes.";
 	if kleptomode is true:
 		say "You can't carry that, which is a damn shame."
+		
+To wait for the/-- Enter key:
+	let keycode be 0;
+	while keycode is not -6:
+		let keycode be the chosen letter.
 
 [starting inventory]
 
-wallet is stealable with the printed name "Cartwright's wallet". The player carries wallet. The description of wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him." Understand "wallet" as the wallet.
+Wallet is a stealable with the printed name "Cartwright's wallet". The player carries wallet. The description of wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him." Understand "wallet" as the wallet.
 
-church pew pencils are stealable. The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
+Church pew pencils are a stealable with the printed name "church pew pencils". The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
 
 The hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to [quotation mark]O, For A Thousand Tongues To Sing.[quotation mark]"
 
+Understand "check inventory" as a mistake ("There's no need to be so formal! They're your pockets, after all. Try [quotation mark]inventory[quotation mark] or [quotation mark]inv[quotation mark] or my personal favorite, [quotation mark]i.[quotation mark]").
 
+Understand "xyzzy" as a mistake ("A hollow voice fondly calls you a [quotation mark]dumbass.[quotation mark] It reminds you of Uncle Clifton.").
 
 Part I - Get Upstairs
 
@@ -207,7 +219,7 @@ Instead of going east in the vestibule for more than the first time:
 
 [Hall]
 
-The Hall is north of the vestibule. The description of Hall is "This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south[first time], where you just came from,[only] is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.[first time][line break][line break]Cedric and Bryce whisper about something. You can only make out the words [quotation mark]alter[quotation mark] and [quotation mark]will[quotation mark].[line break][line break]When they see you, they quickly move to the game room.[only]"
+The Hall is north of the vestibule. The description of Hall is "This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south[first time], where you just came from,[only] is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.[first time][line break][line break]Cedric and Bryce whisper about something. You can only make out the words [quotation mark]Will[quotation mark] and [quotation mark]alter[quotation mark].[line break][line break]When they see you, they quickly move to the game room.[only]"
 
 [After deciding the scope of the player while the player is in the Hall:
 	place the Vestibule in scope;
@@ -229,12 +241,12 @@ Instead of going up in the hall:
 
 Instead of giving a peanut butter canapé to Cartwright in the hall:
 	say "In order to get past him, you give Cartwright--a man whose allergies might be way more severe than you're aware of--a common and potentially life-threatening allergen.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "No. You don't. Obviously you don't.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "What is wrong with you?";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	try looking.
 
@@ -275,11 +287,13 @@ The description of the lawn table is "It's just a table for food."
 
 
 
-A peanut butter canapé is a kind of thing.  100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible. Understand "canapes" or "canape" or "peanut canapes" or "peanut canape" or "peanut butter canapes" or "peanut butter canape" or "hors doeuvre" or "hors d'oeuvre" as the peanut butter canapés.
+A peanut butter canapé is a kind of stealable.  100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible. Understand "canapes" or "canape" or "peanut canapes" or "peanut canape" or "peanut butter canapes" or "peanut butter canape" or "hors doeuvre" or "hors d'oeuvre" as the peanut butter canapés.
 
 Instead of examining a peanut butter canapé, say "Delicious finger food."
 
-Before taking a peanut butter canapé, say "Hey, it's not stealing if it's free food."
+After taking a peanut butter canapé:
+	if kleptomode is false:
+		say "Hey, it's not stealing if it's free food.".
 
 Hildegard is a person in the Lawn. Hildegard is undescribed. The description of Hildegard is "[first time]Anne's daughter. You've known each other growing up, since she's only a few years younger than you. She tends to get overstimulated at social gatherings, so you'll often find her somewhere quieter.[line break][line break][only]She's the only person other than Uncle Clifton who seems to understand what you're going through. She's covered for you in a few tense situations, pretending to [quotation mark]find[quotation mark] things you unintentionally stole, as long as you gave the thing to her."
 
@@ -310,7 +324,7 @@ The snooker table is scenery in the Game room. The description of the snooker ta
 darts are a stealable in the Game Room. The Description of darts is "These darts are probably made out of some real endangerd peacock feathers or something."
 Instead of touching the snooker table:
 	say "You felt the felt.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Actually the fabric on the table is baize, a coarse woollen cloth, similar in texture to felt, but more durable.".
 
 The vodka is a stealable in the Game Room. The description of the vodka is "You've never been much of a drinker."
@@ -533,12 +547,12 @@ The silver pocketwatch is in Uncle Clifton's Study. The description of the silve
 
 After taking the silver pocketwatch:
 	say "You grab the pocketwatch, not in an act of compulsive theft, but as a statement of ownership.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear the screen;
 	say "You take a moment of silence, to remember Uncle Clifton by.";
-	wait for any key;
+	wait for enter key;
 	say "The only sound is the muffled ticking of his pocketwatch in your pocket.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "With the moment of silence over, now you can leave this damn house.";
 	now the papers are nowhere;
 	now the original will is on the partners desk;
@@ -556,23 +570,23 @@ The description of the letter opener is "Long, with a white-bone handle. Surpris
 
 Instead of taking the letter opener during Gun Scene:
 	say "Cartwright sees you reaching for the [if knife_disambiguation is true]letter opener[end if][if knife_disambiguation is false]knife[end if], and fires.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Maybe you shouldn't have brought a knife to a gun fight.";
-	wait for any key;
+	wait for enter key;
 	end the story saying "You have died".
 	
 Instead of giving the peanut butter canapé to Cartwright during Gun Scene:
 	say "Cartwright's deathly allergic, but he shoots you before you get close.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Seriously, who brings a canapé to a gunfight?";
-	wait for any key;
+	wait for enter key;
 	end the story saying "You have died".
 	
 Instead of throwing the peanut butter canapé at Cartwright during Gun Scene:
 	say "Cartwright's deathly allergic, but he's also a quick shot.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Seriously, who brings a canapé to a gunfight?";
-	wait for any key;
+	wait for enter key;
 	end the story saying "Cartwright has died, but so have you".
 	
 Instead of giving the silver pocketwatch to Cartwright during Gun Scene, say "It's what he wants, but 1. you get the sense that any false moves will send you to the same place as Uncle Clifton, and 2. you're taking this damn watch with you."
@@ -616,18 +630,18 @@ When Wallet Scene begins:
 When Wallet Scene ends:
 	now kleptomode is true;
 	say "A muffled cry from the other room:[line break][line break][quotation mark]Cartwright! I found your wallet![quotation mark][line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break][quotation mark]You found my wallet?[quotation mark][line break][line break]";
 	now Cartwright is nowhere;
-	wait for any key;
+	wait for enter key;
 	say "Now's your chance! You duck up the stairs and tiptoe over to Uncle Clifton's study.";
 	now the player is in Uncle Clifton's Study.
 
 Instead of attacking Cartwright during the Gun Scene:
 	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Cartwright did.";
-	wait for any key;
+	wait for enter key;
 	end the story saying "You have died".
 	
 Instead of going during the Gun Scene:
@@ -655,19 +669,19 @@ When Gun Scene begins:
 	say "You pick up both wills, one in each hand, weighing the implications.[line break][line break]";
 	now the player is carrying the original will;
 	now the player is carrying the doctored will;
-	wait for any key;
+	wait for enter key;
 	say "One will is definitely the original. The other is a decent fake.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You read through the wills at the same time. You can only find one change in the doctored will.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "The line that bequeaths the pocketwatch to you has been removed.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "His family gets a 750 fucking million dollar estate and they couldn't let you have one measly pocketwatch.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You sigh.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You hear the unmistakable [italic type]cli-cli-click[roman type] of a revolver hammer being pulled back.";
 	now Cartwright is in Uncle Clifton's Study;
 	now Cartwright is carrying the revolver;
@@ -680,19 +694,19 @@ Every turn during Gun Scene:
 	
 When Gun Scene ends:
 	say "> take revolver[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Wait.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "What?";
 	now the player is carrying the revolver;
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "You find yourself holding Cartwright at gunpoint. Waving the revolver in the direction of the desk chair until the scared bully sits down.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Your body moves without you, sprinting out of the room towards the stairs.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "Fuck this family.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You're taking everything that isn't nailed down.";
 	wait for any key.
 	
@@ -702,11 +716,11 @@ Chase Scene Hall is a scene. Chase Scene Hall begins when Gun Scene ends. Chase 
 
 When Chase Scene Hall begins:
 	say "You run back the way you came, barrelling down the stairs.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You hear Cartwright yell [quotation mark]THIEF![quotation mark] and, after a moment's thought, [quotation mark]WITH A GUN![quotation mark][line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You see Edmund charging you.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You duck into the kitchen.";
 	now the description of the kitchen is "The caterers sprint out of the room, because you're sprinting into it with a gun. Rowan freezes, a handful of ham in his hand. Then he bolts as well.";
 	now the player is in the kitchen;
@@ -721,7 +735,7 @@ Chase Scene Dining is a scene. Chase Scene Dining begins when Chase Scene Hall e
 
 When Chase Scene Dining begins:
 	say "Edmund finally catches up to you.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "You dodge him and run into the dining room.";
 	now the description of the dining room is "The caterers have already fled. On her way out of the room, Anne flashes you a dirty look.";
 	now the player is in the dining room;
@@ -746,12 +760,12 @@ Instead of going during Chase Scene Sitting:
 	
 When Chase Scene Sitting ends:
 	say "Probably best to quit while you're ahead.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	now the description of the lawn is "";
 	say "You sprint out onto the lawn.";
 	now the player is in the lawn;
 	say "In the pandemonium, the hors d'oeuvres table was knocked over. Peanut butter canapés litter the grass beneath your feet, crunching as you run. Hildegard gives you a high five.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	now the left hand status line is "Your Car";
 	say "You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face.";
 	end the story finally.
@@ -820,12 +834,12 @@ one problem with this approach is that the room descriptions will have to be dyn
 
 [Instead of giving the peanut butter canapé to Cartwright in the hall:
 	say "You give Cartwright[unicode 2014]a man whose allergies might be way more severe than you're aware of[unicode 2014]a common and potentially life-threatening allergen.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	say "No. You don't. Obviously you don't.[line break][line break]";
-	wait for any key;
+	wait for enter key;
 	say "What is wrong with you?";
-	wait for any key;
+	wait for enter key;
 	clear screen;
 	try looking.
 

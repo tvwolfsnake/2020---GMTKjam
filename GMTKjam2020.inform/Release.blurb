@@ -1,20 +1,20 @@
 ! Blurb file created by Inform build 6M62
 
-status "C:\Program Files (x86)\Inform 7\Internal\Miscellany\CblorbModel.html" "D:\2020---GMTK\GMTKjam2020.inform\Build\StatusCblorb.html"
+status "C:\Program Files (x86)\Inform 7\Internal\Miscellany\CblorbModel.html" "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Build\StatusCblorb.html"
 
 
 ! Identification
 
-project folder "D:\2020---GMTK\GMTKjam2020.inform"
-release to "D:\2020---GMTK\GMTKjam2020.materials\Release"
+project folder "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform"
+release to "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Release"
 
 ! Blorb instructions
 
 storyfile leafname "you can't take it with you.gblorb"
-storyfile "D:\2020---GMTK\GMTKjam2020.inform\Build\output.ulx" include
-ifiction "D:\2020---GMTK\GMTKjam2020.inform\Metadata.iFiction" include
-cover "D:\2020---GMTK\GMTKjam2020.materials\Cover.jpg"
-picture 1 "D:\2020---GMTK\GMTKjam2020.materials\Cover.jpg"
+storyfile "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Build\output.ulx" include
+ifiction "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Metadata.iFiction" include
+cover "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Cover.jpg"
+picture 1 "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Cover.jpg"
 
 ! Placeholder variables
 
@@ -31,17 +31,17 @@ placeholder [BLURB] = "You just want to go to the funeral reception, get the sil
 ! Website instructions
 
 placeholder [ENCODEDSTORYFILE] = "you can't take it with you.gblorb.js"
-template path "D:\2020---GMTK\GMTKjam2020.materials\Templates"
-template path "C:\Users\Joshua\Documents\Inform\Templates"
+template path "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Templates"
+template path "C:\Users\fireh\Documents\Inform\Templates"
 template path "C:\Program Files (x86)\Inform 7\Internal\Templates"
 placeholder [INTERPRETERSCRIPTS] = " "
 interpreter "Quixe" "g"
-base64 "D:\2020---GMTK\GMTKjam2020.inform\Build\output.ulx" to "D:\2020---GMTK\GMTKjam2020.materials\Release\interpreter\you can't take it with you.gblorb.js"
+base64 "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.inform\Build\output.ulx" to "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Release\interpreter\you can't take it with you.gblorb.js"
 
 ! Website instructions
 
-template path "D:\2020---GMTK\GMTKjam2020.materials\Templates"
-template path "C:\Users\Joshua\Documents\Inform\Templates"
+template path "G:\Games (Development)\2020 - GMTKjam\GMTKjam2020.materials\Templates"
+template path "C:\Users\fireh\Documents\Inform\Templates"
 template path "C:\Program Files (x86)\Inform 7\Internal\Templates"
 css
 website "Standard"
