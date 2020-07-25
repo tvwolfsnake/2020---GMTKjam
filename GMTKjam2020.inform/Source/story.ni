@@ -390,6 +390,8 @@ Instead of touching the delicate tea cup:
 	say "Careful! You’ll break it!".
 Instead of smelling the delicate tea cup:
 	say "Careful! You’ll break it!".
+Instead of eating the loose grapes:
+	say "You aren’t in the mood for eyeballs.".
 	
 Before going north in the Dining Room:
 	now kitchen_visited is true.
@@ -426,6 +428,18 @@ Instead of smelling the mystery can:
 	say "Mysterious...".
 Instead of tasting the mystery can:
 	say "Mysterious...".
+Instead of eating the can of beans:
+	say "You gnaw on the metal can, but to no avail.".
+Instead of eating the can of corn:
+	say "You gnaw on the metal can, but to no avail.".
+Instead of eating the mystery can:
+	say "You gnaw on the metal can, but to no avail.".
+Instead of opening the can of beans:
+	say "You gnaw on the metal can, but to no avail.".
+Instead of opening the can of corn:
+	say "You gnaw on the metal can, but to no avail.".
+Instead of opening the mystery can:
+	say "You gnaw on the metal can, but to no avail.".
 
 
 [implement later?]
