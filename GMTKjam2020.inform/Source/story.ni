@@ -380,15 +380,20 @@ The description of a  cue ball is "It's white."
 
 [Kitchen]
 
-The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break][line break]On the plus side they probably won't care if you take anything.[line break][line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. [first time]The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes.[only][if rowan is in the kitchen][line break][line break]Rowan searches the kitchen for something to eat.[end if]"
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break][line break]On the plus side they probably won't care if you take anything.[line break][line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. You cannot reach the fridge. [first time]The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes.[only][if rowan is in the kitchen][line break][line break]Rowan searches the kitchen for something to eat.[end if]"
 
-The delicate tea cup is a stealable in The Kitchen. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
+
+The counter is scenery in The Kitchen. The delicate tea cup is on the counter. loose grapes are on the counter. The empty bottle is on the counter. The recipe book is on the counter.
+caterers are scenery in The Kitchen. The description of caterers is "They crowd most of the room like a hivemind, moving in synchronized movement like a sentient liquid in a religious fervor, only speaking to eachother in loud, quick barks.[line break][line break]They completely ignore you.[line break]Which is something of a relief."
+The fridge is scenery in The Kitchen. The description of the fridge is "Large and bursting with all kinds of food and beverages. It is hopelessly out of your reach."
+
+The delicate tea cup is a stealable. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
-Loose grapes are stealable. Loose grapes are in The Kitchen. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
+loose grapes are stealable. The description of loose grapes is "If you close your eyes, you can pretend these are eyeballs. If that’s something you’re into."
 Understand "grapes" as the loose grapes.
-The empty bottle is a stealable in The Kitchen. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
+The empty bottle is a stealable. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
 Understand "bottle" as the empty bottle.
-The recipe book is a stealable in The Kitchen. The description of the recipe book is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
+The recipe book is a stealable. The description of the recipe book is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
 
 Instead of smelling loose grapes:
 	say "If you close your eyes you can pretend you are smelling eyeballs. If that’s something you’re into.".
