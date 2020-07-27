@@ -596,7 +596,7 @@ Instead of throwing the peanut butter canapé at Cartwright during Gun Scene:
 	
 Instead of giving the silver pocketwatch to Cartwright during Gun Scene, say "It's what he wants, but 1. you get the sense that any false moves will send you to the same place as Uncle Clifton, and 2. you're taking this damn watch with you."
 
-The rolling chair is scenery in Uncle Clifton's Study. Understand "chair" as the rolling chair. The description of the rolling chair is "An old leather rolling chair. Parts of it are peeling off, and friction on the seat over years of sitting has turned it from brown to almost white.".
+The rolling chair is scenery in Uncle Clifton's Study. Understand "chair" as the rolling chair. The description of the rolling chair is "An old leather rolling chair. Parts of it are peeling off, and friction on the seat over years of sitting has turned it from solid brown to a spiderweb of white.".
 
 The original will has the printed name "original will". The original will is undescribed.
 
@@ -609,10 +609,16 @@ Instead of taking the doctored will:
 	try examining the doctored will instead.
 	
 Instead of examining the original will:
-	now gun_start is true.
+	if gun_start is false:
+		now gun_start is true;
+	otherwise:
+		continue the action.
 	
 Instead of examining the doctored will:
-	now gun_start is true.
+	if gun_start is false:
+		now gun_start is true;
+	otherwise:
+		continue the action.
 
 Instead of going in Uncle Clifton's Study:
 	say "There's something much more important in here.".
