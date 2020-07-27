@@ -176,6 +176,20 @@ Understand "check inventory" as a mistake ("There's no need to be so formal! The
 
 Understand "xyzzy" as a mistake ("A hollow voice fondly calls you a [quotation mark]dumbass.[quotation mark] It reminds you of Uncle Clifton.").
 
+[Stuff for inside wallet]
+[
+Cartwright's ID is stealable. The description of Cartwright's ID is "Cartwright's pale face offers you a phlegmatic stare from the card. His dark eyes meet yours in accusation."
+
+Cartwright's credit cards is stealable. The description of Cartwright's credit cards is "Cartwright seems to collect credit cards the way 90s kids collect pogs. Visa, Mastercard, Amex, he's got 'em all."
+
+Cartwright's cash is stealable. The description of Cartwright's cash is "A very generous brick of greenbacks bursts forth from the wallet."
+
+Cartwright's business card is stealable. The description of Cartwright's business card is "Patrick Bateman would lose his marbles over this card."
+
+After taking Cartwright's business card:
+	if kleptomode is false:
+		say "Hey, you never know.".
+]
 Part I - Get Upstairs
 
 [n.b.: parts don't actually show up in the game, they're just to make the code easier to keep track of]
