@@ -25,6 +25,8 @@ wallet_given is a truth state that varies.
 gun_start is a truth state that varies.
 kitchen_visited is a truth state that varies.
 knife_disambiguation is a truth state that varies.
+nails_examined is a truth state that varies.
+pen_variable is a truth state that varies.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
@@ -40,8 +42,14 @@ When play begins:
 	now gun_start is false;
 	now kitchen_visited is false;
 	now knife_disambiguation is false;
-	say "Uncle Clifton is dead.[line break][line break][italic type][bracket]Press ENTER to continue.[close bracket][roman type][line break][line break]";
+	now nails_examined is false;
+	now pen_variable is false;
+	now the wallet is closed;
+	clear screen;
+	say "Uncle Clifton is dead.[line break][line break][italic type][bracket]Press ENTER to continue.[close bracket][roman type]";
 	wait for enter key;
+	clear screen;
+	say "Uncle Clifton is dead.[line break][line break]";
 	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
 	wait for enter key;
 	say "He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.[line break][line break]";
@@ -71,11 +79,35 @@ When play begins:
 	wait for enter key;
 	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
-	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe [quotation mark]tvwolfsnake[quotation mark] spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
+	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe 'tvwolfsnake' spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
 
 A stealable is a kind of undescribed thing.
-
 A mourner is a kind of person.
+Wallcontents is a kind of thing.
+
+Signing is an action applying to one thing. Understand "sign [something]" as signing.
+
+
+Check signing:
+	if the noun is the condolence book:
+		if we have not signed the condolence book:
+			if the pen is not carried:
+				if the player is in the Vestibule:
+					now pen_variable is true;
+					now the player has the pen;
+					say "You take the pen.";
+					say "[line break]These books are full of shallow false sympathy, and you have very little to say to Uncle Clifton's family, but you leave a short message and sign it anyway. It's the polite thing to do.";
+			if the player is not in the Vestibule:
+				say "Signing something usually requires a pen.";
+			if the pen is carried:
+				if pen_variable is false:
+					say "These books are full of shallow false sympathy, and you have very little to say to Uncle Clifton's family, but you leave a short message and sign it anyway. It's the polite thing to do.";
+		if we have signed the condolence book:
+			say "Once is enough.";
+	if the noun is not the condolence book:
+		say "That's not something you should sign[if the pen is not carried]. Besides, you don't have a pen.[end if][if the pen is carried].[end if]".
+
+The examine containers rule is not listed in any rulebook.
 
 A first-floor room is a kind of room.
 
@@ -107,7 +139,7 @@ Every turn:
 					wait for enter key;
 					say "[line break]You just can't help yourself, can you.[line break][line break]";
 					wait for enter key;
-					say "[quotation mark]THIEF! THIEF![quotation mark]";
+					say "'THIEF! THIEF!'";
 					wait for enter key;
 					clear screen;
 					now the left hand status line is "The Curb";
@@ -121,9 +153,49 @@ The block giving rule is not listed in the check giving it to rules.
 				
 Instead of putting, inserting, or dropping a stealable:
 	if gun_start is false:
+		if the noun is the pen:
+			if the player is in the Vestibule:
+				continue the action;
+		if the noun is a peanut butter canapé:
+			continue the action;
+		otherwise:
+			say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.";
+	if gun_start is true:
+		say "No, you're keeping all of this stuff."
+		
+Instead of putting, inserting, or dropping the wallet:
+	if gun_start is false:
 		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.";
 	if gun_start is true:
 		say "No, you're keeping all of this stuff."
+		
+Instead of putting, inserting, or dropping wallcontents:
+	if gun_start is false:
+		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.";
+	if gun_start is true:
+		say "No, you're keeping all of this stuff."
+
+Instead of putting the business card on a supporter:
+	say "That's littering."
+	
+Instead of inserting the business card into a container:
+	if the noun is the wallet:
+		say "You put the business card back.";
+		now the business card is in the wallet;
+	otherwise:
+		say "That doesn't belong there.".
+	
+[Instead of inserting the business card:
+	say "That's littering."]
+
+Instead of dropping the business card:
+	if gun_start is false:
+		say "You've heard of dropping names, but this is just littering.";
+	if gun_start is true:
+		say "He pulled a gun on you. You're keeping this card specifically to burn it."
+
+[Does the player mean putting Cartwright's business card on Cartwright's business card:
+	it is very unlikely.]
 
 Instead of wearing a stealable:
 	if gun_start is false:
@@ -141,14 +213,29 @@ Instead of giving the wallet to a person:
 		say "The family is already watching you like a hawk, if you give it to one of them they'll probably think you stole it.[line break][line break]";
 		wait for enter key;
 		say "Which, to be fair, you did.".
+		
+Instead of giving wallcontents to a person:
+	if the person is a mourner:
+		say "There is absolutely no way they won't think you stole this.";
+	if the person is Hildegard:
+		say "She doesn't need Cartwright's money or ID, but she'd probably help you out if you gave her the wallet itself."
+		
+Instead of taking wallcontents:
+	say "You're leaving that in the wallet. If you manage to get it back to Cartwright, I think he'd notice if something were missing."
 			
 Instead of giving the wallet to Cartwright:
-	say "That would be a really, really, really bad idea. I don't think he'll believe you if you claim you [quotation mark]just found it.[quotation mark][line break]If you really want to return it, you might want to find someone more sympathetic to your condition.".
+	say "That would be a really, really, really bad idea. I don't think he'll believe you if you claim you 'just found it.'[line break]If you really want to return it, you might want to find someone more sympathetic to your condition.".
 	
+Instead of opening the wallet:
+	now the wallet is open;
+	say "You open Cartwright's wallet.[line break]";
+	try examining the wallet.
 
 Check taking a stealable:
 	if kleptomode is false:
 		if the player is in the Lawn:
+			continue the action;
+		if the noun is the pen:
 			continue the action;
 		otherwise:
 			say "This is a funeral reception and everyone knows you're a kleptomaniac. You're not going to intentionally take anything you aren't supposed to.[line break]" instead.
@@ -166,47 +253,74 @@ To wait for the/-- Enter key:
 
 [starting inventory]
 
-Wallet is a stealable with the printed name "Cartwright's wallet". The player carries wallet. The description of wallet is "[first time]Whoops.[line break][only]You should probably find a way to give it back to him." Understand "wallet" as the wallet.
+Wallet is a container with the printed name "Cartwright's wallet". The player carries wallet. The description of wallet is "[if wallet is closed][one of]Whoops.[line break][line break]You should probably find a way to give it back to him.[or]It's calf leather, it's full of cash, and it's not yours.[line break][line break]You should probably find a way to give it back.[stopping][end if][if wallet is open]Immediately visible are Cartwright's driver's license and other cards (credit[businesscardcondition]). A generous brick of cash bursts forth from the innards.[end if]". Understand "wallet" as the wallet. The wallet can be open or closed. The wallet is openable. Driver's license, credit cards, cash, and Cartwright's business card are inside the wallet.
+
+To say businesscardcondition:
+	say "[if Cartwright's business card is inside the wallet], business[end if]"
 
 Church pew pencils are a stealable with the printed name "church pew pencils". The player carries church pew pencils. The description of church pew pencils is "There wasn't much to steal at the funeral, so your compulsion forced you to grab these. You've got at least ten of them."
 
-The hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to [quotation mark]O, For A Thousand Tongues To Sing.[quotation mark]"
+The hymnal is a stealable. The player carries the hymnal. The description of the hymnal is "The church where the funeral was held has a lot of these, but you still feel bad for taking it.[line break][line break]On the plus side, you'll never forget the words to 'O, For A Thousand Tongues To Sing.'"
 
-Understand "check inventory" as a mistake ("There's no need to be so formal! They're your pockets, after all. Try [quotation mark]inventory[quotation mark] or [quotation mark]inv[quotation mark] or my personal favorite, [quotation mark]i.[quotation mark]").
+Understand "check inventory" as a mistake ("There's no need to be so formal! They're your pockets, after all. Try 'inventory' or 'inv' or my personal favorite, 'i.'").
 
-Understand "xyzzy" as a mistake ("A hollow voice fondly calls you a [quotation mark]dumbass.[quotation mark] It reminds you of Uncle Clifton.").
+Understand "xyzzy" as a mistake ("A hollow voice fondly calls you a 'dumbass.' It reminds you of Uncle Clifton.").
 
 [Stuff for inside wallet]
-[
-Cartwright's ID is stealable. The description of Cartwright's ID is "Cartwright's pale face offers you a phlegmatic stare from the card. His dark eyes meet yours in accusation."
 
-Cartwright's credit cards is stealable. The description of Cartwright's credit cards is "Cartwright seems to collect credit cards the way 90s kids collect pogs. Visa, Mastercard, Amex, he's got 'em all."
+Driver's license is wallcontents. Driver's license is undescribed. The description of driver's license is "A typical driver's license, issued by the state to a Cartwright G. Fenwick.[first time]His pale face offers you a phlegmatic stare from a square on the card, and his dark eyes meet yours, as if in accusation.[only][line break][line break][one of]The card[or]It[stopping] apparently expires in about a month." The printed name of the driver's license is "Cartwright's driver's license". Understand "license", "licence", "driver's license", "driver's licence", "drivers license", "drivers licence", "driver license", "driver licence", "Cartwright's license", "Cartwright's licence", "Cartwright's drivers license", "Cartwright's drivers licence", "Cartwright's driver license", or "Cartwright's driver licence" as the driver's license.
 
-Cartwright's cash is stealable. The description of Cartwright's cash is "A very generous brick of greenbacks bursts forth from the wallet."
+Credit cards is wallcontents. Credit cards is undescribed. Credit cards has the printed name "Cartwright's credit cards". The description of credit cards is "Cartwright seems to collect credit cards the way 90s kids collect pogs. Visa, Mastercard, Amex, he's got [apostrophe]em all. No limits." Understand "Cartwright's credit cards", "Cartwright's credit card", "credit cards", "credit card", "card", or "credit" as the credit cards.
 
-Cartwright's business card is stealable. The description of Cartwright's business card is "Patrick Bateman would lose his marbles over this card."
+Cash is wallcontents. Cash is undescribed. Cash has the printed name "Cartwright's cash". The description of cash is "[one of]A huge wad of money. Greenbacks, bones, simoleons, sawbucks, benjamins, what have you. Stacks of dead presidents.[line break][line break]Actually, right now most of his bills are Canadian. Before the funeral you overheard him talking Anne's ear off about Banff, so you guess he must've taken a vacation.[or]A good few thousand, mostly in Canadian bills.[stopping]". Understand "cash", "Cartwright's cash", "money", "bill", "bills", "dollars", "dollar", "greenbacks", "greenback", "loonie", "loonies", "bones", "simoleons", "sawbucks", "benjamin", "benjamins", "dead presidents", "moolah", "bucks", "stacks", "currency", or "cheddar" as the cash.
 
-After taking Cartwright's business card:
-	if kleptomode is false:
-		say "Hey, you never know.".
-]
+Business card is undescribed. Business card has the printed name "Cartwright's business card". The description of business card is "[first time]It looks something like this:[line break][fixed letter spacing] ------------------------------------ [line break]| 203-555-9142                       |[line break]|                                    |[line break]|                                    |[line break]|                                    |[line break]|     CARTWRIGHT G FENWICK, ESQ.     |[line break]|          Estate Planning           |[line break]|                                    |[line break]|                                    |[line break]|            326 East Ave, Suite 105 |[line break]|               New Canaan, CT 06840 |[line break] ------------------------------------ [variable letter spacing][line break][line break][only]In person, the design is immaculate. Patrick Bateman would lose his marbles over this card." Understand "card", "business card", "Cartwright's card" or "Cartwright's business card" as business card.
+
+After taking the business card:
+	say "[first time]Hey, you never know.[only]".
+
+
 Part I - Get Upstairs
 
 [n.b.: parts don't actually show up in the game, they're just to make the code easier to keep track of]
 
 [Vestibule]
 
-Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."
+Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book, which lies open[if pen is unheld], and a pen[end if]."
+
+[full old description:
+Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."]
 
 The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time]--it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
 
-There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is stealable. The table is scenery.
+There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is scenery. The table is scenery.
 
-The description of the table is "[first time]Hastily dragged here from a different room in the house. [only]Most people would just use a folding table, but you're pretty sure this is an antique."
+The description of the table is "[first time]Hastily dragged here from a different room in the house. [only]Most people would just use a folding table, but you're pretty sure this is an antique.[if nails_examined is true][line break][line break]An antique that they've driven nails through.[end if]"
 
-The description of the condolence book is "[first time]Not to sound crass, but do the bereaved ever actually read these? It's bad enough having people come up to you in person to give a tactless [quotation mark]he's in a better place now[quotation mark], you can't imagine having a written record of that too.[line break][line break][only]Probably better not to subject yourself to that."
+The description of the condolence book is "[first time]Not to sound crass, but do the bereaved ever actually read these? It's bad enough having people come up to you in person to give a tactless 'he's in a better place now', you can't imagine having a written record of that too.[line break][line break][only]Probably better not to subject yourself to that.[first time][line break][line break]On closer inspection, you notice the book has been nailed to the table at all four corners.[only][condolence_signature]"
+
+To say condolence_signature:
+	say "[if we have signed the condolence book][line break][line break]You already know what the current page looks like, anyway. At the bottom it says:[line break][line break]'Clifton showed a great deal of kindness to me, and I will never forget him. But I barely knew him. I can't imagine what you must be going through. I wish you peace.'[line break][line break]followed by your signature.[end if]"
+	
+Nails are scenery in the Vestibule. The description of the nails is "Understandable, but still insulting." Understand "corners" as nails.
+
+After examining the condolence book for the first time:
+	now nails_examined is true.
+	
+Instead of examining the nails for the first time:
+	if nails_examined is false:
+		say "You look at the nails, driven into the condolence book to keep it on the table.";
+		wait for enter key;
+		say "[line break]Wait, really?";
+		wait for enter key;
+		continue the action;
+		now nails_examined is true.
 
 The description of the pen is "It's an ordinary ballpoint pen: sleek, black, [if pen is held]demonstrably [end if]easy to palm."
+
+After taking the pen:
+	if kleptomode is false:
+		say "You should probably put this back once you're done with it, so other people can use it.".
 
 [Testthing is a stealable in the vestibule.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
 
@@ -233,7 +347,7 @@ Instead of going east in the vestibule for more than the first time:
 
 [Hall]
 
-The Hall is north of the vestibule. The description of Hall is "This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south[first time], where you just came from,[only] is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.[first time][line break][line break]Cedric and Bryce whisper about something. You can only make out the words [quotation mark]Will[quotation mark] and [quotation mark]alter[quotation mark].[line break][line break]When they see you, they quickly move to the game room.[only]"
+The Hall is north of the vestibule. The description of Hall is "This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south[first time], where you just came from,[only] is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.[first time][line break][line break]Cedric and Bryce whisper about something. You can only make out something about an 'altar.' Or was that something being 'altered?'[line break][line break]When they see you, they quickly move to the game room.[only]"
 
 [After deciding the scope of the player while the player is in the Hall:
 	place the Vestibule in scope;
@@ -248,7 +362,7 @@ Instead of examining the Vestibule when the player is in the Hall, say "It looks
 
 Instead of examining a first-floor room when the player is in the Hall, say "It'd be easier to see if you were inside it."
 	
-Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal [quotation mark]jokes[quotation mark] at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is that guy as an old man.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet." Cartwright is undescribed.
+Cartwright is a mourner in the hall. The description of Cartwright is "[first time]You ever been in the same room as one of those rich fratty white guys? You know the type. Dominates every conversation with hurtful, overpersonal 'jokes' at the expense of his buddies, but as soon as they turn it back on him, he gets real quiet and real tense and everyone kind of changes the subject?[line break][line break]Yeah, Cartwright is that guy as an old man.[line break][line break]Towering, gray-haired. You think he's Uncle Clifton's brother? Maybe his cousin. Either way, his stature and his demeanor have the effect of making him intimidating, an effect which is only slightly diminished by your vague recollection that he is mildly allergic to a [italic type]comical[roman type] amount of things.[line break][line break][only]He seems annoyed with you. It might be because you stole his wallet." Cartwright is undescribed.
 
 Instead of going up in the hall:
 	say "Cartwright stops you in your tracks. He doesn't want you upstairs, and you know him just well enough to know he's not interested in any stories about a pocketwatch." instead.
@@ -270,7 +384,7 @@ The hunting trophy is a stealable in the Hall. The description of the hunting tr
 
 [Sitting Room]
 
-The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.[line break][line break]To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. [if lawn is unvisited]Barely anyone's out there.[end if][if lawn is visited]Hildegarde is out there.[end if]"
+The Sitting Room is a first-floor room. The Sitting Room is southwest of the hall. The description of Sitting Room is "A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.[line break][line break]To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. [if lawn is unvisited]Barely anyone's out there.[end if][if lawn is visited]Hildegard is out there.[end if]"
 
 The game table is scenery in the Sitting Room. The chess set is on the game table. The champagne flute is on the game table.
 The couch is scenery in the Sitting Room. The pack of cigarettes is on the couch. The ashtray is on the couch. The clutch is on the couch. The sweater is on the couch. The jacket is on the couch. The empty china plate is on the couch. The golden watch is on the couch. The description of the couch is "It's probably an antique."
@@ -301,7 +415,7 @@ The description of the lawn table is "It's just a table for food."
 
 
 
-A peanut butter canapé is a kind of stealable.  100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible. Understand "canapes" or "canape" or "peanut canapes" or "peanut canape" or "peanut butter canapes" or "peanut butter canape" or "hors doeuvre" or "hors d'oeuvre" as the peanut butter canapés.
+A peanut butter canapé is a kind of stealable.  100 peanut butter canapés are on the lawn table. Peanut butter canapés are undescribed. Peanut butter canapés are edible. Understand "canapes" or "canape" or "peanut canapes" or "peanut canape" or "peanut butter canapes" or "peanut butter canape" or "hors doeuvre" or "hors d'oeuvre" or "horse divorce" as the peanut butter canapés.
 
 Instead of examining a peanut butter canapé, say "Delicious finger food."
 
@@ -309,7 +423,7 @@ After taking a peanut butter canapé:
 	if kleptomode is false:
 		say "Hey, it's not stealing if it's free food.".
 
-Hildegard is a person in the Lawn. Hildegard is undescribed. The description of Hildegard is "[first time]Anne's daughter. You've known each other growing up, since she's only a few years younger than you. She tends to get overstimulated at social gatherings, so you'll often find her somewhere quieter.[line break][line break][only]She's the only person other than Uncle Clifton who seems to understand what you're going through. She's covered for you in a few tense situations, pretending to [quotation mark]find[quotation mark] things you unintentionally stole, as long as you gave the thing to her."
+Hildegard is a person in the Lawn. Hildegard is undescribed. The description of Hildegard is "[first time]Anne's daughter. You've known each other growing up, since she's only a few years younger than you. She tends to get overstimulated at social gatherings, so you'll often find her somewhere quieter.[line break][line break][only]She's the only person other than Uncle Clifton who seems to understand what you're going through. She's covered for you in a few tense situations, pretending to 'find' things you unintentionally stole, as long as you gave the thing to her."
 
 Instead of giving the wallet to Hildegard:
 	now the wallet is nowhere;
@@ -480,7 +594,7 @@ Instead of opening the mystery can:
 
 The Dining Room is a first-floor room. The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. [line break][line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south.[line break][line break]Anne sits at the table with her head in her hands."
 
-Anne is a mourner in the Dining Room. Anne is undescribed. The description of Anne is "Hildegarde's mom. She looks exhausted. She doesn't look thrilled to see you."
+Anne is a mourner in the Dining Room. Anne is undescribed. The description of Anne is "Hildegard's mom. She looks exhausted. She doesn't look thrilled to see you."
 
 The china cabinet is scenery in the Dining Room. The description of the china cabinet is "A tall wooden cabinet. Through the glass panels in the cabinet doors, you can see an absurdly expensive collection of fancy, mostly unused fine china."
 Understand "cabinet" as the china cabinet.
@@ -649,14 +763,14 @@ North of here is the other end of the balcony ]
 Wallet Scene is a scene. Wallet Scene begins when wallet_given is true. Wallet Scene ends when the player is in the Hall.
 
 When Wallet Scene begins:
-	say "Hildegard grins, taking the wallet.[line break][line break]She leans in conspiratorially. [quotation mark]Go back to the hall, and I'll yell to Cartwright that I found his wallet.[quotation mark]";
+	say "Hildegard grins, taking the wallet.[line break][line break]She leans in conspiratorially. 'Go back to the hall, and I'll yell to Cartwright that I found his wallet.'";
 	now the description of Hildegard is "Hildegard is a lot of things, but right now she's mostly waiting for you to go to the hall".
 	
 When Wallet Scene ends:
 	now kleptomode is true;
-	say "A muffled cry from the other room:[line break][line break][quotation mark]Cartwright! I found your wallet![quotation mark][line break][line break]";
+	say "A muffled cry from the other room:[line break][line break]'Cartwright! I found your wallet!'[line break][line break]";
 	wait for enter key;
-	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break][quotation mark]You found my wallet?[quotation mark][line break][line break]";
+	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break]'You found my wallet?'[line break][line break]";
 	now Cartwright is nowhere;
 	wait for enter key;
 	say "Now's your chance! You duck up the stairs and tiptoe over to Uncle Clifton's study.";
@@ -680,7 +794,7 @@ Stabbing is an action applying to one thing. Understand "stab [something]" as st
 
 Instead of stabbing Cartwright:
 	if gun_start is false:
-		say "Even if you had a knife, stabbing people out of nowhere is generally considered both [quotation mark]rude[quotation mark] and [quotation mark]attempted murder.[quotation mark][line break]";
+		say "Even if you had a knife, stabbing people out of nowhere is generally considered both 'rude' and 'attempted murder.'[line break]";
 	if gun_start is true:
 		if the player carries the letter opener:
 			try attacking Cartwright instead;
@@ -712,6 +826,7 @@ When Gun Scene begins:
 	now Cartwright is carrying the revolver;
 	now the description of Uncle Clifton's Study is "There's a rolling chair, [if letter opener is held]and [end if]a desk[if letter opener is held].[end if][if letter opener is unheld], and a letter opener.[end if][line break][line break]Oh also, Cartwright is standing in the doorway, brandishing a six-shooter at you.";
 	now the description of Cartwright is "You know those old rich fratty white guys who hold people at gunpoint?[line break][line break]Yeah. Exactly.";
+	now the description of the business card is "It's the business card of the guy who probably personally altered the wills.";
 	try looking.
 	
 Every turn during Gun Scene:
@@ -740,9 +855,9 @@ Part III - Now Go Back Downstairs
 Chase Scene Hall is a scene. Chase Scene Hall begins when Gun Scene ends. Chase Scene Hall ends when the time since Chase Scene Hall began is 2 minutes.
 
 When Chase Scene Hall begins:
-	say "You run back the way you came, barrelling down the stairs.[line break][line break]";
+	say "Still not really in control of your feet, you run back the way you came, barrelling down the stairs.[line break][line break]";
 	wait for enter key;
-	say "You hear Cartwright yell [quotation mark]THIEF![quotation mark] and, after a moment's thought, [quotation mark]WITH A GUN![quotation mark][line break][line break]";
+	say "You hear Cartwright yell 'THIEF!' and, after a moment's thought, 'WITH A GUN!'[line break][line break]";
 	wait for enter key;
 	say "You see Edmund charging you.[line break][line break]";
 	wait for enter key;
@@ -750,7 +865,7 @@ When Chase Scene Hall begins:
 	now the description of the kitchen is "The caterers sprint out of the room, because you're sprinting into it with a gun. Rowan freezes, a handful of ham in his hand. Then he bolts as well.";
 	now the player is in the kitchen;
 	let L be the list of visible unheld stealables;
-	say "Here's a list of everything you can steal from the kitchen now: [L with definite articles].";
+	say "Here's a list of everything you can steal from the kitchen now: [L].";
 	say "Take all of it!".
 	
 Instead of going during Chase Scene Hall:
@@ -765,7 +880,7 @@ When Chase Scene Dining begins:
 	now the description of the dining room is "The caterers have already fled. On her way out of the room, Anne flashes you a dirty look.";
 	now the player is in the dining room;
 	let L be the list of visible unheld stealables;
-	say "Anyways, there's more things to steal: [L with indefinite articles].";
+	say "Anyways, there's more things to steal: [L].";
 	say "Take everything!".
 	
 Instead of going during Chase Scene Dining:
@@ -778,7 +893,7 @@ When Chase Scene Sitting begins:
 	now the description of the sitting room is "This room was crowded just a few minutes ago. It seems like the people who were in here took the door to the hall and then barricaded it. Cool.";
 	now the player is in the sitting room;
 	let L be the list of visible unheld stealables;
-	say "Anyways, it's time to steal: [L with definite articles]. Take it all.".
+	say "Anyways, it's time to steal: [L]. Take it all.".
 
 Instead of going during Chase Scene Sitting:
 	say "You have more than enough time."
