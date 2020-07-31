@@ -81,7 +81,7 @@ When play begins:
 	choose row 1 in Table of Basic Help Options;
 	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe 'tvwolfsnake' spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
 
-A stealable is a kind of undescribed thing.
+A stealable is a kind of undescribed thing. A stealable can be openable or unopenable. A stealable is usually unopenable. A stealable can be open or closed.
 A mourner is a kind of person.
 Wallcontents is a kind of thing.
 
@@ -133,7 +133,8 @@ Every turn:
 				if entry 1 of the most-recently-taken list is a peanut butter canapé:
 					say "> [bold type]take [most-recently-taken list][roman type][line break]Thankfully, it's not [italic type]really[roman type] stealing if it's free food.[line break][line break]Hildegard shrugs at the kleptomania, and you shrug back. A private joke.";
 				otherwise:
-					say "> [bold type]take [most-recently-taken list][roman type][line break]You stuff it in your pocket as surreptitiously as you can.";
+					let M be the most-recently-taken list;
+					say "> [bold type]take [most-recently-taken list][roman type][line break]You stuff [M with definite articles] in your pocket as surreptitiously as you can.";
 				now kleptomode is false;
 				if a mourner is touchable:
 					wait for enter key;
@@ -178,8 +179,8 @@ Instead of putting, inserting, or dropping wallcontents:
 Instead of putting the business card on a supporter:
 	say "That's littering."
 	
-Instead of inserting the business card into a container:
-	if the noun is the wallet:
+Instead of putting or inserting the business card into a container:
+	if the container is the wallet:
 		say "You put the business card back.";
 		now the business card is in the wallet;
 	otherwise:
@@ -277,7 +278,7 @@ Cash is wallcontents. Cash is undescribed. Cash has the printed name "Cartwright
 Business card is undescribed. Business card has the printed name "Cartwright's business card". The description of business card is "[first time]It looks something like this:[line break][fixed letter spacing] ------------------------------------ [line break]| 203-555-9142                       |[line break]|                                    |[line break]|                                    |[line break]|                                    |[line break]|     CARTWRIGHT G FENWICK, ESQ.     |[line break]|          Estate Planning           |[line break]|                                    |[line break]|                                    |[line break]|            326 East Ave, Suite 105 |[line break]|               New Canaan, CT 06840 |[line break] ------------------------------------ [variable letter spacing][line break][line break][only]In person, the design is immaculate. Patrick Bateman would lose his marbles over this card." Understand "card", "business card", "Cartwright's card" or "Cartwright's business card" as business card.
 
 After taking the business card:
-	say "[first time]Hey, you never know.[only]".
+	say "Taken.[first time][line break]Hey, you never know.[only]".
 
 
 Part I - Get Upstairs
@@ -291,7 +292,7 @@ Vestibule is a room. The description of the vestibule is "The entranceway of Unc
 [full old description:
 Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."]
 
-The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time]--it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?"
+The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time]--it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?" Instead of closing the umbrella, say "It's already closed."
 
 There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is scenery. The table is scenery.
 
@@ -319,8 +320,9 @@ Instead of examining the nails for the first time:
 The description of the pen is "It's an ordinary ballpoint pen: sleek, black, [if pen is held]demonstrably [end if]easy to palm."
 
 After taking the pen:
+	say "Taken.";
 	if kleptomode is false:
-		say "You should probably put this back once you're done with it, so other people can use it.".
+		say "[line break]You should probably put this back once you're done with it, so other people can use it.".
 
 [Testthing is a stealable in the vestibule.  The description of the testthing is "It's a testthing." Understand "thing" as the testthing.
 
@@ -511,7 +513,7 @@ The description of a  cue ball is "It's white."
 The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break][line break]On the plus side they probably won't care if you take anything.[line break][line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. You cannot reach the fridge. [first time]The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes.[only][if rowan is in the kitchen][line break][line break]Rowan searches the kitchen for something to eat.[end if]"
 
 
-The counter is scenery in The Kitchen. The delicate tea cup is on the counter. loose grapes are on the counter. The empty bottle is on the counter. The recipe book is on the counter.
+The counter is scenery in The Kitchen. The delicate tea cup is on the counter. Some loose grapes are on the counter. The empty bottle is on the counter. The recipe book is on the counter.
 caterers are scenery in The Kitchen. The description of caterers is "They crowd most of the room like a hivemind, moving in synchronized movement like a sentient liquid in a religious fervor, only speaking to eachother in loud, quick barks.[line break][line break]They completely ignore you.[line break]Which is something of a relief."
 The fridge is scenery in The Kitchen. The description of the fridge is "Large and bursting with all kinds of food and beverages. It is hopelessly out of your reach."
 
@@ -521,7 +523,11 @@ loose grapes are stealable. The description of loose grapes is "If you close you
 Understand "grapes" as the loose grapes.
 The empty bottle is a stealable. The description of the empty bottle is "A sleek glass bottle full to the brim with delicious air."
 Understand "bottle" as the empty bottle.
-The recipe book is a stealable. The description of the recipe book is "A pocket-sized guide to culinary and confectionery competence, a tome of dark instruction in the unknown arts."
+Understand "cookbook" as the recipe book.
+The recipe book is a stealable. The recipe book is openable and closed. The description of the recipe book is "[one of]A pocket-sized guide to culinary and confectionery competence, a tome for instruction in mysterious arts.[or]A not-so-brand new pocket-sized cookbook.[stopping][if the recipe book is open] Since it's a pocket edition, they've tried to cram a bunch of recipes onto each page. [recipelist][end if]"
+
+To say recipelist:
+	say "[one of]You spot one for Duck a l'Orange, which is a little old-fashioned.[or]You spot one for Clams Casino, which is about as old-fashioned as the duck.[or]You spot one for peanut butter canapes, a basic hors d'oeuvre.[if the player has visited the Lawn] The black-and-white photo for them looks vaguely familiar.[end if][or]You spot one for a nice mushroom risotto.[or]You spot one for an Old-Fashioned. You know, the cocktail.[or]You spot one for...tomato aspic? [line break][line break]Seriously, when was this book written?[or]You spot one that might look interesting, but your eyes glaze over. You've read enough recipes today.[or] [stopping]"
 
 Instead of smelling loose grapes:
 	say "If you close your eyes you can pretend you are smelling eyeballs. If that’s something you’re into.".
@@ -833,12 +839,13 @@ Every turn during Gun Scene:
 	say "[one of]Cartwright tells you how much he hates you, as if the gun wasn't an obvious reminder.[or]Cartwright uses the arm that isn't holding the gun to wipe sweat off his brow.[or]You wish he'd point that gun somewhere else.[or]You've gotta think of a way out of this.[or]Cartwright makes a snide remark about your kleptomania.[or]You need a miracle.[or]Cartwright brags about how good he is on the shooting range.[stopping][line break]";
 	
 When Gun Scene ends:
-	say "> take revolver[line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
+	say "> [bold type]take revolver[roman type][line break]You stuff the revolver in your pocket as surreptitiously as you can.[line break][line break]";
 	wait for enter key;
 	say "Wait.[line break][line break]";
 	wait for enter key;
 	say "What?";
 	now the player is carrying the revolver;
+	now the indefinite article of the revolver is "your";
 	wait for enter key;
 	clear screen;
 	say "You find yourself holding Cartwright at gunpoint. Waving the revolver in the direction of the desk chair until the scared bully sits down.[line break][line break]";
@@ -865,7 +872,7 @@ When Chase Scene Hall begins:
 	now the description of the kitchen is "The caterers sprint out of the room, because you're sprinting into it with a gun. Rowan freezes, a handful of ham in his hand. Then he bolts as well.";
 	now the player is in the kitchen;
 	let L be the list of visible unheld stealables;
-	say "Here's a list of everything you can steal from the kitchen now: [L].";
+	say "Here's a list of everything you can steal from the kitchen now: [L with indefinite articles].";
 	say "Take all of it!".
 	
 Instead of going during Chase Scene Hall:
@@ -893,7 +900,7 @@ When Chase Scene Sitting begins:
 	now the description of the sitting room is "This room was crowded just a few minutes ago. It seems like the people who were in here took the door to the hall and then barricaded it. Cool.";
 	now the player is in the sitting room;
 	let L be the list of visible unheld stealables;
-	say "Anyways, it's time to steal: [L]. Take it all.".
+	say "Anyways, it's time to steal: [L with definite articles]. Take it all.".
 
 Instead of going during Chase Scene Sitting:
 	say "You have more than enough time."
@@ -911,7 +918,10 @@ When Chase Scene Sitting ends:
 	end the story finally.
 	
 
-The revolver is a thing. The description of the revolver is "A series of mechanisms designed specifically for killing.". Understand "gun" or "six shooter" or "six-shooter" as the revolver.
+The revolver is a thing. The description of the revolver is "A series of intricate mechanisms designed specifically for killing.". Understand "gun" or "six shooter" or "six-shooter" as the revolver.
+
+Rule for printing the name of the revolver while taking inventory:
+	say "revolver[first time], now[only]".
 
 Instead of putting, inserting, or dropping the original will, say "This is evidence. Or blackmail."
 
@@ -921,12 +931,14 @@ The description of the original will is "Uncle Clifton's Last Will and Testament
 
 The description of the doctored will is "A petty fake by petty takers."
 
-Intruding Mourner is a scene. Intruding Mourner begins when kitchen_visited is true. Intruding Mourner ends when the time since Intruding Mourner began is 4 minutes.
+Intruding Mourner is a scene. Intruding Mourner begins when kitchen_visited is true. Intruding Mourner ends when the time since Intruding Mourner began is 10 minutes.
 
 When Intruding Mourner ends:
 	now Rowan is in the kitchen;
 	if the player is in the kitchen:
-		say "Rowan enters, searching for a snack.".
+		say "Rowan enters, searching for a snack.";
+	if the player is in the pantry:
+		say "Through the crack in the door, you see Rowan enter the kitchen, searching for a snack.".
 
 
 Rowan is a mourner. Rowan is undescribed. The description of Rowan is "He's a college rower, so he spends a lot of time in the kitchen searching for protein. He'll probably be in here a while. He's ignoring you because he hasn't noticed you, but if he had, he'd still be ignoring you."
