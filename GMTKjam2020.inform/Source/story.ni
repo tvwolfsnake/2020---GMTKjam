@@ -8,7 +8,7 @@ The story creation year is 2020.
 The story headline is "a take all game".
 The story genre is "Comedy".
 The story description is "You just want to go to the funeral reception, get the silver pocketwatch your Uncle Clifton left you in his will, and leave. Trouble is, you're a chronic kleptomaniac, and his family hates you, probably because you're a chronic kleptomaniac."
-After printing the banner text, say "Type HELP for more information."
+After printing the banner text, say "Type HELP for more information. Type SCREEN READER to toggle accessibility mode."
 
 Release along with cover art ("A roll of toilet paper, a ring of keys, a cigarette, and a fancy pocketwatch with the letters C.F. on it, rendered in a black and white comic book style.").
 
@@ -20,13 +20,18 @@ Release along with the "Quixe" interpreter.
 
 [BASIC RULES]
 
-Kleptomode is a truth state that varies.
-wallet_given is a truth state that varies.
-gun_start is a truth state that varies.
-kitchen_visited is a truth state that varies.
-knife_disambiguation is a truth state that varies.
-nails_examined is a truth state that varies.
-pen_variable is a truth state that varies.
+Kleptomode is a truth state that varies. Kleptomode is initially false.
+wallet_given is a truth state that varies. wallet_given is initially false.
+gun_start is a truth state that varies. gun_start is initially false.
+kitchen_visited is a truth state that varies. kitchen_visited is initially false.
+knife_disambiguation is a truth state that varies. knife_disambiguation is initially false.
+nails_examined is a truth state that varies. nails_examined is initially false.
+pen_variable is a truth state that varies. pen_variable is initially false.
+screenreader_on is a truth state that varies. screenreader_on is initially false.
+cutscene_over is a truth state that varies. cutscene_over is initially true.
+kitchen_looked is a truth state that varies. kitchen_looked is initially false.
+dining_looked is a truth state that varies. dining_looked is initially false.
+sitting_looked is a truth state that varies. sitting_looked is initially false.
 
 [This is some text before the title. Many games use this space to set the basic scene, get an insight into the player character's mental state. We could use this space to express how the player character feels about the situation, as they park their car, calm themself down, walk inside, and pinch that one character's wallet, and then follow it up with the title.]
 
@@ -36,50 +41,74 @@ pen_variable is a truth state that varies.
 
 He was a friend.]
 
+Screen reader is an action out of world. Understand "screen reader" as screen reader.
+
+Carry out screen reader:
+	if screenreader_on is false:
+		now screenreader_on is true;
+		say "Screen reader mode set to ON. (Certain effects will change to be more screen reader-friendly, and the start and end of long minimal-interaction cutscenes will be marked.)";
+	otherwise:
+		now screenreader_on is false;
+		say "Screen reader mode set to OFF."
+		
+To say sr_enter:
+	say "[bracket]Press ENTER to continue.[close bracket][line break][line break]"
+
 When play begins:
-	now kleptomode is false;
-	now wallet_given is false;
-	now gun_start is false;
-	now kitchen_visited is false;
-	now knife_disambiguation is false;
-	now nails_examined is false;
-	now pen_variable is false;
 	now the wallet is closed;
+	say "Would you like to turn screen reader mode on? (y or n) ";
+	if the player consents:
+		now screenreader_on is true;
+		say "Screen reader mode set to ON. (Certain effects will change to be more screen reader-friendly, and long minimal-interaction cutscenes (like the following) will be marked.)[line break][line break][bracket]Press ENTER to continue.[close bracket]";
+		wait for enter key;
+	otherwise:
+		now screenreader_on is false;
+		say "Noted.";
 	clear screen;
-	say "Uncle Clifton is dead.[line break][line break][italic type][bracket]Press ENTER to continue.[close bracket][roman type]";
+	say "[if screenreader_on is true][bracket]Cutscene begins.[close bracket][line break][line break][end if]Uncle Clifton is dead.[line break][line break][italic type][bracket]Press ENTER to continue.[close bracket][roman type][if screenreader_on is true][line break][line break][end if]";
 	wait for enter key;
-	clear screen;
-	say "Uncle Clifton is dead.[line break][line break]";
-	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break]";
+	if screenreader_on is false:
+		clear screen;
+		say "Uncle Clifton is dead.[line break][line break]";
+	say "He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.[line break][line break]";
+	say "He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "He was awful, probably.[line break][line break]";
-	wait for enter key;
-	clear screen;
-	say "He was one of the few people who bothered to understand you.";
-	wait for enter key;
-	clear screen;
-	wait for enter key;
-	clear screen;
-	say "He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.[line break][line break]";
-	wait for enter key;
-	say "He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.[line break][line break]";
-	wait for enter key;
-	say "That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.[line break][line break]";
+	say "He was awful, probably.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	clear screen;
-	say "You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.[line break][line break]He gives you a dirty look and walks off into the hall.[line break][line break]";
+	say "He was one of the few people who bothered to understand you.[if screenreader_on is true][line break][line break][sr_enter][end if]";
+	if screenreader_on is false:
+		wait for enter key;
+		clear screen;
 	wait for enter key;
-	say "His wallet fell out of his pocket. It's sitting on the floor.";
+	clear screen;
+	say "He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "> [bold type]take wallet[roman type][line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break]";
+	say "He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "In about a seven count, you're going to take something else, even though you don't want to.[line break][line break]";
+	say "That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.[line break][line break][if screenreader_on is true][sr_enter][end if]";
+	wait for enter key;
+	clear screen;
+	say "You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.[line break][line break]He gives you a dirty look and walks off into the hall.[line break][line break][if screenreader_on is true][sr_enter][end if]";
+	wait for enter key;
+	say "His wallet fell out of his pocket. It's sitting on the floor.[if screenreader_on is true][sr_enter][end if]";
+	wait for enter key;
+	say "> [bold type]take wallet[roman type][line break]You stuff it in your pocket as surreptitiously as you can.[line break][line break][if screenreader_on is true][sr_enter][end if]";
+	wait for enter key;
+	say "In about a seven count, you're going to take something else, even though you don't want to.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	say "You can kind of understand why Uncle Clifton's family don't like you.";
 	choose row 1 in Table of Basic Help Options;
 	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe 'tvwolfsnake' spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
+	
+Before printing the locale description of the Vestibule:
+	if screenreader_on is true:
+		if cutscene_over is true:
+			say "[bracket]Cutscene ends.[close bracket]";
+			now cutscene_over is false;
+		if cutscene_over is false:
+			say "".
 
 A stealable is a kind of undescribed thing. A stealable can be openable or unopenable. A stealable is usually unopenable. A stealable can be open or closed.
 A mourner is a kind of person.
@@ -137,10 +166,12 @@ Every turn:
 					say "> [bold type]take [most-recently-taken list][roman type][line break]You stuff [M with definite articles] in your pocket as surreptitiously as you can.";
 				now kleptomode is false;
 				if a mourner is touchable:
+					if screenreader_on is true:
+						say "[sr_enter]";
 					wait for enter key;
-					say "[line break]You just can't help yourself, can you.[line break][line break]";
+					say "[line break]You just can't help yourself, can you.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 					wait for enter key;
-					say "'THIEF! THIEF!'";
+					say "'THIEF! THIEF!'[if screenreader_on is true][sr_enter][end if]";
 					wait for enter key;
 					clear screen;
 					now the left hand status line is "The Curb";
@@ -211,7 +242,7 @@ Check giving a stealable to a person:
 
 Instead of giving the wallet to a person:
 	if the person is a mourner:
-		say "The family is already watching you like a hawk, if you give it to one of them they'll probably think you stole it.[line break][line break]";
+		say "The family is already watching you like a hawk, if you give it to one of them they'll probably think you stole it.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 		wait for enter key;
 		say "Which, to be fair, you did.".
 		
@@ -275,7 +306,10 @@ Credit cards is wallcontents. Credit cards is undescribed. Credit cards has the 
 
 Cash is wallcontents. Cash is undescribed. Cash has the printed name "Cartwright's cash". The description of cash is "[one of]A huge wad of money. Greenbacks, bones, simoleons, sawbucks, benjamins, what have you. Stacks of dead presidents.[line break][line break]Actually, right now most of his bills are Canadian. Before the funeral you overheard him talking Anne's ear off about Banff, so you guess he must've taken a vacation.[or]A good few thousand, mostly in Canadian bills.[stopping]". Understand "cash", "Cartwright's cash", "money", "bill", "bills", "dollars", "dollar", "greenbacks", "greenback", "loonie", "loonies", "bones", "simoleons", "sawbucks", "benjamin", "benjamins", "dead presidents", "moolah", "bucks", "stacks", "currency", or "cheddar" as the cash.
 
-Business card is undescribed. Business card has the printed name "Cartwright's business card". The description of business card is "[first time]It looks something like this:[line break][fixed letter spacing] ------------------------------------ [line break]| 203-555-9142                       |[line break]|                                    |[line break]|                                    |[line break]|                                    |[line break]|     CARTWRIGHT G FENWICK, ESQ.     |[line break]|          Estate Planning           |[line break]|                                    |[line break]|                                    |[line break]|            326 East Ave, Suite 105 |[line break]|               New Canaan, CT 06840 |[line break] ------------------------------------ [variable letter spacing][line break][line break][only]In person, the design is immaculate. Patrick Bateman would lose his marbles over this card." Understand "card", "business card", "Cartwright's card" or "Cartwright's business card" as business card.
+Business card is undescribed. Business card has the printed name "Cartwright's business card". The description of business card is "[one of][businesscardascii][or]It reads: CARTWRIGHT G FENWICK, ESQ[if screenreader_on is true]UIRE[end if]. Estate Planning. 326 East Ave, Suite 105. New Canaan, CT 06840.[line break][line break][stopping]In person, the design is immaculate. Patrick Bateman would lose his marbles over this card." Understand "card", "business card", "Cartwright's card" or "Cartwright's business card" as business card.
+
+To say businesscardascii:
+	say "[if screenreader_on is false]It looks something like this:[line break][fixed letter spacing] ------------------------------------ [line break]| 203-555-9142                       |[line break]|                                    |[line break]|                                    |[line break]|                                    |[line break]|     CARTWRIGHT G FENWICK, ESQ.     |[line break]|          Estate Planning           |[line break]|                                    |[line break]|                                    |[line break]|            326 East Ave, Suite 105 |[line break]|               New Canaan, CT 06840 |[line break] ------------------------------------ [variable letter spacing][end if][if screenreader_on is true]It reads: 203-555-9142. CARTWRIGHT G FENWICK, ESQUIRE. Estate Planning. 326 East Ave, Suite 105. New Canaan, CT 06840.[end if][line break][line break]"
 
 After taking the business card:
 	say "Taken.[first time][line break]Hey, you never know.[only]".
@@ -310,9 +344,9 @@ After examining the condolence book for the first time:
 	
 Instead of examining the nails for the first time:
 	if nails_examined is false:
-		say "You look at the nails, driven into the condolence book to keep it on the table.";
+		say "You look at the nails, driven into the condolence book to keep it on the table.[if screenreader_on is true][sr_enter][end if]";
 		wait for enter key;
-		say "[line break]Wait, really?";
+		say "[line break]Wait, really?[if screenreader_on is true][sr_enter][end if]";
 		wait for enter key;
 		continue the action;
 		now nails_examined is true.
@@ -370,12 +404,12 @@ Instead of going up in the hall:
 	say "Cartwright stops you in your tracks. He doesn't want you upstairs, and you know him just well enough to know he's not interested in any stories about a pocketwatch." instead.
 
 Instead of giving a peanut butter canapé to Cartwright in the hall:
-	say "In order to get past him, you give Cartwright--a man whose allergies might be way more severe than you're aware of--a common and potentially life-threatening allergen.[line break][line break]";
+	say "In order to get past him, you give Cartwright--a man whose allergies might be way more severe than you're aware of--a common and potentially life-threatening allergen.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	clear screen;
-	say "No. You don't. Obviously you don't.[line break][line break]";
+	say "No. You don't. Obviously you don't.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "What is wrong with you?";
+	say "What is wrong with you?[if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	clear screen;
 	try looking.
@@ -453,7 +487,7 @@ The dartboard is scenery in the Game Room. The description of the dartboard is "
 The snooker table is scenery in the Game room. The description of the snooker table is "You remember when you could barely see over the edge of this table. The snooker table is littered with snooker balls of various colours, truly the game of the rich and out of touch. But at least it was less dangerous than darts.".
 darts are a stealable in the Game Room. The Description of darts is "These darts are probably made out of some real endangerd peacock feathers or something."
 Instead of touching the snooker table:
-	say "You felt the felt.[line break][line break]";
+	say "You felt the felt.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	say "Actually the fabric on the table is baize, a coarse woollen cloth, similar in texture to felt, but more durable.".
 
@@ -685,12 +719,14 @@ Uncle Clifton's Study is west of the Upstairs Balcony_south. The description of 
 The silver pocketwatch is in Uncle Clifton's Study. The description of the silver pocketwatch is "The one thing Uncle Clifton promised to you. It's beautiful. On the inside, the hour and minute hand point at roman numerals. On the outside, gold accents circumscribe a pair of initials, also in gold: C.F.[first time][line break][line break]Either Uncle Clifton commissioned this watch, or he got very lucky in an antique shop.[only]". The silver pocketwatch is undescribed. Understand "watch" or "pocket watch" as the silver pocketwatch.
 
 After taking the silver pocketwatch:
-	say "You grab the pocketwatch, not in an act of compulsive theft, but as a statement of ownership.[line break][line break]";
+	if screenreader_on is true:
+		say "[bracket]Cutscene begins.[close bracket][line break][line break]";
+	say "You grab the pocketwatch, not in an act of compulsive theft, but as a statement of ownership.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	clear the screen;
-	say "You take a moment of silence, to remember Uncle Clifton by.";
+	say "You take a moment of silence, to remember Uncle Clifton by.[if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "The only sound is the muffled ticking of his pocketwatch in your pocket.[line break][line break]";
+	say "The only sound is the muffled ticking of his pocketwatch in your pocket.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	say "With the moment of silence over, now you can leave this damn house.";
 	now the papers are nowhere;
@@ -699,6 +735,8 @@ After taking the silver pocketwatch:
 	now the letter opener is on the partners desk;
 	now the description of the desk is "A partners desk, designed for two people to sit at. Uncle Clifton's rolling chair sits on one side, but there is no chair on the other.";
 	now the description of Uncle Clifton's Study is "You know this room very well. The partners desk, given pride of place in the center of the room. The rolling chair behind it. [if the letter opener is unheld]The letter opener on the desk.[end if][line break][line break]Now that you're not singularly focused on the pocketwatch, you can see that the papers under it were...Uncle Clifton's will, and a will that looks almost just like it.";
+	if screenreader_on is true:
+		say "[bracket]Cutscene ends.[close bracket][line break][line break]";
 	try looking.
 	
 Instead of putting, inserting, or dropping the silver pocketwatch, say "This is staying right in your pocket, where it belongs."
@@ -708,23 +746,23 @@ The partners desk is scenery in Uncle Clifton's Study. Understand "desk" as the 
 The description of the letter opener is "Long, with a white-bone handle. Surprisingly sharp.". The letter opener is undescribed. Understand "knife" as the letter opener.
 
 Instead of taking the letter opener during Gun Scene:
-	say "Cartwright sees you reaching for the [if knife_disambiguation is true]letter opener[end if][if knife_disambiguation is false]knife[end if], and fires.[line break][line break]";
+	say "Cartwright sees you reaching for the [if knife_disambiguation is true]letter opener[end if][if knife_disambiguation is false]knife[end if], and fires.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Maybe you shouldn't have brought a knife to a gun fight.";
+	say "Maybe you shouldn't have brought a knife to a gun fight.[if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	end the story saying "You have died".
 	
 Instead of giving the peanut butter canapé to Cartwright during Gun Scene:
-	say "Cartwright's deathly allergic, but he shoots you before you get close.[line break][line break]";
+	say "Cartwright's deathly allergic, but he shoots you before you get close.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Seriously, who brings a canapé to a gunfight?";
+	say "Seriously, who brings a canapé to a gunfight?[if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	end the story saying "You have died".
 	
 Instead of throwing the peanut butter canapé at Cartwright during Gun Scene:
-	say "Cartwright's deathly allergic, but he's also a quick shot.[line break][line break]";
+	say "Cartwright's deathly allergic, but he's also a quick shot.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Seriously, who brings a canapé to a gunfight?";
+	say "Seriously, who brings a canapé to a gunfight?[if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	end the story saying "Cartwright has died, but so have you".
 	
@@ -774,26 +812,26 @@ When Wallet Scene begins:
 	
 When Wallet Scene ends:
 	now kleptomode is true;
-	say "A muffled cry from the other room:[line break][line break]'Cartwright! I found your wallet!'[line break][line break]";
+	say "A muffled cry from the other room:[line break][line break]'Cartwright! I found your wallet!'[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break]'You found my wallet?'[line break][line break]";
+	say "Cartwright gives you a funny look before begrudgingly leaving his post by the stairs and heading into the sitting room.[line break][line break]'You found my wallet?'[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	now Cartwright is nowhere;
 	wait for enter key;
 	say "Now's your chance! You duck up the stairs and tiptoe over to Uncle Clifton's study.";
 	now the player is in Uncle Clifton's Study.
 
 Instead of attacking Cartwright during the Gun Scene:
-	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break]";
+	say "Violence isn't the answer to this one, but it should be. The problem is that this is a gun fight, and you haven't brought a gun.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Cartwright did.";
+	say "Cartwright did.[if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	end the story saying "You have died".
 	
 Instead of going during the Gun Scene:
 	say "You move towards the door[line break][line break]";
-	wait for any key;
-	say "Cartwright moves his pointer finger.";
-	wait for any key;
+	wait for enter key;
+	say "Cartwright moves his pointer finger.[if screenreader_on is true][sr_enter][end if]";
+	wait for enter key;
 	end the story saying "You have died".
 	
 Stabbing is an action applying to one thing. Understand "stab [something]" as stabbing.
@@ -811,21 +849,23 @@ Instead of stabbing Cartwright:
 Gun Scene is a scene. Gun Scene begins when gun_start is true. Gun Scene ends when the time since Gun Scene began is 7 minutes.
 
 When Gun Scene begins:
-	say "You pick up both wills, one in each hand, weighing the implications.[line break][line break]";
+	say "You pick up both wills, one in each hand, weighing the implications.[line break][line break][if screenreader_on is true][sr_enter][end if]";
+	if screenreader_on is true:
+		say "[bracket]Cutscene begins.[close bracket][if screenreader_on is true][sr_enter][end if]";
 	now the player is carrying the original will;
 	now the player is carrying the doctored will;
 	wait for enter key;
-	say "One will is definitely the original. The other is a decent fake.[line break][line break]";
+	say "One will is definitely the original. The other is a decent fake.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "You read through the wills at the same time. You can only find one change in the doctored will.[line break][line break]";
-	wait for enter key;
-	clear screen;
-	say "The line that bequeaths the pocketwatch to you has been removed.[line break][line break]";
+	say "You read through the wills at the same time. You can only find one change in the doctored will.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	clear screen;
-	say "His family gets a 750 fucking million dollar estate and they couldn't let you have one measly pocketwatch.[line break][line break]";
+	say "The line that bequeaths the pocketwatch to you has been removed.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "You sigh.[line break][line break]";
+	clear screen;
+	say "His family gets a 750 fucking million dollar estate and they couldn't let you have one measly pocketwatch.[line break][line break][if screenreader_on is true][sr_enter][end if]";
+	wait for enter key;
+	say "You sigh.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	say "You hear the unmistakable [italic type]cli-cli-click[roman type] of a revolver hammer being pulled back.";
 	now Cartwright is in Uncle Clifton's Study;
@@ -833,55 +873,69 @@ When Gun Scene begins:
 	now the description of Uncle Clifton's Study is "There's a rolling chair, [if letter opener is held]and [end if]a desk[if letter opener is held].[end if][if letter opener is unheld], and a letter opener.[end if][line break][line break]Oh also, Cartwright is standing in the doorway, brandishing a six-shooter at you.";
 	now the description of Cartwright is "You know those old rich fratty white guys who hold people at gunpoint?[line break][line break]Yeah. Exactly.";
 	now the description of the business card is "It's the business card of the guy who probably personally altered the wills.";
-	try looking.
+	try looking;
+	if screenreader_on is true:
+		say "[line break][bracket]Cutscene ends.[close bracket]".
 	
 Every turn during Gun Scene:
 	say "[one of]Cartwright tells you how much he hates you, as if the gun wasn't an obvious reminder.[or]Cartwright uses the arm that isn't holding the gun to wipe sweat off his brow.[or]You wish he'd point that gun somewhere else.[or]You've gotta think of a way out of this.[or]Cartwright makes a snide remark about your kleptomania.[or]You need a miracle.[or]Cartwright brags about how good he is on the shooting range.[stopping][line break]";
 	
 When Gun Scene ends:
-	say "> [bold type]take revolver[roman type][line break]You stuff the revolver in your pocket as surreptitiously as you can.[line break][line break]";
+	say "> [bold type]take revolver[roman type][line break]You stuff the revolver in your pocket as surreptitiously as you can.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Wait.[line break][line break]";
+	say "Wait.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "What?";
+	say "What?[if screenreader_on is true][sr_enter][end if]";
 	now the player is carrying the revolver;
 	now the indefinite article of the revolver is "your";
 	wait for enter key;
 	clear screen;
-	say "You find yourself holding Cartwright at gunpoint. Waving the revolver in the direction of the desk chair until the scared bully sits down.[line break][line break]";
+	if screenreader_on is true:
+		say "[bracket]Cutscene begins.[close bracket][line break][line break]";
+	say "You find yourself holding Cartwright at gunpoint. Waving the revolver in the direction of the desk chair until the scared bully sits down.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Your body moves without you, sprinting out of the room towards the stairs.[line break][line break]";
+	say "Your body moves without you, sprinting out of the room towards the stairs.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "Fuck this family.[line break][line break]";
+	say "Fuck this family.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "You're taking everything that isn't nailed down.";
-	wait for any key.
+	say "You're taking everything that isn't nailed down.[if screenreader_on is true][sr_enter][end if]";
+	wait for enter key.
 	
 Part III - Now Go Back Downstairs
 	
 Chase Scene Hall is a scene. Chase Scene Hall begins when Gun Scene ends. Chase Scene Hall ends when the time since Chase Scene Hall began is 2 minutes.
 
 When Chase Scene Hall begins:
-	say "Still not really in control of your feet, you run back the way you came, barrelling down the stairs.[line break][line break]";
+	say "Still not really in control of your feet, you run back the way you came, barrelling down the stairs.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "You hear Cartwright yell 'THIEF!' and, after a moment's thought, 'WITH A GUN!'[line break][line break]";
+	say "You hear Cartwright yell 'THIEF!' and, after a moment's thought, 'WITH A GUN!'[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "You see Edmund charging you.[line break][line break]";
+	say "You see Edmund charging you.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	say "You duck into the kitchen.";
 	now the description of the kitchen is "The caterers sprint out of the room, because you're sprinting into it with a gun. Rowan freezes, a handful of ham in his hand. Then he bolts as well.";
 	now the player is in the kitchen;
 	let L be the list of visible unheld stealables;
-	say "Here's a list of everything you can steal from the kitchen now: [L with indefinite articles].";
-	say "Take all of it!".
+	say "[if an unheld stealable is visible]Here's a list of everything you can steal from the kitchen now: [L with indefinite articles].[end if]";
+	say "[if an unheld stealable is visible]Take all of it![end if]";
+	if screenreader_on is true:
+		say "[line break][line break][bracket]Cutscene ends.[close bracket]".
 	
 Instead of going during Chase Scene Hall:
 	say "You have enough time to grab something before they catch up to you."
 	
+Before looking in the Kitchen during Chase Scene Hall:
+	if kitchen_looked is false:
+		let L be the list of visible unheld stealables;
+		now the description of the kitchen is "This is what a busy kitchen would look like if everyone in it suddenly vanished.[line break][line break][if an unheld stealable is visible]Try stealing stuff: [L with indefinite articles].[end if]";
+		now kitchen_looked is true;
+	if kitchen_looked is true:
+		continue the action.
+	
 Chase Scene Dining is a scene. Chase Scene Dining begins when Chase Scene Hall ends. Chase Scene Dining ends when the time since Chase Scene Dining began is 2 minutes.
 
 When Chase Scene Dining begins:
-	say "Edmund finally catches up to you.[line break][line break]";
+	say "Edmund finally catches up to you.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	say "You dodge him and run into the dining room.";
 	now the description of the dining room is "The caterers have already fled. On her way out of the room, Anne flashes you a dirty look.";
@@ -891,7 +945,18 @@ When Chase Scene Dining begins:
 	say "Take everything!".
 	
 Instead of going during Chase Scene Dining:
-	say "You have enough time to grab something before they catch up to you."
+	if an unheld stealable is visible:
+		say "You have enough time to grab something before they catch up to you.";
+	otherwise:
+		say "Take a deep breath first.".
+	
+Before looking in the dining room during Chase Scene Dining:
+	if dining_looked is false:
+		let L be the list of visible unheld stealables;
+		now the description of the dining room is "This room's about as empty as a dining room usually is when a dinner party isn't going on.[line break][line break][if an unheld stealable is visible]Try stealing stuff: [L].[end if]";
+		now dining_looked is true;
+	if dining_looked is true:
+		continue the action.
 	
 Chase Scene Sitting is a scene. Chase Scene Sitting begins when Chase Scene Dining ends. Chase Scene Sitting ends when the time since Chase Scene Dining began is 5 minutes.
 
@@ -905,13 +970,21 @@ When Chase Scene Sitting begins:
 Instead of going during Chase Scene Sitting:
 	say "You have more than enough time."
 	
+Before looking in the sitting room during Chase Scene Dining:
+	if sitting_looked is false:
+		let L be the list of visible unheld stealables;
+		now the description of the sitting room is "This room used to be packed full of rich mourners in black tailored suit jackets and coats. The jackets and coats are gone, and so are their owners.[line break][line break][if an unheld stealable is visible]Try stealing stuff: [L].[end if]";
+		now sitting_looked is true;
+	if sitting_looked is true:
+		continue the action.
+	
 When Chase Scene Sitting ends:
-	say "Probably best to quit while you're ahead.[line break][line break]";
+	say "Probably best to quit while you're ahead.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	now the description of the lawn is "";
 	say "You sprint out onto the lawn.";
 	now the player is in the lawn;
-	say "In the pandemonium, the hors d'oeuvres table was knocked over. Peanut butter canapés litter the grass beneath your feet, crunching as you run. Hildegard gives you a high five.[line break][line break]";
+	say "In the pandemonium, the hors d'oeuvres table was knocked over. Peanut butter canapés litter the grass beneath your feet, crunching as you run. Hildegard gives you a high five.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	now the left hand status line is "Your Car";
 	say "You jump in your car. You speed off into the sunset, your silver pocketwatch in one hand and a goofy smile on your face.";
