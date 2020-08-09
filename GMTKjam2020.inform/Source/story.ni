@@ -144,6 +144,32 @@ Definition: a stealable is unheld if it is not carried.
 
 Definition: a thing is unheld if it is not carried.
 
+A thing can be seen or unseen.
+
+Carry out examining a thing:
+	now the noun is seen.
+
+A thing can be felt or unfelt.
+
+Carry out touching a thing:
+	now the noun is felt.
+	
+A thing can be sniffed or unsniffed.
+
+Carry out smelling a thing:
+	now the noun is sniffed.
+	
+A thing can be sampled or unsampled.
+
+Carry out tasting a thing:
+	now the noun is sampled.
+
+Carry out eating a thing:
+	now the noun is sampled.
+	
+Carry out drinking a thing:
+	now the noun is sampled.
+
 The steal list is a list of objects that varies.
 
 The most-recently-taken list is a list of objects that varies.
@@ -443,7 +469,7 @@ Dimia is a mourner in the Sitting Room. Dimia is undescribed. The description of
 [scope lawn]
 
 [Lawn]
-The Lawn is west of the sitting room. The description of the Lawn is "A clearing full of lush green grass. A table is set up with, at this point, just peanut butter canapés. Standing near the table is Hildegard, a rare friendly face."
+The Lawn is west of the sitting room. The description of the Lawn is "A clearing full of lush green grass. A table is set up for hors d'oeuvres[if an unheld peanut butter canapé is visible and the player is in the Lawn] which, at this point, just means peanut butter canapés[otherwise], but now it's empty[end if]. Standing near the table is Hildegard, a rare friendly face."
 
 The lawn table is in the Lawn. The lawn table is undescribed. The peanut butter canapés are on the lawn table.
 
@@ -480,7 +506,7 @@ Cedric is a mourner in the Game Room. Cedric is undescribed. The description of 
 Bryce is a mourner in the Game Room. Bryce is undescribed. The description of Bryce is "A clumsy coward, but a whiz at snooker. Not that you've played with him. He's drinking scotch with Cedric."
 
 
-The deer head is a stealable in the Game Room. The description of the deer head is "You guess this is why they call it the GAME room. The decapitated deer glares at you."
+The deer head is a stealable in the Game Room. The description of the deer head is "You guess this is why they call it the [italic type]game[roman type] room.[line break][line break]The decapitated deer glares at you."
 The bear head is a stealable in the Game Room. The description of the bear head is "Even mounted on a wooden plaque, this bear is still intimidating."
 The mounted fish is a stealable in the Game Room. The description of the mounted fish is "This fish looks depressed. To the degree that any fish can look depressed."
 The dartboard is scenery in the Game Room. The description of the dartboard is "Multicoloured concentric circles are segmented into sections for darts to land. Holes cover the wall around the dartboard from where Uncle Clifton played darts while drunk. Those were always scary games."
@@ -544,11 +570,12 @@ The description of a  cue ball is "It's white."
 
 [Kitchen]
 
-The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break][line break]On the plus side they probably won't care if you take anything.[line break][line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. You cannot reach the fridge. [first time]The counter you can reach holds a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes.[only][if rowan is in the kitchen][line break][line break]Rowan searches the kitchen for something to eat.[end if]"
+The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The description of the kitchen is "The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.[line break][line break]On the plus side they probably won't care if you take anything.[line break][line break]Unfortunately they are currently occupying three quarters of the room.[line break][line break]You can reach the pantry to the north of the kitchen or head into the dining room to the south. You cannot reach the fridge[if an unheld stealable is visible and the player is in the Kitchen]. The unattended counter in this corner of the room holds [list of visible unheld stealables with indefinite articles][end if].[if rowan is in the kitchen][line break][line break]Rowan searches the kitchen for something to eat.[end if]"
 
+[a delicate tea cup, an empty bottle, a pocket-sized recipe book, and some loose grapes]
 
 The counter is scenery in The Kitchen. The delicate tea cup is on the counter. Some loose grapes are on the counter. The empty bottle is on the counter. The recipe book is on the counter.
-caterers are scenery in The Kitchen. The description of caterers is "They crowd most of the room like a hivemind, moving in synchronized movement like a sentient liquid in a religious fervor, only speaking to eachother in loud, quick barks.[line break][line break]They completely ignore you.[line break]Which is something of a relief."
+caterers are scenery in The Kitchen. The description of caterers is "They crowd most of the room like a hivemind, moving in synchronized movement in a quasireligious fervor, only speaking to each other in loud bursts of coded language.[line break][line break]They completely ignore you.[first time][line break][line break]Which is something of a relief.[only]".
 The fridge is scenery in The Kitchen. The description of the fridge is "Large and bursting with all kinds of food and beverages. It is hopelessly out of your reach."
 
 The delicate tea cup is a stealable. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
@@ -564,9 +591,11 @@ To say recipelist:
 	say "[one of]You spot one for Duck a l'Orange, which is a little old-fashioned.[or]You spot one for Clams Casino, which is about as old-fashioned as the duck.[or]You spot one for peanut butter canapes, a basic hors d'oeuvre.[if the player has visited the Lawn] The black-and-white photo for them looks vaguely familiar.[end if][or]You spot one for a nice mushroom risotto.[or]You spot one for an Old-Fashioned. You know, the cocktail.[or]You spot one for...tomato aspic? [line break][line break]Seriously, when was this book written?[or]You spot one that might look interesting, but your eyes glaze over. You've read enough recipes today.[or] [stopping]"
 
 Instead of smelling loose grapes:
-	say "If you close your eyes you can pretend you are smelling eyeballs. If that’s something you’re into.".
+	say "If you close your eyes you can pretend you are smelling eyeballs. If that’s something you’re into.";
+	now the grapes are sniffed.
 Instead of tasting loose grapes:
-	say "You aren’t in the mood for eyeballs.".
+	say "[if the loose grapes are seen][eyeball_description][grape_description][otherwise if the loose grapes are felt][eyeball_description][grape_description][otherwise if the loose grapes are sniffed][eyeball_description][grape_description][otherwise if the loose grapes are sampled][eyeball_description][grape_description][otherwise]Y[grape_description][end if]";
+	now the grapes are sampled.
 Instead of drinking the empty bottle:
 	say "You gulp down a fresh mouthful of air. Refreshing!".
 Instead of tasting the empty bottle:
@@ -578,7 +607,24 @@ Instead of touching the delicate tea cup:
 Instead of smelling the delicate tea cup:
 	say "Careful! You’ll break it!".
 Instead of eating loose grapes:
-	say "You aren’t in the mood for eyeballs.".
+	say "[if the loose grapes are seen][eyeball_description][grape_description][otherwise if the loose grapes are felt][eyeball_description][grape_description][otherwise if the loose grapes are sniffed][eyeball_description][grape_description][otherwise if the loose grapes are sampled][eyeball_description][grape_description][otherwise]Y[grape_description][end if]";
+	now the grapes are sampled.
+Instead of touching loose grapes:
+	say "You close your eyes and touch the grapes.[line break][if the loose grapes are seen][grapes_expected1][otherwise if the loose grapes are sampled][grapes_expected2][end if][line break]They feel vaguely like eyeballs.";
+	now the grapes are felt.
+	
+To say grape_description:
+	say "ou've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit."
+	
+To say eyeball_description:
+	say "You aren’t in the mood for eyeballs.[line break][line break]More seriously, y".
+	
+To say grapes_expected1:
+	say "[first time][line break] It's just as you thought.[line break][only]".
+	
+To say grapes_expected2:
+	say "[first time][line break] It's just as you thought. [line break][only]".
+[seen, felt, sniffed, sampled]
 	
 Before going north in the Dining Room:
 	now kitchen_visited is true.
@@ -596,9 +642,11 @@ Before going south in the Pantry:
 
 [Pantry]
 
-The Pantry is north of the Kitchen. The description of the Pantry is "A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf at eye-level, you can see a can of beans, a can of corn, a mystery can, and a key. The kitchen to the south is the only exit."
+The Pantry is north of the Kitchen. The description of the Pantry is "A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed[if an unheld stealable is visible and the player is in the Pantry]. On the dusty shelf, at eye-level, you can see [list of visible unheld stealables with indefinite articles][otherwise]. The dusty shelf is empty, clean imprints showing where the stuff you stole used to sit[end if]. The kitchen (to the south) is the only exit."
 
-The can of beans is a stealable in the Pantry. The description of the can of beans is "Like most cans, this metal tube is opaque and you must trust, for now, in the veracity of the label that claims it contains beans."
+[a can of beans, a can of corn, a mystery can, and a key]
+
+The can of beans is a stealable in the Pantry. The description of the can of beans is "Like most cans, this metal tube is opaque and you must trust, for now, in the veracity of the label's claim that it contains beans."
 The can of corn is a stealable in the Pantry. The description of the can of corn is "The verdant colossus on the label is very muscular, selling you effectively on the ameliorating health benefits of regular vegetable consumption. His smile makes you feel funny."
 The mystery can is a stealable in the Pantry. The description of the mystery can is "The label’s long worn off, and what you can make out looks like branding from about fifty years ago.  You’ve offered to pitch it more than once, but Uncle Clifton always kept it around. For...sentimental reasons? You guess?"
 The key is a stealable in the Pantry. The description of the key is "Mysterious, heavy, bronze key. Begging to be picked up."
@@ -668,20 +716,28 @@ placecard10 is a placecard in the Dining room. The description of placecard10 is
 
 [Bathroom]
 
-The Bathroom is a first-floor room. The Bathroom is north of the Hall. The description of the Bathroom is "A small but opulent bathroom. [first time]By the sink you can see soap, a roll of toilet paper, lotion, sunglasses, and a glass eye. There is a plunger and a flashlight at the foot of the toilet. Slung over the towl rack are fancy towels and an ostentatious scarf.[only] The only exit is back south into the hall."
+The Bathroom is a first-floor room. The Bathroom is north of the Hall. The description of the Bathroom is "A small but opulent bathroom[if an unheld sinkthing is visible and the player is in the Bathroom]. By the sink you can see [list of visible unheld sinkthings with indefinite articles][end if][if an unheld toiletthing is visible and the player is in the Bathroom]. There's [list of visible unheld toiletthings with indefinite articles] at the foot of the toilet[end if][if an unheld towelthing is visible and the player is in the Bathroom]. Slung over the towel rack [are] [list of visible unheld towelthings with indefinite articles][otherwise]. The towel rack is empty[end if]. The only exit is back south into the hall.".
 
 The toilet is scenery in the Bathroom. "That's a toilet, alright."
 The sink is scenery in the Bathroom. The description of the sink is "Smooth marble countertop and a sunken sink with ivory taps."
 
-The soap is a stealable in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap.". The printed name of the soap is "bar of soap". 
-The roll of toilet paper is a stealable in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive.".
-fancy towels are stealable. fancy towels are in the Bathroom. The description of fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft." Understand "towels" as fancy towels. Understand "towel" as fancy towels. Understand "fancy towel" as fancy towels.
-The plunger is a stealable in the Bathroom. The description of the plunger is "When one uses triple ply toilet paper, one must expect certain results." 
-The lotion is a stealable in the Bathroom. The description of the lotion is "Small travel-sized bottle of skin lotion."
-The glass eye is a stealable in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
-The flashlight is a stealable in the Bathroom. The description of the flashlight is "Thin and hefty, the lack of batteries make this flashlight more useful as a bludgeoning weapon."
-The ostentatious scarf is a stealable in the Bathroom. The description of the ostentatious scarf is "'It's truly truly outrageous[line break]truly truly truly outrageous.'[line break][line break]-Jem and The Holograms, [italic type]Truly Outrageous[roman type]." Understand "scarf" as the ostentatious scarf.
-sunglasses are a stealable in the Bathroom. The description of sunglasses is "Dark aviator sunglasses. Goes well with a cowboy hat." Understand "aviator sunglasses" as sunglasses.
+A sinkthing is a kind of stealable.
+
+A toiletthing is a kind of stealable.
+
+A towelthing is a kind of stealable.
+
+The soap is a sinkthing in the Bathroom. The description of the soap is "A slippery ovoid bar of green soap.". The printed name of the soap is "bar of soap". 
+The roll of toilet paper is a sinkthing in the Bathroom. The description of the roll of toilet paper is "Triple ply. Very soft. Very expensive.".
+Some fancy towels are towelthing. Some fancy towels are in the Bathroom. The description of the fancy towels is "Clean black towels with 'C. F.' embroidered on the corner in gold thread, ensuring these towels are easily identifiable in case of theft." Understand "towels" as fancy towels. Understand "towel" as fancy towels. Understand "fancy towel" as fancy towels.
+The plunger is a toiletthing in the Bathroom. The description of the plunger is "When one uses triple ply toilet paper, one must expect certain results.". 
+lotion is a sinkthing in the Bathroom. The description of lotion is "A small, travel-size bottle of skin lotion."
+The glass eye is a sinkthing in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
+The flashlight is a toiletthing in the Bathroom. The description of the flashlight is "Thin and hefty, the lack of batteries make this flashlight more useful as a bludgeoning weapon."
+The ostentatious scarf is a towelthing in the Bathroom. The description of the ostentatious scarf is "[italic type]'It's truly truly outrageous[line break]truly truly truly outrageous.'[roman type][line break][line break]-Jem and The Holograms, [italic type]Truly Outrageous[roman type]." Understand "scarf" as the ostentatious scarf.
+sunglasses are a sinkthing in the Bathroom. The description of sunglasses is "Dark aviator sunglasses. They'd go well with a cowboy hat." Understand "aviator sunglasses" as sunglasses.
+
+The towel rack is scenery in the Bathroom. The description of the towel rack is "Made of ornate brass for the sole purpose of holding hand towels."
 
 Instead of smelling the soap:
 	say "Smells like irish spring. Which is to say it smells soapy.".
@@ -916,8 +972,8 @@ When Chase Scene Hall begins:
 	now the description of the kitchen is "The caterers sprint out of the room, because you're sprinting into it with a gun. Rowan freezes, a handful of ham in his hand. Then he bolts as well.";
 	now the player is in the kitchen;
 	let L be the list of visible unheld stealables;
-	say "[if an unheld stealable is visible]Here's a list of everything you can steal from the kitchen now: [L with indefinite articles].[end if]";
-	say "[if an unheld stealable is visible]Take all of it![end if]";
+	say "[if an unheld stealable is visible and the player is in the Kitchen]Here's a list of everything you can steal from the kitchen now: [L with indefinite articles].[end if]";
+	say "[if an unheld stealable is visible and the player is in the Kitchen]Take all of it![end if]";
 	if screenreader_on is true:
 		say "[line break][line break][bracket]Cutscene ends.[close bracket]".
 	
@@ -927,7 +983,7 @@ Instead of going during Chase Scene Hall:
 Before looking in the Kitchen during Chase Scene Hall:
 	if kitchen_looked is false:
 		let L be the list of visible unheld stealables;
-		now the description of the kitchen is "This is what a busy kitchen would look like if everyone in it suddenly vanished.[line break][line break][if an unheld stealable is visible]Try stealing stuff: [L with indefinite articles].[end if]";
+		now the description of the kitchen is "This is what a busy kitchen would look like if everyone in it suddenly vanished.[line break][line break][if an unheld stealable is visible and the player is in the Kitchen]Try stealing stuff: [L with indefinite articles].[end if]";
 		now kitchen_looked is true;
 	if kitchen_looked is true:
 		continue the action.
@@ -945,7 +1001,7 @@ When Chase Scene Dining begins:
 	say "Take everything!".
 	
 Instead of going during Chase Scene Dining:
-	if an unheld stealable is visible:
+	if an unheld stealable is visible and the player is in the Dining Room:
 		say "You have enough time to grab something before they catch up to you.";
 	otherwise:
 		say "Take a deep breath first.".
@@ -953,7 +1009,7 @@ Instead of going during Chase Scene Dining:
 Before looking in the dining room during Chase Scene Dining:
 	if dining_looked is false:
 		let L be the list of visible unheld stealables;
-		now the description of the dining room is "This room's about as empty as a dining room usually is when a dinner party isn't going on.[line break][line break][if an unheld stealable is visible]Try stealing stuff: [L].[end if]";
+		now the description of the dining room is "This room's about as empty as a dining room usually is when a dinner party isn't going on.[line break][line break][if an unheld stealable is visible and the player is in the Dining Room]Try stealing stuff: [L].[end if]";
 		now dining_looked is true;
 	if dining_looked is true:
 		continue the action.
@@ -973,7 +1029,7 @@ Instead of going during Chase Scene Sitting:
 Before looking in the sitting room during Chase Scene Dining:
 	if sitting_looked is false:
 		let L be the list of visible unheld stealables;
-		now the description of the sitting room is "This room used to be packed full of rich mourners in black tailored suit jackets and coats. The jackets and coats are gone, and so are their owners.[line break][line break][if an unheld stealable is visible]Try stealing stuff: [L].[end if]";
+		now the description of the sitting room is "This room used to be packed full of rich mourners in black tailored suit jackets and coats. The jackets and coats are gone, and so are their owners.[line break][line break][if an unheld stealable is visible and the player is in the Sitting Room]Try stealing stuff: [L].[end if]";
 		now sitting_looked is true;
 	if sitting_looked is true:
 		continue the action.

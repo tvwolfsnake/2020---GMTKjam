@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-1256"/>
+  <activeNode nodeId="node-1376"/>
   <item nodeId="node-1">
     <command xml:space="preserve">GMTKjam2020</command>
     <result xml:space="preserve">Would you like to turn screen reader mode on? (y or n)</result>
@@ -20,9 +20,9 @@
       <child nodeId="node-1082"/>
       <child nodeId="node-1188"/>
       <child nodeId="node-1200"/>
-      <child nodeId="node-1216"/>
-      <child nodeId="node-1231"/>
-      <child nodeId="node-1235"/>
+      <child nodeId="node-1219"/>
+      <child nodeId="node-1236"/>
+      <child nodeId="node-1240"/>
     </children>
   </item>
   <item nodeId="node-2">
@@ -10630,7 +10630,7 @@
     <changed>YES</changed>
     <children>
       <child nodeId="node-1214"/>
-      <child nodeId="node-1252"/>
+      <child nodeId="node-1216"/>
     </children>
   </item>
   <item nodeId="node-1214">
@@ -10648,33 +10648,9 @@
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
-  <item nodeId="node-1252">
+  <item nodeId="node-1216">
     <command xml:space="preserve">open wallet</command>
     <result xml:space="preserve">You open Cartwright's wallet.&#x000A;&#x000A;Immediately visible are Cartwright's driver's license and other cards (credit, business). A generous brick of cash bursts forth from the innards.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-1253"/>
-    </children>
-  </item>
-  <item nodeId="node-1253">
-    <command xml:space="preserve">x business card</command>
-    <result xml:space="preserve">It reads: 203-555-9142. CARTWRIGHT G FENWICK, ESQUIRE. Estate Planning. 326 East Ave, Suite 105. New Canaan, CT 06840.&#x000A;&#x000A;In person, the design is immaculate. Patrick Bateman would lose his marbles over this card.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-    <children>
-      <child nodeId="node-1254"/>
-    </children>
-  </item>
-  <item nodeId="node-1254">
-    <command xml:space="preserve">x business card</command>
-    <result xml:space="preserve">It reads: CARTWRIGHT G FENWICK, ESQUIRE. Estate Planning. 326 East Ave, Suite 105. New Canaan, CT 06840.&#x000A;&#x000A;In person, the design is immaculate. Patrick Bateman would lose his marbles over this card.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-1216">
-    <command xml:space="preserve">n</command>
-    <result xml:space="preserve">Noted.&#x000A;&#x000A;Uncle Clifton is dead.&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10682,8 +10658,8 @@
     </children>
   </item>
   <item nodeId="node-1217">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Uncle Clifton is dead.&#x000A;&#x000A;He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.</result>
+    <command xml:space="preserve">x business card</command>
+    <result xml:space="preserve">It reads: 203-555-9142. CARTWRIGHT G FENWICK, ESQUIRE. Estate Planning. 326 East Ave, Suite 105. New Canaan, CT 06840.&#x000A;&#x000A;In person, the design is immaculate. Patrick Bateman would lose his marbles over this card.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10691,17 +10667,14 @@
     </children>
   </item>
   <item nodeId="node-1218">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.</result>
+    <command xml:space="preserve">x business card</command>
+    <result xml:space="preserve">It reads: CARTWRIGHT G FENWICK, ESQUIRE. Estate Planning. 326 East Ave, Suite 105. New Canaan, CT 06840.&#x000A;&#x000A;In person, the design is immaculate. Patrick Bateman would lose his marbles over this card.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
-    <children>
-      <child nodeId="node-1219"/>
-    </children>
   </item>
   <item nodeId="node-1219">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He was awful, probably.</result>
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Noted.&#x000A;&#x000A;Uncle Clifton is dead.&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10710,7 +10683,7 @@
   </item>
   <item nodeId="node-1220">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He was one of the few people who bothered to understand you.</result>
+    <result xml:space="preserve">Uncle Clifton is dead.&#x000A;&#x000A;He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10719,7 +10692,7 @@
   </item>
   <item nodeId="node-1221">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve"></result>
+    <result xml:space="preserve">He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10728,7 +10701,7 @@
   </item>
   <item nodeId="node-1222">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.</result>
+    <result xml:space="preserve">He was awful, probably.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10737,7 +10710,7 @@
   </item>
   <item nodeId="node-1223">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.</result>
+    <result xml:space="preserve">He was one of the few people who bothered to understand you.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10746,7 +10719,7 @@
   </item>
   <item nodeId="node-1224">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.</result>
+    <result xml:space="preserve"></result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10755,7 +10728,7 @@
   </item>
   <item nodeId="node-1225">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.&#x000A;&#x000A;He gives you a dirty look and walks off into the hall.</result>
+    <result xml:space="preserve">He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10764,7 +10737,7 @@
   </item>
   <item nodeId="node-1226">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">His wallet fell out of his pocket. It's sitting on the floor.</result>
+    <result xml:space="preserve">He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10773,7 +10746,7 @@
   </item>
   <item nodeId="node-1227">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">&gt; take wallet&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <result xml:space="preserve">That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10782,7 +10755,7 @@
   </item>
   <item nodeId="node-1228">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">In about a seven count, you're going to take something else, even though you don't want to.</result>
+    <result xml:space="preserve">You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.&#x000A;&#x000A;He gives you a dirty look and walks off into the hall.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10791,38 +10764,25 @@
   </item>
   <item nodeId="node-1229">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">You can kind of understand why Uncle Clifton's family don't like you.&#x000A;&#x000A;you can't take it with you&#x000A;a take all game by take all games&#x000A;Release 2 / Serial number 200804 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;Type HELP for more information. Type SCREEN READER to toggle accessibility mode.&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">His wallet fell out of his pocket. It's sitting on the floor.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
       <child nodeId="node-1230"/>
-      <child nodeId="node-1255"/>
     </children>
   </item>
   <item nodeId="node-1230">
-    <command xml:space="preserve">screen reader</command>
-    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-1255">
-    <command xml:space="preserve">open wallet</command>
-    <result xml:space="preserve">You open Cartwright's wallet.&#x000A;&#x000A;Immediately visible are Cartwright's driver's license and other cards (credit, business). A generous brick of cash bursts forth from the innards.&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">&gt; take wallet&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-1256"/>
+      <child nodeId="node-1231"/>
     </children>
   </item>
-  <item nodeId="node-1256">
-    <command xml:space="preserve">x business card</command>
-    <result xml:space="preserve">It looks something like this:&#x000A; ------------------------------------ &#x000A;| 203-555-9142                       |&#x000A;|                                    |&#x000A;|                                    |&#x000A;|                                    |&#x000A;|     CARTWRIGHT G FENWICK, ESQ.     |&#x000A;|          Estate Planning           |&#x000A;|                                    |&#x000A;|                                    |&#x000A;|            326 East Ave, Suite 105 |&#x000A;|               New Canaan, CT 06840 |&#x000A; ------------------------------------ In person, the design is immaculate. Patrick Bateman would lose his marbles over this card.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
   <item nodeId="node-1231">
-    <command xml:space="preserve">yes</command>
-    <result xml:space="preserve">Screen reader mode set to ON. (Certain effects will change to be more screen reader-friendly.)&#x000A;&#x000A;[Press ENTER to continue.]</result>
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">In about a seven count, you're going to take something else, even though you don't want to.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10831,40 +10791,1100 @@
   </item>
   <item nodeId="node-1232">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Uncle Clifton is dead.&#x000A;&#x000A;[Press ENTER to continue.]</result>
+    <result xml:space="preserve">You can kind of understand why Uncle Clifton's family don't like you.&#x000A;&#x000A;you can't take it with you&#x000A;a take all game by take all games&#x000A;Release 2 / Serial number 200808 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;Type HELP for more information. Type SCREEN READER to toggle accessibility mode.&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
       <child nodeId="node-1233"/>
+      <child nodeId="node-1234"/>
+      <child nodeId="node-1257"/>
+      <child nodeId="node-1260"/>
     </children>
   </item>
   <item nodeId="node-1233">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.&#x000A;&#x000A;[Press ENTER to continue.]</result>
+    <command xml:space="preserve">screen reader</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
-    <children>
-      <child nodeId="node-1234"/>
-    </children>
   </item>
   <item nodeId="node-1234">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.&#x000A;&#x000A;[Press ENTER to continue.]</result>
-    <commentary xml:space="preserve"></commentary>
-    <changed>NO</changed>
-  </item>
-  <item nodeId="node-1235">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">Please answer yes or no.&gt;</result>
+    <command xml:space="preserve">open wallet</command>
+    <result xml:space="preserve">You open Cartwright's wallet.&#x000A;&#x000A;Immediately visible are Cartwright's driver's license and other cards (credit, business). A generous brick of cash bursts forth from the innards.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
-      <child nodeId="node-1236"/>
+      <child nodeId="node-1235"/>
     </children>
   </item>
-  <item nodeId="node-1236">
+  <item nodeId="node-1235">
+    <command xml:space="preserve">x business card</command>
+    <result xml:space="preserve">It looks something like this:&#x000A; ------------------------------------ &#x000A;| 203-555-9142                       |&#x000A;|                                    |&#x000A;|                                    |&#x000A;|                                    |&#x000A;|     CARTWRIGHT G FENWICK, ESQ.     |&#x000A;|          Estate Planning           |&#x000A;|                                    |&#x000A;|                                    |&#x000A;|            326 East Ave, Suite 105 |&#x000A;|               New Canaan, CT 06840 |&#x000A; ------------------------------------ In person, the design is immaculate. Patrick Bateman would lose his marbles over this card.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1257">
     <command xml:space="preserve">n</command>
-    <result xml:space="preserve">Noted.&#x000A;&#x000A;Uncle Clifton is dead.&#x000A;&#x000A;[Press ENTER to continue.]</result>
+    <result xml:space="preserve">Hall&#x000A;This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south, where you just came from, is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.&#x000A;&#x000A;Cedric and Bryce whisper about something. You can only make out something about an "altar." Or was that something being "altered?"&#x000A;&#x000A;When they see you, they quickly move to the game room.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1258"/>
+      <child nodeId="node-1268"/>
+      <child nodeId="node-1314"/>
+    </children>
+  </item>
+  <item nodeId="node-1258">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1259"/>
+    </children>
+  </item>
+  <item nodeId="node-1259">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Lawn&#x000A;A clearing full of lush green grass. A table is set up for hors d'oeuvres which, at this point, just means peanut butter canap&#x00E9;s. Standing near the table is Hildegard, a rare friendly face.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1264"/>
+      <child nodeId="node-1265"/>
+      <child nodeId="node-1266"/>
+    </children>
+  </item>
+  <item nodeId="node-1264">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying:&#x000A;  Cartwright's wallet (closed)&#x000A;  church pew pencils&#x000A;  a hymnal&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1265">
+    <command xml:space="preserve">x peanut butter canap&#x00E9;</command>
+    <result xml:space="preserve">Delicious finger food.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1266">
+    <command xml:space="preserve">take canape</command>
+    <result xml:space="preserve">Hey, it's not stealing if it's free food.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1267"/>
+    </children>
+  </item>
+  <item nodeId="node-1267">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Lawn&#x000A;A clearing full of lush green grass. A table is set up for hors d'oeuvres, but now it's empty. Standing near the table is Hildegard, a rare friendly face.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+  </item>
+  <item nodeId="node-1268">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">Kitchen&#x000A;The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.&#x000A;&#x000A;On the plus side they probably won't care if you take anything.&#x000A;&#x000A;Unfortunately they are currently occupying three quarters of the room.&#x000A;&#x000A;You can reach the pantry to the north of the kitchen or head into the dining room to the south. You cannot reach the fridge. The unattended counter in this corner of the room holds a delicate tea cup, some loose grapes, an empty bottle and a recipe book.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1273"/>
+    </children>
+  </item>
+  <item nodeId="node-1273">
+    <command xml:space="preserve">x grapes</command>
+    <result xml:space="preserve">If you close your eyes, you can pretend these are eyeballs. If that's something you're into.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1274"/>
+    </children>
+  </item>
+  <item nodeId="node-1274">
+    <command xml:space="preserve">taste grapes</command>
+    <result xml:space="preserve">You've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1275"/>
+    </children>
+  </item>
+  <item nodeId="node-1275">
+    <command xml:space="preserve">eat grapes</command>
+    <result xml:space="preserve">You've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1314">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a bar of soap, a roll of toilet paper, lotion, a glass eye and sunglasses. There's a plunger and a flashlight at the foot of the toilet. Slung over the towel rack are some fancy towels and an ostentatious scarf. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1315"/>
+    </children>
+  </item>
+  <item nodeId="node-1315">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1316"/>
+    </children>
+  </item>
+  <item nodeId="node-1316">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1317"/>
+    </children>
+  </item>
+  <item nodeId="node-1317">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1318"/>
+    </children>
+  </item>
+  <item nodeId="node-1318">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1319"/>
+    </children>
+  </item>
+  <item nodeId="node-1319">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take sunglasses&#x000A;You stuff sunglasses in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1320"/>
+    </children>
+  </item>
+  <item nodeId="node-1320">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a bar of soap, a roll of toilet paper, lotion and a glass eye. There's a plunger and a flashlight at the foot of the toilet. Slung over the towel rack are some fancy towels and an ostentatious scarf. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1321"/>
+    </children>
+  </item>
+  <item nodeId="node-1321">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1322"/>
+    </children>
+  </item>
+  <item nodeId="node-1322">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1323"/>
+    </children>
+  </item>
+  <item nodeId="node-1323">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1324"/>
+    </children>
+  </item>
+  <item nodeId="node-1324">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1325"/>
+    </children>
+  </item>
+  <item nodeId="node-1325">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1326"/>
+    </children>
+  </item>
+  <item nodeId="node-1326">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take ostentatious scarf&#x000A;You stuff the ostentatious scarf in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1327"/>
+    </children>
+  </item>
+  <item nodeId="node-1327">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a bar of soap, a roll of toilet paper, lotion and a glass eye. There's a plunger and a flashlight at the foot of the toilet. Slung over the towel rack are some fancy towels. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1328"/>
+    </children>
+  </item>
+  <item nodeId="node-1328">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying:&#x000A;  an ostentatious scarf&#x000A;  sunglasses&#x000A;  Cartwright's wallet (closed)&#x000A;  church pew pencils&#x000A;  a hymnal&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1329"/>
+    </children>
+  </item>
+  <item nodeId="node-1329">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1330"/>
+    </children>
+  </item>
+  <item nodeId="node-1330">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1331"/>
+    </children>
+  </item>
+  <item nodeId="node-1331">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1332"/>
+    </children>
+  </item>
+  <item nodeId="node-1332">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1333"/>
+    </children>
+  </item>
+  <item nodeId="node-1333">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take bar of soap&#x000A;You stuff the bar of soap in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1334"/>
+    </children>
+  </item>
+  <item nodeId="node-1334">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a roll of toilet paper, lotion and a glass eye. There's a plunger and a flashlight at the foot of the toilet. Slung over the towel rack are some fancy towels. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1335"/>
+    </children>
+  </item>
+  <item nodeId="node-1335">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1336"/>
+    </children>
+  </item>
+  <item nodeId="node-1336">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1337"/>
+    </children>
+  </item>
+  <item nodeId="node-1337">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1338"/>
+    </children>
+  </item>
+  <item nodeId="node-1338">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1339"/>
+    </children>
+  </item>
+  <item nodeId="node-1339">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1340"/>
+    </children>
+  </item>
+  <item nodeId="node-1340">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take lotion&#x000A;You stuff lotion in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1341"/>
+    </children>
+  </item>
+  <item nodeId="node-1341">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a roll of toilet paper and a glass eye. There's a plunger and a flashlight at the foot of the toilet. Slung over the towel rack are some fancy towels. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1342"/>
+    </children>
+  </item>
+  <item nodeId="node-1342">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1343"/>
+    </children>
+  </item>
+  <item nodeId="node-1343">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1344"/>
+    </children>
+  </item>
+  <item nodeId="node-1344">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1345"/>
+    </children>
+  </item>
+  <item nodeId="node-1345">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1346"/>
+    </children>
+  </item>
+  <item nodeId="node-1346">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1347"/>
+    </children>
+  </item>
+  <item nodeId="node-1347">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take roll of toilet paper&#x000A;You stuff the roll of toilet paper in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1348"/>
+    </children>
+  </item>
+  <item nodeId="node-1348">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a glass eye. There's a plunger and a flashlight at the foot of the toilet. Slung over the towel rack are some fancy towels. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1349"/>
+    </children>
+  </item>
+  <item nodeId="node-1349">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1350"/>
+    </children>
+  </item>
+  <item nodeId="node-1350">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1351"/>
+    </children>
+  </item>
+  <item nodeId="node-1351">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1352"/>
+    </children>
+  </item>
+  <item nodeId="node-1352">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1353"/>
+    </children>
+  </item>
+  <item nodeId="node-1353">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1354"/>
+    </children>
+  </item>
+  <item nodeId="node-1354">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take fancy towels&#x000A;You stuff the fancy towels in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1355"/>
+    </children>
+  </item>
+  <item nodeId="node-1355">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a glass eye. There's a plunger and a flashlight at the foot of the toilet. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1356"/>
+    </children>
+  </item>
+  <item nodeId="node-1356">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1357"/>
+    </children>
+  </item>
+  <item nodeId="node-1357">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1358"/>
+    </children>
+  </item>
+  <item nodeId="node-1358">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1359"/>
+    </children>
+  </item>
+  <item nodeId="node-1359">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1360"/>
+    </children>
+  </item>
+  <item nodeId="node-1360">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1361"/>
+    </children>
+  </item>
+  <item nodeId="node-1361">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take plunger&#x000A;You stuff the plunger in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1362"/>
+    </children>
+  </item>
+  <item nodeId="node-1362">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. By the sink you can see a glass eye. There's a flashlight at the foot of the toilet. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1363"/>
+    </children>
+  </item>
+  <item nodeId="node-1363">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1364"/>
+    </children>
+  </item>
+  <item nodeId="node-1364">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1365"/>
+    </children>
+  </item>
+  <item nodeId="node-1365">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1366"/>
+    </children>
+  </item>
+  <item nodeId="node-1366">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1367"/>
+    </children>
+  </item>
+  <item nodeId="node-1367">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1368"/>
+    </children>
+  </item>
+  <item nodeId="node-1368">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take glass eye&#x000A;You stuff the glass eye in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1369"/>
+    </children>
+  </item>
+  <item nodeId="node-1369">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. There's a flashlight at the foot of the toilet. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1370"/>
+    </children>
+  </item>
+  <item nodeId="node-1370">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1371"/>
+    </children>
+  </item>
+  <item nodeId="node-1371">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1372"/>
+    </children>
+  </item>
+  <item nodeId="node-1372">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1373"/>
+    </children>
+  </item>
+  <item nodeId="node-1373">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1374"/>
+    </children>
+  </item>
+  <item nodeId="node-1374">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1375"/>
+    </children>
+  </item>
+  <item nodeId="node-1375">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take flashlight&#x000A;You stuff the flashlight in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1376"/>
+    </children>
+  </item>
+  <item nodeId="node-1376">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Bathroom&#x000A;A small but opulent bathroom. The only exit is back south into the hall.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1260">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1261"/>
+    </children>
+  </item>
+  <item nodeId="node-1261">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Hall&#x000A;This great hall connects you to the rest of the house. To the southwest is the sitting room, where most of the family is. To the northwest, the kitchen. To the north is the bathroom, to the northeast the game room, the southeast, the library, and the south, where you just came from, is the vestibule. Near the bathroom, a stairway leads up to the second floor. Cartwright stands guard in front of it. Next to him, a hunting trophy also stands guard.&#x000A;&#x000A;Cedric and Bryce whisper about something. You can only make out something about an "altar." Or was that something being "altered?"&#x000A;&#x000A;When they see you, they quickly move to the game room.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1262"/>
+      <child nodeId="node-1269"/>
+    </children>
+  </item>
+  <item nodeId="node-1262">
+    <command xml:space="preserve">sw</command>
+    <result xml:space="preserve">Sitting Room&#x000A;A crowd of family and friends share condolences and fond memories of Uncle Clifton, drink champagne, and eat the hors d'oeuvres that remain on their napkins. Dimia sits in the middle of it all, looking past you, a hard-to-read expression on her face. The couch is loaded down with stuff: a pack of cigarettes and its ashtray, balanced precariously; a clutch; a cardigan and a leather jacket, draped over the couch next to each other; an empty china plate; and a golden watch. A chess set sits to the side of the room, on a game table, and a forgotten champagne flute sits on top of it.&#x000A;&#x000A;To the west, a door is open to the lawn, where the remaining hors d'oeuvres are laid out. Barely anyone's out there.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1263"/>
+    </children>
+  </item>
+  <item nodeId="node-1263">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Lawn&#x000A;A clearing full of lush green grass. A table is set up for hors d'oeuvres, but now it's empty. Standing near the table is Hildegard, a rare friendly face.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1269">
+    <command xml:space="preserve">nw</command>
+    <result xml:space="preserve">Kitchen&#x000A;The kitchen is mostly filled with a small militia of busy caterers. They bustle around not paying you any attention.&#x000A;&#x000A;On the plus side they probably won't care if you take anything.&#x000A;&#x000A;Unfortunately they are currently occupying three quarters of the room.&#x000A;&#x000A;You can reach the pantry to the north of the kitchen or head into the dining room to the south. You cannot reach the fridge. The unattended counter in this corner of the room holds a delicate tea cup, some loose grapes, an empty bottle and a recipe book.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1270"/>
+      <child nodeId="node-1276"/>
+      <child nodeId="node-1281"/>
+    </children>
+  </item>
+  <item nodeId="node-1270">
+    <command xml:space="preserve">smell grapes</command>
+    <result xml:space="preserve">If you close your eyes you can pretend you are smelling eyeballs. If that's something you're into.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1271"/>
+    </children>
+  </item>
+  <item nodeId="node-1271">
+    <command xml:space="preserve">taste grapes</command>
+    <result xml:space="preserve">You've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1272"/>
+    </children>
+  </item>
+  <item nodeId="node-1272">
+    <command xml:space="preserve">touch grapes</command>
+    <result xml:space="preserve">You close your eyes and touch the grapes.&#x000A; They feel vaguely like eyeballs.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1276">
+    <command xml:space="preserve">taste grapes</command>
+    <result xml:space="preserve">You've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1277"/>
+    </children>
+  </item>
+  <item nodeId="node-1277">
+    <command xml:space="preserve">x grapes</command>
+    <result xml:space="preserve">If you close your eyes, you can pretend these are eyeballs. If that's something you're into.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1278"/>
+    </children>
+  </item>
+  <item nodeId="node-1278">
+    <command xml:space="preserve">taste grapes</command>
+    <result xml:space="preserve">You aren't in the mood for eyeballs.&#x000A;&#x000A;More seriously, you've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1279"/>
+    </children>
+  </item>
+  <item nodeId="node-1279">
+    <command xml:space="preserve">touch grapes</command>
+    <result xml:space="preserve">You close your eyes and touch the grapes.&#x000A;&#x000A; It's just as you thought.&#x000A;&#x000A;They feel vaguely like eyeballs.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1280"/>
+    </children>
+  </item>
+  <item nodeId="node-1280">
+    <command xml:space="preserve">touch grapes</command>
+    <result xml:space="preserve">You close your eyes and touch the grapes.&#x000A;&#x000A;They feel vaguely like eyeballs.&#x000A;&#x000A;&gt; take empty bottle&#x000A;You stuff the empty bottle in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1284"/>
+    </children>
+  </item>
+  <item nodeId="node-1284">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1285"/>
+    </children>
+  </item>
+  <item nodeId="node-1285">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1286"/>
+    </children>
+  </item>
+  <item nodeId="node-1286">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1287"/>
+    </children>
+  </item>
+  <item nodeId="node-1287">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;Rowan enters, searching for a snack.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1288"/>
+    </children>
+  </item>
+  <item nodeId="node-1288">
+    <command xml:space="preserve">x caterers</command>
+    <result xml:space="preserve">They crowd most of the room like a hivemind, moving in synchronized movement in a quasireligious fervor, only speaking to each other in loud bursts of coded language.&#x000A;&#x000A;They completely ignore you.&#x000A;&#x000A;Which is something of a relief.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1289"/>
+    </children>
+  </item>
+  <item nodeId="node-1289">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You close the pantry door behind you.&#x000A;&#x000A;Pantry&#x000A;A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf, at eye-level, you can see a can of beans, a can of corn, a mystery can and a key. The kitchen (to the south) is the only exit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1290"/>
+    </children>
+  </item>
+  <item nodeId="node-1290">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take mystery can&#x000A;You stuff the mystery can in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1291"/>
+    </children>
+  </item>
+  <item nodeId="node-1291">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1292"/>
+    </children>
+  </item>
+  <item nodeId="node-1292">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1293"/>
+    </children>
+  </item>
+  <item nodeId="node-1293">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1294"/>
+    </children>
+  </item>
+  <item nodeId="node-1294">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1295"/>
+    </children>
+  </item>
+  <item nodeId="node-1295">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1296"/>
+    </children>
+  </item>
+  <item nodeId="node-1296">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Pantry&#x000A;A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf, at eye-level, you can see a can of beans, a can of corn and a key. The kitchen (to the south) is the only exit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1297"/>
+    </children>
+  </item>
+  <item nodeId="node-1297">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take can of corn&#x000A;You stuff the can of corn in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1298"/>
+    </children>
+  </item>
+  <item nodeId="node-1298">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Pantry&#x000A;A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf, at eye-level, you can see a can of beans and a key. The kitchen (to the south) is the only exit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1299"/>
+    </children>
+  </item>
+  <item nodeId="node-1299">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1300"/>
+    </children>
+  </item>
+  <item nodeId="node-1300">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1301"/>
+    </children>
+  </item>
+  <item nodeId="node-1301">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1302"/>
+    </children>
+  </item>
+  <item nodeId="node-1302">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1303"/>
+    </children>
+  </item>
+  <item nodeId="node-1303">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1304"/>
+    </children>
+  </item>
+  <item nodeId="node-1304">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1305"/>
+    </children>
+  </item>
+  <item nodeId="node-1305">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take key&#x000A;You stuff the key in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1306"/>
+    </children>
+  </item>
+  <item nodeId="node-1306">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Pantry&#x000A;A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closed. On the dusty shelf, at eye-level, you can see a can of beans. The kitchen (to the south) is the only exit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1307"/>
+    </children>
+  </item>
+  <item nodeId="node-1307">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1308"/>
+    </children>
+  </item>
+  <item nodeId="node-1308">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1309"/>
+    </children>
+  </item>
+  <item nodeId="node-1309">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1310"/>
+    </children>
+  </item>
+  <item nodeId="node-1310">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1311"/>
+    </children>
+  </item>
+  <item nodeId="node-1311">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1312"/>
+    </children>
+  </item>
+  <item nodeId="node-1312">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt; take can of beans&#x000A;You stuff the can of beans in your pocket as surreptitiously as you can.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1313"/>
+    </children>
+  </item>
+  <item nodeId="node-1313">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Pantry&#x000A;A dark and mostly empty pantry. You can just fit yourself comfortably inside it with the door closedThe dusty shelf is empty, clean imprints showing where objects used to be. The kitchen (to the south) is the only exit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1281">
+    <command xml:space="preserve">touch grapes</command>
+    <result xml:space="preserve">You close your eyes and touch the grapes.&#x000A;&#x000A;They feel vaguely like eyeballs.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1282"/>
+    </children>
+  </item>
+  <item nodeId="node-1282">
+    <command xml:space="preserve">taste grapes</command>
+    <result xml:space="preserve">You aren't in the mood for eyeballs.&#x000A;&#x000A;More seriously, you've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-1283"/>
+    </children>
+  </item>
+  <item nodeId="node-1283">
+    <command xml:space="preserve">taste grapes</command>
+    <result xml:space="preserve">You aren't in the mood for eyeballs.&#x000A;&#x000A;More seriously, you've never much cared for grapes. The skin's unpleasant, and so is the texture of the inside bit.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-1236">
+    <command xml:space="preserve">yes</command>
+    <result xml:space="preserve">Screen reader mode set to ON. (Certain effects will change to be more screen reader-friendly.)&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10873,7 +11893,7 @@
   </item>
   <item nodeId="node-1237">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">Uncle Clifton is dead.&#x000A;&#x000A;He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.</result>
+    <result xml:space="preserve">Uncle Clifton is dead.&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10882,7 +11902,7 @@
   </item>
   <item nodeId="node-1238">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.</result>
+    <result xml:space="preserve">He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10891,16 +11911,13 @@
   </item>
   <item nodeId="node-1239">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He was awful, probably.</result>
+    <result xml:space="preserve">He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
-    <children>
-      <child nodeId="node-1240"/>
-    </children>
   </item>
   <item nodeId="node-1240">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He was one of the few people who bothered to understand you.</result>
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">Please answer yes or no.&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10908,8 +11925,8 @@
     </children>
   </item>
   <item nodeId="node-1241">
-    <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve"></result>
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Noted.&#x000A;&#x000A;Uncle Clifton is dead.&#x000A;&#x000A;[Press ENTER to continue.]</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10918,7 +11935,7 @@
   </item>
   <item nodeId="node-1242">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.</result>
+    <result xml:space="preserve">Uncle Clifton is dead.&#x000A;&#x000A;He wasn't even really your uncle. Something like a father of a cousin of an in-law. A guy you mostly met at reunions at his house when you were a kid, the guy with the family that hates you.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10927,7 +11944,7 @@
   </item>
   <item nodeId="node-1243">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.</result>
+    <result xml:space="preserve">He ran a real estate company. Made millions off the backs of his employees and the people who lived in his properties. You don't get the kind of money he had by being a good person.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10936,7 +11953,7 @@
   </item>
   <item nodeId="node-1244">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.</result>
+    <result xml:space="preserve">He was awful, probably.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10945,7 +11962,7 @@
   </item>
   <item nodeId="node-1245">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.&#x000A;&#x000A;He gives you a dirty look and walks off into the hall.</result>
+    <result xml:space="preserve">He was one of the few people who bothered to understand you.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10954,7 +11971,7 @@
   </item>
   <item nodeId="node-1246">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">His wallet fell out of his pocket. It's sitting on the floor.</result>
+    <result xml:space="preserve"></result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10963,7 +11980,7 @@
   </item>
   <item nodeId="node-1247">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">&gt; take wallet&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <result xml:space="preserve">He caught you once, in your teens, stealing his silver pocketwatch from on top of his desk. He didn't get mad. He'd figured it out, before anyone else. You had kleptomania. An uncontrollable compulsion.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10972,7 +11989,7 @@
   </item>
   <item nodeId="node-1248">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">In about a seven count, you're going to take something else, even though you don't want to.</result>
+    <result xml:space="preserve">He gently took the pocketwatch back and promised you that someday, when he was gone, it would be yours.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10981,7 +11998,7 @@
   </item>
   <item nodeId="node-1249">
     <command xml:space="preserve">[enter]</command>
-    <result xml:space="preserve">You can kind of understand why Uncle Clifton's family don't like you.&#x000A;&#x000A;you can't take it with you&#x000A;a take all game by take all games&#x000A;Release 2 / Serial number 200804 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;Type HELP for more information. Type SCREEN READER to toggle accessibility mode.&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">That's why you're sitting in your car in front of his house, trying to convince yourself to brave the funeral reception so you can sneak upstairs, take the nicest present anyone's ever given you, and finally say goodbye to his family for good.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10989,8 +12006,8 @@
     </children>
   </item>
   <item nodeId="node-1250">
-    <command xml:space="preserve"></command>
-    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">You get out of the car, nervously walk up to the front door, open it, and run smack dab into Cartwright.&#x000A;&#x000A;He gives you a dirty look and walks off into the hall.</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -10998,6 +12015,51 @@
     </children>
   </item>
   <item nodeId="node-1251">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">His wallet fell out of his pocket. It's sitting on the floor.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1252"/>
+    </children>
+  </item>
+  <item nodeId="node-1252">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">&gt; take wallet&#x000A;You stuff it in your pocket as surreptitiously as you can.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1253"/>
+    </children>
+  </item>
+  <item nodeId="node-1253">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">In about a seven count, you're going to take something else, even though you don't want to.</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1254"/>
+    </children>
+  </item>
+  <item nodeId="node-1254">
+    <command xml:space="preserve">[enter]</command>
+    <result xml:space="preserve">You can kind of understand why Uncle Clifton's family don't like you.&#x000A;&#x000A;you can't take it with you&#x000A;a take all game by take all games&#x000A;Release 2 / Serial number 200804 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;Type HELP for more information. Type SCREEN READER to toggle accessibility mode.&#x000A;&#x000A;Vestibule&#x000A;The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits, one lonely umbrella inside it. Next to it, a table has been set up for the condolence book, which lies open, and a pen.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1255"/>
+    </children>
+  </item>
+  <item nodeId="node-1255">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-1256"/>
+    </children>
+  </item>
+  <item nodeId="node-1256">
     <command xml:space="preserve">screen reader</command>
     <result xml:space="preserve">Screen reader mode set to ON. (Certain effects will change to be more screen reader-friendly, and the start and end of long minimal-interaction cutscenes will be marked.)&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
