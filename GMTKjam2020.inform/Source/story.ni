@@ -110,7 +110,7 @@ Before printing the locale description of the Vestibule:
 		if cutscene_over is false:
 			say "".
 
-A stealable is a kind of undescribed thing. A stealable can be openable or unopenable. A stealable is usually unopenable. A stealable can be open or closed.
+A stealable is a kind of undescribed thing. A stealable can be openable or unopenable. A stealable is usually unopenable. A stealable can be open or closed. A stealable can be wearable. A stealable is usually not wearable.
 A mourner is a kind of person.
 Wallcontents is a kind of thing.
 
