@@ -98,17 +98,17 @@ When play begins:
 	wait for enter key;
 	say "In about a seven count, you're going to take something else, even though you don't want to.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
-	say "You can kind of understand why Uncle Clifton's family don't like you.";
+	say "You can kind of understand why Uncle Clifton's family don't like you. [if screenreader_on is true][bracket]Cutscene ends.[close bracket][end if]";
 	choose row 1 in Table of Basic Help Options;
 	now description entry is "hi! chloe from take all games here. cool to see you're playing our game.[line break][line break]you can't take it with you is a short comedy game about kleptomania with absolutely no deeper meaning at all.[line break][line break]this game operates in a unique way compared to most interactive fiction: you won't be able to pick many things up intentionally, and every seven turns (not counting failed actions) the player character will involuntarily take something without warning. this presents a problem if there are witnesses. if you get caught, remember that you can always UNDO.[line break][line break]this game was originally made for the GMTK game jam, july 2020. it is our first work as a team, onion and ian's first work of parser-based interactive fiction, my second, and the fourth work of interactive fiction in total that I have worked on.[line break][line break]credits:[line break]chloe 'tvwolfsnake' spears: writing, programming, coding[line break]ironiconion: writing, programming, coding, cover art[line break]ian kay: writing.".
 	
-Before printing the locale description of the Vestibule:
+[Before printing the locale description of the Vestibule:
 	if screenreader_on is true:
 		if cutscene_over is true:
-			say "[bracket]Cutscene ends.[close bracket]";
+			say "";
 			now cutscene_over is false;
 		if cutscene_over is false:
-			say "".
+			say "".]
 
 A stealable is a kind of undescribed thing. A stealable can be openable or unopenable. A stealable is usually unopenable. A stealable can be open or closed. A stealable can be wearable. A stealable is usually not wearable.
 A mourner is a kind of person.
@@ -126,8 +126,8 @@ Check signing:
 					now the player has the pen;
 					say "You take the pen.";
 					say "[line break]These books are full of shallow false sympathy, and you have very little to say to Uncle Clifton's family, but you leave a short message and sign it anyway. It's the polite thing to do.";
-			if the player is not in the Vestibule:
-				say "Signing something usually requires a pen.";
+				[if the player is not in the Vestibule:
+					say "Signing something usually requires a pen.";]
 			if the pen is carried:
 				if pen_variable is false:
 					say "These books are full of shallow false sympathy, and you have very little to say to Uncle Clifton's family, but you leave a short message and sign it anyway. It's the polite thing to do.";
@@ -340,6 +340,7 @@ To say businesscardascii:
 After taking the business card:
 	say "Taken.[first time][line break]Hey, you never know.[only]".
 
+The description of the player is "Your discomfort with your formal attire[unicode 8212]and the context you're wearing it in[unicode 8212]is pretty obvious."
 
 Part I - Get Upstairs
 
@@ -352,7 +353,7 @@ Vestibule is a room. The description of the vestibule is "The entranceway of Unc
 [full old description:
 Vestibule is a room. The description of the vestibule is "The entranceway of Uncle Clifton's imposing mansion, the anteroom of the Hall to the north. On your left, a weathered wooden umbrella stand sits[if umbrella is unheld], one lonely umbrella inside it[end if]. Next to it, a table has been set up for the condolence book[if condolence book is held], which is missing[end if][if condolence book is unheld], which lies open[end if][if pen is unheld], and a pen[end if]."]
 
-The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time]--it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?" Instead of closing the umbrella, say "It's already closed."
+The umbrella_stand is a container and scenery in the vestibule. The umbrella_stand has the printed name "umbrella stand". Understand "umbrella stand" as the umbrella_stand. The umbrella is inside the umbrella_stand. The umbrella is stealable. The description of the umbrella_stand is "The weathered wooden umbrella stand [if umbrella is unheld]has an old forgotten umbrella in it.[end if][if umbrella is held]is umbrellaless.[end if]". The description of the umbrella is "Shabby, old, a faded shade of purple[first time][unicode 8212]it's as weathered as the umbrella stand.[line break][line break]Okay, to be fair, that's kind of expected for an umbrella[only].". Instead of opening the umbrella, say "Isn't your luck bad enough already?" Instead of closing the umbrella, say "It's already closed."
 
 There is a table in the vestibule. The pen is on top of the table. The condolence book is on top of the table. The pen is stealable. The condolence book is scenery. The table is scenery.
 
@@ -430,7 +431,7 @@ Instead of going up in the hall:
 	say "Cartwright stops you in your tracks. He doesn't want you upstairs, and you know him just well enough to know he's not interested in any stories about a pocketwatch." instead.
 
 Instead of giving a peanut butter canapé to Cartwright in the hall:
-	say "In order to get past him, you give Cartwright--a man whose allergies might be way more severe than you're aware of--a common and potentially life-threatening allergen.[line break][line break][if screenreader_on is true][sr_enter][end if]";
+	say "In order to get past him, you give Cartwright[unicode 8212]a man whose allergies might be way more severe than you're aware of[unicode 8212]a common and potentially life-threatening allergen.[line break][line break][if screenreader_on is true][sr_enter][end if]";
 	wait for enter key;
 	clear screen;
 	say "No. You don't. Obviously you don't.[line break][line break][if screenreader_on is true][sr_enter][end if]";
@@ -926,9 +927,10 @@ When Gun Scene begins:
 	say "You hear the unmistakable [italic type]cli-cli-click[roman type] of a revolver hammer being pulled back.";
 	now Cartwright is in Uncle Clifton's Study;
 	now Cartwright is carrying the revolver;
+	now the description of the player is "Other than the formal attire, you're wearing that panicked, flop-sweaty expression most people have when they get held at gunpoint.";
 	now the description of Uncle Clifton's Study is "There's a rolling chair, [if letter opener is held]and [end if]a desk[if letter opener is held].[end if][if letter opener is unheld], and a letter opener.[end if][line break][line break]Oh also, Cartwright is standing in the doorway, brandishing a six-shooter at you.";
 	now the description of Cartwright is "You know those old rich fratty white guys who hold people at gunpoint?[line break][line break]Yeah. Exactly.";
-	now the description of the business card is "It's the business card of the guy who probably personally altered the wills.";
+	now the description of the business card is "It's the business card of the guy who is currently holding you at gunpoint[if the business card is seen], and who also probably personally altered the will[end if].";
 	try looking;
 	if screenreader_on is true:
 		say "[line break][bracket]Cutscene ends.[close bracket]".
@@ -944,6 +946,8 @@ When Gun Scene ends:
 	say "What?[if screenreader_on is true][sr_enter][end if]";
 	now the player is carrying the revolver;
 	now the indefinite article of the revolver is "your";
+	now the description of the business card is "It's the business card of the guy you held at gunpoint, after he held you at gunpoint, which [if the business card is seen]doubly [end if]serves him right[if the business card is seen], seeing as he probably altered the will[end if].";
+	now the description of the player is "Self-reflection would just dampen this high you're feeling. Probably best to just go with it.";
 	wait for enter key;
 	clear screen;
 	if screenreader_on is true:
@@ -1060,7 +1064,7 @@ The description of the original will is "Uncle Clifton's Last Will and Testament
 
 The description of the doctored will is "A petty fake by petty takers."
 
-Intruding Mourner is a scene. Intruding Mourner begins when kitchen_visited is true. Intruding Mourner ends when the time since Intruding Mourner began is 10 minutes.
+Intruding Mourner is a scene. Intruding Mourner begins when kitchen_visited is true. Intruding Mourner ends when the time since Intruding Mourner began is 12 minutes.
 
 When Intruding Mourner ends:
 	now Rowan is in the kitchen;
