@@ -681,7 +681,7 @@ Instead of opening the mystery can:
 [implement later?]
 [Dining Room]
 
-The Dining Room is a first-floor room. The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in the corner and a long oaken dining table with a large centerpiece and ten placecards set around the table. [line break][line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south.[line break][line break]Anne sits at the table with her head in her hands."
+The Dining Room is a first-floor room. The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in one corner, a shelf along the wall, and a long oaken dining table in the centre of the room with a large centerpiece and ten placecards set around the surface. [line break][line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south.[line break][line break]Anne sits at the table with her head in her hands."
 
 Anne is a mourner in the Dining Room. Anne is undescribed. The description of Anne is "Hildegard's mom. She looks exhausted. She doesn't look thrilled to see you."
 
@@ -691,29 +691,57 @@ Instead of opening the china cabinet:
 	say "You pull on the handle and the doors rattle alarmingly, but remain closed. The china locked safely inside.".
 The centerpiece is scenery in the Dining Room. The description of the centerpiece is "The centerpiece is a large ornate ice sculpture of Uncle Clifton holding his hands towards you magnanimously. It's already starting to melt."
 The dining table is scenery in the Dining Room. The description of the dining table is "The centerpiece takes up alot of room on the table but you can see the ten placecards:[line break][line break]Dane's placecard[line break]Anne's placecard[line break]Rowan's placecard[line break]Hildegard's placecard[line break]Dimia's placecard[line break]Beatrix's placecard[line break]Bryce's placecard[line break]Cartwright's placecard[line break]Cedric's placecard[line break]Edmund's placecard."
+The shelf is scenery in the Dining Room. The description of the shelf is "Smooth sandalwood shelf, polished to a shine."
+
+[shelf things need to be described in dynamic descriptions]
+
+A shelfthing is a kind of stealable.
+
+The glass penguin figurine is a shelfthing in the Dining Room. The description of the glass penguin figurine is "A beautifully crafted glass statuette with flakes of gold floating encased within the shape of a penguin in an imperious pose.". Understand "penguin" as the glass penguin figurine. Understand "penguin figurine" as the glass penguin figurine. 
+The glass horse figurine is a shelfthing in the Dining Room. The description of the glass horse figurine is "A robustly crafted glass statuette with flakes of gold floating encased within the shape of a very muscular horse. A positively jacked equine.". Understand "horse" as the glass penguin figurine. Understand "horse figurine" as the glass penguin figurine. 
+The glass swan figurine is a shelfthing in the Dining Room. The description of the glass swan figurine is "An elegently crafted glass statuette with flakes of gold floating encased within the shape of a swan.". Understand "swan" as the glass penguin figurine. Understand "swan figurine" as the glass swan figurine. 
+The glass caribou figurine is a shelfthing in the Dining Room. The description of the glass caribou figurine is "A delicately crafted glass statuette with flakes of gold floating encased within the shape of a thin, dainty, wispy caribou. ". Understand "caribou" as the glass penguin figurine. Understand "caribou figurine" as the glass caribou figurine. 
+The glass rooster figurine is a shelfthing in the Dining Room. The description of the glass rooster figurine is "An intricately crafted glass statuette with flakes of gold floating encased within the shape of a pompous, preening rooster.". Understand "rooster" as the glass penguin figurine. Understand "rooster figurine" as the glass rooster figurine. 
+The glass cat figurine is a shelfthing in the Dining Room. The description of the glass cat figurine is "An angularly crafted glass statuette with flakes of gold floating encased within the shape of a slightly abstracted, polygonal cat, with many flat faces intersecting smoothly.". Understand "cat" as the glass penguin figurine. Understand "cat figurine" as the glass cat figurine. 
+
+The skull is a shelfthing in the Dining Room. The description of the skull is "You can't tell whether this is a real skull or just a very detailed model. Neither would surprise you.[line break]It wouldn't have surprised you if the walls were lined with taxidermied human heads on wooden plaques."
+The candlestick holder is a shelfthing in the Dining Room. The description of the candlestick holder is "A very heavy, excessively ornamented, bronze candlestick holder, the sculpted figures in the ornate design resemble something out of Bosch's [italic type]Garden of Earthly Delights[roman type]."
+A candlething is a kind of shelfthing. A red candlestick is a kind of candlething. A white candlestick is a kind of candlething. A black candlestick is a kind of candlething. Understand "candle" as candlething.
+There are 3 red candlesticks in the Dining Room. There are 3 black candlesticks in the Dining Room. There are 3 white candlesticks in the Dining Room.
+The description of the red candlestick is "It is smooth, waxy, and red and looks delicious."
+The description of the white candlestick is "It is smooth, waxy, and white and looks delicious."
+The description of the black candlestick is "It is smooth, waxy, and black and looks delicious."
+Instead of smelling a candlething:
+	say "Waxy...".
+Instead of tasting a candlething:
+	say "You lick the candle. It's smooth but tastes like wax.".
+Instead of eating a candlething:
+	say "You take a full bite out of the candle.[line break]You spit it out immediately.[line break]Tastes like wax.".
 
 
 A placecard is a kind of stealable.
 
-placecard1 is a placecard in the Dining room. The description of placecard1 is "It reads: Dane Fenwick.". The printed name of placecard1 is "Dane's placecard". Understand "Dane's placecard" as placecard1. Understand "Dane's" as placecard1.
+placecard1 is a placecard in the Dining Room. The description of placecard1 is "It reads: Dane Fenwick.". The printed name of placecard1 is "Dane's placecard". Understand "Dane's placecard" as placecard1. Understand "Dane's" as placecard1.
 
-placecard2 is a placecard in the Dining room. The description of placecard2 is "It reads: Anne Chaucer Fenwick.". The printed name of placecard2 is "Anne's placecard". Understand "Anne's placecard" as placecard2. Understand "Anne's" as placecard2.
+placecard2 is a placecard in the Dining Room. The description of placecard2 is "It reads: Anne Chaucer Fenwick.". The printed name of placecard2 is "Anne's placecard". Understand "Anne's placecard" as placecard2. Understand "Anne's" as placecard2.
 
-placecard3 is a placecard in the Dining room. The description of placecard3 is "It reads: Rowan Writingham.". The printed name of placecard3 is "Rowan's placecard". Understand "Rowan's placecard" as placecard3. Understand "Rowan's" as placecard3.
+placecard3 is a placecard in the Dining Room. The description of placecard3 is "It reads: Rowan Writingham.". The printed name of placecard3 is "Rowan's placecard". Understand "Rowan's placecard" as placecard3. Understand "Rowan's" as placecard3.
 
-placecard4 is a placecard in the Dining room. The description of placecard4 is "It reads: Hildegard Fenwick.". The printed name of placecard4 is "Hildegard's placecard". Understand "Hildegard's placecard" as placecard4. Understand "Hildegard's" as placecard4.
+placecard4 is a placecard in the Dining Room. The description of placecard4 is "It reads: Hildegard Fenwick.". The printed name of placecard4 is "Hildegard's placecard". Understand "Hildegard's placecard" as placecard4. Understand "Hildegard's" as placecard4.
 
-placecard5 is a placecard in the Dining room. The description of placecard5 is "It reads: Dimia Fenwick.". The printed name of placecard5 is "Dimia's placecard". Understand "Dimia's placecard" as placecard5. Understand "Dimia's" as placecard5.
+placecard5 is a placecard in the Dining Room. The description of placecard5 is "It reads: Dimia Fenwick.". The printed name of placecard5 is "Dimia's placecard". Understand "Dimia's placecard" as placecard5. Understand "Dimia's" as placecard5.
 
-placecard6 is a placecard in the Dining room. The description of placecard6 is "It reads: Beatrix Cornwallis-Fenwick.". The printed name of placecard6 is "Beatrix's placecard". Understand "Beatrix's placecard" as placecard6. Understand "Beatrix's" as placecard6.
+placecard6 is a placecard in the Dining Room. The description of placecard6 is "It reads: Beatrix Cornwallis-Fenwick.". The printed name of placecard6 is "Beatrix's placecard". Understand "Beatrix's placecard" as placecard6. Understand "Beatrix's" as placecard6.
 
-placecard7 is a placecard in the Dining room. The description of placecard7 is "It reads: Bryce Fenwick.". The printed name of placecard7 is "Bryce's placecard". Understand "Bryce's placecard" as placecard7. Understand "Bryce's" as placecard7.
+placecard7 is a placecard in the Dining Room. The description of placecard7 is "It reads: Bryce Fenwick.". The printed name of placecard7 is "Bryce's placecard". Understand "Bryce's placecard" as placecard7. Understand "Bryce's" as placecard7.
 
-placecard8 is a placecard in the Dining room. The description of placecard8 is "It reads: Cartwright Fenwick.". The printed name of the placecard8 is "Cartwright's placecard". Understand "Cartwright's placecard" as placecard8. 
+placecard8 is a placecard in the Dining Room. The description of placecard8 is "It reads: Cartwright Fenwick.". The printed name of the placecard8 is "Cartwright's placecard". Understand "Cartwright's placecard" as placecard8. 
 
-placecard9 is a placecard in the Dining room. The description of placecard9 is "It reads: Cedric William Fenwick.". The printed name of placecard9 is "Cedric's placecard". Understand "Cedric's placecard" as placecard9. Understand "Cedric's" as placecard9.
+placecard9 is a placecard in the Dining Room. The description of placecard9 is "It reads: Cedric William Fenwick.". The printed name of placecard9 is "Cedric's placecard". Understand "Cedric's placecard" as placecard9. Understand "Cedric's" as placecard9.
 
-placecard10 is a placecard in the Dining room. The description of placecard10 is "It reads: Edmund Fenwick.". The printed name of placecard10 is "Edmund's placecard". Understand "Edmunds's placecard" as placecard10 . Understand "Edmund's" as placecard10 .
+placecard10 is a placecard in the Dining Room. The description of placecard10 is "It reads: Edmund Fenwick.". The printed name of placecard10 is "Edmund's placecard". Understand "Edmunds's placecard" as placecard10 . Understand "Edmund's" as placecard10 .
+
+
 
 [Bathroom]
 
@@ -735,8 +763,8 @@ The plunger is a toiletthing in the Bathroom. The description of the plunger is 
 lotion is a sinkthing in the Bathroom. The description of lotion is "A small, travel-size bottle of skin lotion."
 The glass eye is a sinkthing in the Bathroom. The description of the glass eye is "You don’t know anyone who lived in this house who is missing an eye …?"
 The flashlight is a toiletthing in the Bathroom. The description of the flashlight is "Thin and hefty, the lack of batteries make this flashlight more useful as a bludgeoning weapon."
-The ostentatious scarf is a towelthing in the Bathroom. The description of the ostentatious scarf is "[italic type]'It's truly truly outrageous[line break]truly truly truly outrageous.'[roman type][line break][line break]-Jem and The Holograms, [italic type]Truly Outrageous[roman type]." Understand "scarf" as the ostentatious scarf.
-sunglasses are a sinkthing in the Bathroom. The description of sunglasses is "Dark aviator sunglasses. They'd go well with a cowboy hat." Understand "aviator sunglasses" as sunglasses.
+The ostentatious scarf is a towelthing in the Bathroom. The description of the ostentatious scarf is "[italic type]'It's truly truly outrageous[line break]truly truly truly outrageous.'[roman type][line break][line break]-Jem and The Holograms, [italic type]Truly Outrageous[roman type]." Understand "scarf" as the ostentatious scarf. The ostentatious scarf is a wearable.
+sunglasses are a sinkthing in the Bathroom. The description of sunglasses is "Dark aviator sunglasses. They'd go well with a cowboy hat." Understand "aviator sunglasses" as sunglasses. sunglasses are wearable.
 
 The towel rack is scenery in the Bathroom. The description of the towel rack is "Made of ornate brass for the sole purpose of holding hand towels."
 
