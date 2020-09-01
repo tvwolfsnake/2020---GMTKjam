@@ -679,6 +679,14 @@ Instead of opening the mystery can:
 
 
 [implement later?]
+[This is added stealables for during the chase and in the fridge, ]
+[spices,
+cutlery , 
+bowl of fruits, 
+condiments, 
+finger food ]
+
+
 [Dining Room]
 
 The Dining Room is a first-floor room. The Dining Room is south of the Kitchen, west of the Hall, and north of the Sitting Room. The description of the Dining Room is "There is a china cabinet in one corner, a shelf along the wall, and a long oaken dining table in the centre of the room with a large centerpiece and ten placecards set around the surface. [line break][line break]There is no placecard for you. The kitchen is to the north. The sitting room is to the south.[line break][line break]Anne sits at the table with her head in her hands."
