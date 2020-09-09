@@ -578,6 +578,7 @@ The Kitchen is a first-floor room. The Kitchen is northwest of the hall. The des
 The counter is scenery in The Kitchen. The delicate tea cup is on the counter. Some loose grapes are on the counter. The empty bottle is on the counter. The recipe book is on the counter.
 caterers are scenery in The Kitchen. The description of caterers is "They crowd most of the room like a hivemind, moving in synchronized movement in a quasireligious fervor, only speaking to each other in loud bursts of coded language.[line break][line break]They completely ignore you.[first time][line break][line break]Which is something of a relief.[only]".
 The fridge is scenery in The Kitchen. The description of the fridge is "Large and bursting with all kinds of food and beverages. It is hopelessly out of your reach."
+[^^^^^^^^^^^^^^^^^^^^^^^remember to change this as you implement openable fridge^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^]
 
 The delicate tea cup is a stealable. The description of the delicate tea cup is "This dainty tea cup seems incredibly delicate. It is off-white and dusty rose with a fine, intricate merry-go-round design. Its frail, breakable form is an almost tactless reminder of the fragility of life. Like a diviner consulting tea dregs in exactly such a cup, you can see in the gossamer frame of this chalice the future condition of yourself and every other living creature. And the present condition of Uncle Clifton."
 Understand "tea cup" as delicate tea cup.
@@ -680,11 +681,64 @@ Instead of opening the mystery can:
 
 [implement later?]
 [This is added stealables for during the chase and in the fridge, ]
-[spices,
-cutlery , 
-bowl of fruits, 
-condiments, 
-finger food ]
+[ In part of kitchen only accessible during Chase. 
+spices (counter)
+	basil 
+	allspice
+	garlic
+	chives
+	ginger
+	oregano
+	paprika
+	rosemary
+	turmeric
+	cilantro
+
+cutlery (counter)
+	fork
+	spoon
+	knife
+	tongs
+
+fruits (fridge/counter)
+	apple 
+	pear
+	orange
+	avocado
+	kiwi
+	lemon
+	peach
+	plum
+
+condiments (fridge)
+	whipped dressing
+	dijon mustard
+	aioli
+	chutney
+	horseradish
+	hummus
+	sriracha
+	teriyaki 
+	sauerkraut
+
+finger food (fridge/counter)
+	devilled eggs
+	marinated shrimp
+	asparagus bruschetta
+	cucumber canapes
+	macarons
+
+	
+The fridge is a container in the Kitchen. The description of the fridge is "[if fridge is closed]something something.[end if][if wallet is open]something something.[end if]". Understand "fridge" as the fridge. The fridge can be open or closed. The fridge is openable. x, y, z are inside the wallet.
+
+Instead of opening the fridge:
+	if gun_start is false:
+		say "It might not be a good idea to give grieving rich people concrete evidence that you're stealing from them.";
+	if gun_start is true:
+		now the fridge is open;
+			say "You open the fridge[line break]";
+		try examining the fridge.
+]
 
 
 [Dining Room]
